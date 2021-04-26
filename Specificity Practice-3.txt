@@ -13,51 +13,31 @@ SOLUTION:
 HTML_CODE:
 <!DOCTYPE html>
 <html>
-  <head></head>
-  <body>
-    <div class="language-container">
-      <h1 class="blue-text">JavaScript</h1>
-      <p class="language-description" id="description">
-        JavaScript is the programming language of the Web. JavaScript adds
-        interactivity to the website that engages a user.
-      </p>
-      <button style="background-color: orange;">Learn</button>
-    </div>
-  </body>
+
+<head></head>
+
+<body>
+    <p>A paragraph with the type selector</p>
+    <p id="dark">A paragraph with the ID selector</p>
+    <p>A paragraph with the type selector</p>
+</body>
+
 </html>
 
 
 CSS_CODE:
 
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
-div{
-    background-color: lightgray;
-}
-.language-container {
-  text-align: center;
-  padding: 40px;
-}
-h1 {
-  color: orange;
-  font-family: "Roboto";
-  font-size: 30px;
-  font-weight: bold;
-}
-.blue-text{
-    color: blue;
-}
-.language-description {
-  font-family: "Roboto";
-  font-size: 16px;
-}
-#description {
-    font-size: 20px;
-}
-button {
-  font-family: "Roboto";
-  width: 100px;
-  height: 30px;
-  border-width: 0px;
-  border-radius: 5px;
+
+p {
+    background-color: #f3e1cd;
+    font-family: "Open Sans";
+    font-size: 22px;
+    padding: 25px;
+    margin: 0px;
 }
 
+#dark {
+    background-color: black;
+    color: white;
+}
