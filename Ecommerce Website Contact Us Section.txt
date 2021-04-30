@@ -1,0 +1,60 @@
+Question:
+
+Ecommerce Website Contact Us Section
+In this assignment, let's build an Ecommerce Website Contact Us Section by applying the concepts we learned till now.
+
+Refer to the below images.
+
+The following images illustrate all device sizes, from extra small to extra large.
+Note:
+Try to achieve the design as close as possible.
+Resources:
+CSS Colors used:
+
+#f5f7fa
+#ff9f00
+#183b56
+
+SOLUTION:-
+HTML_CODE:-
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="contact-us-section pt-5 pb-5 text-center">
+        <h1 class="contact-us-section-heading mb-3">Let us Join Together</h1>
+        <button class="custom-button">CONTACT US</button>
+    </div>
+  </body>
+</html>
+
+CSS_CODE:-
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+.contact-us-section{
+    background-color: #f5f7fa;
+}
+.contact-us-section-heading{
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 32px;
+    font-weight: bold;
+}
+.custom-button{
+    color: #ff9f00;
+    background-color: transparent;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 500;
+    width: 140px;
+    height: 43px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ff9f00;
+}
