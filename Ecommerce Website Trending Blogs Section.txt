@@ -1,0 +1,127 @@
+Question:
+Ecommerce Website Trending Blogs Section
+In this assignment, let's build an Ecommerce Website Trending Blogs Section by applying the concepts we learned till now.
+
+Refer to the below images.
+
+The following images illustrate all device sizes, from extra small to extra large.
+
+Extra Small (Size < 576px) and Small (Size >= 576px)
+Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)
+Note
+Try to achieve the design as close as possible.
+Resources
+Use the image URLs given below.
+
+https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-trending-blogs-1-img.png
+https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-trending-blogs-2-img.png
+CSS Colors used:
+
+#183b56
+#ff9f00
+#959ead
+
+SOLUTION:-
+HTML_CODE:-
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <j1 class="trending-blogs-section-heading mb-30">Trending Blogs</j1>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="shadow mb-3">
+                        <img 
+                        src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-trending-blogs-1-img.png"
+                        class="w-100"
+                        />
+                        <div class="p-3">
+                            <h1 class="trending-blogs-card-sub-title">Foundation Pens</h1>
+                            <h1 class="trending-blogs-card-title">Guide to Foundation Pen Nibs</h1>
+                            <p class="trending-blogs-card-description">
+                                If you're having trouble with a fountain pen whether it's scratchy, too dry, or too wet...
+                            </p>
+                            <a class="trending-blogs-card-link" href="">
+                                READ MORE
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path 
+                                    fill-rule="eveodd"
+                                    d="M4 8a.5.5 0 0 1 .5.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .7081-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="shadow mb-3">
+                        <img 
+                        src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-trending-blogs-2-img.png"
+                        class="w-100"
+                        />
+                        <div class="p-3">
+                            <h1 class="trending-blogs-card-sub-title">Productivity</h1>
+                            <h1 class="trending-blogs-card-title">How to Craft a Better Today List</h1>
+                            <p class="trending-blogs-card-description">
+                                A well-crafted Todo list acts as a guiding light for your day. It helps you overcome...
+                            </p>
+                            <a class="trending-blogs-card-link" href="">
+                                READ MORE
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path 
+                                    fill-rule="eveodd"
+                                    d="M4 8a.5.5 0 0 1 .5.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .7081-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                    />
+                                    </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+CSS_CODE:-
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+.trending-blogs-section-heading{
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 36px;
+    font-weight: 700;
+}
+.trending-blogs-card-sub-title{
+    color: #959ead;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 500;
+}
+.trending-blogs-card-title{
+    color: #183b56;
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 24px;
+}
+.trending-blogs-card-description{
+    color: #959ead;
+    font-family: "Roboto";
+    font-size: 20px;
+}
+.trending-blogs-card-link{
+    color: #ff9f00;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 700;
+}
