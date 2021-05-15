@@ -1,0 +1,125 @@
+Question:
+Ecommerce Website Services Section
+In this assignment, let's build an Ecommerce Website Services Section by applying the concepts we learned till now.
+
+Refer to the below images.
+
+The following images illustrate all device sizes, from extra small to extra large.
+
+Extra Small (Size < 576px) and Small (Size >= 576px)
+Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)
+Note:-
+Try to achieve the design as close as possible.
+Resources:-
+Use the image URLs given below.
+
+https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-services-delivery-img.png
+https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-services-money-back-img.png
+https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-services-24-by-7-support-img.png
+CSS Colors used:
+
+#183b56
+#616c7c
+#1f2933
+#7b8794
+
+SOLUTION:-
+HTML_CODE:-
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="services-section-heading">Our Services</h1>
+                    <p class="services-section-description">
+                        Most online stores offer lower prices. Online shopping makes price
+                        comparison simpler and quicker. It is very convenient to shop from
+                        where you are located. It saves you the cost of driving to stores,
+                        as well as parking fees.
+                    </p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="shadow p-3 text-center mb-3">
+                        <img 
+                        src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-services-delivery-img.png"
+                        class="services-card-image"
+                        />
+                        <h1 class="services-card-title">Fast and Free Delivery </h1>
+                        <p class="services-card-description">
+                            Fast, free, and convenient delivery choices on millions of items.
+                        </p>
+                    </div>
+                </div>
+                 <div class="col-12 col-md-4">
+                    <div class="shadow p-3 text-center mb-3">
+                        <img 
+                        src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-services-money-back-img.png"
+                        class="services-card-image"
+                        />
+                        <h1 class="services-card-title">100% Money back guarantee</h1>
+                        <p class="services-card-description">
+                            This is probably the most popular guarantee in the world.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="shadow p-3 text-center mb-3">
+                        <img 
+                        src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-services-24-by-7-support-img.png"
+                        class="services-card-image"
+                        />
+                        <h1 class="services-card-title">Online Support 24/7</h1>
+                        <p class="services-card-description">
+                            Our Online Support will provide you with many useful functions,
+                            valuable information, tips.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+CSS_CODE:-
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.services-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.services-section-description {
+    color: #616c7c;
+    font-family: "Roboto";
+    font-size: 18px;
+}
+
+.services-card-image {
+    width: 80px;
+}
+
+.services-card-title {
+    color: #1f2933;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.services-card-description {
+    color: #7b8794;
+    font-family: "Roboto";
+    font-size: 14px;
+}
