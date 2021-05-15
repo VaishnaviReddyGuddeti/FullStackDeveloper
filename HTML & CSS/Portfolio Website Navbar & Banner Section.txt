@@ -1,0 +1,132 @@
+Question:-
+Portfolio Website Navbar & Banner Section
+In this assignment, let's build a Portfolio Website Navbar & Banner Section by applying the concepts we learned till now.
+
+Refer to the below :-.
+
+The following images illustrate all device sizes, from extra small to extra large.
+
+Extra Small (Size < 576px) and Small (Size >= 576px)
+Medium (Size >= 768px)
+Large (Size >= 992px) and Extra Large (Size >= 1200px)
+Note
+Try to achieve the design as close as possible.
+The logo in the Navbar is the text. You can customise it by adding your favourite or initial letters.
+
+You can use your own image in the Banner Section.
+
+Resources:-
+Use the image URL given below.
+
+https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/portfolio-banner-img.png
+
+CSS Colors used:
+#4b6cc1
+#191a1d
+#9aa5b1
+
+SOLUTION:-
+HTML_CODE:-
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand portfolio-logo" href="#">J.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-lable="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar nav ml-auto">
+                <a class="nav-link active text-white" href="#">
+                    Home
+                    <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-link text-while" href="#">About me</a>
+                <a class="nav-link text-while" href="#">Projects</a>
+                <a class="nav-link text-while" href="#">Recent Blogs</a>
+                <a class="nav-link text-while" href="#">Testimonial</a>
+            </div>
+        </div>
+        </nav>
+    <div class="banner-section-bg-container d-flex flex-column justify-content-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5 order-1 order-md-2">
+                    <img
+                    src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/portfolio-banner-img.png"
+                    class="banner-section-image"
+                    />
+                </div>
+                <div class="col-12 col-md-7 order-2 order-md-1 d-flex flex-column justify-content-center">
+                    <h1 class="banner-section-heading mb-3">
+                        Hey, I am <span class="person-name">Jenny</span>
+                    </h1>
+                    <p class="banner-section-description mb-3">
+                        I am a Frontend Developer & Mentor
+                    </p>
+                    <button class="custom-button">Contact Me</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+CSS_CODE:-
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.portfolio-logo {
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 700;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #4b6cc1;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.banner-section-bg-container {
+    background-color: #191a1d;
+    height: 100vh;
+}
+
+.banner-section-heading {
+    color: white;
+    font-family: "Roboto";
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.banner-section-description {
+    color: #9aa5b1;
+    font-family: "Roboto";
+    font-size: 24px;
+}
+
+.banner-section-image {
+    width: 280px;
+    margin-bottom: 10px;
+}
+
+.person-name {
+    color: #4b6cc1;
+}
+
+.custom-button {
+    color: white;
+    background-color: #4b6cc1;
+    width: 130px;
+    height: 45px;
+    border-width: 0;
+    border-radius: 8px;
+}
+ 
