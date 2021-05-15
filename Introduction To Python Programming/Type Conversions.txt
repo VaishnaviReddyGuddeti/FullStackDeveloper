@@ -1,0 +1,122 @@
+*Type Conversion*
+
+String Slicing:
+Obtaining a part of a string is called string slicing.
+
+Code:
+variable_name[start_index:end_index]
+
+-Start from the start_index and stops at end_index
+-end_index is not included in the slice.
+Code:
+message = "Hi Ravi"
+part = message[3:7]
+print(part)
+Output:
+Ravi 
+
+Slicing to End:
+If end index is not specified, slicing stops at the end of the string.
+
+Code:
+message = "Hi Ravi"
+part = message[3:]
+print(part)
+Output:
+Ravi
+
+Slicing from Start:
+If start index is not specified, slicing starts from the index 0.
+
+Code:
+message = "Hi Ravi"
+part = message[:2]
+print(part)
+Output:
+Hi 
+
+Checking Data Type:
+Check the datatype of the variable or value using type() 
+
+Printing Data Type:
+
+Code:
+print(type(10))
+print(type(4.2))
+print(type("Hi"))
+Output:
+<class 'int'>
+<class 'float'>
+<class 'str
+
+Type Conversion:
+Converting the value of one data type to another data type is called Type Conversion or Type Casting.
+We can convert
+-String to Integer
+-Integer to Float
+-Float to String and so on.
+-String to Integer
+int() converts valid data of any type to integer
+
+Code:
+a = "5"
+a = int(a)
+print(type(a))
+print(a)
+Output:
+<class 'int'>
+5
+
+Invalid Integer Conversion
+Code:
+a = "Five"
+a = int(a)
+print(type(a))
+Output:
+ValueError: 
+invalid literal for int() with
+
+Code:
+a = "5.0"
+a = int(a)
+print(type(a))
+Output:
+invalid literal for int() with base 10:'5.0'
+
+Adding Two Numbers:
+Code:
+a = input()
+a = int(a)
+b = input()
+b = int(b)
+result = a + b
+print(result)
+Input:
+2
+3
+Output:
+5
+
+Integer to String:
+str() converts data of any type to a string.
+
+Code:
+a = input()
+a = int(a)
+b = input()
+b = int(b)
+result = a + b
+print("Sum: " + str(result))
+Input:
+2
+3
+Output:
+Sum: 5
+
+
+Summary:
+1. int() -> Converts to integer data type
+2. float() -> Converts to float data type
+3. str() -> Converts to string data type
+4. bool() -> Converts to boolean data type
+
