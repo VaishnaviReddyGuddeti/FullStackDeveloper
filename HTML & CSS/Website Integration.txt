@@ -1,0 +1,1957 @@
+Website Integration :-
+
+
+1. CCBP UI Kit
+It is a collection of reusable code snippets similar to Bootstrap. It is specially designed for CCBP training.
+
+1.1 Adding CCBP UI Kit to the Web Page
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+  </body>
+</html>
+The CCBP UI Kit Script Code should be placed just before the HTML body end tag.
+
+1.2 Display Utility
+It is a reusable code snippet to display or hide Section Containers based on user actions.
+
+html:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="section1">
+      <p>This is Section One</p>
+      <button class="btn btn-primary" onclick="display('section2')">
+        Go to Section 2
+      </button>
+    </div>
+    <div id="section2">
+      <p>This is Section Two</p>
+      <button class="btn btn-primary" onclick="display('section3')">
+        Go to Section 3
+      </button>
+    </div>
+    <div id="section3">
+      <p>This is Section Three</p>
+      <button class="btn btn-primary" onclick="display('section1')">
+        Go to Section 1
+      </button>
+    </div>
+   <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+  </body>
+</html>
+
+2. Sections in Tourism Website
+2.1 Home Section
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbG+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMM+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="bg-container d-flex flex-column justify-content-end">
+      <div class="tourism-card">
+        <h1 class="main-heading">Tourism</h1>
+        <p class="paragraph">Plan your trip.</p>
+        <button class="button">
+          Get Started
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/ocean.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.tourism-card {
+  text-align: center;
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 5px;
+}
+.button {
+  color: white;
+  background-color: #25b1cc;
+  width: 138px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 20px;
+}
+.main-heading {
+  font-family: "Roboto";
+}
+.paragraph {
+  font-family: "Roboto";
+}
+
+2.2 Favourite Places Section
+HTM_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="favourite-places-bg-container">
+      <h1 class="favourite-places-heading">Favourite Places</h1>
+      <div class="favourite-place-card-container d-flex flex-row">
+        <div>
+          <h1 class="favourite-place-card-heading">Taj Mahal</h1>
+          <p class="favourite-place-card-description">
+            If there was just one symbol to represent all of India, it would be the
+            Taj Mahal
+          </p>
+        </div>
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png" class="favourite-place-card-image" />
+      </div>
+      <div class="favourite-place-card-container d-flex flex-row">
+        <div>
+          <h1 class="favourite-place-card-heading">Golden Temple</h1>
+          <p class="favourite-place-card-description">
+            Amritsar is world-famous for the beautiful and highly revered Golden
+            Temple
+          </p>
+        </div>
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/golden-temple-img.png" class="favourite-place-card-image" />
+      </div>
+      <div class="favourite-place-card-container d-flex flex-row">
+        <div>
+          <h1 class="favourite-place-card-heading">Mysore Palace</h1>
+          <p class="favourite-place-card-description">
+            The Mysore Palace is a historical palace and the royal residence at
+            Mysore .
+          </p>
+        </div>
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/mysore-palace-img.png" class="favourite-place-card-image" />
+      </div>
+      <div class="favourite-place-card-container d-flex flex-row">
+        <div>
+          <h1 class="favourite-place-card-heading">Varanasi Temple</h1>
+          <p class="favourite-place-card-description">
+            Varanasi Temple is most famous Hindu temples dedicated to Lord Shiva
+          </p>
+        </div>
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/varanasi-temple-img.png" class="favourite-place-card-image" />
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.favourite-places-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/towerbg.png");
+  height: 100vh;
+  background-size: cover;
+  padding: 24px;
+}
+.favourite-places-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+}
+.favourite-place-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 15px;
+}
+.favourite-place-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.favourite-place-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.favourite-place-card-image {
+  width: 80px;
+  height: 100px;
+}
+.favourite-place-card-text-container {
+  margin-right: 15px;
+}
+Note:-
+To occupy the background image to the entire content in the above output, remove the height specified to the favourite-places-bg-container.
+The background image takes the height of the content of an HTML element if you don't specify the height to it.
+
+2.3 Detailed View Section
+
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="detailed-view-bg-container">
+      <h1 class="detailed-view-heading">Detailed View</h1>
+      <div class="detailed-view-card-container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c1-img.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c2-img.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c3-img.png" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class="detailed-view-card-text-container">
+          <h1 class="detailed-view-card-heading">Taj Mahal</h1>
+          <p class="detailed-view-card-description">
+            The Taj Mahal is considered to be the greatest architectural
+            achievement in the whole range of Indo-Islamic architecture. Its
+            recognised architectonic beauty has a rhythmic combination of solids
+            and voids, concave and convex and light shadow; such as arches and
+            domes further increases the aesthetic aspect. Not a piece of
+            architecture, as other buildings are, but the proud passions of an
+            emperor’s love wrought in living stones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.detailed-view-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/seabg.png");
+  height: 100vh;
+  background-size: cover;
+}
+.detailed-view-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+.detailed-view-card-container {
+  background-color: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin: 24px;
+}
+.detailed-view-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.detailed-view-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.detailed-view-card-text-container {
+  padding: 16px;
+}
+
+3. HTML Attributes
+3.1 The HTML id Attribute
+The HTML id attribute specifies a unique id for an HTML element. The value of the id attribute must be unique within the HTML document.
+html: <div id="section1">Section 1</div>
+
+3.2 The HTML onclick Attribute
+The onclick event occurs when the user clicks on an HTML Element.
+html:
+<button class="btn btn-primary" onclick="display('section3')">
+  Go to Section 3
+</button>
+The value of an HTML onclick attribute should be enclosed in double-quotes and the value inside the brackets of display() should be enclosed in single quotes.
+
+4. Website Integration
+4.1 Integration of Home and Favourite Places Sections
+To display Favourite Places Section when we are in the Home Section:
+
+Step-1: Change ids of Section Containers. All the ids must start with section
+Step-2: Add HTML code of Home Section and corresponding CSS styles to Display Utility
+Step-3: Add HTML code of Favourite Places Section and corresponding  CSS styles to Display Utility
+Step-4: Add an HTML onclick attribute to the HTML button element in the Home Section
+
+To display the Home Section when we are in the Favourite Places Section:
+
+Step-5: Add an HTML button element in Favourite places Section
+Step-6: Add an HTML onclick attribute to it
+
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="sectionHome">
+      <div class="bg-container d-flex flex-column justify-content-end">
+        <div class="tourism-card">
+          <h1 class="main-heading">Tourism</h1>
+          <p class="paragraph">Plan your trip.</p>
+          <button class="button" onclick="display('sectionFavouritePlaces')">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="sectionFavouritePlaces">
+      <div class="favourite-places-bg-container">
+        <h1 class="favourite-places-heading">Favourite Places</h1>
+        <div class="favourite-place-card-container d-flex flex-row">
+          <div>
+            <h1 class="favourite-place-card-heading">Taj Mahal</h1>
+            <p class="favourite-place-card-description">
+              If there was just one symbol to represent all of India, it would
+              be the Taj Mahal
+            </p>
+          </div>
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <div class="favourite-place-card-container d-flex flex-row">
+          <div>
+            <h1 class="favourite-place-card-heading">Golden Temple</h1>
+            <p class="favourite-place-card-description">
+              Amritsar is world-famous for the beautiful and highly revered
+              Golden Temple
+            </p>
+          </div>
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/golden-temple-img.png"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <div class="favourite-place-card-container d-flex flex-row">
+          <div>
+            <h1 class="favourite-place-card-heading">Mysore Palace</h1>
+            <p class="favourite-place-card-description">
+              The Mysore Palace is a historical palace and the royal residence
+              at Mysore .
+            </p>
+          </div>
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/mysore-palace-img.png"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <div class="favourite-place-card-container d-flex flex-row">
+          <div>
+            <h1 class="favourite-place-card-heading">Varanasi Temple</h1>
+            <p class="favourite-place-card-description">
+              Varanasi Temple is most famous Hindu temples dedicated to Lord
+              Shiva
+            </p>
+          </div>
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/varanasi-temple-img.png"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionHome')">
+          back
+        </button>
+      </div>
+    </div>
+    <div id="sectionTajMahalDetailedView"></div>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/ocean.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.tourism-card {
+  text-align: center;
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 5px;
+}
+.button {
+  color: white;
+  background-color: #25b1cc;
+  width: 138px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 20px;
+}
+.main-heading {
+  font-family: "Roboto";
+}
+.paragraph {
+  font-family: "Roboto";
+}
+.favourite-places-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/towerbg.png");
+  height: 100vh;
+  background-size: cover;
+  padding: 24px;
+}
+.favourite-places-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+}
+.favourite-place-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 15px;
+}
+.favourite-place-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.favourite-place-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.favourite-place-card-image {
+  width: 80px;
+  height: 100px;
+}
+.favourite-place-card-text-container {
+  margin-right: 15px;
+}
+
+Note:-
+While Integrating the sections with CCBP UI Kit, the ids of the section container must have a prefix section. Otherwise it doesn't work.
+4.2 Integration of Favourite Places and Detailed View Sections
+To display the Detailed View Section when we click on Taj Mahal Card:
+
+Step-1: Add HTML code of Detailed View Section code to the Display Utility
+Step-2: Add corresponding styles to the CSS file
+Step-3: Add an HTML onclick attribute to the Taj Mahal Card in the Favourite Places Section
+
+To display the Favourite Places Section when we are in the Detailed View Section:
+
+Step-4: Add an HTML button element in the Detailed View Section
+Step-5: Add an HTML onclick attribute to the HTML button element
+
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="sectionHome">
+      <div class="bg-container d-flex flex-column justify-content-end">
+        <div class="tourism-card">
+          <h1 class="main-heading">Tourism</h1>
+          <p class="paragraph">Plan your trip.</p>
+          <button class="button" onclick="display('sectionFavouritePlaces')">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="sectionFavouritePlaces">
+      <div class="favourite-places-bg-container">
+        <h1 class="favourite-places-heading">Favourite Places</h1>
+        <div class="favourite-place-card-container d-flex flex-row" onclick="display('sectionTajMahalDetailedView')">
+          <div>
+            <h1 class="favourite-place-card-heading">Taj Mahal</h1>
+            <p class="favourite-place-card-description">
+              If there was just one symbol to represent all of India, it would
+              be the Taj Mahal
+            </p>
+          </div>
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <div class="favourite-place-card-container d-flex flex-row">
+          <div>
+            <h1 class="favourite-place-card-heading">Golden Temple</h1>
+            <p class="favourite-place-card-description">
+              Amritsar is world-famous for the beautiful and highly revered
+              Golden Temple
+            </p>
+          </div>
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/golden-temple-img.png"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <div class="favourite-place-card-container d-flex flex-row">
+          <div>
+            <h1 class="favourite-place-card-heading">Mysore Palace</h1>
+            <p class="favourite-place-card-description">
+              The Mysore Palace is a historical palace and the royal residence
+              at Mysore .
+            </p>
+          </div>
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/mysore-palace-img.png"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <div class="favourite-place-card-container d-flex flex-row">
+          <div>
+            <h1 class="favourite-place-card-heading">Varanasi Temple</h1>
+            <p class="favourite-place-card-description">
+              Varanasi Temple is most famous Hindu temples dedicated to Lord
+              Shiva
+            </p>
+          </div>
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/varanasi-temple-img.png"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionHome')">
+          back
+        </button>
+      </div>
+    </div>
+    <div id="sectionTajMahalDetailedView">
+      <div class="detailed-view-bg-container">
+        <h1 class="detailed-view-heading">Detailed View</h1>
+        <div class="detailed-view-card-container">
+          <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c1-img.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c2-img.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c3-img.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="detailed-view-card-text-container">
+            <h1 class="detailed-view-card-heading">Taj Mahal</h1>
+            <p class="detailed-view-card-description">
+              The Taj Mahal is considered to be the greatest architectural
+              achievement in the whole range of Indo-Islamic architecture. Its
+              recognised architectonic beauty has a rhythmic combination of
+              solids and voids, concave and convex and light shadow; such as
+              arches and domes further increases the aesthetic aspect. Not a
+              piece of architecture, as other buildings are, but the proud
+              passions of an emperor’s love wrought in living stones.
+            </p>
+          </div>
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionFavouritePlaces')">
+          back
+        </button>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/ocean.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.tourism-card {
+  text-align: center;
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 5px;
+}
+.button {
+  color: white;
+  background-color: #25b1cc;
+  width: 138px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 20px;
+}
+.main-heading {
+  font-family: "Roboto";
+}
+.paragraph {
+  font-family: "Roboto";
+}
+.favourite-places-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/towerbg.png");
+  height: 100vh;
+  background-size: cover;
+  padding: 24px;
+}
+.favourite-places-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+}
+.favourite-place-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 15px;
+}
+.favourite-place-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.favourite-place-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.favourite-place-card-image {
+  width: 80px;
+  height: 100px;
+}
+.favourite-place-card-text-container {
+  margin-right: 15px;
+}
+.detailed-view-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/seabg.png");
+  height: 100vh;
+  background-size: cover;
+}
+.detailed-view-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+.detailed-view-card-container {
+  background-color: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin: 24px;
+}
+.detailed-view-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.detailed-view-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.detailed-view-card-text-container {
+  padding: 16px;
+}
+
+
+Website Integration | Part 2 
+1. Detailed View Section
+1.1 Golden Temple Detailed View Section
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="detailed-view-bg-container">
+      <h1 class="detailed-view-heading">Detailed View</h1>
+      <div class="detailed-view-card-container">
+        <div id="goldenTempleCarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#goldenTempleCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#goldenTempleCarousel" data-slide-to="1"></li>
+            <li data-target="#goldenTempleCarousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/goldentemple1-img.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/goldentemple2-img.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/goldentemple3-img.png" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#goldenTempleCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#goldenTempleCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class="detailed-view-card-text-container">
+          <h1 class="detailed-view-card-heading">Golden Temple</h1>
+          <p class="detailed-view-card-description">
+            The Golden Temple, also known as Harmandir Sahib is a gurdwara
+            located in the city of Amritsar, Punjab, India. There are many
+            places to visit Near Golden Temple like Jallianwala Bagh, Wagah Border, Harike Wetland, Bathinda Fort.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.detailed-view-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/seabg.png");
+  height: 100vh;
+  background-size: cover;
+}
+.detailed-view-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+.detailed-view-card-container {
+  background-color: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin: 24px;
+}
+.detailed-view-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.detailed-view-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.detailed-view-card-text-container {
+  padding: 16px;
+}
+
+1.2 Mysore Palace Detailed View Section
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="detailed-view-bg-container">
+      <h1 class="detailed-view-heading">Detailed View</h1>
+      <div class="detailed-view-card-container">
+        <div id="mysorePalaceCarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#mysorePalaceCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#mysorePalaceCarousel" data-slide-to="1"></li>
+            <li data-target="#mysorePalaceCarousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/mysore-palace1-img.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/mysore-palace2-img.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/mysore-palace3-img.png" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#mysorePalaceCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#mysorePalaceCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class="detailed-view-card-text-container">
+          <h1 class="detailed-view-card-heading">Mysore Palace</h1>
+          <p class="detailed-view-card-description">
+            Mysore Palace, also called Amba Vilas Palace, is one of the most magnificent and largest palaces in India. Situated in the southern state of Karnataka, it used to be the official residence of the Wodeyar Dynasty, the rulers of Mysore from 1399 to 1950. The grand palace stands tall in the heart of Mysore city and attracts visitors from across the world. Being one of the prime attractions in India after the Taj Mahal, it certainly deserves a place in every traveler’s bucket list.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.detailed-view-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/seabg.png");
+  height: 100vh;
+  background-size: cover;
+}
+.detailed-view-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+.detailed-view-card-container {
+  background-color: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin: 24px;
+}
+.detailed-view-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.detailed-view-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.detailed-view-card-text-container {
+  padding: 16px;
+}
+1.3 Varanasi Temple Detailed View Section
+
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="detailed-view-bg-container">
+      <h1 class="detailed-view-heading">Detailed View</h1>
+      <div class="detailed-view-card-container">
+        <div id="varanasiTempleCarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#varanasiTempleCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#varanasiTempleCarousel" data-slide-to="1"></li>
+            <li data-target="#varanasiTempleCarousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/varanasi1-img.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/varanasi2-img.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/varanasi3-img.png" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#varanasiTempleCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#varanasiTempleCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class="detailed-view-card-text-container">
+          <h1 class="detailed-view-card-heading">Varanasi Temple</h1>
+          <p class="detailed-view-card-description">
+            Sri Kashi Vishwanath Temple also known as the Golden Temple, it is dedicated to Lord Shiva, the presiding deity of the city. Varanasi is Said to be the point at which the first jyotirlinga, the fiery pillar of light by which shiva manifested has supremacy over others gods, broke through the Earth’s crust and flared towards the heavens. More than the Gaths and even the Ganga, the Shivalinga installed in the temple remains the devotional focus of Varanasi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.detailed-view-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/seabg.png");
+  height: 100vh;
+  background-size: cover;
+}
+.detailed-view-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+.detailed-view-card-container {
+  background-color: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin: 24px;
+}
+.detailed-view-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.detailed-view-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.detailed-view-card-text-container {
+  padding: 16px;
+}
+
+Note:-
+The ids of the Carousels are changed in the above Detailed View Sections code.
+
+The ids used in the above code are unique throughout the HTML document.
+
+2. Website Integration
+2.1 Integration of Favourite Places and Detailed View Sections
+To display the Detailed View Section when we click on the Golden Temple Card in the Favourite Places Section:
+
+Step-1: Add the Section Container with the unique id
+Step-2: Add HTML Code of Golden Temple Detailed View Section
+Step-3: Add an HTML onclick attribute to the Golden Temple Card in the Favourite Places Section
+
+To display the Favourite Places Section when we are in the Detailed View Section:
+
+Step-4: Add an HTML button element in the Detailed View Section
+Step-5: Add an HTML onclick attribute to the HTML button element
+
+Try out adding the Mysore Palace and Varanasi Temple Detailed View Sections and integrate them similar to the Golden Temple and TajMahal Detailed View Sections in the below Code Playground.
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="sectionHome">
+      <div class="bg-container d-flex flex-column justify-content-end">
+        <div class="tourism-card">
+          <h1 class="main-heading">Tourism</h1>
+          <p class="paragraph">Plan your trip.</p>
+          <button class="button" onclick="display('sectionFavouritePlaces')">Get Started</button>
+        </div>
+      </div>
+    </div>
+    <div id="sectionFavouritePlaces">
+      <div class="favourite-places-bg-container">
+       <h1 class="favourite-places-heading">Favourite Places</h1>
+       <div class="favourite-place-card-container d-flex flex-row" onclick="display('sectionTajMahalDetailedView')">
+         <div>
+           <h1 class="favourite-place-card-heading">Taj Mahal</h1>
+           <p class="favourite-place-card-description">
+             If there was just one symbol to represent all of India, it would be the
+             Taj Mahal
+           </p>
+         </div>
+         <img
+           src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"
+           class="favourite-place-card-image"
+         />
+       </div>
+       <div class="favourite-place-card-container d-flex flex-row" onclick="display('sectionGoldenTempleDetailedView')">
+         <div>
+           <h1 class="favourite-place-card-heading">Golden Temple</h1>
+           <p class="favourite-place-card-description">
+             Amritsar is world-famous for the beautiful and highly revered Golden
+             Temple
+           </p>
+         </div>
+         <img
+           src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/golden-temple-img.png"
+           class="favourite-place-card-image"
+         />
+       </div>
+       <div class="favourite-place-card-container d-flex flex-row">
+         <div>
+           <h1 class="favourite-place-card-heading">Mysore Palace</h1>
+           <p class="favourite-place-card-description">
+             The Mysore Palace is a historical palace and the royal residence at
+             Mysore .
+           </p>
+         </div>
+         <img
+           src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/mysore-palace-img.png"
+           class="favourite-place-card-image"
+         />
+       </div>
+       <div class="favourite-place-card-container d-flex flex-row">
+         <div>
+           <h1 class="favourite-place-card-heading">Varanasi Temple</h1>
+           <p class="favourite-place-card-description">
+             Varanasi Temple is most famous Hindu temples dedicated to Lord Shiva
+           </p>
+         </div>
+         <img
+           src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/varanasi-temple-img.png"
+           class="favourite-place-card-image"
+         />
+       </div>
+       <button class="btn btn-dark" onclick="display('sectionHome')">back</button>
+      </div>
+    </div>
+    <div id="sectionTajMahalDetailedView">
+      <div class="detailed-view-bg-container">
+        <h1 class="detailed-view-heading">Detailed View</h1>
+        <div class="detailed-view-card-container">
+          <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c1-img.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c2-img.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c3-img.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="detailed-view-card-text-container">
+            <h1 class="detailed-view-card-heading">Taj Mahal</h1>
+            <p class="detailed-view-card-description">
+              The Taj Mahal is considered to be the greatest architectural achievement
+              in the whole range of Indo-Islamic architecture. Its recognised
+              architectonic beauty has a rhythmic combination of solids and voids,
+              concave and convex and light shadow; such as arches and domes further
+              increases the aesthetic aspect. Not a piece of architecture, as other
+              buildings are, but the proud passions of an emperor’s love wrought in
+              living stones.
+            </p>
+          </div>
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionFavouritePlaces')">
+          back
+        </button>
+      </div>
+    </div>
+    <div id="sectionGoldenTempleDetailedView">
+      <div class="detailed-view-bg-container">
+        <h1 class="detailed-view-heading">Detailed View</h1>
+        <div class="detailed-view-card-container">
+          <div id="goldenTempleCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#goldenTempleCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#goldenTempleCarousel" data-slide-to="1"></li>
+              <li data-target="#goldenTempleCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/goldentemple1-img.png" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/goldentemple2-img.png" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/goldentemple3-img.png" class="d-block w-100" alt="..." />
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#goldenTempleCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#goldenTempleCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="detailed-view-card-text-container">
+            <h1 class="detailed-view-card-heading">Golden Temple</h1>
+            <p class="detailed-view-card-description">
+              The Golden Temple, also known as Harmandir Sahib is a gurdwara
+              located in the city of Amritsar, Punjab, India. There are many
+              places to visit Near Golden Temple like Jallianwala Bagh, Wagah Border, Harike Wetland, Bathinda Fort.
+            </p>
+          </div>
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionFavouritePlaces')">
+          back
+        </button>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/ocean.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.tourism-card {
+  text-align: center;
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 5px;
+}
+.button {
+  color: white;
+  background-color: #25b1cc;
+  width: 138px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 20px;
+}
+.main-heading {
+  font-family: "Roboto";
+}
+.paragraph {
+  font-family: "Roboto";
+}
+.favourite-places-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/towerbg.png");
+  height: 100vh;
+  background-size: cover;
+  padding: 24px;
+}
+.favourite-places-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+}
+.favourite-place-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 15px;
+}
+.favourite-place-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.favourite-place-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.favourite-place-card-image {
+  width: 80px;
+  height: 100px;
+}
+.favourite-place-card-text-container {
+  margin-right: 15px;
+}
+.detailed-view-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/seabg.png");
+  height: 100vh;
+  background-size: cover;
+}
+.detailed-view-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+.detailed-view-card-container {
+  background-color: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin: 24px;
+}
+.detailed-view-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.detailed-view-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.detailed-view-card-text-container {
+  padding: 16px;
+}
+
+Note:
+To use multiple Carousels in the same HTML document, we have to provide a unique id to each Carousel.
+
+So while adding a new Carousel, you need to change the id of the Carousel. Else, the Carousel controls don’t work.
+
+3. HTML Lists
+The List is a way to group related pieces of information so that they are easy to read and understand.
+
+For example, Shopping list, Todo list, etc.
+
+There are mainly two types of Lists available in HTML.
+
+Unordered List
+Ordered List
+3.1 Unordered List
+It is a collection of related items that have no special order or sequence.
+
+For example, List of Hobbies
+
+Painting
+Reading Books
+Playing the Guitar
+The Unordered List starts with <ul> tag. It wraps around all the list items and each list item starts with the <li> tag.
+html:
+<ul>
+  <li>Painting</li>
+  <li>Reading Books</li>
+  <li>Playing the Guitar</li>
+</ul>
+By default, list items in the Unordered List are marked with bullets.
+
+3.1.1 Styling Unordered List
+The CSS list-style-type property is used to style the List.
+css:
+.unordered-square-list {
+  list-style-type: square;
+}
+
+You can use one of the below values of the CSS list-style-type property to style the Unordered List.
+
+Value:
+square
+circle
+disc
+none
+
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <ul class="unordered-square-list">
+      <li>Painting</li>
+      <li>Reading Books</li>
+      <li>Playing the Guitar</li>
+    </ul>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.unordered-square-list {
+  list-style-type: square;
+}
+3.2 Ordered List
+It is a collection of related items that follow some order or have a sequence.
+
+For example, Web Technologies
+
+HTML
+CSS
+JavaScript
+The Ordered List starts with <ol> tag. It wraps around all the list items and each list item starts with the <li> tag.
+html:
+<ol>
+  <li>Go through the HTML elements and CSS properties</li>
+  <li>Complete the Todolist Coding Practice</li>
+  <li>Go through the Bootstrap Concepts</li>
+  <li>Read the Bootstrap cheat sheet</li>
+  <li>Build a Tourism Website</li>
+</ol>
+By default, list items in the Ordered List are marked with numbers.
+
+3.2.1 Styling Ordered List
+The CSS list-style-type property is used to style the List.
+css:
+.ordered-lower-roman-list {
+  list-style-type: lower-roman;
+}
+You can use one of the below values of the CSS list-style-type property to style the Ordered List.
+
+Value:
+upper-alpha
+lower-alpha
+upper-roman
+lower-roman
+decimal
+none
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <ol class="ordered-lower-roman-list">
+      <li>Go through the HTML elements and CSS properties</li>
+      <li>Complete the Todolist Coding Practice</li>
+      <li>Go through the Bootstrap Concepts</li>
+      <li>Read the Bootstrap cheat sheet</li>
+      <li>Build a Tourism Website</li>
+    </ol>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.ordered-lower-roman-list {
+  list-style-type: lower-roman;
+}
+
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="sectionHome">
+      <div class="bg-container d-flex flex-column justify-content-end">
+        <div class="tourism-card">
+          <h1 class="main-heading">Tourism</h1>
+          <p class="paragraph">Plan your trip.</p>
+          <button class="button" onclick="display('sectionFavouritePlaces')">Get Started</button>
+        </div>
+      </div>
+    </div>
+    <div id="sectionFavouritePlaces">
+      <div class="favourite-places-bg-container">
+       <h1 class="favourite-places-heading">Favourite Places</h1>
+       <div class="favourite-place-card-container d-flex flex-row" onclick="display('sectionTajMahalDetailedView')">
+         <div>
+           <h1 class="favourite-place-card-heading">Taj Mahal</h1>
+           <p class="favourite-place-card-description">
+             If there was just one symbol to represent all of India, it would be the
+             Taj Mahal
+           </p>
+         </div>
+         <img
+           src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"
+           class="favourite-place-card-image"
+         />
+       </div>
+       <div class="favourite-place-card-container d-flex flex-row" onclick="display('sectionGoldenTempleDetailedView')">
+         <div>
+           <h1 class="favourite-place-card-heading">Golden Temple</h1>
+           <p class="favourite-place-card-description">
+             Amritsar is world-famous for the beautiful and highly revered Golden
+             Temple
+           </p>
+         </div>
+         <img
+           src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/golden-temple-img.png"
+           class="favourite-place-card-image"
+         />
+       </div>
+       <div class="favourite-place-card-container d-flex flex-row">
+         <div>
+           <h1 class="favourite-place-card-heading">Mysore Palace</h1>
+           <p class="favourite-place-card-description">
+             The Mysore Palace is a historical palace and the royal residence at
+             Mysore .
+           </p>
+         </div>
+         <img
+           src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/mysore-palace-img.png"
+           class="favourite-place-card-image"
+         />
+       </div>
+       <div class="favourite-place-card-container d-flex flex-row">
+         <div>
+           <h1 class="favourite-place-card-heading">Varanasi Temple</h1>
+           <p class="favourite-place-card-description">
+             Varanasi Temple is most famous Hindu temples dedicated to Lord Shiva
+           </p>
+         </div>
+         <img
+           src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/varanasi-temple-img.png"
+           class="favourite-place-card-image"
+         />
+       </div>
+       <button class="btn btn-dark" onclick="display('sectionHome')">back</button>
+      </div>
+    </div>
+    <div id="sectionTajMahalDetailedView">
+      <div class="detailed-view-bg-container">
+        <h1 class="detailed-view-heading">Detailed View</h1>
+        <div class="detailed-view-card-container">
+          <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c1-img.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c2-img.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c3-img.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="detailed-view-card-text-container">
+            <h1 class="detailed-view-card-heading">Taj Mahal</h1>
+            <p class="detailed-view-card-description">
+              The Taj Mahal is considered to be the greatest architectural achievement
+              in the whole range of Indo-Islamic architecture. Its recognised
+              architectonic beauty has a rhythmic combination of solids and voids,
+              concave and convex and light shadow; such as arches and domes further
+              increases the aesthetic aspect. Not a piece of architecture, as other
+              buildings are, but the proud passions of an emperor’s love wrought in
+              living stones.
+            </p>
+          </div>
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionFavouritePlaces')">
+          back
+        </button>
+      </div>
+    </div>
+    <div id="sectionGoldenTempleDetailedView">
+      <div class="detailed-view-bg-container">
+        <h1 class="detailed-view-heading">Detailed View</h1>
+        <div class="detailed-view-card-container">
+          <div id="goldenTempleCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#goldenTempleCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#goldenTempleCarousel" data-slide-to="1"></li>
+              <li data-target="#goldenTempleCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/goldentemple1-img.png" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/goldentemple2-img.png" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/goldentemple3-img.png" class="d-block w-100" alt="..." />
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#goldenTempleCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#goldenTempleCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="detailed-view-card-text-container">
+            <h1 class="detailed-view-card-heading">Golden Temple</h1>
+            <p class="detailed-view-card-description">
+              The Golden Temple, also known as Harmandir Sahib is a gurdwara
+              located in the city of Amritsar, Punjab, India. There are many
+              places to visit Near Golden Temple.
+            </p>
+            <ol class="detailed-view-card-description">
+              <li>Jallianwala Bagh</li>
+              <li>Wagah Border</li>
+              <li>Harike Wetland</li>
+              <li>Bathinda Fort</li>
+            </ol>
+          </div>
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionFavouritePlaces')">
+          back
+        </button>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/ocean.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.tourism-card {
+  text-align: center;
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 5px;
+}
+.button {
+  color: white;
+  background-color: #25b1cc;
+  width: 138px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 20px;
+}
+.main-heading {
+  font-family: "Roboto";
+}
+.paragraph {
+  font-family: "Roboto";
+}
+.favourite-places-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/towerbg.png");
+  height: 100vh;
+  background-size: cover;
+  padding: 24px;
+}
+.favourite-places-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+}
+.favourite-place-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 15px;
+}
+.favourite-place-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.favourite-place-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.favourite-place-card-image {
+  width: 80px;
+  height: 100px;
+}
+.favourite-place-card-text-container {
+  margin-right: 15px;
+}
+.detailed-view-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/seabg.png");
+  height: 100vh;
+  background-size: cover;
+}
+.detailed-view-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+.detailed-view-card-container {
+  background-color: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin: 24px;
+}
+.detailed-view-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.detailed-view-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.detailed-view-card-text-container {
+  padding: 16px;
+}
+
+
+HTML Hyperlinks:
+
+1. HTML Anchor Element
+The HTML a element defines a Hyperlink.
+
+We use Hyperlinks to navigate to other web resources or a specific element within the HTML document. They are also called links.
+
+Syntax:<a href="URL">Content</a>
+1.1 HTML href Attribute
+The HTML href Attribute specifies the URL/ path of the page where the link goes to.
+html:- a href="https://www.onthegomodel.com/">On the Go Model</a>
+1.2 HTML target Attribute
+The HTML target Attribute specifies where to open the linked web resource.
+html-code:-
+<!DOCTYPE html>
+<html>
+  <head> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <a href="https://www.onthegomodel.com/" target="_blank">On the Go Model</a>
+  </body>
+</html>
+
+
+2. Navigate within the same HTML document
+The HTML a element can also be used to navigate to different sections within the same HTML document.
+
+Add an HTML id attribute to the section that you want to navigate to. Provide the hash symbol #, and the value of the id attribute of that section as a value to the link's HTML href attribute.
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="profile">
+      <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/profile-avatar-img.png" class="image"/>
+      <h1 class="heading">Vinod</h1>
+      <p>
+        Vinod is an Indian-American business executive. He is the chief
+        executive officer of Vincent Club Inc
+      </p>
+      <a href="#bioSection">Bio</a>
+    </div>
+    <div class="awards">
+      <h1 class="heading">Awards</h1>
+      <ul>
+        <li>Quality Mark Award</li>
+        <li>Golden Peacock Awards</li>
+        <li>Emerging Entrepreneurs</li>
+      </ul>
+    </div>
+    <div class="bio" id="bioSection">
+      <h1 class="heading">Bio</h1>
+      <p>
+        Vinod (born June 10, 1972), is an Indian-American business executive.He
+        is the chief executive officer (CEO) of Vincent Club Inc. and its
+        subsidiary Techtron LLC. Born in Madurai, India, Vinod earned his degree
+        from the Indian Institute of Technology Kharagpur in metallurgical
+        engineering. Moving to the United States
+      </p>
+      <p>
+        He attained an M.S. from Stanford University in materials science and
+        engineering and further attained an MBA from the Wharton School of the
+        University of Pennsylvania, where he was named a Siebel Scholar and a
+        Palmer Scholar, respectively.
+      </p>
+      <p>
+        He worked in engineering and product management at Applied Materials and
+        in management consulting at McKinsey & Company and joined Vincet in
+        2020, where he led the product management and innovation efforts for a
+        suite of Vincents's client software products, including Pantron
+      </p>
+    </div>
+  </body>
+</html>
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.profile {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px;
+}
+
+.image {
+  width: 200px;
+  margin: 30px;
+}
+
+.heading {
+  font-size: 24px;
+}
+
+.awards {
+  background-color: #f7fbff;
+  padding: 20px;
+}
+
+.bio {
+  background-color: #ffffff;
+  padding: 20px;
+}
+Note:-
+While navigating to a particular section within the same HTML document, the content of that section doesn't start from the starting of a page when 
+
+It has less content to fill the Viewport height and there are no sections after it.
+The content of that section and the content of the sections after it has less content to fill the Viewport height.
+
+3. HTML Image Element as Link
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="profile">
+      <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/profile-avatar-img.png" class="image"/>
+      <h1 class="heading">Vinod</h1>
+      <p>
+        Vinod is an Indian-American business executive. He is the chief
+        executive officer of Vincent Club Inc
+      </p>
+      <a href="https://www.onthegomodel.com/">
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/learn-technologies-img.png"/>
+      </a>
+    </div>
+  </body>
+</html>
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.profile {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px;
+}
+
+.image {
+  width: 200px;
+  margin: 30px;
+}
+
+.heading {
+  font-size: 24px;
+}
+4. Most commonly used HTML Void Elements
+4.1 HTML Line Break Element
+The HTML br element helps to break the text and continue it in the next line.
+html:
+<h1 class="heading">
+  Twinkle Twinkle Little Star
+</h1>
+<p> 
+  Twinkle, twinkle, little star, <br />
+  How I wonder what you are! <br />
+  Up above the world so high, <br />
+  Like a diamond in the sky. 
+</p>
+4.2 HTML Horizontal Rule Element
+The HTML hr element inserts a horizontal line and helps to separate the content.
+ html:
+<h1 class="heading">
+  Twinkle Twinkle Little Star
+</h1> 
+<hr />
+<p> 
+  Twinkle, twinkle, little star, <br />
+  How I wonder what you are! <br />
+  Up above the world so high, <br />
+  Like a diamond in the sky. 
+</p>
+HTML_CODE:-
+<!DOCTYPE html>
+<html>
+  <head> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1 class="heading">
+      Twinkle Twinkle Little Star
+    </h1> 
+    <hr />
+    <p> 
+      Twinkle, twinkle, little star, <br />
+      How I wonder what you are! <br />
+      Up above the world so high, <br />
+      Like a diamond in the sky. 
+    </p>
+    <hr />
+  </body>
+</html>
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+On-Demand Session 
+1. Getting URLs for Your Images
+You can get the URLs to your images using Cloudinary. Cloudinary lets you easily upload the images and provide the image URLs.
+
+Cloudinary Website URL: https://cloudinary.com/
+
+Note
+To Sign up, copy the Cloudinary Website URL and open in new tab.
+2. Install Visual Studio Code
+Windows Operating System
+Ubuntu/Linux Operating System (Watch only for 2 minutes)
+Mac Operating System (Watch only for 2 minutes 30 seconds)
+3. Linking HTML and CSS Files
+We use the HTML link element to link the HTML and CSS files. It is a void element.
+
+Syntax:<link rel="stylesheet" href="tourism.css">
+Note:
+You need to add the HTML link element in the HTML head element.
+

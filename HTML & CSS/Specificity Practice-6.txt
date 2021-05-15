@@ -1,0 +1,52 @@
+QUESTION:
+
+Specificity Practice-6
+In this assignment, you will be applying the CSS Specificity concepts we learned till now.
+
+Read the instructions below.
+
+Instructions
+Follow the instructions one by one and check how the output is varying.
+
+Change the color of the last two HTML main heading elements to black using the CSS class selector. The class name should be black-text.
+Change the color of the last two HTML main heading elements to green using the CSS class selector. The class name should be green-text.
+Change the color of the last HTML main heading element to orange using the CSS ID selector. The ID name should be orangeText.
+Change the color of the last HTML main heading element to blue using Inline Styles.
+Add an !important declaration to the CSS Property color in the class selector black-text.
+Note
+This assignment is only for practice. It's not recommended to write Inline Styles or !important declaration.
+
+Write the CSS Rulesets one after the other in the CSS following the instructions.
+SOLUTION:-
+HTML_CODE:-
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>Make the World Wonderful</h1>
+    <h1 class="black-text green-text">Spread the Light</h1>
+    <h1 class="black-text green-text" id="orangeText" style="color: blue">
+        Channelise your Energy
+        </h1>
+  </body>
+</html>
+
+CSS_CODE:-
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+h1 {
+  color: white;
+  background-color: burlywood;
+  font-family: "Open Sans";
+  padding: 20px;
+}
+.black-text{
+    color: black !important;
+}
+.green-text{
+    color: green;
+}
+#orangeText{
+    color: orange;
+}

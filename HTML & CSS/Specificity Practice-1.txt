@@ -1,0 +1,80 @@
+QUESTION:
+Specificity Practice-1
+In this assignment, you will be applying the CSS Specificity concepts we learned till now.
+To get started, you are provided with a CSS code snippet, which includes the necessary styles to achieve the desired outcome.
+Your objective is to update the HTML code snippet by making use of the styles defined in the CSS code snippet so that the web page looks like the image given below.
+
+Note:-
+Try to achieve the design as close as possible.
+Do not edit the CSS Code Snippet. Write the HTML Code by making use of the CSS styles already written.
+
+SOLUTION:-
+
+HTML_CODE:-
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <div class="profile-container">
+        <h1>Rahul</h1>
+        <p>FRONT END DEVELOPER</p>
+        <div class="designation-details-container">
+            <p class="designation-details">
+                I am a Front-End Developer with an year of work experiencce across the
+                product development life cycle.
+            </p>
+        </div>
+        <div class="contact-info-container">
+            <p class="contact-info">
+                Send me an Email to get access to my work.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+CSS_CODE:-
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.profile-container {
+    background-color: #f5f9fd;
+    padding: 10px;
+}
+
+h1 {
+    color: #03449e;
+    font-family: "Roboto";
+    font-size: 32px;
+}
+
+p {
+    color: #0967d2;
+    font-family: "Bree Serif";
+    font-size: 24px;
+}
+
+.designation-details-container {
+    background-color: #d0efff;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.designation-details {
+    color: #47a3f3;
+    font-family: "Roboto";
+    font-size: 18px;
+}
+
+.contact-info-container {
+    background-color: #03254c;
+    padding: 10px;
+}
+
+.contact-info {
+    color: #9aa5b1;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-style: italic;
+}
