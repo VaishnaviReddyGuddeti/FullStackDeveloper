@@ -1,0 +1,70 @@
+Logical Operators:
+The logical operators are used to perform logical operations on Boolean values.
+Gives True or False as the result.  
+
+Following are the logical operators  
+-and
+-or
+-not
+
+Logical AND Operator:
+Gives True if both the booleans are true else, it gives False
+
+Code:
+print(True and True)
+Output:
+True
+
+Examples of Logical AND:
+
+Code:
+print((2 < 3) and (1 < 2))
+
+Step by Step Explanation
+(2 < 3) and (1 < 2)  
+True and (1 < 2)  
+True and True 
+Output:
+True
+
+Logical OR Operator:
+Gives True if any one of the booleans is true else, it gives False
+
+Code:
+print(False or False)
+Output:
+False
+
+Examples of Logical OR:
+
+Code:
+print((2 < 3) or (2 < 1))
+Step by Step Explanation:
+(2 < 3) or (2 < 1)  
+True or (2 < 1)  
+True or False
+Output:
+True
+
+Logical NOT Operator:
+Gives the opposite value of the given boolean.
+
+Code:
+print(not(False))
+Output:
+True
+
+Examples of Logical NOT:
+Code:
+print(not(2 < 3))
+Step by Step Explanation
+not(2 < 3)  
+not(True)  
+False
+Output:
+False
+
+Summary:
+1.Logical AND Operator gives True if all the booleans are true.
+2.Logical OR Operator gives True if any of the booleans are true.
+3.Logical NOT Operator gives the opposite value
