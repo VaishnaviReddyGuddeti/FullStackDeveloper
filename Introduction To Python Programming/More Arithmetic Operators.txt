@@ -1,0 +1,27 @@
+*More Arithmetic Operators*
+Modulus:
+To find the remainder, we use Modulus operator %
+-a % b
+Code:
+print(6 % 3)
+Output:
+0
+
+Exponent:
+To calculate a power b, we use Exponent Operator **
+a ** b  
+
+Code:
+print(2 ** 3)
+Output:
+8
+
+Floor Division:
+To find integral part of quotient we use Floor Division Operator //
+a // b  
+
+Code:
+print(3 // 2)
+Output:
+1
+
