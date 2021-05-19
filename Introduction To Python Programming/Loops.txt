@@ -1,0 +1,252 @@
+
+Loops:
+So far we have seen that Python executes code in a sequence and each block of code is executed once.
+Loops allow us to execute a block of code several times.
+
+While Loop:
+Allows us to execute a block of code several times as long as the condition is True. 
+While Loop Example:
+The following code snippet prints the next three consecutive numbers after a given number.  
+
+Code:
+a = int(input())  
+counter = 0  
+while counter < 3:  
+    a = a + 1  
+    print(a)  
+    counter = counter + 1
+Input:
+4
+Output:
+5
+6
+7
+
+Possible Mistakes:
+1. Missing Initialization
+
+Code:
+a = int(input())  
+while counter < 3:  
+    a = a + 1  
+    print(a)  
+    counter = counter + 1  
+print("End")
+Input:
+5 
+Output:
+NameError: name 'counter' is not
+
+2. Incorrect Termination Condition
+
+Code:
+a = int(input())  
+counter = 0  
+condition = (counter < 3)  
+while condition:  
+    a = a + 1  
+    print(a)  
+    counter = counter + 1
+Input:
+10
+Output:
+Infinite Loop
+
+While block will keep repeating as the value in condition variable is True.
+
+3. Not Updating Counter Variable
+
+Code:
+a = int(input())  
+counter = 0  
+while counter < 3:  
+    a = a + 1  
+    print(a)  
+print("End")
+Input:
+10
+Output:
+Infinite Loop
+
+As the value of counter is not updating.
+
+
+For Loop:
+for statement iterates over each item of a sequence. 
+Examples of sequences:
+
+Sequence of Characters (string)
+Sequence of numbers, etc.
+For Syntax:
+Code:
+ord = "Python"  
+for each_char in word:  
+    print(each_char)
+Output:
+P  
+y  
+t  
+h  
+o  
+n
+
+Range:
+Generates a sequence of integers starting from 0.
+Syntax: range(n)
+Stops before n (n is not included).
+
+Code:
+for number in range(3):  
+    print(number)
+Output:
+0
+1
+2
+
+Range with Start and End:
+Generates a sequence of numbers starting from start
+Syntax: range(start, end)
+Stops before end (end is not included).  
+
+Code:
+for number in range(5, 8):  
+    print(number)
+Output:
+5
+6
+7
+
+Extended Slicing and String Methods:
+Extended Slicing:
+Syntax:  variable[start_index:end_index:step]
+
+Step determines the increment between each index for slicing.  
+
+Code:
+a = "Waterfall"  
+part = a[1:6:3]  
+print(part)
+Output:
+ar
+
+Methods:
+Python has a set of built-in reusable utilities.
+They simplify the most commonly performed operations are: 
+
+String Methods:
+
+-isdigit()
+-strip()
+-lower()
+-upper()
+-startswith()
+-endswith()
+-replace() and more...
+
+Isdigit:
+Syntax: str_var.isdigit()
+
+Gives True if all the characters are digits. Otherwise, False  
+
+Code:
+is_digit = "4748".isdigit()  
+print(is_digit)
+Output:
+True
+
+Strip:
+Syntax: str_var.strip()  
+
+Removes all the leading and trailing spaces from a string.  
+
+Code:
+mobile = " 9876543210 "  
+mobile = mobile.strip()  
+print(mobile)
+Output:
+9876543210
+
+Strip - Specific characters:
+Syntax: str_var.strip(chars)  
+
+We can also specify characters that need to be removed.  
+
+Code:
+name = "Sushanth."  
+name = name.strip(".")  
+print(name)
+Output:
+Sushanth
+
+Strip - Multiple Characters:
+Removes all spaces, comma(,) and full stop(.) that lead or trail the string.  
+
+Code:
+name = ", .. ,, shourya ,, .. ."  
+name = name.strip(" ,.")  
+print(name)
+Output:
+shourya
+
+Replace:
+Syntax: str_var.replace(old,new)  
+
+Gives a new string after replacing all the occurrences of the old substring with the new substring.  
+
+Code:
+sentence = "teh cat and teh dog"  
+sentence = sentence.replace("teh","the")  
+print(sentence)
+Output:
+the cat and the 
+
+Startswith:
+Syntax: str_var.startswith(value)  
+
+Gives True if the string starts with the specified value. Otherwise, False  
+
+Code:
+url = "https://onthegomodel.com"  
+is_secure_url = url.startswith("https://")  
+print(is_secure_url)
+Output:
+True
+
+Endswith:
+Syntax: str_var.endswith(value)  
+
+Gives True if the string ends with the specified value. Otherwise, False  
+
+Code:
+gmail_id = "rahul123@gmail.com"  
+is_gmail = gmail_id.endswith("@gmail.com")  
+print(is_gmail)
+Output:
+True
+
+Upper:
+Syntax: str_var.upper()  
+
+Gives a new string by converting each character of the given string to uppercase.  
+
+Code:
+name = "sushanth"  
+print(name.upper())
+Output:
+SUSHANTH
+
+Lower:
+Syntax: str_var.lower()  
+
+Gives a new string by converting each character of the given string to lowercase.  
+
+Code:
+name = "SHOURYA"  
+print(name.lower())
+Output:
+shourya
+
+
+
+
+	
