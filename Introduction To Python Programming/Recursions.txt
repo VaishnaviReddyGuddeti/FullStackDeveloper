@@ -1,0 +1,337 @@
+Passing Mutable Objects:
+The same object in the memory is referred by both list_a and list_x.
+Code:
+def add_item(list_x):
+    list_x += [3]
+
+list_a = [1,2]
+add_item(list_a)
+print(list_a)
+Output:
+[1, 2, 3] 
+
+Code:
+def add_item(list_x):
+    list_x = list_x + [3]
+
+list_a = [1,2]
+add_item(list_a)
+print(list_a)
+Output:
+[1, 2]
+
+Default args are evaluated only once when the function is defined, not each time the function is called.
+Code:
+def add_item(list_x=[]):
+    list_x += [3]
+    print(list_x)
+
+add_item()
+add_item([1,2])
+add_item()
+Output:
+[3]
+[1, 2, 3]
+[3, 3]
+
+Built-in functions:
+Built-in functions are readily available for reuse.
+
+We are already using functions which are pre-defined in Python
+
+-print()
+-int()
+-str()
+-len()
+
+Finding Minimum:
+min() returns the smallest item in a sequence or smallest of two or more arguments.
+code:
+min(sequence)
+min(arg1, arg2, arg3 ...)
+
+Example - 1
+
+Code:
+smallest= min(3,5,4)
+print(smallest)
+Output:
+3 
+
+Example - 2
+
+Code:
+smallest = min([1,-2,4,2])
+print(smallest)
+Output:
+-2 
+
+Minimum of Strings:
+min(str_1, str_2)
+
+Strings are compared character by character using unicode values.
+
+P - 80(unicode)
+J - 74(unicode)
+
+Code:
+smallest = min("Python", "Java")
+print(smallest)
+Output:
+Java
+
+Finding Maximum:
+max() returns the largest item in a sequence or largest of two or more arguments.
+
+code:
+max(sequence)
+max(arg1, arg2, arg3 ...)
+
+Example - 1
+
+Code:
+largest = max(3,5,4)
+print(largest)
+Ouput:
+5
+
+Example - 2
+
+Code:
+largest = max([1,-2,4,2])
+print(largest)
+Output:
+4
+
+Finding Sum:
+sum(sequence) returns sum of items in a sequence.
+
+Code:
+sum_of_numbers = sum([1,-2,4,2])
+print(sum_of_numbers)
+Output:
+5
+
+Ordering List Items:
+sorted(sequence) returns a new sequence with all the items in the given sequence ordered in increasing order.
+
+Code:
+list_a = [3, 5, 2, 1, 4, 6]
+list_x = sorted(list_a)
+print(list_x)
+Output:
+[1, 2, 3, 4, 5, 6]
+
+Ordering List Items - Reverse:
+sorted(sequence, reverse=True) returns a new sequence with all the items in the given sequence ordered in decreasing order.
+
+Code:
+list_a = [3, 5, 2, 1, 4, 6]
+list_x = sorted(list_a, reverse=True)
+print(list_x)
+Output:
+[6, 5, 4, 3, 2, 1]
+
+Function Call Stack & Recursion:
+Stack:
+
+Stack is a data structure that stores items in an Last-In/First-Out manner.  
+
+Calling a Function:
+
+Calling function_1() inside function_2()  
+Code:
+def get_largest_sqr(list_x):  
+ len_list = len(list_x)  
+ for i in range(len_list):  
+ x = list_x[i] list_x[i] = x * x largest = max(list_x)  
+ return largest  
+list_a = [1,-3,2]  
+result = get_largest_sqr(list_a)  
+print(result)
+Output:
+9
+In the above code calling functions are len() and max() inside get_largest_sqr()
+
+Sum of Squares of List Items:
+Code:
+def get_sqrd_val(x): 
+    return (x * x) 
+  
+def get_sum_of_sqrs(list_a): 
+    sqrs_sum = 0
+    for i in list_a: 
+        sqrs_sum += get_sqrd_val(i) 
+    return sqrs_sum
+
+list_a = [1, 2, 3] 
+sum_of_sqrs = get_sum_of_sqrs(list_a) 
+print(sum_of_sqrs)
+Output:
+14
+
+Function Call Stack:
+Function Call Stack keeps track of function calls in progress
+
+Recursion:
+A function calling itself is called a Recursion
+
+Let's understand recursion with a simple example of multiplying N numbers
+
+Multiply N Numbers:
+Code:
+def factorial(n):  # Recursive Function
+   if n == 1:  # Base Case
+       return 1
+   return n * factorial(n - 1)  # Recursion
+num = int(input())
+result = factorial(num)
+print(result)
+
+Base Case:
+
+A recursive function terminates when base condition is met
+
+Input:
+3
+Output:
+6
+
+Without Base case:
+Code:
+def factorial(n):
+    return n * factorial(n - 1)
+num = int(input())
+result = factorial(num)
+print(result)
+Input:
+3
+Output:
+RecursionError: maximum recursion depth exceeded
+
+
+List Methods:
+Python provides list methods that allow us to work with lists.
+
+Let’s learn few among them
+
+-append()
+-extend()
+-insert()
+-pop()
+-clear()
+-remove()
+-sort()
+-index()
+
+Append:
+list.append(value) Adds an element to the end of the list.
+
+Code:
+list_a = []
+for x in range(1,4):
+    list_a.append(x)
+print(list_a)
+Output:
+[1, 2, 3]
+
+Extend:
+list_a.extend(list_b)  Adds all the elements of a sequence to the end of the list.
+
+Code:
+list_a = [1, 2, 3]
+list_b = [4, 5, 6]
+list_a.extend(list_b)
+print(list_a)
+Output:
+[1, 2, 3, 4, 5, 6]
+
+Insert:
+list.insert(index,value) Element is inserted to the list at specified index.
+
+Code:
+list_a = [1, 2, 3]
+list_a.insert(1,4)
+print(list_a)
+Output:
+[1, 4, 2, 3]
+
+Pop:
+list.pop() Removes last element.
+
+Code:
+list_a = [1, 2, 3]
+list_a.pop()
+print(list_a)
+Output:
+[1, 2] 
+
+Remove:
+list.remove(value) Removes the first matching element from the list.
+
+Code:
+PYTHONlist_a = [1, 3, 2, 3]
+list_a.remove(3)
+print(list_a)
+Output:
+[1, 2, 3] 
+
+Clear:
+list.clear() Removes all the items from the list.
+
+Code:
+list_a = [1, 2, 3]
+list_a.clear()
+print(list_a)
+Output:
+[]
+
+Index:
+list.index(value) Returns the index at the first occurrence of the specified value.
+
+Code:
+list_a = [1, 3, 2, 3]
+index =list_a.index(3)
+print(index)
+Output:
+1
+
+Count:
+list.count(value)  Returns the number of elements with the specified value.
+
+Code:
+list_a = [1, 2, 3]
+count = list_a.count(2)
+print(count)
+Output:
+1
+
+Sort:
+list.sort() Sorts the list.
+
+Code:
+list_a = [1, 3, 2]
+list_a.sort()
+print(list_a)
+Output:
+[1, 2, 3]
+
+Sort & Sorted:
+sort()  Modifies the list
+
+Code:
+list_a = [1, 3, 2]
+list_a.sort()
+print(list_a)
+Output:
+[1, 2, 3] 
+
+sorted() Creates a new sorted list
+
+Code:
+list_a = [1, 3, 2]
+sorted(list_a)
+print(list_a)
+Output:
+[1, 2, 3]
+
