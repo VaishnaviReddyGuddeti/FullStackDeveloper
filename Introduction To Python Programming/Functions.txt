@@ -1,0 +1,556 @@
+Lists and Strings:
+Splitting:
+str_var.split(separator)
+
+Splits a string into a list at every specified separator.
+If no separator is specified, default separator is whitespace.
+
+Code:
+nums = "1 2 3 4"
+num_list = nums.split()
+print(num_list)
+Output:
+['1', '2','3','4']
+
+Multiple WhiteSpaces:
+Multiple whitespaces are considered as single when splitting.
+
+Code:
+nums = "1  2 3 4 "
+num_list = nums.split()
+print(num_list)
+Output:
+['1', '2', '3', '4']
+New line \n and tab space \t are also whitespace.
+
+Code:
+nums = "1\n2\t3 4"
+num_list = nums.split()
+print(num_list)
+Output:
+['1', '2', '3', '4']
+
+Using Separator:
+Breaks up a string at the specified separator.
+
+Example -1:
+Code:
+nums = "1,2,3,4"
+num_list = nums.split(',')
+print(num_list)
+Output:
+['1', '2', '3', '4']
+
+Example -2
+Code:
+nums = "1,2,,3,4,"
+num_list = nums.split(',')
+print(num_list)
+Output:
+['1', '2', '','3','4',"]
+
+Space as Separator:
+Code:
+nums = "1  2 3 4 "
+num_list = nums.split(" ")
+print(num_list)
+Output:
+['1', '', '2','3','4',"]
+
+String as Separator:
+Example - 1:
+
+Code:
+string_a = "Python is a programming language"
+list_a = string_a.split('a')
+print(list_a)
+Output:
+['Python is ', ' progr', 'mming I', 'ngu', 'ge']
+
+Example - 2:
+Code:
+string_a = "step-by-step execution of code"
+list_a = string_a.split('step')
+print(list_a)
+Output:
+['', '-by-', ' execution of code']
+
+Joining:
+str.join(sequence) 
+
+Takes all the items in a sequence of strings and joins them into one string.
+
+Code:
+list_a = ['Python is ', ' progr', 'mming l', 'ngu', 'ge']
+string_a = "a".join(list_a)
+print(string_a)
+Output:
+Python is a programming language 
+
+Joining Non String Values:
+Sequence should not contain any non-string values.
+
+Code:
+list_a = list(range(4))
+string_a = ",".join(list_a)
+print(string_a)
+Output:
+TypeError: sequence item 0: expected str instance, int found
+
+Negative Indexing:
+Using a negative index returns the nth item from the end of list.
+
+Last item in the list can be accessed with index -1
+
+Reversing a List:
+-1 for step will reverse the order of items in the list.
+
+Code:
+list_a = [5, 4, 3, 2, 1]
+list_b = list_a[::-1]
+print(list_b)
+Output:
+[1, 2, 3, 4, 5]
+
+Accessing List Items:
+Example-1:
+
+Code:
+list_a = [5, 4, 3, 2, 1]
+item = list_a[-1]
+print(item)
+Output:
+1 
+
+Example-2:
+
+Code:
+list_a = [5, 4, 3, 2, 1]
+item = list_a[-4]
+print(item)
+Output:
+4 
+
+Slicing With Negative Index:
+You can also specify negative indices while slicing a List.  
+
+Code:
+list_a = [5, 4, 3, 2, 1]
+list_b = list_a[-3:-1]
+print(list_b)
+Output:
+[3, 2] 
+
+Out of Bounds Index:
+While slicing, Index can go out of bounds.
+
+Code:
+list_a = [5, 4, 3, 2, 1]
+list_b = list_a[-6:-2]
+print(list_b)
+Output:
+[5, 4, 3]
+
+Negative Step Size:
+variable[start:end:negative_step]
+
+Negative Step determines the decrement between each index for slicing.
+
+Start index should be greater than the end index in this case
+
+-start > end
+Negative Step Size Examples
+Example - 1:
+
+Code:
+list_a = [5, 4, 3, 2, 1]
+list_b = list_a[4:2:-1]
+print(list_b)
+Output:
+[1, 2] 
+
+Example - 2:
+Negative step requires the start to be greater than end.
+
+Code:
+list_a = [5, 4, 3, 2, 1]
+list_b = list_a[2:4:-1]
+print(list_b)
+Output:
+[]
+
+Reversing a List:
+-1 for step will reverse the order of items in the list.
+Code:
+list_a = [5, 4, 3, 2, 1]
+list_b = list_a[::-1]
+print(list_b)
+Output:
+[1, 2, 3, 4, 5] 
+
+Reversing a String:
+-1 for step will reverse the order of the characters.
+
+Code:
+string_1 = "Program"
+string_2 = string_1[::-1]
+print(string_2)
+Output:
+margorP 
+
+Negative Step Size - Strings:
+Code:
+string_1 = "Program"
+string_2 = string_1[6:0:-2]
+print(string_2)
+Output:
+mro 
+
+Indexing & Slicing - Strings:
+Example - 1:
+
+Code:
+string_1 = "Program"
+string_2 = string_1[-1]
+print(string_2)
+Output:
+m
+
+Example - 2:
+Code:
+string_1 = "Program"
+string_2 = string_1[-4:-1]
+print(string_2)
+Output:
+gra 
+
+Functions:
+Block of reusable code to perform a specific action.
+
+Reusing Code:
+Using an existing code without writing it every time we need.
+Code:
+def greet():
+    print("Hello")
+
+name = input()
+print(name)
+Input:
+Shourya 
+Output:
+Shourya 
+
+Defining a Function:
+Function is uniquely identified by the( function_name)
+Code:
+def greet():
+    print("Hello")
+
+name = input()
+print(name)
+Input:
+Sushanth
+Output:
+Sushanth 
+
+Calling a Function:
+The functional block of code is executed only when the function is called.
+Code:
+def greet():
+    print("Hello")
+
+name = input()
+greet()
+print(name)
+Input:
+Shourya
+Output:
+Hello
+Shourya 
+
+Defining & Calling a Function:
+A function should be defined before it is called.
+
+Code:
+name = input()
+greet()
+print(name)
+
+def greet():
+    print("Hello")
+Input:
+Teja 
+Output:
+NameError: name 'greet' is not defined 
+
+Printing a Message:
+Code:
+def greet():
+    msg = "Hello " + ?
+    print(msg)
+
+name = input()
+greet()
+Input:
+Sushanth
+Output:
+Hello Sushanth 
+
+Function With Arguments:
+We can pass values to a function using Argument.
+Code:
+def greet(word):
+    msg = "Hello " + word
+    print(msg)
+
+name = input()
+greet(word=name)
+Input:
+Shourya 
+Output:
+Hello Shourya
+
+Variables Inside a Function:
+A variable created inside a function can only be used in it.
+
+Code:
+def greet(word):
+    msg = "Hello " + word
+
+name = input()
+greet(word=name)
+print(msg)
+Input:
+Teja
+Output:
+NameError:namev'msg' is not defined
+
+Returning a Value:
+To return a value from the function use return keyword.
+Exits from the function when return statement is executed.
+
+Code:
+def greet(word):
+    msg = "Hello " + word
+    return msg
+
+name = input()
+greeting = greet(word=name)
+print(greeting)
+Input:
+Sushanth
+Output:
+Hello Sushanth
+
+Code written after return statement will not be executed.
+
+Code:
+def greet(word):
+    msg = "Hello "+word
+    return msg
+    print(msg)
+
+name = input()
+greeting = greet(word=name)
+print(greeting)
+Input:
+Gulshan
+Output:
+Hello Gulshan
+
+Built-in Functions:
+We are already using functions which are pre-defined in Python.
+Built-in functions are readily available for reuse
+
+-print()
+-int()
+-str()
+-len()
+
+Function Arguments:
+A function can have more than one argument.
+
+Keyword Arguments:
+Passing values by their names.
+
+Code:
+def greet(arg_1, arg_2):
+  print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet(arg_1=greeting,arg_2=name)
+Input:
+Good Morning 
+Shourya 
+Output:
+Good Morning Shourya 
+
+Possible Mistakes - Keyword Arguments
+Code:
+def greet(arg_1, arg_2):
+    print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet(arg_2=name)
+Input:
+Good Morning 
+Ram
+Output:
+TypeError: greet() missing 1 required positional argument:'arg_1' 
+
+Positional Arguments:
+Values can be passed without using argument names.
+
+These values get assigned according to their position.
+Order of the arguments matters here.
+Code:
+def greet(arg_1, arg_2):
+    print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet(greeting,name)
+Input:
+Good Morning 
+Sushanth
+Output:
+Sushanth 
+
+Possible Mistakes - Positional Arguments:
+Mistake - 1:
+
+Code:
+def greet(arg_1, arg_2):
+ print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet(greeting)
+Input:
+Good Morning
+Ram
+Output:
+TypeError: greet() missing 1 required positional argument:'arg_2' 
+
+Mistake - 2:
+
+Code:
+def greet(arg_1, arg_2):
+ print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet()
+Input:
+Good Morning 
+Ram 
+Output:
+TypeError: greet() missing 2 required positional arguments 
+
+Default Values:
+Example - 1:
+
+Code:
+def greet(arg_1="Hi", arg_2="Sushanth"):
+    print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet()
+Input:
+Hello Shourya
+Output:
+Hello Sushanth 
+
+Example - 2
+
+Code:
+def greet(arg_1="Hi", arg_2="Shourya"):
+    print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet(greeting)
+Input:
+Hello 
+Sushanth
+Output:
+Hello Shourya 
+
+Example - 3
+
+Code:
+def greet(arg_1="Hi", arg_2="Shourya"):
+    print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet(name)
+Input:
+Hello Sushanth
+Output:
+Sushanth Shourya
+
+Example - 4
+
+Code:
+def greet(arg_1="Hi", arg_2="Shourya"):
+    print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet(arg_2=name)
+Input:
+Hello 
+Sushanth
+Output:
+Hi Sushanth
+
+Example - 5
+
+Code:
+def greet(arg_1="Hi", arg_2):
+    print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet(arg_2=name)
+Input:
+Hello
+Teja
+Output:
+SyntaxError:non-default argument follows default argument 
+Non-default arguments cannot follow default arguments.
+
+Example - 6
+
+Code:
+def greet(arg_2, arg_1="Hi"):
+    print(arg_1 + " " + arg_2)
+
+greeting = input()
+name = input()
+greet(arg_2=name)
+Input:
+Hello
+Shourya
+Output:
+Hi Shourya 
+
+Passing Immutable Objects:
+Code:
+def increment(a):
+    a += 1
+    
+a = int(input())
+increment(a)
+print(a)
+Input:
+5
+Output:
+5
+Even though variable names are same, they are referring to two different objects.
+Changing the value of the variable inside the function will not affect the variable outside.
+
