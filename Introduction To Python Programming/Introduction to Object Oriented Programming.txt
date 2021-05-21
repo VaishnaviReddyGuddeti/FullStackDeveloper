@@ -1,0 +1,1117 @@
+*Introduction to OOP*
+
+Good Software:
+Before jumping into Object Oriented Programming, let’s understand the word Software.
+
+Software is an easily changeable tool/product that performs a specific task.
+
+The ease of changing or making changes to the software is referred as its softness.
+-A good software should keep the users happy, by delivering what they need.
+-A good software should also keep the developers happy. Ease of making changes (softness) keeps developers happy. So is should be:
+       --Easy to understand and make changes.
+       --Easy to fix bugs and add new features within the scope.
+Object-Oriented Programming System (OOPS) is a way of approaching, designing, developing software that is easy to change.
+
+
+OOPs:
+Object-Oriented Programming is a way of approaching, designing and developing software, so that the components of the software and the interactions between them resembles real-life objects and their interactions.
+
+Proper usage of OOPS concepts helps us build well-organized systems that are easy to use and extend.
+
+Describing Real-Life Objects:
+In Object Oriented Programming, we model software after real-life objects. To be good at modeling software after real-life objects, we should be able to properly describe them. 
+
+The following description is a bad way of describing, as the information of an object scattered and unorganized.
+Object 1 is a car and it has four tyres.
+Object 2 is a dog and it has four legs. 
+Object 1 has four doors. 
+Object 1 can make sound. 
+Object 2, barks.
+Object 1 is in blue color. 
+Object 2 is in brown color.
+
+Organized Description:
+In the below description we are grouping the information related to an object.
+
+Object 1 is a car and it has four tyres.
+Object 1 has four doors.
+Object 1 can make sound.
+Object 1 is in blue color.
+
+Object 2 is a dog and it has four legs. Object 2, barks. 
+Object 2 is in brown color
+
+In the below approach, we further organize the information into
+-What the object is?
+-What the object has?
+-What the object can do?
+
+Object 1 is a car
+Object 1 has
+  Four tyres
+  Four seats
+  Four doors
+  and so on ...
+  
+Object 1 can
+  Sound horn
+  Move
+  Accelerate
+  and so on ...
+
+
+Object 2 is a dog
+Object 2 has
+  Brown fur
+  Four legs
+  Two ears
+  and so on ...
+  
+Object 2 can
+  Bark
+  Jump
+  Run
+  and so on ...
+The above description shows a simple framework where we describe object by specifying the properties that the object has and actions that the object can do.
+
+Organized Description should be
+-A clear separation of objects.
+-A clear grouping of what object has and what it does.
+
+
+Describing Similar Objects:
+Sometimes, the objects that we are describing are so similar that only values of the properties differ.
+Object 3 is a Mobile
+Properties
+    camera : 13 MP
+    storage : 16 GB
+    battery life : 21 Hrs
+    ram : 3 GB
+    and so on ...
+
+Object 4 is a Mobile
+Properties
+    camera : 64 MP
+    storage : 128 GB
+    battery life : 64 Hrs
+    ram : 6 GB
+    and so on ...
+In this case, the objects that we describe have completely the same set of properties like camera, storage, etc.
+
+Template:
+For objects that are very similar to each other (objects that have the same set of actions and properties), we can create a standard Form or Template that can be used to describe different objects in that category.
+
+Mobile Template:
+
+Model :
+Camera:  
+Storage:
+Does it have a Face Unlock?Yes|No
+
+Filled Template:
+Model : iPhone 12 Pro
+Camera: 64MP
+Storage: 128GB
+Does it have a Face Unlock? Yes
+
+
+Bundling Data:
+While modeling real-life objects with object oriented programming, we ensure to bundle related information together to clearly separate information of different objects.
+
+Bundling of related properties and actions together is called Encapsulation.
+
+Classes can be used to bundle related properties and actions.
+
+Defining a Class:
+To create a class, use the keyword class
+
+Special Method:
+In Python, a special method __init__ is used to assign values to properties.
+
+Code:
+class Mobile:
+    def __init__(self, model, camera):
+        self.model = model
+        self.camera = camera
+
+Properties & Values:
+Code:
+class Mobile:
+    def __init__(self, model, camera):
+        self.model = model
+        self.camera = camera
+    def make_call(self, number):
+        print("calling..")
+
+In the above example, model and camera are the properties and values are which passed to the __init__ method.
+
+Action:
+class Mobile:
+    def __init__(self, model, camera):
+        self.model = model
+        self.camera = camera
+    def make_call(self, number):
+        print("calling..")
+
+In the above example, the below function is an action
+def make_call(self, number):
+      print("calling..")
+In OOP terminology, properties are referred as attributes actions are referred as methods
+
+Using a Class:
+To use the defined class, we have to instantiate it.
+A class is like a blueprint, while its instance is based on that class with actual values.
+
+Instance of Class:
+Syntax for creating an instance of class looks similar to function call.
+
+An instance of class is Object.
+
+Code:
+class Mobile:
+    def __init__(self, model, camera):
+        self.model = model
+        self.camera= camera
+
+mobile_obj = Mobile(
+    "iPhone 12 Pro",
+    "12 MP")
+print(mobile_obj)
+
+Class Object:
+An object is simply a collection of attributes and methods that act on those data.
+
+Code:
+class Mobile:
+    def __init__(self, model, camera):
+        self.model = model
+        self.camera= camera
+
+mobile_obj = Mobile(
+    "iPhone 12 Pro",
+    "12 MP")
+print(mobile_obj)
+
+Method Arguments & Return Values:
+Similar to functions, Methods also support positional, keyword & default arguments and also return values.
+
+Code:
+class Mobile:
+    def __init__(self, model, camera):
+        self.model = model
+        self.camera= camera
+    def make_call(self,number):
+        return "calling..{}".format(number)
+
+Instance Methods of Class:
+For instance method, we need to first write self in the function definition and then the other arguments.
+
+Code:
+
+class Mobile:
+    def __init__(self, model, camera):
+        self.model = model
+        self.camera= camera
+    def make_call(self,number):
+        print("calling..{}".format(number))
+
+mobile_obj = Mobile("iPhone 12 Pro", "12 MP")
+mobile_obj.make_call(9876543210)
+
+Output:
+calling..9876543210 
+
+Multiple Instances:
+Code:
+ 
+class Mobile:
+    def __init__(self, model, camera):
+        self.model = model
+        self.camera= camera
+    def make_call(self,number):
+        print("calling..{}".format(number))
+
+mobile_obj1 = Mobile("iPhone 12 Pro", "12 MP")
+print(id(mobile_obj1))
+mobile_obj2 = Mobile("Galaxy M51", "64 MP")
+print(id(mobile_obj2))
+
+Output:
+
+139685004996560
+1396850049963
+
+Type of Object:
+The class from which object is created is considered to be the type of object.
+
+Code:
+class Mobile:
+    def __init__(self, model, camera):
+        self.model = model
+        self.camera = camera
+
+obj_1 = Mobile("iPhone 12 Pro", "12 MP")
+print(type(obj_1))
+
+Output:
+
+<class '__main__.Mobile'>
+
+Classes and Objects:
+Attributes of an Object
+Attributes can be set or accessed using . (dot) character.
+
+Code:
+class Mobile:
+    def __init__(self, model, storage):
+        self.model = model
+        self.storage = storage
+
+
+obj = Mobile("iPhone 12 Pro", "128GB")
+print(obj.model)
+
+Output:
+iPhone 12 Pro
+
+Accessing in Other Methods:
+We can also access and update properties in other methods.
+
+Code:
+class Mobile:
+    def __init__(self, model):
+        self.model = model
+
+    def get_model(self):
+        print(self.model)
+
+
+obj_1 = Mobile("iPhone 12 Pro")
+obj_1.get_model()
+
+Output:
+iPhone 12 Pro
+
+Updating Attributes:
+It is recommended to update attributes through methods.
+
+Code:
+ 
+class Mobile:
+    def __init__(self, model):
+        self.model = model
+
+    def update_model(self, model):
+        self.model = model
+
+
+obj_1 = Mobile("iPhone 12")
+print(obj_1.model)
+obj_1.update_model("iPhone 12 Pro")
+print(obj_1.model)
+
+Output:
+iPhone 12
+iPhone 12 Pro 
+
+Modeling Class:
+Let’s model the scenario of shopping cart of ecommerce site.
+
+The features a cart should have
+
+-can add an item
+-can remove an item from cart
+-update quantity of an item
+-to show list of items in cart
+-to show total price for the items in the cart
+
+Code:
+class Cart:
+    def __init__(self):
+        self.items = {}
+        self.price_details = {"book": 500, "laptop": 30000}
+
+    def add_item(self, item_name, quantity):
+        self.items[item_name] = quantity
+
+    def remove_item(self, item_name):
+        del self.items[item_name]
+
+    def update_quantity(self, item_name, quantity):
+        self.items[item_name] = quantity
+
+    def get_cart_items(self):
+        cart_items = list(self.items.keys())
+        return cart_items
+
+    def get_total_price(self):
+        total_price = 0
+        for item, quantity in self.items.items():
+            total_price += quantity * self.price_details[item]
+        return total_price
+
+
+cart_obj = Cart()
+cart_obj.add_item("book", 3)
+cart_obj.add_item("laptop", 1)
+print(cart_obj.get_total_price())
+cart_obj.remove_item("laptop")
+print(cart_obj.get_cart_items())
+cart_obj.update_quantity("book", 2)
+print(cart_obj.get_total_price())
+
+Output:
+31500
+['book']
+1000
+Attributes & Methods:
+Shopping Cart:
+Users can add different items to their shopping cart and checkout.
+The total value of the cart should be more than a minimum amount (Rs. 100/-) for the checkout.
+During Offer Sales, all users get a flat discount on their cart and the minimum cart value will be Rs. 200/-.
+
+
+Attributes:
+Broadly, attributes can be categorized as 
+-Instance Attributes
+-Class Attributes
+
+Instance Attributes:
+Attributes whose value can differ for each instance of class are modeled as instance attributes.
+
+Ex: Items in Cart
+
+Class Attributes:
+Attributes whose values stay common for all the objects are modelled as Class Attributes.
+
+Ex:  Minimum Cart Bill,
+       Flat Discount
+
+Accessing Instance Attributes:
+Code:
+ 
+class Cart:
+  flat_discount = 0
+  min_bill = 100
+  def __init__(self):
+      self.items = {}
+  def add_item(self,..):
+      self.items[item_name] = quantity
+  def display_items(self):
+      print(items)
+a = Cart()
+a.display_items()
+
+Output:
+
+NameError: name 'items' is not defined 
+
+Instance attributes can only be accessed using instance of class.
+
+Self:
+self passed to method contains the object, which is an instance of class.
+
+Code:
+class Cart:
+  flat_discount = 0
+  min_bill = 100
+  def __init__(self):
+      self.items = {}
+  def add_item(self,item_name, quantity):
+      self.items[item_name] = quantity
+  def display_items(self):
+      print(self)
+
+a = Cart()
+a.display_items()
+print(a)
+
+Output:
+<__main__.Cart object at 0x7f6f83c9dfd0>
+<__main__.Cart object at 0x7f6f83c9dfdo>
+
+Accessing Using Self:
+Code:
+ 
+class Cart:
+   flat_discount = 0
+   min_bill = 100
+   def __init__(self):
+       self.items = {}
+   def add_item(self, item_name,quantity):
+       self.items[item_name] = quantity
+   def display_items(self):
+       print(self.items)
+a = Cart()
+a.add_item("book", 3)
+a.display_items()
+
+Output:
+{"book":3}
+
+Accessing Using Object:
+Code:
+ 
+class Cart:
+   flat_discount = 0
+   min_bill = 100
+   def __init__(self):
+       self.items = {}
+   def add_item(self, item_name,quantity):
+       self.items[item_name] = quantity
+   def display_items(self):
+       print(self.items)
+a = Cart()
+a.add_item("book", 3)
+print(a.items)
+
+Output:
+{'book':3}
+
+Accessing Using Class:
+
+Code:
+
+class Cart:
+   flat_discount = 0
+   min_bill = 100
+   def __init__(self):
+       self.items = {}
+   def add_item(self, item_name,quantity):
+       self.items[item_name] = quantity
+   def display_items(self):
+       print(self.items)
+print(Cart.items)
+
+Output:
+AttributeError: type object 'Cart' has no attributes 'items'
+
+Accessing Class Attributes:
+Example 1
+Code:
+
+class Cart:
+   flat_discount = 0
+   min_bill = 100
+   def __init__(self):
+       self.items = {}
+
+print(Cart.min_bill)
+Output:
+100
+
+Example 2
+Code:
+
+class Cart:
+   flat_discount = 0
+   min_bill = 100
+   def __init__(self):
+       self.items = {}
+   def print_min_bill(self):
+       print(Cart.min_bill)
+
+a = Cart()
+a.print_min_bill()
+
+Output:
+100
+
+Updating Class Attribute:
+
+Code:
+class Cart:
+   flat_discount = 0
+   min_bill = 100
+   def print_min_bill(self):
+       print(Cart.min_bill)
+a = Cart()
+b = Cart()
+Cart.min_bill = 200
+print(a.print_min_bill())
+print(b.print_min_bill())
+
+Output:
+200
+200
+
+Method:
+Broadly, methods can be categorized as 
+-Instance Methods
+-Class Methods
+-Static Methods
+
+Instance Methods:
+Instance methods can access all attributes of the instance and have self as a parameter.
+
+Example 1
+Code:
+
+class Cart:
+   def __init__(self):
+       self.items = {}
+   def add_item(self, item_name,quantity):
+      self.items[item_name] = quantity
+   def display_items(self):
+      print(self.items)
+
+a = Cart()
+a.add_item("book", 3)
+a.display_items()
+
+Output:
+{'book':3}
+
+Example 2
+Code:
+
+class Cart:
+  def __init__(self):
+      self.items = {}
+  def add_item(self, item_name,quantity):
+     self.items[item_name] = quantity
+     self.display_items()
+  def display_items(self):
+     print(self.items)
+
+a = Cart()
+a.add_item("book", 3)
+
+Output:
+{'book':3}
+
+
+Class Methods:
+Methods which need access to class attributes but not instance attributes are marked as Class Methods.
+For class methods, we send cls as a parameter indicating we are passing the class.
+
+Code:
+
+class Cart:
+   flat_discount = 0
+   min_bill = 100
+   @classmethod
+   def update_flat_discount(cls, 
+                          new_flat_discount):
+       cls.flat_discount = new_flat_discount
+
+Cart.update_flat_discount(25)
+print(Cart.flat_discount)
+
+Output:
+25
+
+@classmethod decorator marks the method below it as a class method.
+
+We will learn more about decorators in upcoming sessions.
+
+Accessing Class Method:
+Code:
+ 
+class Cart:
+  flat_discount = 0
+  min_bill = 100
+  @classmethod
+  def update_flat_discount(cls, new_flat_discount):
+      cls.flat_discount = new_flat_discount
+
+  @classmethod
+  def increase_flat_discount(cls, amount):
+      new_flat_discount = cls.flat_discount + amount
+      cls.update_flat_discount(new_flat_discount)
+
+Cart.increase_flat_discount(50)
+print(Cart.flat_discount)
+
+Output:
+50
+
+Static Method:
+We might need some generic methods that don’t need access to either instance or class attributes. These type of methods are called Static Methods. 
+
+Usually, static methods are used to create utility functions which make more sense to be part of the class.
+
+@staticmethod decorator marks the method below it as a static method.
+
+Code:
+
+class Cart:
+
+   @staticmethod
+   def greet():
+       print("Have a Great Shopping")
+
+Cart.greet()
+
+Output:
+
+Have a Great Shopping
+
+
+Inheritance:
+Products:
+Lets model e-commerce site having different products like Electronics, Kids Wear, Grocery, etc.
+
+Electronic & Grocery Items:
+Electronic Item & Grocery Item will have all attributes & methods which are common to all products.
+Lets Separate the common attributes & methods as Product
+
+Advantages of Modelling Classes :
+-Reusability
+-Clear Separation
+-More Organized
+
+Inheritance:
+Inheritance is a mechanism by which a class inherits attributes and methods from another class.
+
+With Inheritance, we can have ElectronicItem inherit the attributes & methods from Product instead of defining them again.
+
+Product is Super/Base/Parent Class and ElectronicItem is Sub/Derived/Child Class.
+
+Super Class:
+Code:
+
+class Product:
+    def __init__(self, name, price, deal_price, ratings):
+        self.name = name
+        self.price = price
+        self.deal_price = deal_price
+        self.ratings = ratings
+        self.you_save = price - deal_price
+    def display_product_details(self):
+        print("Product: {}".format(self.name))
+        print("Price: {}".format(self.price))
+        print("Deal Price: {}".format(self.deal_price))
+        print("You Saved: {}".format(self.you_save))
+        print("Ratings: {}".format(self.ratings))
+
+p = Product("Shoes",500, 250, 3.5)
+p.display_product_details()
+
+Output:
+
+Product: Shoes
+Price: 500
+Deal Price: 250
+You Saved: 250
+Ratings: 3.5
+
+
+Sub Class:
+The subclass automatically inherits all the attributes & methods from its superclass.
+
+Example 1
+Code:
+
+class Product:
+    def __init__(self, name, price, deal_price, ratings):
+        self.name = name
+        self.price = price
+        self.deal_price = deal_price
+        self.ratings = ratings
+        self.you_save = price - deal_price
+    def display_product_details(self):
+        print("Product: {}".format(self.name))
+        print("Price: {}".format(self.price))
+        print("Deal Price: {}".format(self.deal_price))
+        print("You Saved: {}".format(self.you_save))
+        print("Ratings: {}".format(self.ratings))
+
+class ElectronicItem(Product):
+    pass
+class GroceryItem(Product):
+    pass
+
+e = ElectronicItem("TV",45000, 40000, 3.5)
+e.display_product_details()
+
+Output:
+
+Product: TV
+Price: 45000
+Deal Price: 40000
+You Saved: 5000
+Ratings: 3.5
+
+
+
+Example 2
+Code:
+ 
+class Product:
+    def __init__(self, name, price, deal_price, ratings):
+        self.name = name
+        self.price = price
+        self.deal_price = deal_price
+        self.ratings = ratings
+        self.you_save = price - deal_price
+    def display_product_details(self):
+        print("Product: {}".format(self.name))
+        print("Price: {}".format(self.price))
+        print("Deal Price: {}".format(self.deal_price))
+        print("You Saved: {}".format(self.you_save))
+        print("Ratings: {}".format(self.ratings))
+
+class ElectronicItem(Product):
+    pass
+class GroceryItem(Product):
+    pass
+
+e = GroceryItem("milk", 25, 20, 3)
+e.display_product_details()
+
+Output:
+
+Product: milk
+Price: 25
+Deal Price: 20
+You Saved: 5
+Ratings: 3
+
+Example 3
+Code:
+ 
+class Product:
+   def __init__(self, name, price, deal_price, ratings):
+       self.name = name
+       self.price = price
+       self.deal_price = deal_price
+       self.ratings = ratings
+       self.you_save = price - deal_price
+   def display_product_details(self):
+       print("Product: {}".format(self.name))
+       print("Price: {}".format(self.price))
+       print("Deal Price: {}".format(self.deal_price))
+       print("You Saved: {}".format(self.you_save))
+       print("Ratings: {}".format(self.ratings))
+
+class ElectronicItem(Product):
+   def set_warranty(self, warranty_in_months):
+       self.warranty_in_months = warranty_in_months
+      
+   def get_warranty(self):
+       return self.warranty_in_months
+
+e = ElectronicItem("TV",45000, 40000, 3.5)
+e.set_warranty(24)
+print(e.get_warranty())
+
+Output:
+
+24
+
+In the above example, calling set_warranty will create an attribute warranty_in_months.
+
+Super Class & Sub Class:
+Superclass cannot access the methods and attributes of the subclass.
+
+Code:
+
+class Product:
+   def __init__(self, name, price, deal_price, ratings):
+       self.name = name
+       self.price = price
+       self.deal_price = deal_price
+       self.ratings = ratings
+       self.you_save = price - deal_price
+   def display_product_details(self):
+       print("Product: {}".format(self.name))
+       print("Price: {}".format(self.price))
+       print("Deal Price: {}".format(self.deal_price))
+       print("You Saved: {}".format(self.you_save))
+       print("Ratings: {}".format(self.ratings))
+
+class ElectronicItem(Product):
+   def set_warranty(self, warranty_in_months):
+       self.warranty_in_months = warranty_in_months
+      
+   def get_warranty(self):
+       return self.warranty_in_months
+
+p = Product("TV",45000, 40000, 3.5)
+p.set_warranty(24)
+
+Output:
+
+AttributeError: 'Product' object has no attribute 'set_warranty'
+
+Sub Class Method:
+Code:
+ 
+class Product:
+   def __init__(self, name, price, deal_price, ratings):
+       self.name = name
+       self.price = price
+       self.deal_price = deal_price
+       self.ratings = ratings
+       self.you_save = price - deal_price
+   def display_product_details(self):
+       print("Product: {}".format(self.name))
+       print("Price: {}".format(self.price))
+       print("Deal Price: {}".format(self.deal_price))
+       print("You Saved: {}".format(self.you_save))
+       print("Ratings: {}".format(self.ratings))
+
+class ElectronicItem(Product):
+   def set_warranty(self, warranty_in_months):
+       self.warranty_in_months = warranty_in_months
+      
+   def get_warranty(self):
+       return self.warranty_in_months
+
+e = ElectronicItem("TV",45000, 40000, 3.5)
+e.set_warranty(24)
+e.display_product_details()
+
+Output:
+Product: TV
+Price: 45000
+Deal Price: 40000
+You Saved: 5000
+Ratings: 3.5
+
+Calling Super Class Method:
+We can call methods defined in superclass from the methods in the subclass. 
+
+Code:
+ 
+class Product:
+   def __init__(self, name, price, deal_price, ratings):
+       self.name = name
+       self.price = price
+       self.deal_price = deal_price
+       self.ratings = ratings
+       self.you_save = price - deal_price
+   def display_product_details(self):
+       print("Product: {}".format(self.name))
+       print("Price: {}".format(self.price))
+       print("Deal Price: {}".format(self.deal_price))
+       print("You Saved: {}".format(self.you_save))
+       print("Ratings: {}".format(self.ratings))
+
+class ElectronicItem(Product):
+   def set_warranty(self, warranty_in_months):
+       self.warranty_in_months = warranty_in_months
+      
+   def get_warranty(self):
+       return self.warranty_in_months
+   
+   def display_electronic_product_details(self):
+       self.display_product_details()
+       print("Warranty {} months".format(self.warranty_in_months))
+
+e = ElectronicItem("TV",45000, 40000, 3.5)
+e.set_warranty(24)
+e.display_electronic_product_details()
+
+Output:
+
+Product: TV
+Price: 45000
+Deal Price: 40000
+You Saved: 5000
+Ratings: 3.5
+Warranty 24 month
+
+How would you design and implement placing order with the details of all the products bought?
+
+Composition:
+Modelling instances of one class as attributes of another class is called Composition
+
+Code:
+ 
+class Product:
+  
+    def __init__(self, name, price, deal_price, ratings):
+       self.name = name
+       self.price = price
+       self.deal_price = deal_price
+       self.ratings = ratings
+       self.you_save = price - deal_price
+
+    def display_product_details(self):
+           print("Product: {}".format(self.name))
+           print("Price: {}".format(self.price))
+           print("Deal Price: {}".format(self.deal_price))
+           print("You Saved: {}".format(self.you_save))
+           print("Ratings: {}".format(self.ratings))
+    
+    def get_deal_price(self):
+        return self.deal_price
+
+class ElectronicItem(Product):
+   def set_warranty(self, warranty_in_months):
+       self.warranty_in_months = warranty_in_months
+      
+   def get_warranty(self):
+       return self.warranty_in_months
+
+class GroceryItem(Product):
+    pass
+   
+class Order:
+    def __init__(self, delivery_speed, delivery_address):
+         self.items_in_cart = []
+         self.delivery_speed = delivery_speed
+         self.delivery_address = delivery_address 
+         
+    def add_item(self, product, quantity):
+        self.items_in_cart.append((product, quantity))
+
+    def display_order_details(self):
+        for product, quantity in self.items_in_cart:
+            product.display_product_details()
+            print("Quantity: {}".format(quantity))
+          
+    def display_total_bill(self):
+        total_bill = 0
+        for product, quantity in self.items_in_cart:
+             price = product.get_deal_price() * quantity
+             total_bill += price
+        print("Total Bill: {}".format(total_bill))
+
+milk = GroceryItem("Milk",40, 25, 3.5)
+tv = ElectronicItem("TV",45000, 40000, 3.5)
+order = Order("Prime Delivery", "Hyderabad")
+order.add_item(milk, 2)
+order.add_item(tv, 1)
+order.display_order_details()
+order.display_total_bill()
+
+Output:
+
+Product: Milk
+Price: 40
+Deal Price: 25
+You Saved: 15
+Ratings: 3.5
+Quantity: 2
+Product: TV
+Price: 45000
+Deal Price: 40000
+You Saved: 5000
+Ratings: 3.5
+Quantity: 1
+Total Bill: 40050
+
+In the above example, we are modelling Product as attribute of Order
+
+Overriding Methods:
+Sometimes, we require a method in the instances of a sub class to behave differently from the method in instance of a superclass.
+
+Code:
+ 
+class Product:
+  
+  def __init__(self, name, price, deal_price, ratings):
+    self.name = name
+    self.price = price
+    self.deal_price = deal_price
+    self.ratings = ratings
+    self.you_save = price - deal_price
+
+  def display_product_details(self):
+      print("Product: {}".format(self.name))
+      print("Price: {}".format(self.price))
+      print("Deal Price: {}".format(self.deal_price))
+      print("You Saved: {}".format(self.you_save))
+      print("Ratings: {}".format(self.ratings))
+   
+  def get_deal_price(self):
+    return self.deal_price
+
+class ElectronicItem(Product):
+   
+  def display_product_details(self):
+    self.display_product_details()    
+    print("Warranty {} months".format(self.warranty_in_months))
+    
+  def set_warranty(self, warranty_in_months):
+    self.warranty_in_months = warranty_in_months
+    
+  def get_warranty(self):
+    return self.warranty_in_months
+
+e = ElectronicItem("Laptop",45000, 40000,3.5)
+e.set_warranty(10)
+e.display_product_details()
+
+Output:
+RecursionError: maximum recursion depth exceeded
+
+Because self.display_product_details() in ElectronicItem class does not call the method in the superclass.
+
+Super:
+Accessing Super Class’s Method:
+super() allows us to call methods of the superclass (Product) from the subclass.
+
+Instead of writing and methods to access and modify warranty we can override __init__
+
+Let's add warranty of ElectronicItem.
+
+Code:
+ 
+class Product:
+  
+  def __init__(self, name, price, deal_price, ratings):
+    self.name = name
+    self.price = price
+    self.deal_price = deal_price
+    self.ratings = ratings
+    self.you_save = price - deal_price
+
+  def display_product_details(self):
+      print("Product: {}".format(self.name))
+      print("Price: {}".format(self.price))
+      print("Deal Price: {}".format(self.deal_price))
+      print("You Saved: {}".format(self.you_save))
+      print("Ratings: {}".format(self.ratings))
+   
+  def get_deal_price(self):
+    return self.deal_price
+
+class ElectronicItem(Product):
+   
+  def display_product_details(self):
+    super().display_product_details()    
+    print("Warranty {} months".format(self.warranty_in_months))
+    
+  def set_warranty(self, warranty_in_months):
+    self.warranty_in_months = warranty_in_months
+    
+  def get_warranty(self):
+    return self.warranty_in_months
+
+e = ElectronicItem("Laptop",45000, 40000,3.5)
+e.set_warranty(10)
+e.display_product_details()
+
+Output:
+Product: Laptop
+Price: 45000
+Deal Price: 40000
+You Saved: 5000
+Ratings: 3.5
+Warranty 10 months
+
+MultiLevel Inheritance:
+We can also inherit from a subclass. This is called MultiLevel Inheritance. 
+
+We can continue such inheritance to any depth in Python.
+Code:
+
+class Product:
+    pass
+
+class ElectronicItem(Product):
+    pass
+
+class Laptop(ElectronicItem):
+    pass
+
+Inheritance & Composition:
+When to use Inheritance?
+Prefer modeling with inheritance when the classes have an IS-A relationship.
+
+When to use Composition?
+Prefer modeling with inheritance when the classes have an HAS-A relationship.
