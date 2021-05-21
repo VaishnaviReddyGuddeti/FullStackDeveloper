@@ -1,0 +1,550 @@
+*Tuples and Sequences*
+None:
+None is an object which is a datatype of its own (NoneType).
+
+Used to define no value or nothing.
+
+Code:
+var = None
+print(var)
+print(type(var))
+Output:
+None
+<class 'NoneType>
+
+Function Without Return:
+Functions assigned to a variable, when function does not have a return statement, the variable will get the value None
+
+Code:
+def increment(a):
+    a += 1
+    
+a = 55
+result = increment(a)
+print(result)
+Output:
+None
+
+Function That Returns Nothing:
+When a function returns no value, the default value will be None
+
+Example - 1:
+
+Code:
+def increment(a):
+    a += 1
+    return
+
+a = 55
+result = increment(a)
+print(result)
+Output:
+None
+
+Example - 2:
+
+Code:
+def increment(a):
+    a += 1
+    return None
+
+a = 5
+result = increment(a)
+print(result)
+Output:
+None
+
+Example - 3:
+
+Code:
+result = print("Hi")
+print(result)
+Output:
+Hi
+None
+
+Tuple:
+-Holds an ordered sequence of items.
+-Tuple is immutable object, where as list is a mutable object.
+Code:
+a = 2
+tuple_a = (5, "Six", a, 8.2)
+
+Creating a Tuple:
+Created by enclosing elements within (round) brackets.
+Each item is separated by a comma.
+Code:
+a = 2
+tuple_a = (5, "Six", a, 8.2)
+print(type(tuple_a))
+print(tuple_a)
+Output:
+<class 'tuple'>
+(5, 'Six', 2, 8.2)
+
+Tuple with a Single Item:
+Code:
+a = (1,)
+print(type(a))
+print(a)
+Output:
+<class 'tuple'>
+(1,)
+
+Accessing Tuple Elements:
+Accessing Tuple elements is also similar to string and list accessing and slicing.
+
+Code:
+a = 2
+tuple_a = (5, "Six", a, 8.2)
+print(tuple_a[1])
+Output:
+Six
+
+Tuples are Immutable:
+Tuples does not support modification.
+
+Code:
+tuple_a = (1, 2, 3, 5)
+tuple_a[3] = 4
+print(tuple_a)
+Output:
+TypeError: 'tuple' object does not support item assignment.
+
+Operations can be done on Tuples:
+-len()
+-Iterating
+-Slicing
+-Extended Slicing
+
+Converting to Tuple:
+tuple(sequence) Takes a sequence and converts it into tuple.
+
+String to Tuple:
+Code:
+color = "Red"
+tuple_a = tuple(color)
+print(tuple_a)
+Output:
+('R', 'e', 'd')
+
+List to Tuple:
+Code:
+list_a = [1, 2, 3]
+tuple_a = tuple(list_a)
+print(tuple_a)
+Output:
+(1, 2, 3)
+
+Sequence to Tuple:
+Code:
+tuple_a = tuple(range(4)) 
+print(tuple_a)
+Output:
+(0, 1, 2, 3)
+
+Membership Check:
+Check if given data element is part of a sequence or not.
+
+Membership Operators:
+
+-in
+-not in
+
+Example - 1
+
+Code;
+tuple_a = (1, 2, 3, 4)
+is_part = 5 in tuple_a
+print(is_part)
+Output:
+False
+
+Example - 2:
+
+Code:
+tuple_a = (1, 2, 3, 4)
+is_part = 1 not in tuple_a
+print(is_part)
+Output:
+False
+
+List Membership:
+Code:
+list_a = [1, 2, 3, 4]
+is_part = 1 in list_a
+print(is_part)
+Output:
+True 
+
+String Membership:
+Code:
+word = 'Python'
+is_part = 'th' in word
+print(is_part)
+Output:
+True 
+
+Packing & Unpacking:
+Unpacking:
+Values of any sequence can be directly assigned to variables.
+
+Number of variables in the left should match the length of sequence.
+
+Code:
+tuple_a = ('R', 'e', 'd')
+(s_1, s_2, s_3) = tuple_a
+print(s_1)
+print(s_2)
+print(s_3)
+Output:
+R
+e
+d
+
+Errors in Packing
+Code:
+tuple_a = ('R', 'e', 'd')
+s_1, s_2 = tuple_a
+print(s_1)
+print(s_2)
+Output:
+ValueError: too many values to unpack(expected 2)
+
+Code:
+tuple_a = ('R', 'e', 'd')
+s_1, s_2, s_3, s_4 = tuple_a
+print(s_1)
+Output:
+ValueError: not enough values to unpack (expected4,got3)
+
+Tuple Packing:
+() brackets are optional while creating tuples.
+
+In Tuple Packing, Values separated by commas will be packed into a tuple.
+
+Code:
+a = 1, 2, 3
+print(type(a))
+print(a)
+Output:
+<class 'tuple'>
+(1, 2, 3)
+
+Code:
+a = 1,
+print(type(a))
+print(a)
+Output:
+<class 'tuple'>
+(1,)
+
+Code:
+a, = 1,
+print(type(a)) print(a)
+Output:
+<class 'int'>
+1
+
+Sets:
+Unordered collection of items.
+
+Every set element is
+
+-Unique (no duplicates)
+-Must be immutable
+
+Creating a Set:
+-Created by enclosing elements within {curly} brackets.
+-Each item is separated by a comma.
+Code:
+a = 2
+set_a = {5, "Six", a, 8.2}
+print(type(set_a))
+print(set_a)
+Output:
+<class 'set'>
+{8.2, 2, 'Six', 5)
+
+Need not be in the same order as defined.
+
+No Duplicate Items:
+Sets contain unique elements
+
+Code:
+set_a = {"a", "b", "c", "a"}
+print(set_a)
+Output:
+{'b', 'a', 'c'}
+
+Immutable Items:
+Set items must be immutable.
+As List is mutable, Set cannot have list as an item.
+
+Code:
+set_a = {"a", ["c", "a"]}
+print(set_a)
+Output:
+TypeError:unhashable type: 'list'
+
+Creating Empty Set:
+We use set() to create an empty set.
+
+Code:
+set_a = set()
+print(type(set_a))
+print(set_a)
+Output:
+<class 'set'>
+set()
+
+Converting to Set:
+set(sequence) takes any sequence as argument and converts to set, avoiding duplicates 
+
+List to Set:
+Code:
+set_a = set([1,2,1])
+print(type(set_a))
+print(set_a)
+Output:
+<class 'set'>
+{1, 2}
+
+String to Set:
+Code:
+set_a = set("apple")
+print(set_a)
+Output:
+{'l', 'p', 'e', 'a'}
+
+Tuple to Set:
+Code:
+set_a = set((1, 2, 1))
+print(set_a)
+Output:
+{1, 2} 
+
+Accessing Items:
+As sets are unordered, we cannot access or change an item of a set using 
+-Indexing
+-Slicing
+
+Code:
+set_a = {1, 2, 3}
+print(set_a[1])
+print(set_a[1:3])
+Output:
+TypeError: 'set' object is not subscriptable 
+
+Adding Items:
+set.add(value) adds the item to the set, if the item is not present already.
+
+Code:
+set_a = {1, 3, 6, 2, 9}
+set_a.add(7)
+print(set_a)
+Output:
+{1, 2, 3, 6, 7, 9}
+
+Adding Multiple Items:
+set.update(sequence) adds multiple items to the set, and duplicates are avoided.
+
+Code:
+set_a = {1, 3, 9}
+set_a.update([2, 3])
+print(set_a)
+Output:
+{2, 1, 3, 9}
+
+Removing Specific Item:
+set.discard(value) takes a single value and removes if present.
+
+Code:
+set_a = {1, 3, 9}
+set_a.discard(3)
+print(set_a)
+Output:
+{1, 9}
+
+set_a.remove(value) takes a value and remove if it present or raise an error.
+
+Code:
+set_a = {1, 3, 9}
+set_a.remove(5)
+print(set_a)
+Output:
+KeyError: 5
+
+Operations on Sets:
+You can perform the following operations on Sets
+
+-clear()
+-len()
+-Iterating
+-Membership Check
+
+Set Operations:
+Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.
+
+-Union
+-Difference
+-Intersection
+-Symmetric Difference
+
+Union:
+Union of two sets is a set containing all elements of both sets.
+
+set_a | set_b
+or
+set_a.union(sequence)
+
+union() converts sequence to a set, and performs the union.  
+
+Code:
+set_a = {4, 2, 8}
+set_b = {1, 2}
+union = set_a | set_b
+print(union)
+Output:
+{1, 2, 4, 8}
+
+Code:
+set_a = {4, 2, 8}
+list_a = [1, 2]
+union = set_a.union(list_a)
+print(union)
+Output:
+{1, 2, 4, 8}
+
+Intersection:
+Intersection of two sets is a set containing common elements of both sets.
+
+set_a & set_b 
+or
+set_a.intersection(sequence)
+
+intersection() converts sequence to a set, and perform the intersection. 
+
+Code:
+set_a = {4, 2, 8}
+set_b = {1, 2}
+intersection = set_a & set_b
+print(intersection)
+Output:
+{2}
+
+Code:
+set_a = {4, 2, 8}
+list_a = [1, 2]
+intersection = set_a.intersection(list_a)
+print(intersection)
+Output:
+{2}
+
+Difference of two sets is a set containing all the elements in first set but not second.
+set_a - set_b
+or
+set_a.difference(sequence)
+
+difference() converts sequence to a set.
+
+Code:
+set_a = {4, 2, 8}
+set_b = {1, 2}
+diff = set_a - set_b
+print(diff)
+Output:
+{8, 4}
+
+Code:
+set_a = {4, 2, 8}
+tuple_a = (1, 2)
+diff = set_a.difference(tuple_a)
+print(diff)
+Output:
+{8, 4}
+
+Symmetric Difference:
+Symmetric difference of two sets is a set containing all elements which are not common to both sets.
+
+set_a ^ set_b
+or
+set_a.symmetric_difference(sequence)
+
+symmetric_difference() converts sequence to a set.
+
+Code:
+set_a = {4, 2, 8}
+set_b = {1, 2}
+symmetric_diff = set_a ^ set_b
+print(symmetric_diff)
+Output:
+{8, 1, 4}
+
+Code:
+set_a = {4, 2, 8}
+set_b = {1, 2}
+diff = set_a.symmetric_difference(set_b)
+print(diff)
+Output:
+{8, 1, 4}
+
+Set Comparisons:
+Set comparisons are used to validate whether one set fully exists within another
+
+-issubset()
+-issuperset()
+-isdisjoint()
+
+Subset:
+set2.issubset(set1) Returns True if all elements of second set are in first set. Else, False
+
+Example - 1
+Code:
+et_1 = {'a', 1, 3, 5}
+set_2 = {'a', 1}
+is_subset = set_2.issubset(set_1)
+print(is_subset)
+Output:
+True 
+
+Example-2
+Code:
+set_1 = {4, 6}
+set_2 = {2, 6}
+is_subset = set_2.issubset(set_1)
+print(is_subset)
+Output:
+False
+
+SuperSet:
+set1.issuperset(set2) Returns True if all elements of second set are in first set. Else, False
+
+Example - 1
+Code:
+set_1 = {'a', 1, 3, 5}
+set_2 = {'a', 1}
+is_superset = set_1.issuperset(set_2)
+print(is_superset)
+Output:
+True 
+
+Example-2
+Code:
+set_1 = {4, 6}
+set_2 = {2, 6}
+is_superset = set_1.issuperset(set_2)
+print(is_superset)
+Output:
+False
+
+Disjoint Sets:
+set1.isdisjoint(set2) Returns True when they have no common elements. Else, False
+
+Code:
+set_a = {1, 2}
+set_b = {3, 4}
+is_disjoint = set_a.isdisjoint(set_b)
+print(is_disjoint)
+Output:
+True 
