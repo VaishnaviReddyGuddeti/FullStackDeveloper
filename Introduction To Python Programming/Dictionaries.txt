@@ -1,0 +1,585 @@
+Nested Lists & String Formatting:
+A list as an item of another list.
+Code:
+list_a = [5, "Six", [8, 6], 8.2]
+print(list_a[2])
+Output:
+[8, 6]
+
+Accessing Items of Nested List:
+Example - 1
+
+Code:
+list_a = [5, "Six", [8, 6], 8.2]
+print(list_a[2][0])
+Output:
+8
+
+Example - 2
+
+Code:
+list_a = ["Five", "Six"]
+print(list_a[0][1])
+Output:
+1
+
+String Formatting:
+Code:
+name = input()
+age = int(input())
+msg = ("Hi " + name + ". You are "+ str(age) + " years old.")
+print(s)
+String formatting simplifies this concatenation.
+
+It increases the readability of code and type conversion is not required.
+
+Add Placeholders:
+Add placeholders {} where the string needs to be formatted.
+
+Code:
+msg = "Hi {}. You are {} years old."
+msg.format(val_1, val_2,..)
+Inserts values inside the string’s placeholder  {}
+
+Code:
+name = "Sushanth"
+age = 10
+msg = "Hi {}. You are {} years old."
+print(msg.format(name, age))
+Output:
+Hi Sushanth. You are 10 years old.
+
+Number of Placeholders:
+Code:
+name = "Raju"
+age = 10
+msg = "Hi {}. You are {} years old {}."
+print(msg.format(name, age))
+Output:
+IndexError: Replacement index 2 out of range for  positional args tuple 
+
+Numbering Placeholders:
+Numbering placeholders, will fill values according to the position of arguments.
+
+Code:
+Numbering Placeholders
+Numbering placeholders, will fill values according to the position of arguments.
+
+Code:
+name = input()
+age = int(input())
+msg = "Hi {0}. You are {1} years old."
+print(msg.format(name, age))
+Output:
+Hi Raju. You are 10 years old.
+
+Code:
+name = input()
+age = int(input())
+msg = "Hi {1}. You are {0} years old."
+print(msg.format(name, age))
+Output:
+Hi 10. You are Raju years old.
+
+Naming Placeholder:
+Naming placeholders will fill values according to the keyword arguments.
+
+Code:
+name = input()
+age = int(input())
+msg = "Hi {name}. You are {age} years old."
+print(msg.format(name=name, age=age))
+Output:
+Hi Raju. You are 10 years old.
+
+Dictionaries:
+Unordered collection of items.
+
+Every dictionary item is a Key-value pair.
+
+Creating a Dictionary:
+Created by enclosing items within {curly} brackets
+
+Each item in dictionary has a key - value pair separated by a comma.
+
+Code:
+PYTHON
+dict_a = {
+  "name": "Teja",
+  "age": 15 
+}
+
+Key - Value Pairs:
+Code:
+dict_a = {
+  "name": "Teja",
+  "age": 15 
+}
+In the above dictionary, the
+-keys are name and age
+-values are Teja and 15
+
+Collection of Key-Value Pairs:
+Code:
+dict_a = { "name": "Sushanth",
+            "age": 15 }
+print(type(dict_a))
+print(dict_a)
+Output:
+<class 'dict'>
+{'name': 'Sushanth','age':15}
+
+Immutable Keys:
+Keys must be of immutable type and must be unique.
+
+Values can be of any data type and can repeat.
+
+Code:
+dict_a = {
+  "name": "Shourya",
+  "age": 15,
+  "roll_no": 15
+}
+
+Creating Empty Dictionary:
+Code - 1:
+dict_a = dict()
+print(type(dict_a))
+print(dict_a)
+Output:
+<class 'dict'> 
+{}
+
+Code - 2:
+dict_a = {}
+print(type(dict_a))
+print(dict_a)
+Output:
+<class 'dict'> 
+{}
+
+Accessing Items:
+To access the items in dictionary, we use square bracket [ ] along with the key to obtain its value.
+
+Code:
+dict_a = {
+  'name': 'Sushanth',
+  'age': 15
+}
+print(dict_a['name'])
+Output:
+Sushanth
+
+Accessing Items - Get:
+The get() method returns None if the key is not found.
+
+Code:
+dict_a = {
+  'name': 'Shourya',
+  'age': 15
+}
+print(dict_a.get('name'))
+Output:
+Shourya
+
+Code:
+dict_a = {
+  'name': 'Teja',
+  'age': 15
+}
+print(dict_a.get('city'))
+Output:
+None 
+
+KeyError:
+When we use the square brackets [] to access the key-value, KeyError is raised in case a key is not found in the dictionary.
+
+Code:
+dict_a = {'name': 'Teja','age': 15 }
+print(dict_a['city'])
+Output:
+KeyError:'city'
+
+Quick Tip:
+If we use the square brackets [], KeyError is raised in case a key is not found in the dictionary. On the other hand, the get() method returns None if the key is not found.
+
+Membership Check:
+Checks if the given key exists.
+
+Code:
+dict_a = {
+  'name': 'Sushanth',
+  'age': 15
+}
+result = 'name' in dict_a
+print(result)
+Output:
+True
+
+Operations on Dictionaries:
+We can update a dictionary by
+-Adding a key-value pair
+-Modifying existing items
+-Deleting existing items
+
+Adding a Key-Value Pair:
+Code:
+dict_a = {'name': 'Sushanth','age': 15 }
+dict_a['city'] = 'Hyderabad'
+print(dict_a)
+Output:
+{'name': 'Sushanth', 'age': 15, 'city':'Hyderabad'}
+
+Modifying an Existing Item:
+As dictionaries are mutable, we can modify the values of the keys.
+
+Code:
+dict_a = {
+    'name': 'Shourya',
+    'age': 15
+}
+dict_a['age'] = 24
+print(dict_a)
+Output:
+{'name': 'Shourya', 'age': 24}
+
+Modifying an Existing Item:
+As dictionaries are mutable, we can modify the values of the keys.
+
+Code:
+dict_a = {
+    'name': 'Sushanth',
+    'age': 15
+}
+dict_a['age'] = 24
+print(dict_a)
+Output:
+{'name': 'Sushanth', 'age':24}
+
+Deleting an Existing Item:
+We can also use the del keyword to remove individual items or the entire dictionary itself.
+
+Code:
+dict_a = {
+  'name': 'Teja',
+  'age': 15
+}
+del dict_a['age']
+print(dict_a)
+Output:
+{'name': 'Teja'}
+
+Dictionary Views:
+They provide a dynamic view on the dictionary’s entries, which means that when the dictionary changes, the view reflects these changes.
+
+Dictionary Methods:
+
+-dict.keys()
+returns dictionary Keys
+-dict.values()
+returns dictionary Values
+-dict.items()
+returns dictionary items(key-value) pairs
+The objects returned bykeys() , values() & items() are View Objects .
+
+Getting Keys:
+The keys() method returns a view object of the type dict_keys that holds a list of all keys.
+
+Code:
+dict_a = {
+  'name': 'Sushanth',
+  'age': 15
+}
+print(dict_a.keys())
+Output:
+dict_keys(['name', 'age']) 
+
+Getting Values:
+The values() method returns a view object that displays a list of all the values in the dictionary.
+
+Code:
+dict_a = {
+  'name': 'Sushanth',
+  'age': 15
+}
+print(dict_a.values())
+Output:
+dict_values(['Sushanth'])
+
+Getting Items:
+The items() method returns a view object that displays a list of dictionary's (key, value) tuple pairs.
+
+Code:
+dict_a = {
+  'name': 'Shourya',
+  'age': 15
+}
+print(dict_a.items())
+Output:
+dict_items([('name', 'Shourya'), ('age', 15)])
+
+Iterate over Dictionary Views:
+Example - 1
+
+Code:
+dict_a = {
+    'name': 'Sushanth',
+    'age': 15
+}
+for key in dict_a.keys():
+   print(key)
+Output:
+name
+age
+
+Example - 2
+
+Code:
+dict_a = {
+  'name': 'Shourya',
+  'age': 15
+}
+keys_list = list(dict_a.keys())
+print(keys_list)
+Output:
+['name', 'age']
+
+Example - 3
+
+Code:
+dict_a = {
+  'name': 'Sushanth',
+  'age': 15
+}
+for value in dict_a.values():
+   print(value)
+Output:
+Sushanth
+15
+
+Example - 4
+
+Code:
+dict_a = {
+  'name': 'Sushanth',
+  'age': 15
+}
+for key, value in dict_a.items():
+    pair = "{} {}".format(key,value)
+    print(pair)
+Output:
+name Sushanth
+age 15
+
+Dictionary View Objects:
+keys() , values() & items() are called Dictionary Views as they provide a dynamic view on the dictionary’s items.
+
+Code:
+ict_a = {
+    'name': 'Shourya',
+    'age': 15 
+}
+view = dict_a.keys()
+print(view)
+dict_a['roll_no'] = 10
+print(view)
+Output:
+dict_keys(['name', 'age'])
+dict_keys(['name', 'age', 'roll_no'])
+
+Converting to Dictionary:
+dict(sequence) takes any number of key-value pairs and converts to dictionary.
+
+Code:
+list_a = [ 
+    ("name","Sushanth"),
+    ["age",15],
+    ("roll_no",15)
+]
+dict_a = dict(list_a)
+print(dict_a)
+Output:
+{'name': 'Sushanth', 'age': 15, 'roll_no':12}
+
+Code:
+list_a = ["name", "Teja", 15]
+dict_a = dict(list_a)
+print(dict_a)
+Output:
+ValueError: dictionary update sequence element #0 has length 4;2 is required 
+
+Type of Keys:
+A dictionary key must be of a type that is immutable.
+
+Working with Dictionaries:
+Dictionary Methods:
+Python provides dictionary methods that allow us to work with dictionaries.
+-copy()
+-get()
+-update()
+-fromkeys() and more..
+
+Let’s learn few among them
+
+Referring Same Dictionary Object:
+Code:
+dict_a = {
+    'name': 'Sushanth',
+    'age': 15
+}
+dict_b = dict_a
+dict_b['age'] = 20
+print(dict_a)
+print(id(dict_a))
+print(id(dict_b))
+Output:
+{'name':'Sushanth', 'age': 20}
+140170705626624
+140170705626624
+
+Copy of Dictionary:
+dict.copy() returns copy of a dictionary.
+
+Code:
+dict_a = {
+  'name': 'Shourya',
+  'age': 15
+}
+dict_b = dict_a.copy()
+dict_b['age'] = 20
+print(dict_a)
+print(id(dict_a))
+print(id(dict_b))
+Output:
+{'name':'Shourya',  'age': 15}
+140664418952704
+14066441895289
+
+Copy of List:
+Code:
+list_a = ['Shourya', 15]
+list_b = list_a.copy()
+list_b.extend([20])
+print(list_a)
+print(id(list_a))
+print(id(list_b))
+Output:
+['Shourya', 15]
+139631861316032
+13963186058950
+
+Operations on Dictionaries:
+-len()
+-clear()
+-Membership Check
+
+Code:
+dict_a = {
+'name': 'Sushanth',
+'age': 15
+}
+print(len(dict_a))  # length of dict_a
+if 'name' in dict_a:  # Membership Check 
+    print("True")
+dict_a.clear()  # clearing dict_a
+print(dict_a)
+Output:
+2
+True
+{}
+
+Iterating:
+Cannot add/remove dictionary keys while iterating the dictionary.
+
+Code:
+dict_a = {'name': 'Teja', 'age': 15}
+for k in dict_a.keys():
+    if k == 'name':
+        del dict_a[k]
+print(dict_a)
+Output:
+RuntimeError: dictionary changed size during iteration 
+
+Arbitrary Function Arguments:
+Passing Multiple Values:
+We can define a function to receive any number of arguments.
+
+We have already seen such functions
+-max(*args) max(1,2,3..)
+-min(*args) min(1,2,3..)
+
+Variable Length Arguments:
+Variable length arguments are packed as tuple.
+
+Code:
+def more_args(*args):
+  print(args)
+   
+more_args(1, 2, 3, 4)
+more_args()
+Output:
+(1, 2, 3, 4)
+()
+
+Unpacking as Arguments:
+If we already have the data required to pass to a function as a sequence, we can
+
+unpack it with * while passing.
+
+Code:
+def greet(arg1="Hi", arg2="Shourya"):
+    print(arg1 + " " + arg2)
+
+data = ["Hello", "Sushanth"]
+greet(*data)
+Output:
+Hello Sushanth
+
+Multiple Keyword Arguments:
+We can define a function to receive any number of keyword arguments.
+
+Variable length kwargs are packed as dictionary.
+
+Code:
+def more_args(**kwargs):
+    print(kwargs)
+    
+more_args(a=1, b=2)
+more_args()
+Output:
+{'a': 1, 'b': 2}
+{}
+
+Iterating:
+kwargs is a dictionary. We can iterate over them like any other dictionary.
+
+Code:
+def more_args(**kwargs):
+    for i, j in kwargs.items():
+      print('{}:{}'.format(i,j))
+ 
+more_args(a=1, b=2)
+Output:
+a:1
+b:2
+
+Unpacking as Arguments:
+Code - 1:
+def greet(arg1="Hi", arg2="Shourya"):
+    print(arg1 + " " + arg2)
+
+data = {'arg1':'Hello', 'arg2':'Sushanth'}
+greet(**data)
+Output:
+Hello Sushanth
+
+Code - 2:
+def greet(arg1="Hi", arg2="Ram"):
+  print(arg1 + " " + arg2)
+
+data = {'msg':'Hello', 'name':'Teja'}
+greet(**data)
+Output:
+TypeError: greet() got an unexpected keyword argument 'msg'
+
+
