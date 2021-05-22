@@ -1,0 +1,1110 @@
+*Standard Library*
+
+Built-in Functions:
+Built-in functions are Readily available for reuse.
+
+Some of the built Functions are
+-print()
+-max()
+-min()
+-len() and many more..
+
+Standard Library:
+Python provides several such useful values (constants), classes and functions. 
+
+This collection of predefined utilities is referred as the Python Standard Library
+
+All these functionalities are organized into different modules.
+
+In Python context, any file containing a Python code is called a module
+These modules are further organized into folders known as packages
+Different modules are:
+-collections
+-random
+-datetime
+-math and many more..
+
+Working with Standard Library:
+To use a functionality defined in a module we need to import that module in our program.
+(import module_name)
+
+Math Module:
+math  module provides us to access some common math functions and constants.
+
+Code:
+import math
+print(math.factorial(5))
+print(math.pi)
+
+Output:
+120
+3.14159265358979
+
+Importing module:
+Importing a module and giving it a new name (aliasing)
+
+Code:
+
+import math as m1
+print(m1.factorial(5))
+Output:
+120
+
+
+Importing from a Module:
+We can import just a specific definition from a module.
+
+Code:
+from math import factorial
+print(factorial(5))
+
+Output:
+120
+
+Aliasing Imports:
+We can also import a specific definition from a module and alias it
+
+Code:
+from math import factorial as fact
+print(fact(5))
+Output:
+120 
+
+Random module:
+Randomness is useful in whenever uncertainty is required.  
+
+For example: Rolling a dice, flipping a coin, etc., 
+
+random  module provides us utilities to create randomness.
+
+
+Randint:
+randint() is a function in random module which returns a random integer in the given interval.
+
+Code:
+import random
+random_integer = random.randint(1, 10)
+print(random_integer)
+
+Output:
+
+8
+
+Choice:
+choice() is a function in random module which returns a random element from the sequence. 
+
+Code:
+import random
+random_ele = random.choice(["A","B","C"])
+print(random_ele)
+
+Output:
+B
+
+To know more about Python Standard Library, go through the authentic python documentation 
+- https://docs.python.org/3/library/
+
+Map Filter and Reduce:
+We worked with different sequences (list, tuples, etc.)
+
+To simplify working with sequences we can use map(), filter() and reduce() functions.
+
+Map:
+map() applies a given function to each item of a sequence (list, tuple etc.) and returns a sequence of the results.
+
+Example - 1:
+
+Code:
+def square(n):
+   return n * n
+numbers = [1, 2, 3, 4]
+result = map(square, numbers)
+numbers_square = list(result)
+print(numbers_square)
+
+Output:
+
+[1, 4, 9, 16]
+
+Example - 2
+
+Code:
+numbers = list(map(int, input().split()))
+print(numbers)
+Input:
+1 2 3 4
+Output:
+[1, 2, 3, 4]
+
+Filter:
+filter() method filters the elements of a given sequence based on the result of given function.
+
+The function should return True/False 
+
+Code:
+def is_positive_number(num):
+   return num > 0
+  
+list_a = [1, -2, 3, -4]
+positive_nums = filter(is_positive_number, list_a)
+print(list(positive_nums))
+Output:
+[1, 3]
+
+Reduce:
+reduce() function is defined in the functools module.
+Code:
+from functools import reduce
+
+def sum_of_num(a, b):
+   return a+b
+
+list_a = [1, 2, 3, 4]
+sum_of_list = reduce(sum_of_num, list_a)
+print(sum_of_list)
+Output:
+10
+
+*Scope & Namespaces*
+
+Object:
+In general, anything that can be assigned to a variable in Python is referred to as an object.
+
+Strings, Integers, Floats, Lists, Functions, Module etc. are all objects.
+
+Identity of an Object:
+Whenever an object is created in Python, it will be given a unique identifier (id).This unique id can be different for each time you run the program.
+Every object that you use in a Python Program will be stored in Computer Memory
+
+The unique id will be related to the location where the object is stored in the Computer Memory.
+
+Name of an Object:
+Name or Identifier is simply a name given to an object. 
+
+Namespaces:
+A namespace is a collection of currently defined names along with information about the object that the name references.
+
+It ensures that names are unique and won’t lead to any conflict.
+Namespaces allow us to have the same name referring different things in different namespaces.
+
+Code:
+ 
+def greet_1():
+    a = "Hello"
+    print(a)
+    print(id(a))
+
+def greet_2():
+    a = "Hey"
+    print(a)
+    print(id(a))
+
+print("Namespace - 1")
+greet_1()
+print("Namespace - 2")
+greet_2()
+
+Output:
+
+Namespace - 1
+Hello
+140639382368176
+Namespace - 2
+Hey
+140639382570608
+
+Types of namespaces:
+As Python executes a program, it creates namespaces as necessary and forgets them when they are no longer needed.
+
+Different namespaces are:
+-Built-in
+-Global
+-Local
+
+Built-in Namespace:
+Created when we start executing a Python program and exists as long as the program is running.
+
+This is the reason that built-in functions like id(), print() etc. are always available to us from any part of the program.
+
+Global Namespace:
+This namespace includes all names defined directly in a module (outside of all functions). 
+
+It is created when the module is loaded, and it lasts until the program ends.
+
+Code:
+import math 
+a = 2 
+def foo():
+       b = 3
+       print(a + b)
+foo()
+
+ Local Namespace:
+Modules can have various functions and classes.
+
+A new local namespace is created when a function is called, which lasts until the function returns.
+
+Code:
+import math 
+a = 2 
+
+def foo():
+       b = 3
+       print(a + b)
+foo()
+
+Scope of a Name:
+The scope of a name is the region of a program in which that name has meaning. 
+
+Python searches for a name from the inside out, looking in the local, global, and finally the built-in namespaces.
+
+Global variables:
+In Python, a variable defined outside of all functions is known as a global variable.
+
+This variable name will be part of Global Namespace.
+
+Example 1
+Code:
+x = "Global Variable"
+print(x)
+
+def foo():
+   print(x)
+
+foo()
+
+Output:
+Global Variable
+Global Variable 
+
+
+Example 2
+Code:
+
+def foo():
+   print(x)
+
+x = "Global Variable"
+
+foo()
+
+Output:
+
+Global Variable 
+
+
+Local Variables:
+In Python, a variable defined inside a function is a local variable.
+
+This variable name will be part of the Local Namespace which will be created when the function is called and lasts until the function returns.
+
+Code:
+def foo():
+     x = "Local Variable"
+     print(x) 
+foo()
+print(x)
+
+Code:
+
+def foo():
+   x = "Local Variable"
+   print(x)
+
+foo()
+print(x)
+
+Output:
+Local Variable
+NameError: name 'x' is not defined
+
+As, x is not declared before assignment, python throws an error.
+
+Local Import:
+Code:
+def foo():
+   import math
+   print(math.pi)
+
+foo()
+print(math.pi)
+
+Output:
+3.141592653589793
+NameError: name 'math' is not defined 
+
+Local Variables & Global Variables:
+Code:
+x = "Global Variable"
+
+def foo():
+    x = "Local Variable"
+    print(x)
+
+print(x)
+foo()
+print(x)
+
+Output:
+Global Variable
+Local Variable
+Global Variable 
+
+Modifying Global Variables:
+global  keyword is used to define a name to refer to the value in Global Namespace.
+
+Code:
+
+x = "Global Variable"
+
+def foo():
+    global x    
+    x = "Global Change"
+    print(x)
+
+print(x)
+foo()
+print(x)
+
+Output:
+Global Variable
+Global Change
+Global Change 
+
+*Errors & Exceptions*
+There are two major kinds of errors:   
+
+1.Syntax Errors
+2.Exceptions
+
+Syntax Errors:
+Syntax errors are parsing errors which occur when the code is not adhering to Python Syntax.  
+
+Code:
+if True print("Hello")
+Output:
+SyntaxError: invalid syntax
+
+When there is a syntax error, the program will not execute even if that part of code is not used.  
+
+Code:
+print("Hello")  
+  
+def greet():  
+    print("World"
+Output:
+  
+SyntaxError: unexpected EOF while parsing 
+
+Notice that in the above code, the syntax error is inside the greet function, which is not used in rest of the code.
+
+Exceptions:
+
+Even when a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it.   
+
+Errors detected during execution are called exceptions.   
+
+Example Scenario:
+
+We wrote a program to download a Video over the Internet.  
+
+-Internet is disconnected during the download
+-We do not have space left on the device to download the video
+
+Example 1:
+
+Division Example:
+Input given by the user is not within expected values.  
+
+Code:
+def divide(a, b):  
+    return  a / b  
+
+divide(5, 0)
+Output:
+ZeroDivisionError: division by zero 
+
+
+Example 2  
+
+Input given by the user is not within expected values.  
+
+Code:
+def divide(a, b):  
+    return  a / b  
+
+divide("5", "10")
+Output:
+TypeError: unsupported operand type(s) for /:'str' and 'str' 
+
+Example 3  
+
+Consider the following code, which is used to update the quantity of items in store.  
+
+Code:
+class Store:  
+    def __init__(self):  
+        self.items = {  
+        "milk" : 20, "bread" : 30, }  
+    
+    def add_item(self, name, quantity):  
+       self.items[name] += quantity  
+ 
+s = Store()  
+s.add_item('biscuits', 10)
+Output:
+KeyError: 'biscuits' 
+
+Working With Exceptions:
+
+What happens when your code runs into an exception during execution?  
+
+The application/program crashes.  
+
+End-User Applications:
+
+When you develop applications that are directly used by end-users, you need to handle different possible exceptions in your code so that the application will not crash.  
+
+Reusable Modules
+
+When you develop modules that are used by other developers, you should raise exceptions for different scenarios so that other developers can handle them.  
+
+Money Transfer App Scenario:
+
+Let’s consider we are creating an app that allows users to transfer money between them.
+
+Bank Account Class
+
+Example 1
+Code:
+class BankAccount:
+    def __init__(self, account_number):
+        self.account_number = str(account_number)
+        self.balance = 0
+
+    def get_balance(self):
+        return self.balance
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            print("Insufficient Funds")
+
+    def deposit(self, amount):
+        self.balance += amount
+
+
+def transfer_amount(acc_1, acc_2, amount):
+    acc_1.withdraw(amount)
+    acc_2.deposit(amount)
+
+
+user_1 = BankAccount("001")
+user_2 = BankAccount("002")
+user_1.deposit(250)
+user_2.deposit(100)
+
+print("User 1 Balance: {}/-".format(user_1.get_balance()))
+print("User 2 Balance: {}/-".format(user_2.get_balance()))
+transfer_amount(user_1, user_2, 50)
+print("Transferring 50/- from User 1 to User 2")
+print("User 1 Balance: {}/-".format(user_1.get_balance()))
+print("User 2 Balance: {}/-".format(user_2.get_balance()))
+
+Output:
+
+User 1 Balance: 250/-
+User 2 Balance: 100/-
+Transferring 50/- from User 1 to User 2
+User 1 Balance: 200/-
+User 2 Balance: 150/- 
+
+Example-2
+Code:
+
+class BankAccount:
+    def __init__(self, account_number):
+        self.account_number = str(account_number)
+        self.balance = 0
+
+    def get_balance(self):
+        return self.balance
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            print("Insufficient Funds")
+
+    def deposit(self, amount):
+        self.balance += amount
+
+
+def transfer_amount(acc_1, acc_2, amount):
+    acc_1.withdraw(amount)
+    acc_2.deposit(amount)
+
+
+user_1 = BankAccount("001")
+user_2 = BankAccount("002")
+user_1.deposit(25)
+user_2.deposit(100)
+
+print("User 1 Balance: {}/-".format(user_1.get_balance()))
+print("User 2 Balance: {}/-".format(user_2.get_balance()))
+transfer_amount(user_1, user_2, 50)
+print("Transferring 50/- from User 1 to User 2")
+print("User 1 Balance: {}/-".format(user_1.get_balance()))
+print("User 2 Balance: {}/-".format(user_2.get_balance()))
+
+Output:
+User 1 Balance: 25/-
+User 2 Balance: 100/-
+Insufficient Funds
+Transferring 50/- from User 1 to User 2
+User 1 Balance: 25/-
+User 2 Balance: 150/- 
+
+Raising Exceptions:
+When your code enters an unexpected state, raise an exception to communicate it.
+
+Built-in Exceptions:
+Different exception classes which are raised in different scenarios.  
+
+You can use the built-in exception classes with raise keyword to raise an exception in the program.  
+
+Code:
+We can pass message as argument .  
+
+raise ValueError("Unexpected Value!!")
+Output:
+ValueError:Unexpected Value!! 
+
+Bank Account Class:
+Example 1  
+
+Code:
+
+class BankAccount:
+    def __init__(self, account_number):
+        self.account_number = str(account_number)
+        self.balance = 0
+
+    def get_balance(self):
+        return self.balance
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            raise ValueError("Insufficient Funds")
+
+    def deposit(self, amount):
+        self.balance += amount
+
+
+def transfer_amount(acc_1, acc_2, amount):
+    acc_1.withdraw(amount)
+    acc_2.deposit(amount)
+
+
+user_1 = BankAccount("001")
+user_2 = BankAccount("002")
+user_1.deposit(25)
+user_2.deposit(100)
+
+print("User 1 Balance: {}/-".format(user_1.get_balance()))
+print("User 2 Balance: {}/-".format(user_2.get_balance()))
+transfer_amount(user_1, user_2, 50)
+print("Transferring 50/- from User 1 to User 2")
+print("User 1 Balance: {}/-".format(user_1.get_balance()))
+print("User 2 Balance: {}/-".format(user_2.get_balance()))
+
+Output:
+User 1 Balance: 25/-
+User 2 Balance: 100/-
+
+ValueError: Insufficient Funds 
+
+Handling Exceptions:
+
+Python provides a way to catch the exceptions that were raised so that they can be properly handled.  
+-Exceptions can be handled with try-except block.
+-Whenever an exception occurs at some line in try block, the execution stops at that line and jumps to except block.
+Syntax:
+try:
+ # Write code that
+ # might cause exceptions.
+except:
+ # The code to be run when
+ # there is an exception.
+
+Transfer Amount:
+Example 1
+
+Code:
+
+class BankAccount:
+    def __init__(self, account_number):
+        self.account_number = str(account_number)
+        self.balance = 0
+
+    def get_balance(self):
+        return self.balance
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            raise ValueError("Insufficient Funds")
+
+    def deposit(self, amount):
+        self.balance += amount
+
+
+def transfer_amount(acc_1, acc_2, amount):
+    try:
+        acc_1.withdraw(amount)
+        acc_2.deposit(amount)
+        return True
+    except:
+        return False
+
+
+user_1 = BankAccount("001")
+user_2 = BankAccount("002")
+user_1.deposit(25)
+user_2.deposit(100)
+
+print("User 1 Balance: {}/-".format(user_1.get_balance()))
+print("User 2 Balance: {}/-".format(user_2.get_balance()))
+print(transfer_amount(user_1, user_2, 50))
+print("Transferring 50/- from User 1 to User 2")
+print("User 1 Balance: {}/-".format(user_1.get_balance()))
+print("User 2 Balance: {}/-".format(user_2.get_balance()))
+
+Output:
+User 1 Balance: 25/-
+User 2 Balance: 100/-
+False
+Transferring 50/- from User 1 to User 2
+User 1 Balance: 25/-
+User 2 Balance: 100/-
+
+Summary:
+Reusable Modules:
+-While developing reusable modules, we need to raise Exceptions to stop our code from being used in a bad way.
+
+End-User Applications:
+-While developing end-user applications, we need to handle Exceptions so that application will not crash when used.
+
+Handling Specific Exceptions:
+We can specifically mention the name of exception to catch all exceptions of that specific type.
+
+Syntax:
+try:
+    # Write code that
+    # might cause exceptions.
+except Exception:
+    # The code to be run when
+    # there is an exception.
+
+Example 1  
+
+Code:
+
+try:  
+    a = int(input())  
+    b = int(input())  
+    c = a/b
+    print(c)  
+except ZeroDivisionError:  
+    print("Denominator can't be 0")  
+except:  
+    print("Unhandled Exception")
+
+Input:
+5  
+0
+Output:
+Denominator can't be 0 
+
+
+Example 2
+
+Code:
+Input given by the user is not within expected values.
+
+try:  
+    a = int(input())  
+    b = int(input())  
+    c = a/b
+    print(c)  
+except ZeroDivisionError:  
+    print("Denominator can't be 0")  
+except:  
+    print("Unhandled Exception")
+
+Input:
+12  
+a
+Output:
+Unhandled Exception 
+
+We can also access the handled exception in an object.
+
+Syntax:
+try:
+    # Write code that
+    # might cause exceptions.
+except Exception as e:
+    # The code to be run when
+    # there is an exception.
+
+Code:
+
+class BankAccount:
+    def __init__(self, account_number):
+        self.account_number = str(account_number)
+        self.balance = 0
+
+    def get_balance(self):
+        return self.balance
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            raise ValueError("Insufficient Funds")
+
+    def deposit(self, amount):
+        self.balance += amount
+
+
+def transfer_amount(acc_1, acc_2, amount):  
+    try:
+        acc_1.withdraw(amount)
+        acc_2.deposit(amount)
+        return True
+    except ValueError as e:
+        print(str(e))  
+        print(type(e))  
+        print(e.args)  
+        return False
+
+user_1 = BankAccount("001")
+user_2 = BankAccount("002")
+user_1.deposit(25)
+user_2.deposit(100)
+
+print("User 1 Balance: {}/-".format(user_1.get_balance()))
+print("User 2 Balance: {}/-".format(user_2.get_balance()))
+print(transfer_amount(user_1, user_2, 50))
+print("Transferring 50/- from User 1 to User 2")
+print("User 1 Balance: {}/-".format(user_1.get_balance()))
+print("User 2 Balance: {}/-".format(user_2.get_balance()))
+
+Output:
+
+User 1 Balance: 25/-
+User 2 Balance: 100/-
+Insufficient Funds
+<class 'ValueError'>
+('Insufficient Funds',)
+False
+Transferring 50/- from User 1 to User 2
+User 1 Balance: 25/-
+User 2 Balance: 100/-
+
+Handling Multiple Exceptions:
+We can write multiple exception blocks to handle different types of exceptions differently.
+
+Syntax:
+try:
+    # Write code that
+    # might cause exceptions.
+except Exception1:
+    # The code to be run when
+    # there is an exception.
+except Exception2:
+    # The code to be run when
+    # there is an exception.
+
+Example 1
+
+Code:
+
+try:  
+    a = int(input())  
+    b = int(input())  
+    c = a/b
+    print(c)  
+except ZeroDivisionError:  
+    print("Denominator can't be 0")  
+except ValueError:  
+    print("Input should be an integer")  
+except:  
+    print("Something went wrong")
+
+Input:
+5
+0
+
+Output:
+Denominator can't be 0 
+
+Example-2 
+Code:
+
+try:  
+    a = int(input())  
+    b = int(input())  
+    c = a/b
+    print(c)  
+except ZeroDivisionError:  
+    print("Denominator can't be 0")  
+except ValueError:  
+    print("Input should be an integer")  
+except:  
+    print("Something went wrong")
+
+Input:
+12
+a 
+
+Output:
+Input should be an integer 
+
+
+*Working With Dates & Times*
+
+Datetime:
+Python has a built-in datetime  module which provides convenient objects to work with dates and times.
+
+Code:
+import datetime
+
+Datetime classes:
+Commonly used classes in the datetime module are:
+-date class
+-time class
+-datetime class
+-timedelta class
+
+Working with 'date' class:
+Representing Date:
+A date object can be used to represent any valid date (year, month and day).
+
+Code:
+import datetime
+
+date_object = datetime.date(2019, 4, 13)
+print(date_object)
+
+Output:
+2019-04-13 
+
+Date Object:
+Code:
+
+from datetime import date
+date_obj = date(2022, 2, 31)
+print(date_obj)
+
+Output:
+ValueError: day is out of range for month 
+
+Today’s Date:
+Class method today() returns a date object with today’s date.
+
+Code:
+import datetime
+
+date_object = datetime.date.today()
+print(date_object)
+
+Output:
+2021-02-05 
+
+Attributes of Date Object:
+
+Code:
+
+from datetime import date
+
+date_object = date(2019, 4, 13)
+print(date_object.year)
+print(date_object.month)
+print(date_object.day)
+
+Output:
+2019
+4
+13
+
+Working with ‘time’ Class:
+Representing Time:
+A time object can be used to represent any valid time (hours, minutes and seconds).
+
+Code:
+
+from datetime import time
+
+time_object = time(11, 34, 56)
+print(time_object)
+
+Output:
+11:34:56
+
+Attributes of Time Object:
+Code:
+
+from datetime import time
+
+time_object = time(11, 34, 56)
+print(time_object)
+print(time_object.hour)
+print(time_object.minute)
+print(time_object.second)
+
+Output:
+11:34:56
+11
+34
+56
+
+Working with ‘datetime’ Class:
+Datetime:
+The datetime class represents a valid date and time together.
+
+Example - 1
+
+Code:
+
+from datetime import datetime
+
+date_time_obj = datetime(2018, 11, 28, 10, 15, 26)
+print(date_time_obj.year)
+print(date_time_obj.month)
+print(date_time_obj.hour)
+print(date_time_obj.minute)
+
+Output:
+2018
+11
+10
+15
+
+Example - 2
+It gives the current date and time
+
+Code:
+
+import datetime
+
+datetime_object = datetime.datetime.now()
+print(datetime_object)
+
+Output:
+2021-02-05 09:26:08.077473 
+
+DateTime object:
+Code:
+
+from datetime import datetime
+date_time_obj = datetime(2018, 11, 28)
+print(date_time_obj)
+
+Output:
+
+2018-11-28 00:00:00
+
+Formatting Datetime:
+The datetime classes have strftime(format) method to format the datetime into any required format like 
+-mm/dd/yyyy
+-dd-mm-yyyy
+
+Format Specifier	                              Meaning	                                                           Example
+%y	         Year without century as a zero-padded decimal number	                     19, 20, ...
+%Y	         Year with century as a decimal number	                                          2019, 2020, ...
+%b	Month as abbreviated name	                                                                                 Jan, Feb, ...
+%B	Month as full name	                                                                                                  January, February
+%m	Month as a zero-padded decimal number	                                                              01, 02, …, 12
+%d	Day of the month as a zero-padded decimal number	                                           01, 02, …, 31
+%a	Weekday as abbreviated name	                                                                                  Sun, Mon, ...
+%A	Weekday as full name	                                                                                 Sunday, Monday, ...
+%H	Hour (24-hour clock) as a zero-padded decimal number	                        00, 01, …, 23
+%I	Hour (12-hour clock) as a zero-padded decimal number	                        01, 02, …, 12
+%p	AM or PM	                                                                                                                         AM, PM
+%M	Minute as a zero-padded decimal number	                                                            00, 01, …, 59
+%S	Second as a zero-padded decimal number                                              	00, 01, …, 59
+
+
+
+Code:
+from datetime import datetime
+
+now = datetime.now()
+formatted_datetime_1 = now.strftime("%d %b %Y %I:%M:%S %p")
+print(formatted_datetime_1)
+
+formatted_datetime_2 = now.strftime("%d/%m/%Y, %H:%M:%S")
+print(formatted_datetime_2)
+
+Output:
+05 Feb 2021 09:26:50 AM
+05/02/2021, 09:26:50 
+
+Parsing Datetime:
+The class method strptime() creates a datetime object from a given string representing date and time.
+
+Code:
+from datetime import datetime
+
+date_string = "28 November, 2018"
+print(date_string)
+
+date_object = datetime.strptime(date_string, "%d %B, %Y")
+print(date_object)
+
+Output:
+28 November, 2018
+2018-11-28 00:00:00
+
+Working with ‘timedelta’ Class:
+Timedelta object represents duration.
+
+Example 1
+Code:
+from datetime import timedelta
+
+delta = timedelta(days=365, hours=4)
+print(delta)
+Output:
+365 days, 4:00:00
+
+Example 2
+Code:
+from datetime import timedelta, datetime
+delta = timedelta(days=365)
+current_datetime = datetime.now()
+print(current_datetime)
+next_year_datetime = current_datetime + delta
+print(next_year_datetime)
+Output:
+2021-02-05 09:28:30.239095
+2022-02-05 09:28:30.239095
+
+Calculating Time Difference
+Code:
+import datetime
+
+dt1 = datetime.datetime(2021, 2, 5)
+dt2 = datetime.datetime(2022, 1, 1)
+duration = dt2 - dt1
+print(duration)
+print(type(duration))
+Output:
+330 days, 0:00:00
+<class 'datetime.timedelta'>
