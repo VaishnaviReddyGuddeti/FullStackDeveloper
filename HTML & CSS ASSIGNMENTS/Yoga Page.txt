@@ -1,0 +1,168 @@
+QUESTION:
+
+Yoga Page:
+In this assignment, let's build a Yoga page by applying the concepts we learned till now. You can use the Bootstrap concepts and CCBP UI Kit as well.
+
+Note:
+When clicked on the Get Started button on the Yoga Home Page, it must display the Types of Yoga Page.
+
+Try to achieve the design as close as possible.
+
+Resources:
+Use the image URLs given below.
+
+
+Home Page Background Image:
+
+https://assets.ccbp.in/frontend/static-website/yoga-bg.png
+
+Home Page Girl Image:
+
+https://assets.ccbp.in/frontend/static-website/yoga-girl-with-headphones-img.png
+
+Types of Yoga Page Images:
+
+https://assets.ccbp.in/frontend/static-website/yoga-girl-without-headphones-img.png
+https://assets.ccbp.in/frontend/static-website/yoga-card1-img.png
+https://assets.ccbp.in/frontend/static-website/yoga-card2-img.png
+https://assets.ccbp.in/frontend/static-website/yoga-card3-img.png
+https://assets.ccbp.in/frontend/static-website/yoga-card4-img.png
+
+CSS Colors used:
+Background color Hex Code values:
+
+#ffedcb
+#132d84
+#ffe2ab
+
+Text color Hex Code values:
+
+#323f4b
+#fad693
+#132d84
+#253263
+
+CSS Font families used:
+Roboto
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="bg-container" id="sectionhomepage">
+        <h1 class="main-heading">discover the yogi life in the platform</h1>
+        <img src="https://assets.ccbp.in/frontend/static-website/yoga-girl-with-headphones-img.png" class="image" />
+        <p class="paragraph">yoga posess are very importent to health</p>
+        <button class="button" onclick="display('sectioncards')">get started</button>
+    </div>
+    <div class="bg-container" id="sectioncards">
+        <img src="https://assets.ccbp.in/frontend/static-website/yoga-girl-with-headphones-img.png" class="image0" />
+        <h1 class="main-heading0">yoga posess</h1>
+        <div class="subcard1 d-flex flex-row">
+            <img src="https://assets.ccbp.in/frontend/static-website/yoga-girl-without-headphones-img.png" class="image1" />
+            <div>
+                <h1 class="main-heading1">acro-yoga</h1>
+                <p class="paragraph1">its stevflgsjtoeryjh'je nk'aroyaou</p>
+            </div>
+        </div>
+        <div class="subcard1 d-flex flex-row">
+            <img src="https://assets.ccbp.in/frontend/static-website/yoga-girl-without-headphones-img.png" class="image1" />
+            <div>
+                <h1 class="main-heading1">acro-yoga</h1>
+                <p class="paragraph1">its stevflgsjtoeryjh'je nk'aroyaou</p>
+            </div>
+        </div>
+        <button class="button" onclick="display('sectionhomepage')">back</button>
+    </div>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+</body>
+
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-container {
+    background-image: url("https://assets.ccbp.in/frontend/static-website/yoga-bg.png");
+    background-size: cover;
+    height: 100vh;
+    padding: 10px;
+}
+
+.main-heading {
+    color: #132d84;
+    font-size: 30px;
+    font-family: "roboto";
+    font-weight: bold;
+    text-align: center;
+}
+
+.image {
+    height: 400px;
+    width: 300px;
+    margin-left: 170px;
+}
+
+.paragraph {
+    font-size: 20px;
+    text-align: center;
+}
+
+.button {
+    color: white;
+    background-color: #132d84;
+    border-radius: 10px;
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+.image0 {
+    height: 250px;
+    width: 150px;
+    margin-left: 250px;
+}
+
+.main-heading0 {
+    font-family: "roboto";
+    margin-top: 10px;
+    color: #f132d84;
+    text-align: center;
+
+}
+
+.subcard1 {
+    height: 130px;
+    width: 250px;
+    background-color: white;
+    margin-left: 200px;
+    margin-right: 100px;
+    border-radius: 10px;
+}
+
+.image1 {
+    height: 100px;
+    width: 80px;
+}
+
+.main-heading1 {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+.paragraph1 {
+    font-size: 10px;
+    color: black;
+    text-align: center;
+
+}
