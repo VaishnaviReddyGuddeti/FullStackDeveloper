@@ -1,0 +1,46 @@
+QUESTION:
+
+Traingles:
+Given three sides of the triangle(a, b, c) as input. Write a program to determine whether the triangle is Equilateral, Isosceles or Scalene.
+
+Input:
+The first line of input will contain an integer A.
+The second line of input will contain an integer B.
+The third line of input will contain an integer C.
+
+Output:
+If the given sides A, B and C are equal, print "Equilateral".
+In the given sides any of two sides are equal print "Isosceles".
+If the given sides A, B, C are not equal to each other, print "Scalene".
+
+Explanation:
+For example, if the given sides are 4, 4, 4 the output should be "Equilateral".
+Similarly, if the given sides are 3, 2, 3 the output should be "Isosceles".
+
+Sample Input 1:
+4
+4
+4
+
+Sample Output 1:
+Equilateral
+
+Sample Input 2:
+3
+2
+3
+
+Sample Output 2:
+Isosceles
+
+CODE:
+
+a = int(input())
+b = int(input())
+c = int(input())
+if a==b and b==c and c==a:
+    print("Equilateral")
+elif a==b or b==c or c==a:
+    print("Isosceles")
+elif a!=b and b!=c and c!=a:
+    print("Scalene")
