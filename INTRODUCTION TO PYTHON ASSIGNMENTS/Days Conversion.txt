@@ -1,0 +1,36 @@
+QUESTION:
+
+Days Conversion
+Given a number of days (N) as input, write a program to convert N to years (Y), weeks (W), and days (D).
+
+Input:
+The input will be a single line containing a positive integer (N).
+
+Output:
+The output should be a single line containing years, weeks, days values separated by spaces.
+
+Explanation:
+For example, if the given number of days (N) is  1329.
+1329 = 365*3 + 33*7 + 3
+So the output is 3 years 33 weeks 3 days
+
+Sample Input 1:
+1329
+Sample Output 1:
+3  years 33  weeks 3  days
+Sample Input 2:
+960
+Sample Output 2:
+2  years 32  weeks 6 Days
+
+CODE:
+
+import sys
+try:
+   days = int(sys.argv[1])
+except:
+   days = int(input())
+y = days / 365
+w = (days % 365) / 7
+d = (days % 365) % 7
+print("%d years %d weeks %d days" % (y, w, d))
