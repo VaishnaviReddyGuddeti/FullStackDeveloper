@@ -1,0 +1,216 @@
+QUESTION:
+
+Articles Page
+In this assignment, let's build a Articles Page by applying the concepts we learned till now. You can use the Bootstrap concepts and CCBP UI Kit as well.
+
+Note:
+-When clicked on each category card, the page should display the List of Topics.
+-Try to achieve the design as close as possible.
+
+Resources:
+Use the image URLs given below.
+Categories Icons Images:
+
+https://assets.ccbp.in/frontend/static-website/articles-technology-icon-img.png
+https://assets.ccbp.in/frontend/static-website/articles-science-icon-img.png
+https://assets.ccbp.in/frontend/static-website/articles-healthcare-icon-img.png
+https://assets.ccbp.in/frontend/static-website/articles-business-icon-img.png
+
+Carousel Images (Technology):
+
+https://assets.ccbp.in/frontend/static-website/articles-technology-c1-img.png
+https://assets.ccbp.in/frontend/static-website/articles-technology-c2-img.png
+https://assets.ccbp.in/frontend/static-website/articles-technology-c3-img.png
+
+Carousel Images (Science):
+
+https://assets.ccbp.in/frontend/static-website/articles-science-c1-img.png
+https://assets.ccbp.in/frontend/static-website/articles-science-c2-img.png
+https://assets.ccbp.in/frontend/static-website/articles-science-c3-img.png
+
+Carousel Images (Health Care):
+
+https://assets.ccbp.in/frontend/static-website/articles-healthcare-c1-img.png
+https://assets.ccbp.in/frontend/static-website/articles-healthcare-c2-img.png
+https://assets.ccbp.in/frontend/static-website/articles-healthcare-c3-img.png
+
+Carousel Images (Business):
+
+https://assets.ccbp.in/frontend/static-website/articles-business-c1-img.png
+https://assets.ccbp.in/frontend/static-website/articles-business-c2-img.png
+https://assets.ccbp.in/frontend/static-website/articles-business-c3-img.png
+
+CSS Colors used:
+Background color Hex Code values:
+
+#225db0
+#ffffff
+
+Text color Hex Code values:
+
+#ffffff
+#1f2933
+
+CSS Font families used:
+Roboto
+
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="bg-container" id="sectionmainpage">
+        <h1 class="main-heading">Enpower technology</h1>
+        <p class="paragraph">by learning the acctual the time</p>
+        <div class="d-flex flex-row">
+            <div class="mini-card" onclick="display('sectiontechnologypage')">
+                <img src="https://assets.ccbp.in/frontend/static-website/articles-technology-icon-img.png" class="image" />
+                <p class="paragraph1">technology</p>
+            </div>
+            <div class="mini-card" onclick="display('sectionsciencepage')">
+                <img src="https://assets.ccbp.in/frontend/static-website/articles-science-icon-img.png" class="image" />
+                <p class="paragraph1">science</p>
+            </div>
+        </div>
+        <div class="d-flex flex-row">
+            <div class="mini-card" onclick="display('sectiontechnologypage')">
+                <img src="https://assets.ccbp.in/frontend/static-website/articles-technology-icon-img.png" class="image" />
+                <p class="paragraph1">technology</p>
+            </div>
+            <div class="mini-card" onclick="display('sectionsciencepage')">
+                <img src="https://assets.ccbp.in/frontend/static-website/articles-science-icon-img.png" class="image" />
+                <p class="paragraph1">science</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-cintainer" id="sectiontechnologypage">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://assets.ccbp.in/frontend/static-website/articles-technology-c1-img.png" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://assets.ccbp.in/frontend/static-website/articles-technology-c2-img.png" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://assets.ccbp.in/frontend/static-website/articles-technology-c3-img.png" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <h claa="main-heading">list of itmes</h>
+    <ul class="unordered-list">
+        <li>g9fbgj</li>
+        <li>nidggh</li>
+    </ul>
+    <div>
+        <button class="button" onclick="display('sectionmainpage')">back</button>
+    </div>
+    <div id="sectionsciencepage">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://assets.ccbp.in/frontend/static-website/articles-science-c1-img.png" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://assets.ccbp.in/frontend/static-website/articles-science-c2-img.png" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://assets.ccbp.in/frontend/static-website/articles-science-c3-img.png" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <ul class="unordered-list">
+        <li> slifhbnnmk</li>
+        <li>mpkekojwji</li>
+        <li>nueyubfngjgnm</li>
+    </ul>
+    <div>
+        <h1 class="main-heading">heading</h1>
+        <p class="paragraph">paragraph</p>
+        <button class="button" onclick="display('sectionmainpage')">back</button>
+    </div>
+
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+</body>
+
+</html>
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-container {
+    background-color: #225db0;
+    background-size: cover;
+    height: 100vh;
+}
+
+.main-heading {
+    color: black;
+    text-align: center;
+}
+
+.paragraph {
+    color: black;
+    text-align: center;
+}
+
+.mini-card {
+    background-color: white;
+    height: 130px;
+    width: 230px;
+    margin: 50px;
+    border-radius: 10px;
+}
+
+.image {
+    height: 80px;
+    width: 80px;
+    margin-left: 60px;
+}
+
+.paragraph1 {
+    text-align: center;
+}
+
+.unordered-list {
+    list-style-type: circle;
+}
