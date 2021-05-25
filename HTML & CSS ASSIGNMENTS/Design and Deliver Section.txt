@@ -1,0 +1,99 @@
+QUESTION:
+
+Design and Deliver Section:
+In this assignment, let's build a Design and Deliver Section by applying the concepts we learned till now.
+
+Refer to the below images.
+
+The following images illustrate all device sizes, from extra small to extra large.
+
+Extra Small (Size < 576px) and Small (Size >= 576px)
+Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)
+
+Note:
+Try to achieve the design as close as possible.
+
+Resources:
+Use the image URLs given below.
+
+https://assets.ccbp.in/frontend/responsive-website/design-deliver-1-img.png
+
+https://assets.ccbp.in/frontend/responsive-website/design-deliver-2-img.png
+
+CSS Colors used:
+
+Text color Hex Code values:
+#323f4b
+#7b8794
+
+CSS Font families used:
+Roboto
+
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="browser-section pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 order-1 order-md-2 d-flex flex-column justify-content-center">
+                    <h1 class="browser-section-heading mb-3">Design in the browser</h1>
+                    <img src="https://assets.ccbp.in/frontend/responsive-website/design-deliver-1-img.png" class="design-deliver-1-img d-md-none mb-3" />
+                    <p class="browser-section-description">
+                        A design is a plan or specification for the
+                        construction of an object or system or for
+                        the implementation of an activity or process.
+                        The verb to design expresses the process of developing a design.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 order-1 order-md-2 d-flex flex-column justify-content-center">
+                    <h1 class="deliver-section-heading mb-3">Deliver Faster</h1>
+                    <img src="https://assets.ccbp.in/frontend/responsive-website/design-deliver-2-img.png" class="design-deliver-2-img d-md-none mb-3" />
+                    <p class="deliver-section-description">
+                        Publish responsive pages with your
+                        own domain name or export your work
+                        to host it yourself is great for decision
+                        making,prototyping and publishing
+                        single pagewebsites.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-container {
+    background-color: white;
+    padding: 10px;
+}
+
+.image {
+    height: 350px;
+    width: 100%;
+}
+
+.main-heading {
+    text-align: center;
+    color: #323f4b;
+}
+
+.paragraph {
+    color: #7b8794;
+}
