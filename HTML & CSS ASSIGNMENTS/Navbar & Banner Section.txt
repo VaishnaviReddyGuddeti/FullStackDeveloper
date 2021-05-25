@@ -1,0 +1,121 @@
+QUESTION:
+
+Navbar & Banner Section:
+In this assignment, let's build a Navbar & Banner Section by applying the concepts we learned till now.
+
+Refer to the below images.
+
+The following images illustrate all device sizes, from extra small to extra large.
+
+Extra Small (Size < 576px), Small (Size >= 576px)
+Medium (Size >= 768px)
+Large (Size >= 992px) and Extra Large (Size >= 1200px)
+
+Resources:
+Use the image URLs given below.
+
+Design Tool Logo:
+
+https://assets.ccbp.in/frontend/responsive-website/landing-section-design-logo-img.png
+
+Background Image:
+
+https://assets.ccbp.in/frontend/responsive-website/landing-section-bg.png
+
+CSS Colors used:
+
+#0C0521
+#FFDDA9
+
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg nav-element nav-#0c0521 bg-#0c0521">
+        <a class="navbar-brand" href="#">
+            <img src="https://assets.ccbp.in/frontend/responsive-website/landing-section-design-logo-img.png" class="image" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link active" href="#">Features</a>
+                <a class="nav-link active" href="#">Pricing</a>
+                <a class="nav-link active" href="#">Blog</a>
+                <a class="nav-link active" href="#">contacts</a>
+
+
+            </div>
+        </div>
+    </nav>
+    <div class="bg-container">
+        <div class="text-center d-flex flex-column justify-content-center">
+            <h1 class="main-heading">The most <span class="color">flexible</span> web design tool</h1>
+            <p class="paragraph">we have it carefully and simply combined with the ingridients makes for beautifuk landingfv.is this the nami process desoin</p>
+            <button class="button">sign up</button>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+
+CSS CODE:
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.image {
+    height: 30px;
+    width: 100px;
+}
+
+.bg-container {
+    background-image: url("https://assets.ccbp.in/frontend/responsive-website/landing-section-bg.png");
+    height: 100vh;
+    background-size: cover;
+    padding: 20px;
+}
+
+.main-heading {
+    color: white;
+    font-family: "roboto";
+    font-size: 40px;
+}
+
+.paragraph {
+    color: white;
+    font-family: "roboto";
+    font-size: 20px;
+}
+
+.button {
+    color: black;
+    border-radius: 13px;
+    width: 100px;
+    height: 40px;
+    background-color: #FFDDA9;
+    border-color: white;
+    margin-left: 150px;
+}
+
+.nav-element {
+    background-color: #0c0521;
+
+}
+
+.color {
+    color: #FFDDA9;
+}
