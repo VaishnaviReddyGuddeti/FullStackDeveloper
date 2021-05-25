@@ -1,0 +1,142 @@
+QUESTION:
+
+Features Section
+In this assignment, let's build a Features Section by applying the concepts we learned till now.
+
+Refer to the below images.
+
+The following images illustrate all device sizes, from extra small to extra large.
+
+Extra Small (Size < 576px) and Small (Size >= 576px)
+Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)
+
+Note:
+Try to achieve the design as close as possible.
+
+Resources:
+Use the image URLs given below.
+
+https://assets.ccbp.in/frontend/responsive-website/awsome-features-1-img.png
+https://assets.ccbp.in/frontend/responsive-website/awsome-features-2-img.png
+https://assets.ccbp.in/frontend/responsive-website/awsome-features-3-img.png
+https://assets.ccbp.in/frontend/responsive-website/awsome-features-4-img.png
+https://assets.ccbp.in/frontend/responsive-website/awsome-features-5-img.png
+https://assets.ccbp.in/frontend/responsive-website/awsome-features-6-img.png
+
+CSS Colors used:
+
+Text color Hex Code values:
+#323f4b
+#7b8794
+#9aa5b1
+
+CSS Font families used:
+Roboto
+
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew  +OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9 reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="bg-container">
+        <div class="container">
+            <div class="row">
+                <div col-12>
+                    <h1 class="main-heading">features that make design simply awesome</h1>
+                    <p class="paragraph">not sure if design is for you? check out a few of the key features</p>
+                </div>
+                <div class="d-flex flex-row col-12 col-md-6">
+                    <img src="https://assets.ccbp.in/frontend/responsive-website/awsome-features-1-img.png" class="image" />
+                    <div class="text-center">
+                        <h1 class="main-heading1">Vectors</h1>
+                        <p class="paragraph">use svgs that always stay crisp and you can change the color as you go</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row col-12 col-md-6">
+                    <img src="https://assets.ccbp.in/frontend/responsive-website/awsome-features-2-img.png" class="image" />
+                    <div class="text-center">
+                        <h1 class="main-heading1">Forms</h1>
+                        <p class="paragraph">Add forms to collect your visitors emails directly with Mailchimp.</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row col-12 col-md-6">
+                    <img src="https://assets.ccbp.in/frontend/responsive-website/awsome-features-3-img.png" class="image" />
+                    <div class="text-center">
+                        <h1 class="main-heading1">Effects</h1>
+                        <p class="paragraph">Add some fancy elements to your designs by adding interactive scroll effects or animations.</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row col-12 col-md-6">
+                    <img src="https://assets.ccbp.in/frontend/responsive-website/awsome-features-4-img.png" class="image" />
+                    <div class="text-center">
+                        <h1 class="main-heading1">Paste CSS</h1>
+                        <p class="paragraph">Copy CSS from Photoshop or Sketch or even your text editor and paste it.</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row col-12 col-md-6">
+                    <img src="https://assets.ccbp.in/frontend/responsive-website/awsome-features-5-img.png" class="image" />
+                    <div class="text-center">
+                        <h1 class="main-heading1">Responsive from the start</h1>
+                        <p class="paragraph">Have full control over mobile layouts. Move the breakpoints where it's best for the content.</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row col-12 col-md-6">
+                    <img src="https://assets.ccbp.in/frontend/responsive-website/awsome-features-6-img.png" class="image" />
+                    <div class="text-center">
+                        <h1 class="main-heading1">Library</h1>
+                        <p class="paragraph">Choose from presets or create your collections of elements to re-use later in your projects.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-container {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+.main-heading {
+    color: #323f4b;
+    font-size: 40px;
+    font-family: "roboto";
+    text-align: center;
+    font-weight: bold;
+}
+
+.paragraph {
+    color: #7b8794;
+    text-align: center;
+    font-family: "roboto";
+}
+
+.image {
+    height: 150px;
+    width: 150px;
+}
+
+.main-heading1 {
+    color: #323f4b;
+    font-size: 30px;
+    font-family: "roboto";
+    text-align: center;
+}
