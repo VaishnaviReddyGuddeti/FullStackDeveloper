@@ -1,0 +1,37 @@
+QUESTION:
+
+String Repetition
+Write a program to print the given input word N times in a single line separated by space.
+
+Input:
+The first line of the input containing a string.
+The second line of the input containing a integer (N).
+
+Output:
+The output should be a single line containing the word printed N times separated by space.
+
+Explanation:
+For example, if the given input is "pen", and N is 2 then you should print "pen pen" separated by space.
+
+Sample Input 1:
+pen
+2
+
+Sample Output 1:
+pen pen
+
+Sample Input 2:
+Good Day 
+3
+
+Sample Output 2:
+Good Day Good Day Good Day
+
+
+CODE:
+
+a = input()
+b = int(input())
+c = a + " "
+d = b * c
+print(d)
