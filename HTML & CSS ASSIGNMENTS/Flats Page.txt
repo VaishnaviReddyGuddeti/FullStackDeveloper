@@ -1,0 +1,179 @@
+QUESTION:
+
+Flats Page:
+In this assignment, let's build the Sunrise Avenue page by applying the concepts we learned till now. You can use the Bootstrap concepts and CCBP UI Kit as well.
+
+
+Note:
+-When clicked on the Book Flat button on the Sunrise Avenue Home Page, it must display the Flats List Page.
+-When clicked on each flat in Flats List Page, it must display the respective Flat Details Page.
+-When clicked on Confirm button in Flat Details Page, it must display Sunrise Avenue Home Page
+-When clicked on Back button in Flat Details Page, it must display Flats List Page
+-Try to achieve the design as close as possible.
+
+Resources:
+Use the image URLs given below.
+
+Home Page Background Image:
+
+https://assets.ccbp.in/frontend/static-website/flats-list-bg.png
+
+Flats List Card Images:
+
+https://assets.ccbp.in/frontend/static-website/flats-list-card1-img.png
+https://assets.ccbp.in/frontend/static-website/flats-list-card2-img.png
+https://assets.ccbp.in/frontend/static-website/flats-list-card3-img.png
+
+Location Icon:
+
+https://assets.ccbp.in/frontend/static-website/flats-list-location-icon-img.png
+
+Flats Description Images:
+
+https://assets.ccbp.in/frontend/static-website/flats-list-d1-img.png
+https://assets.ccbp.in/frontend/static-website/flats-list-d2-img.png
+https://assets.ccbp.in/frontend/static-website/flats-list-d3-img.png
+
+CSS Colors used:
+Background color Hex Code values:
+
+#f19116
+#222222
+#ffffff
+
+Text color Hex Code values:
+
+#f19116
+#7b8794
+#ffffff
+#0f0e46
+#6c6b70
+
+CSS Font families used:
+Bree Serif
+
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div>
+        <div class="bg-container" id="sectionflatmainpage">
+            <div class="d-flex flex-column justify-content-end">
+                <div class="sub-card">
+                    <h1 class="main-heading">Sunrise avenue</h1>
+                    <p class="paragraph">move to what moves you</p>
+                    <button class="button" onclick="display('section3bhkflat')">buy a flat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-container1">
+        <h1 class="main-heading1">sunrise avenue</h1>
+        <div class="subcard1 d-flex flex-row" id="section3bhkflat">
+            <img src="https://assets.ccbp.in/frontend/static-website/flats-list-card1-img.png" class="image" onclick="display('sectionpricepage')" />
+            <div>
+                <h1 class="main-heading2">3bhk flat</h1>
+                <p class="paragraph1">this is fully furnished and this house have trible bed rooms and 1 balconoy</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-container1" id="sectionpricepage">
+        <img src="https://assets.ccbp.in/frontend/static-website/flats-list-d1-img.png" class="image2" />
+        <h1 class="main-heading3">RS 4000/-</h1>
+        <div class="d-flex flex-row">
+            <img src="https://assets.ccbp.in/frontend/static-website/flats-list-location-icon-img.png" class="image3" />
+            <p class="paragraph2">4-53bunjarahillad .m-bgp4tnpgjti0</p>
+        </div>
+        <h1 class="main-heading3">description</h1>
+        <p class="paragraph3">main kjagfyoe vlwoug vmvowporihg</p>
+        <button class="button" onclick="display('section3bhkflat')">conform</button>
+        <button class="button">black</button>
+    </div>
+
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+</body>
+
+</html>
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Bree Serif:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-container {
+    background-image: url("https://assets.ccbp.in/frontend/static-website/flats-list-bg.png");
+    background-size: cover;
+    height: 100vh;
+    padding: 0px;
+}
+
+.sub-card {
+    background-color: white;
+    height: 200px;
+    width: 800px;
+    margin-top: 800px;
+}
+
+.main-heading {
+    text-align: center;
+    font-size: 40px;
+    font-family: "roboto";
+    color: orange;
+    padding: 10px;
+}
+
+.paragraph {
+    text-align: center;
+    font-size: 20px;
+}
+
+.button {
+    color: white;
+    background-color: #f19116;
+    margin-left: 330px;
+    border-radius: 10px;
+    border-color: white;
+}
+
+.bg-container1 {
+    background-color: black;
+    height: 100vh;
+}
+
+.main-heading1 {
+    color: orange;
+    text-align: left;
+    padding: 10px;
+}
+
+.subcard1 {
+    background-color: white;
+    height: 200px;
+    width: 600px;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.main-heading2 {
+    font-family: "roboto";
+    font-size: 30px;
+    color: black;
+    margin: 20px;
+}
+
+.paragraph1 {
+    font-family: "roboto";
+    font-size: 20px;
+    color: black;
+    margin: 20px;
+}
