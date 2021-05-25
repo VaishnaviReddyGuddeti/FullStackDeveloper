@@ -1,0 +1,103 @@
+QUESTION:
+
+Foundations Page:
+In this assignment, let's build a Foundations page by applying the concepts we learned till now. You can use the Bootstrap concepts as well.
+
+Note:
+Try to achieve the design as close as possible.
+
+Resources:
+Use the image given below.
+
+
+https://assets.ccbp.in/frontend/static-website/foundations-bg.png
+https://assets.ccbp.in/frontend/static-website/foundations-python-img.png
+https://assets.ccbp.in/frontend/static-website/foundations-javascript-img.png
+https://assets.ccbp.in/frontend/static-website/foundations-html5-img.png
+https://assets.ccbp.in/frontend/static-website/foundations-java-img.png
+
+CSS Colors used:
+Background color Hex Code values:
+#ffffff
+
+Text color Hex Code values:
+#323f4b
+#7b8794
+
+Border color Hex Code values:
+#cbd2d9
+
+CSS Font families used:
+Roboto
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="topcard">
+    </div>
+    <div class="bottomcard">
+        <h1 class="main-heading">foundations</h1>
+        <p class="paragraph">learn coursess that will help you move forward in your carrer</p>
+        <div class="d-flex flex-row">
+            <img src="https://assets.ccbp.in/frontend/static-website/foundations-python-img.png" class="image" />
+            <img src="https://assets.ccbp.in/frontend/static-website/foundations-javascript-img.png" class="image" />
+        </div>
+        <div class="d-flex flex-row">
+            <img src="https://assets.ccbp.in/frontend/static-website/foundations-html5-img.png" class="image" />
+            <img src="https://assets.ccbp.in/frontend/static-website/foundations-java-img.png" class="image" />
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.topcard {
+    background-image: url("https://assets.ccbp.in/frontend/static-website/foundations-bg.png");
+    height: 50vh;
+}
+
+.bottomcard {
+    height: 50vh;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-size: cover;
+}
+
+.main-heading {
+    color: black;
+    text-align: left;
+    font-size: 40px;
+    font-family: "roboto";
+    margin: 20px;
+}
+
+.paragraph {
+    text-align: left;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.image {
+    margin-left: 120px;
+    border: solid;
+    border-radius: 10px;
+    height: 150px;
+    padding: 20px;
+    margin-top: 20px;
+}
