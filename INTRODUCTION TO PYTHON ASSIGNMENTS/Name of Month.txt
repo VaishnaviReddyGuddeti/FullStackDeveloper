@@ -1,0 +1,76 @@
+QUESTION:
+
+Name of Month:
+Given the number of the month, write a program to print the name of the month.
+
+Input:
+The input will be a single line containing a integer N
+
+Output:
+
+If the given number of the month is 1, print "January".
+If the given number of the month is 2, print "February".
+If the given number of the month is 3, print "March".
+If the given number of the month is 4, print "April".
+If the given number of the month is 5, print "May".
+If the given number of the month is 6, print "June".
+If the given number of the month is 7, print "July".
+If the given number of the month is 8, print "August".
+If the given number of the month is 9, print "September".
+If the given number of the month is 10, print "October".
+If the given number of the month is 11, print "November".
+If the given number of the month is 12, print "December".
+If the given number of the month is less than 1 or greater than 12, print "Invalid Month Number".
+
+Explanation:
+
+For example, if the given number of month is 4, the output should be "April".
+Similarly, if the given number of month is 13, the output should be "Invalid Month Number".
+
+
+Sample Input 1:
+4
+
+Sample Output 1:
+April
+
+Sample Input 2:
+13
+
+Sample Output 2:
+Invalid Month Number
+
+CODE:
+
+while True:
+    try:
+        num = int(input())
+        break
+    except:
+        print("Invalid input")
+if num==1:
+    print("January")
+elif num==2:
+    print("February")
+elif num==3:
+    print("March")
+elif num==4:
+    print("April")
+elif num==5:
+    print("May")
+elif num==6:
+    print("June")
+elif num==7:
+    print("July")
+elif num==8:
+    print("August")
+elif num==9:
+    print("September")
+elif num==10:
+    print("October")
+elif num==11:
+    print("November")
+elif num==12:
+    print("December")
+else:
+    print("Invalid Month Number")
