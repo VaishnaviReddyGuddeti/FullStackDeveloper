@@ -1,0 +1,72 @@
+QUESTION:
+
+Temperature Conversion:
+You are given the temperature T of an object in one of Celsius, Fahrenheit, and Kelvin scales.
+Write a program to print T in all scales viz Celsius, Fahrenheit, and Kelvin.
+Formula to convert from Fahrenheit F to Celsius C is C = (F - 32) * 5 / 9.
+Formula to convert from Kelvin K to Celsius C is C = K - 273.
+Here "C", "F", "K" represent that the temperature scale is in Celsius, Fahrenheit and Kelvin scales respectively.
+The input contains the temperature (a number) and the unit of the temperature scale (C, F, K) without any space.
+The output contains temperature in Celsius, Fahrenheit and Kelvin scales in each line in the format similar to input and the value of the temperature is rounded to 2 decimal places.
+
+Input:
+The first line of the input contain a temperature Value in one of Celsius, Fahrenheit, and Kelvin scales.
+
+Output:
+The first line of output should contain the Celsius value and the unit of the Celsius without any space.
+The second line of output should contain the Fahrenheit value and the unit of the Fahrenheit without any space.
+The third line of output should contain the Kelvin value and the unit of the Kelvin without any space.
+
+Explanation:
+For example, if the given temperature Value is 25C then Celsius value is 25.0C, Fahrenheit value is 77.0F, and Kelvin value is 298.0K.
+
+Sample Input 1
+25C
+
+Sample Output 1
+25.0C
+77.oF
+298.0K
+
+Sample Input 2
+37.5F
+
+Sample Output 2
+3.06C
+37.5F
+276.06K
+
+CODE:
+
+temp = input()
+S=temp[-1]
+temp=temp[0:len(temp)-1]
+if S=="C":
+    temp=float(temp)
+    print(str(temp)+str("C"))
+    F=(9/5)*float(temp) + 32
+    F = float(F)
+    print(str(F)+"F")
+    K=temp+273
+    print(str(K)+str("K"))
+elif S=="F":
+    temp=float(temp)
+    C = (temp-32)*5/9
+    K = C + 273
+    cel=float(round(C,2))
+    print(str(cel)+str("C"))
+    For=float(temp)
+    print(str(For)+str("F"))
+    Kel=float(round(K,2))
+    print(str(Kel)+str("K"))
+elif S=="K":
+	C=float(temp)-273
+	cl=float(round(C,2))
+	print(str(cl)+str("C"))
+	F=((9/5)*C) + 32
+	fr=float(round(F,2))
+	print(str(fr)+str("F"))
+	kl=float(temp)
+	print(str(kl)+str("K"))
+else: 
+	print("Rerun the program and Enter the valid Choice")
