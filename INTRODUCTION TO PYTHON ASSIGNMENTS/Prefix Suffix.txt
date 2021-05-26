@@ -1,0 +1,51 @@
+QUESTION:
+
+Prefix Suffix:
+Write a program to check the overlapping of one string's suffix with the prefix of another string.
+
+Input:
+
+The first line of the input will contain a string A.
+The second line of the input will contain a string B.
+
+Output:
+
+The output should contain overlapping word if present else print "No overlapping".
+
+Explanation:
+
+For example, if the given two strings, A and B, are "ramisgood" "goodforall" 
+The output should be "good" as good overlaps as a suffix of the first string and prefix of next.
+
+Sample Input 1:
+
+ramisgood
+goodforall
+
+Sample Output 1:
+
+good
+
+Sample Input 2:
+
+finally
+restforall
+
+Sample Output 2:
+
+No overlapping
+
+
+CODE:
+
+n = input()
+m = input()
+for i in range(len(n)):
+    s = ""
+    if m.startswith(n[i:]):
+        s+=n[i:]
+        break 
+if s=="":
+    print("No overlapping")
+else:
+    print(s)
