@@ -1,0 +1,53 @@
+QUESTION:
+
+Special Characters:
+Write a program to count Vowels and Consonants in string.
+
+Input:
+The input will be a single line containing a string s.
+
+Output:
+The first line of output should contain no of Vowels in the given string
+The second line of output should  contain no of Consonants in the given string
+
+Explanation:
+For example, if the given string is "Good Morning"
+Vowels in the string "Good Morning" are "o, i" and their count is 4.
+Remaining characters in the string are consonants their count is 7.
+The First line of output is 4\nThe second line of output is 7.
+
+Sample Input 1:
+Good Morning
+
+Sample Output 1:
+4
+7
+
+Sample Input 2:
+Welcome 
+
+Sample Output 2:
+3
+4
+
+
+CODE:
+
+word=input()
+word=word.replace(" ","")
+word=word.lower()
+count_vowels=0
+count_consonents=0
+for char in word:
+    is_a=char=="a"
+    is_e=char=="e"
+    is_i=char=="i"
+    is_o=char=="o"
+    is_u=char=="u"
+    is_vowel=((((is_a or is_e)or is_i)or is_o)or is_u)
+    if is_vowel:
+        count_vowels+=1
+    else:
+        count_consonents+=1
+print(count_vowels)
+print(count_consonents)
