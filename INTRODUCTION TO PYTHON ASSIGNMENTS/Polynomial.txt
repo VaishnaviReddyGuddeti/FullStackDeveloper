@@ -1,0 +1,89 @@
+QUESTION:
+
+Polynomial:
+Given polynomial, write a program that prints polynomial in Cix^Pi + Ci-1x^Pi-1 + .... + C1x + C0 format.
+
+Input:
+
+The first line contains a single integer N. 
+Next N lines contain two integers Pi, Ci separated with space, where Pi denotes power and Ci denotes coefficient of Pi.
+
+Output:
+
+Print the polynomial in the format Cix^Pi + Ci-1x^Pi-1 + .... + C1x + C0, where Pi's are powers in decreasing order, Ci is coefficient, and C0 is constant. There will be space before and after the plus or minus sign. 
+If the coefficient is zero, then don't print the term. 
+If the term with the highest degree is negative, the term should represent  -Cix^Pi. 
+For the term where power is 1, represent it as C1x instead of C1x^1. 
+If the polynomial degree is zero and the constant term is also zero, then print 0 to represent the polynomial.
+For term Cix^Pi, if the coefficient of the term Ci is 1, print x^Pi instead of 1x^Pi.
+
+Explanation:
+
+If N = 4
+For power 0, the coefficient is 5
+For power 1, the coefficient is 0
+For power 2, the coefficient is 10
+For power 3, the coefficient is 6.
+Then polynomial represents "6x^3 + 10x^2 + 5"
+
+Constraints:
+
+N <= 100
+0 <= Pi < 1000
+-1000 <= Ci <= 1000
+
+Sample Input :
+4 
+0  5
+1   0
+2   10 
+3    6
+
+Sample Output :
+6x^3 + 10x^2 + 5
+
+CODE:
+
+n = int(input())
+polynomial = {}
+for i in range(n):
+    p,c = input().split()
+    polynomial[int(p)]=int(c)
+
+polynomial_string = str(polynomial[n-1])+"x^"+str(n-1)+" "
+j = n-1
+while j>2:
+    j = j-1
+    if polynomial[j]<0:
+        if polynomial[j]==-1:
+            polynomial_string = polynomial_string+"-"+" "+"x^"+str(j)+" "
+        else:    
+            polynomial_string = polynomial_string+"-"+" "+str(-1*polynomial[j])+"x^"+str(j)+" "
+    elif polynomial[j]==0:
+        pass
+    elif polynomial[j]>0:
+        if polynomial[j]==1:
+            polynomial_string = polynomial_string+"+"+" "+"x^"+str(j)+" "
+        else:    
+            polynomial_string = polynomial_string+"+"+" "+str(polynomial[j])+"x^"+str(j)+" "
+if polynomial[1]>0:
+    if polynomial[1]==1:
+        polynomial_string = polynomial_string + "+"+" "+"x"+" "
+    elif polynomial[1]==0:
+        pass
+    else:
+        polynomial_string = polynomial_string+"+"+" "+str(polynomial[1])+"x"+" "
+else:
+    if polynomial[1]==1:
+        polynomial_string = polynomial_string + "-"+" "+"x"+" "
+    elif polynomial[1]==0:
+        pass
+    else:
+        polynomial_string = polynomial_string+"-"+" "+str(-1*polynomial[1])+"x"+" "
+if polynomial[0]<0:
+    polynomial_string = polynomial_string +"-"+" " +str(-1*polynomial[0])
+elif polynomial[0]>0:
+    polynomial_string = polynomial_string +"+"+" " +str(polynomial[0])
+else:
+    pass
+print(polynomial_string)
