@@ -1,0 +1,62 @@
+QUESTION:
+
+Right Triangle:
+Given a number N, write a program to print a triangular pattern of N lines with numbers as shown below.
+
+Input:
+The input will be a single line containing a positive integer (N).
+
+Output:
+The output should be N rows with numbers.
+Note: There is no space between the numbers.
+
+Explanation:
+For example, if the given number of rows is 4,
+your code should print the following pattern
+
+1
+121
+12321
+1234321
+
+Sample Input 1:
+4
+
+Sample Output 1:
+1 
+1 2 1
+1 2 3 2 1
+1 2 3 4 3 2 1
+
+Sample Input 2:
+9
+
+Sample Output 2:
+1
+1 2 1 
+1 2 3 2 1 
+1 2 3 4 3 2 1 
+1 2 3 4 5 4 3 2 1 
+1 2 3 4 5 6 5 4 3 2 1 
+1 2 3 4 5 6 7 6 5 4 3 2 1 
+1 2 3 4 5 6 7 8 7 6 5 4 3 2 1 
+1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1 
+
+
+CODE:
+
+# Reading a value from user
+n = int(input())
+
+# Looping for n times
+for i in range(1,n+1):
+    # Looping from 1 to i inclusive
+    for j in range(1,i+1):
+        # Printing value of j
+        print(j,end="")
+    # Looping from i-1 to 1 inclusive
+    for j in range(i - 1, 0, -1):
+        # Printing value of j
+        print(j, end="")
+    # Printing new line
+    print()
