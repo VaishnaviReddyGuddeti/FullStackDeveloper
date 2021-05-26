@@ -1,0 +1,41 @@
+QUESTION:
+
+One Color:
+Given a string of length N, made up of only uppercase characters 'R' and 'G', where 'R' stands for Red and 'G' stands for Green. Find out the minimum number of characters you need to change to make the whole string of the same colour.
+
+Input:
+The input will be a single line containing a string.
+
+Output:
+The output should be single line containing the integer representing the minimum number of characters you need to change to make the whole string of the same colour.
+
+Explanation:
+For example, if string is "GGGGGGR" . We need to change only the last character to 'G' to make the string same-coloured.then output is 1.
+
+Sample Input 1:
+GGGGGGR
+
+Sample Output 1:
+1
+
+Sample Input 2:
+RGG
+
+Sample Output 2:
+1
+
+CODE:
+
+word = input()
+r_count = 0
+g_count = 0 
+for char in word:
+    if char == "R":
+        r_count += 1 
+    else:
+        if char == "G":
+            g_count += 1
+if r_count > g_count:
+    print(g_count)
+else:
+    print(r_count)
