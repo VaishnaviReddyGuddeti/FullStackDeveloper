@@ -1,0 +1,80 @@
+QUESTION:
+
+Viewport Width:
+The goal of this coding exam is to quickly get you off the ground with Viewport Width.
+
+Resources:
+CSS Colors used:
+
+Background color Hex Code values:
+
+#5cb85c
+#5bc0de
+#f0ad4e
+#d9534f
+
+Text color Hex Code values:
+
+#ffffff
+
+CSS Font families used:
+
+Roboto
+
+
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <p class="color-1">Width 25vw</p>
+    <p class="color-2"> width 50vw</p>
+    <p class="color-3"> width 75vw</p>
+    <p class="color-4"> width 75vw</p>
+</body>
+
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.color-1 {
+    background-color: #5cb85c;
+    width: 25vw;
+    font-family: "Roboto";
+    font-size: 12px;
+    color: white;
+    height: 20px;
+}
+
+.color-2 {
+    background-color: #5bc0de;
+    width: 50vw;
+    font-family: "Roboto";
+    font-size: 12px;
+    color: white;
+    height: 20px;
+}
+
+.color-3 {
+    background-color: #f0ad4e;
+    width: 75vw;
+    font-family: "Roboto";
+    font-size: 12px;
+    color: white;
+    height: 20px;
+}
+
+.color-4 {
+    background-color: #d9534f;
+    width: 100vw;
+    font-family: "Roboto";
+    font-size: 12px;
+    color: white;
+    height: 20px;
+}
