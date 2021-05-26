@@ -1,0 +1,43 @@
+QUESTION:
+
+Case Conversion:
+Given a string in camel case, write a python program to convert the given string from camel case to snake case.
+
+Input:
+The input will be a single line contain a string.
+
+Output:
+The output should contain the given word in snake case.
+
+Explanation:
+For example, if the given word is "PythonLearning" in camel case, your code should print given word in snake case "python_learning".
+
+Sample Input 1:
+PythonLearning
+
+Sample Output 1:
+python_learning
+
+Sample Input 2:
+CamelCase
+
+Sample Output 2:
+camel_case
+
+CODE:
+
+def convert(word):
+    first = True
+    for ch in word:
+        if first:
+            res = ch.lower()
+        elif ch.isupper():
+            res += '_' + ch.lower()
+        else:
+            res += ch
+        first = False
+    return res
+
+
+if __name__ == '__main__':
+    word = input().strip()
