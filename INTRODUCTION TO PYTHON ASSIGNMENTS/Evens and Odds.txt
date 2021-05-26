@@ -1,0 +1,51 @@
+QUESTION:
+
+Evens and Odds:
+Write a program to count even and odd numbers in given range [M, N]. Both M, N are inclusive in [M, N].
+
+Input:
+The first line of the input will be an integer(M).
+The Second line of the input will be an integer(N).
+
+Output:
+
+The first line of output should be a number of odds count.
+The second line of output should be a number of even counts.
+
+Explanation:
+For example, if the given range is 2 to 11 
+odds numbers in the range are 3, 5, 7, 9, 11 then count is 5.
+even numbers in the range are 2, 4, 6, 8, 10 then count is 5.
+
+Sample Input 1:
+2
+11
+
+Sample Output 1:
+5
+5
+
+Sample Input 2:
+-5
+7
+
+Sample Output 2:
+7
+6
+
+CODE:
+
+M = int(input())
+N = int(input())
+
+count_odds = 0
+count_even = 0
+
+for i in range(M, N+1):
+    if i % 2 == 0:
+        count_even += 1
+    else:
+        count_odds += 1
+
+print(count_odds)
+print(count_even)
