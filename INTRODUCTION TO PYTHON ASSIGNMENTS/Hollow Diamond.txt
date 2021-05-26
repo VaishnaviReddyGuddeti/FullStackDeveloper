@@ -1,0 +1,82 @@
+QUESTION:
+
+Hollow Diamond:
+Given the number of rows N, write a program to print the hallow diamond pattern similar to the pattern shown below.
+  
+     A
+   B B
+  C   C
+ D     D
+E       E
+ D     D
+  C   C
+   B B
+    A
+The input will be a single line containing a positive integer (N).
+
+Output:
+The output should be (2*N - 1) rows and (2*N - 1) columns containing the alphabet characters in the hollow diamond pattern.
+
+Explanation:
+For example, if the given number is 5, the pattern should contain 9 rows and 9 columns as shown below.
+    A
+   B B
+  C   C
+ D     D
+E       E
+ D     D
+  C   C
+   B B
+    A
+
+Sample Input 1:
+5
+
+Sample Output 1:
+     A
+   B   B
+  C      C
+ D          D
+E               E
+ D          D
+  C        C
+   B      B
+       A
+
+Sample Input 2:
+3
+
+Sample Output 2:
+    A
+  B  B
+C      C
+  B   B
+     A
+
+
+CODE:
+
+# Diamond.py
+
+N = int(input())
+
+left = N-1
+mid = -1
+ch = 'A'
+print(' '*left, ch, sep='')
+
+for _ in range(N-1):
+    left -= 1
+    mid += 2
+    ch = chr(ord(ch)+1)
+    print(' '*left, ch, ' '*mid, ch, sep='')
+    
+for _ in range(N-2):
+    left += 1
+    mid -= 2
+    ch = chr(ord(ch)-1)
+    print(' '*left, ch, ' '*mid, ch, sep='')
+
+left += 1
+ch = 'A'
+print(' '*left, ch, sep='')
