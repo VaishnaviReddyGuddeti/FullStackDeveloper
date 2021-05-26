@@ -1,0 +1,75 @@
+QUESTION:
+
+Introduction to HTML and CSS:
+The goal of this coding exam is to quickly get you off the basic HTML and CSS concepts.
+
+Resources:
+CSS Colors used:
+
+lightblue
+
+CSS Font families used:
+
+Roboto
+
+
+HTML-CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div class="card">
+        <div class="bg-container">
+            <h1 class="heading"> Tourism</h1>
+            <p class="paragraph"> plan your trip wherever you want to go</p>
+            <button class="button text=center"> Get started</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.card {
+    text-align: right;
+}
+
+.bg-container {
+    background-color: lightblue;
+    height: 100vh;
+}
+
+.heading {
+    color: black;
+    font-family: "Roboto";
+    text-align: right;
+    font-size: 48px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.paragraph {
+    color: black;
+    font-family: "Roboto";
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: overline;
+}
+
+.button {
+    text-align: right;
+    height: 30px;
+    width: 70px;
+    background-color: white;
+    color: black;
+    font-size: 10px;
+}
