@@ -1,0 +1,47 @@
+QUESTION:
+
+Shift Numbers:
+Given a string, write a program to move all the numbers in it to its end.
+
+Input:
+
+The input will contain a string A.
+
+Output:
+
+The output should contain a string after moving all the numbers in it to its end.
+
+Explanation:
+
+For example, if the given string A is "1good23morning456," the output should be "goodmorning123456," as it contains numbers at the end.
+
+Sample Input 1:
+1good23morning456
+
+Sample Output 1:
+goodmorning123456
+
+Sample Input 2:
+com876binat25ion
+
+Sample Output 2:
+combination87625
+
+
+CODE:
+
+# get the string from the user
+inputString =input("");
+digits=""
+letters=""
+symbols=""
+# Looping through a string.
+for letter in inputString:
+    if (letter.isdigit()):
+        digits+=letter
+    elif (letter.isalpha()):
+        letters+= letter
+    else:
+        symbols+= letter
+# Display a new string.
+print(letters+digits+symbols)
