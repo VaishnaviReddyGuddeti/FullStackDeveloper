@@ -1,0 +1,51 @@
+QUESTION:
+
+Alphabetic Symbol:
+Write a program to print the right alphabetic triangle up to the given N rows.
+
+Input:
+The input will be a single line containing a positive integer (N).
+
+Output:
+The output should be N rows with letters.
+Note: There is a space after each letter.
+
+Explanation:
+For example, if the given number of rows is 4,
+your code should print the following pattern.
+A 
+A B 
+A B C 
+A B C D
+
+Sample Input 1:
+4
+
+Sample Output 1:
+A
+A B
+A B C
+A B C D
+
+Sample Input 2:
+6
+
+Sample Output 2:
+A
+A B
+A B C
+A B C D 
+A B C D E 
+A B C D E F
+
+
+CODE:
+
+
+N = int(input())
+string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+string_index = string[:N]
+pattern = ""
+for i in string_index:
+    pattern = pattern + str(i) + " "
+    print(pattern)
