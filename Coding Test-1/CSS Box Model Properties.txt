@@ -1,0 +1,89 @@
+QUESTION:
+
+CSS Box Model Properties:
+The goal of this coding exam is to quickly get you off the ground with the CSS Box Model Properties.
+
+Note:
+The HTML button element in the leaf shape should consist of the class name leaf-button
+
+Resources:
+CSS Colors used:
+
+#007854
+#ffd0b5
+#841003
+#fab8d9
+#5c0b33
+#0c6b58
+
+
+HTML CODE:
+
+
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <h1 class="main-heading"> Leaf</h1>
+    <button class="leaf-button"> Leaf</button>
+    <h1 class="main-heading">Button Styles</h1>
+    <button class="button-1">Ready</button>
+    <button class="button-2"> Set</button>
+    <button class="button-3"> Go</button>
+</body>
+
+</html>
+
+
+CSS CODE:
+
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.main-heading {
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+.leaf-button {
+    height: 90px;
+    width: 110px;
+    background-color: #007854;
+    color: white;
+    border-top-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    font-size: 10px;
+    border-top-right-radius: 40px;
+}
+
+.button-1 {
+    background-color: #ffd0b5;
+    color: #841003;
+    border-color: #841003;
+    border-style: dashed;
+    border-radius: 0px;
+
+}
+
+.button-2 {
+    background-color: #fab8d9;
+    color: #841003;
+    border-color: #841003;
+    border-style: dotted;
+    height: 30px;
+    border-radius: 0px;
+}
+
+.button-3 {
+    background-color: white;
+    height: 50px;
+    border-color: #0c6b58;
+    border-radius: 50px;
+    width: 50px;
+    border-style: solid;
+    border-width: 5px;
+    padding: 5px;
+
+}
