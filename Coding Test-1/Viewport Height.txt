@@ -1,0 +1,90 @@
+QUESTION:
+
+Viewport Height:
+The goal of this coding exam is to quickly get you off the ground with Viewport Height.
+
+Resources:
+CSS Colors used:
+
+Background color Hex Code values:
+
+#5cb85c
+#5bc0de
+#f0ad4e
+#d9534f
+
+Text color Hex Code values:
+
+#ffffff
+
+CSS Font families used:
+
+Roboto
+
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="d-flex flex-column ">
+        <p class="color-1"> heigt 25vh</p>
+        <p class="color-2"> heigt 50vh</p>
+        <p class="color-3"> heigt 75vh</p>
+        <p class="color-4"> heigt 100vh</p>
+    </div>
+</body>
+
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.card {
+    padding: 20px;
+}
+
+.color-1 {
+    background-color: #5cb85c;
+    width: 40px;
+    font-family: "Roboto";
+    font-size: 7px;
+    color: white;
+    height: 25vh;
+}
+
+.color-2 {
+    background-color: #5bc0de;
+    width: 40px;
+    font-family: "Roboto";
+    font-size: 7px;
+    color: white;
+    height: 50vh;
+}
+
+.color-3 {
+    background-color: #f0ad4e;
+    width: 40px;
+    font-family: "Roboto";
+    font-size: 7px;
+    color: white;
+    height: 75vh;
+}
+
+.color-4 {
+    background-color: #d9534f;
+    width: 40px;
+    font-family: "Roboto";
+    font-size: 7px;
+    color: white;
+    height: 100vh;
+}
