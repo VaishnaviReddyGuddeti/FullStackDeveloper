@@ -1,0 +1,55 @@
+QUESTON:
+
+Sum of Non-Primes:
+Write a program to print the sum of non-primes in the given N numbers. The numbers which are not primes are considered as non-primes.
+
+Input:
+The first line of input will contain a positive integer (N).
+The following N lines will contain an integer in each line.
+
+Output:
+The output should be the sum of non-primes in the given numbers.
+
+Explanation:
+For example, if the given number is 5, then read the inputs in the next 5 lines and print the sum of non-primes in the given five numbers. If the given input integers in the next five lines are 8, 11, 96, 49, and 25 the output should be 8 + 96 + 49 + 25 is 178.
+
+Sample Input 1:
+5 
+8
+11
+96
+49
+25
+
+Sample Output 1:
+178
+
+Sample Input 2:
+2
+4
+2
+
+Sample Output 2:
+4
+
+CODE:
+
+def convert_list_to_int(str_list):
+    new_list = set()
+    sum =0 
+    for char in str_list:
+        char = int(char)
+        count = 0
+        for j in range(2, char):
+            if char % j == 0:
+                new_list.add(char)
+    return new_list 
+n = int(input())
+list_a = []
+for i in range(n):
+    num = int(input())
+    list_a.append(num)
+str_list = list_a 
+int_list = convert_list_to_int(str_list)
+int_list = list(int_list)
+print(sum(int_list))
