@@ -1,0 +1,78 @@
+QUESTION:
+
+CSS Backgrounds and Box Model Properties:
+The goal of this coding exam is to quickly get you off the ground with CSS Background Images, Width, and Height properties.
+
+Note:
+The three HTML image elements should have the width and height of 200px, 250px, and 300px respectively.
+
+Resources:
+Use the image URLs given below.
+
+https://assets.ccbp.in/frontend/static-website/beach-1-img.png
+https://assets.ccbp.in/frontend/static-website/beach-2-img.png
+https://assets.ccbp.in/frontend/static-website/beach-3-img.png
+
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div class="bg-image-1">
+        <h1 class="heading"> Sea</h1>
+    </div>
+    <div class="card">
+        <div class="bg-image-2">
+            <h1 class="heading"> Sea</h1>
+        </div>
+    </div>
+    <div class="card">
+        <div class="bg-image-3">
+            <h1 class="heading">Sea</h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-image-1 {
+    background-image: url("https://assets.ccbp.in/frontend/static-website/beach-1-img.png");
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+}
+
+.heading {
+    font-family: "Roboto";
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.bg-image-2 {
+    background-image: url("https://assets.ccbp.in/frontend/static-website/beach-2-img.png");
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+.bg-image-3 {
+    background-image: url("https://assets.ccbp.in/frontend/static-website/beach-3-img.png");
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+}
