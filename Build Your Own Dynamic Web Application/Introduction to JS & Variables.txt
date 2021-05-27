@@ -1,0 +1,651 @@
+*DOM and Event Fundamentals*
+
+
+1. JavaScript Variables
+
+1.1 Variable Declaration
+Variables are like containers for storing values. We can create a variable using the let keyword.
+JAVASCRIPT:
+let message;
+
+1.2 Assigning a Value to the Variable
+We can put data into a variable using an assignment operator (=).
+JAVASCRIPT:
+let message = 'Hello Sushant';
+
+JAVASCRIPT:
+let message;
+message = 'Hello Shourya';
+
+EXAMPLE HTML CODE & JAVASCRIPT CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>You loose your grip and then slip into the master pice.
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+
+let message;
+message = 'Hello Rahul';
+console.log(message);
+
+OUTPUT:
+You loose your grip and then slip into the master pice.
+
+Note:
+Printing a variable without assigning a value will give the output undefined.
+
+2. Document Object Model (DOM)
+The DOM is the structured representation of the HTML document created by the browser. It allows JavaScript to manipulate, structure, and style your website.
+
+HTML:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>Web Technologies</h1>
+    <button>Change Heading</button>
+  </body>
+</html>
+
+2.1 Document Object
+It is the entry point of the DOM. For accessing any HTML Element, you should always start with accessing the document object first.
+
+2.2 HTML DOM Tree
+The DOM tree represents an HTML document as nodes. Each node is referred to as an Object.
+
+2.3 Methods
+
+2.3.1 getElementById
+
+The getElementById() method helps to select the HTML Element with a specific ID.
+
+JAVASCRIPT:
+
+console.log(document.getElementById("headingElement"))
+
+2.4 Properties
+
+2.4.1 textContent
+To manipulate the text within the HTML Element, we use textContent Property.
+
+2.4.2 style
+The style property is used to get or set a specific style of an HTML Element using different CSS properties.
+
+Use Camel Case naming convention (starting letter of each word should be in the upper case except for the first word) for naming the Style Object Properties.
+
+For example, color, fontFamily, backgroundColor, etc.
+
+2.5 Events
+Events are the actions by which the user or browser interacts with the HTML Elements. Actions can be anything like clicking a button, pressing keyboard keys, scrolling the page, etc.
+
+2.5.1 onclick Event
+The onclick event occurs when the user clicks on an HTML Element. We will give the name of the function as a value for the HTML onclick attribute.
+
+HTML:
+
+<body>
+  <h1 id="headingElement">Web Technologies</h1>
+  <button onclick="manipulateStyles()">Change Heading</button>
+</body>
+
+JAVASCRIPT:
+
+function manipulateStyles() {
+  document.getElementById("headingElement").textContent = "4.O Technologies";
+  document.getElementById("headingElement").style.color = "blue";
+}
+
+Example HTML, CSS, JAVASCRIPT CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="dark-background text-center">
+      <div>
+        <img
+          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png"
+          class="bulb-image"
+          id="bulbImage"
+        />
+      </div>
+      <div>
+        <img
+          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-img.png"
+          class="cat-image"
+          id="catImage"
+        />
+      </div>
+      <div class="d-flex flex-row justify-content-center pt-5">
+        <div class="switch-board">
+          <h1 class="switch-status" id="switchStatus">Switched On</h1>
+          <button class="off-switch" id="offSwitch" onclick="switchOff()">
+            OFF
+          </button>
+          <button class="on-switch" id="onSwitch" onclick="switchOn()">
+            ON
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.dark-background {
+  background-color: #0b0b0b;
+}
+.bulb-image {
+  width: 150px;
+}
+.cat-image {
+  width: 300px;
+}
+.switch-board {
+  background-color: #7b8794;
+  width: 294px;
+  height: 139px;
+  border-radius: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin: 16px;
+}
+.switch-status {
+  color: #ffffff;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.on-switch {
+  color: #ffffff;
+  background-color: #cbd2d9;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: bold;
+  width: 99px;
+  height: 44px;
+  border-radius: 8px;
+  margin-left: 16px;
+}
+.off-switch {
+  color: #ffffff;
+  background-color: #e12d39;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: bold;
+  width: 99px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+JAVASCRITP CODE:
+
+function switchOff() {
+  document.getElementById("bulbImage").src =
+    "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png";
+  document.getElementById("catImage").src =
+    "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-eyes-img.png";
+  document.getElementById("switchStatus").textContent = "Switched Off";
+  document.getElementById("onSwitch").style.backgroundColor = "#22c55e";
+  document.getElementById("offSwitch").style.backgroundColor = "#cbd2d9";
+}
+
+function switchOn() {
+  document.getElementById("bulbImage").src =
+    "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png";
+  document.getElementById("catImage").src =
+    "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-img.png";
+  document.getElementById("switchStatus").textContent = "Switched On";
+  document.getElementById("offSwitch").style.backgroundColor = "#e12d39";
+  document.getElementById("onSwitch").style.backgroundColor = "#cbd2d9";
+}
+
+                      *Primitive Types & Conditionals *
+
+1. JavaScript Values
+Basically In JavaScript values are of two categories.
+
+Primitive Types
+Reference Types
+
+1.1 Primitive Types
+-Number
+-Boolean
+-String
+-Undefined, etc.
+
+Primitive Type     :	Description
+Number	            :       All the numbers are of Number type.
+Boolean	             :      Boolean values are either true or false.
+String	              :     String is a stream of characters. The String should be enclosed with Single quotes, Double quotes, or Backticks.
+Undefined            :     If a value is not assigned to the variable, then it takes undefined as its value. In JS, undefined refers to the value that is not being assigned.
+
+1.2 Operators
+
+1.2.1 typeof()
+The typeof() operator is used to find the type of value.
+
+JAVASCRIPT:
+
+let a = 900;
+let b = 9.2;
+console.log(typeof(a));
+console.log(typeof(b));
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    Your HTML code goes here. Write JavaScript code in JAVASCRIPT tab.
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+let isApproved = false;
+console.log(typeof(isApproved));
+console.log(typeof(true));
+
+2. Converting String to a Number
+
+In JavaScript, when we combine the number and string, it results in a string.
+
+The parseInt() function accepts a string and converts it into an integer.
+
+JAVASCRIPT:
+
+let a = '20';
+console.log(typeof(a));
+
+let b = parseInt(a);
+console.log(typeof(b));
+
+
+3. Conditional Statements
+The Conditional Statement allows you to execute a block of code only when a specific condition is true.
+
+If...Else Statement:
+
+Syntax:
+
+JAVASCRIPT:
+if (conditionA) {
+  Block1;
+}
+else if (conditionB) {
+  Block2;
+}
+else {
+  Block3;
+}
+
+EXAMPLE HTML, CSS, JAVASCRIPT CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="bg-container text-center d-flex flex-column justify-content-center">
+      <h1 class="counter-heading">Counter</h1>
+      <p id="counterValue" class="counter-value">0</p>
+      <div>
+        <button onClick="onDecrement()" class="button">DECREASE</button>
+        <button onClick="onReset()" class="button">RESET</button>
+        <button onClick="onIncrement()" class="button">INCREASE</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-container {
+  background-color: #f1f5f8;
+  height: 100vh;
+}
+.counter-heading {
+  font-family: "Roboto";
+  font-size: 50px;
+  font-weight: 800;
+}
+.counter-value {
+  font-size: 75px;
+  font-weight: 900;
+}
+.button {
+  background-color: #f1f5f8;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 7px;
+  margin: 8px;
+  padding: 5px;
+}
+
+JAVASCRIPT CODE:
+
+let counterElement = document.getElementById("counterValue");
+
+function onIncrement() {
+  let previousCounterValue = counterElement.textContent;
+  let updatedCounterValue = parseInt(previousCounterValue) + 1;
+  if (updatedCounterValue > 0) {
+    counterElement.style.color = "green";
+  }
+  else if (updatedCounterValue < 0) {
+    counterElement.style.color = "red";
+  }
+  else {
+    counterElement.style.color = "black";
+  }
+  counterElement.textContent = updatedCounterValue;
+}
+
+function onDecrement() {
+  let previousCounterValue = counterElement.textContent;
+  let updatedCounterValue = parseInt(previousCounterValue) - 1;
+  if (updatedCounterValue > 0) {
+    counterElement.style.color = "green";
+  }
+  else if (updatedCounterValue < 0) {
+    counterElement.style.color = "red";
+  }
+  else {
+    counterElement.style.color = "black";
+  }
+  counterElement.textContent = updatedCounterValue;
+}
+
+function onReset() {
+  let counterValue = 0;
+  counterElement.textContent = counterValue;
+  counterElement.style.color = "black";
+}
+
+
+
+                                *Input Element and Math Functions*
+
+1. Math Functions
+
+1.1 Math.random()
+The Math.random() function returns a random number (float value) in range 0 to less than 1 (0 <= randomNumber < 1).
+
+JAVASCRIPT:
+console.log(Math.random());
+
+1.2 Math.ceil()
+The Math.ceil() function always rounds a number up to the next largest integer.
+
+JAVASCRIPT:
+console.log(Math.ceil(95.906698007537561));  // 96
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    Your HTML code goes here. Write JavaScript code in JAVASCRIPT tab.
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+
+let randomNumber = Math.random();
+console.log(randomNumber);
+console.log(randomNumber*1000);
+console.log(Math.ceil(randomNumber*1000));
+
+OUTPUT:
+Your HTML code goes here. Write JavaScript code in JAVASCRIPT tab.
+
+2. HTML Elements
+
+2.1 HTML Input Element
+The HTML input element creates interactive controls to accept the data from the user.
+
+There are different types of inputs.
+-Text
+-Password
+-Radio
+-Date
+-Checkbox
+
+2.1.1 Text Input
+
+HTML:
+<input type="text" />
+
+Note:
+Default type for the HTML input element is text.
+
+2.1.2 Password Input
+It provides a way for the user to enter a password securely.
+
+HTML:
+<input type="password" />
+
+3. DOM Properties
+
+3.1 Value
+We can use the value property to get the value of the HTML input Element.
+
+JAVASCRIPT:
+document.getElementById("inputElement").value;
+
+EXAMPLE HTML & JAVASCRIPT CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <p>Enter your Name</p>
+    <input type="text" id="inputElement" />
+    <p>Enter your Password</p>
+    <input type="password" />
+    <div>
+      <button onclick="signIn()">Sign In</button>
+    </div>
+    <p id="signInText"></p>
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+
+let inputElement = document.getElementById("inputElement");
+let signInTextElement = document.getElementById("signInText");
+function signIn() {
+  let inputValue = inputElement.value;
+  let verifyText = "Hi " + inputValue + ", verifying your account...";
+  signInTextElement.textContent = verifyText;
+}
+
+OUTPUT:
+
+Enter your Name:
+sushant
+
+Enter your Password:
+•••••••
+
+Sign In
+
+Hi sushant, verifying your account...
+
+4. Comparison Operator
+
+4.1 Loose equal to vs Strict equal to (== vs ===)
+Loose equal to (==): Loose equality compares two values for equality but doesn’t compare types of values.
+Strict equal to (===): Strict equality compares two values for equality including types of values.
+
+JAVASCRIPT:
+console.log(2 == '2');  // true
+console.log(2 === '2');  // false
+
+EXAMPLE HTML , CSS , JAVASCRIPT CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid bg-container">
+      <div class="row bg-white">
+        <div class="col-12 col-md-6 m-auto bg-white pt-5 pb-5">
+          <img
+            class="guess-game-img"
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/guess-game-img.png"
+          />
+          <p class="text-center game-description">
+            Find out the right number between 1 to 100
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 guess-bg-container text-center">
+          <h1 class="guess-heading">
+            Guess The Number
+            <img
+              class="guess-number-image"
+              src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/guess-number-img.png"
+            />
+          </h1>
+          <input type="text" class="user-input" id="userInput" />
+          <div>
+            <button class="btn btn-info check-guess" onclick="checkGuess()">
+              Check
+            </button>
+          </div>
+          <p class="game-result" id="gameResult"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-container {
+  background-color: #246db6;
+  height: 100vh;
+}
+
+.guess-game-img {
+  width: 100%;
+}
+
+.game-description {
+  color: #323f4b;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.guess-bg-container {
+  background-color: #246db6;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.guess-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.guess-number-image {
+  width: 50px;
+}
+
+.user-input {
+  text-align: center;
+  color: #1f2933;
+  font-family: "Roboto";
+  font-size: 30px;
+  font-weight: 500;
+  width: 300px;
+  padding: 10px;
+}
+
+.game-result {
+  color: #ffffff;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.check-guess {
+  width: 170px;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
+}
+
+JAVASCRIPT CODE:
+
+let gameResult = document.getElementById("gameResult");
+let userInput = document.getElementById("userInput");
+let randomNumber = Math.ceil(Math.random() * 100);
+function checkGuess() {
+  let guessedNumber = parseInt(userInput.value);
+  if (guessedNumber > randomNumber) {
+    gameResult.textContent = "Too High! Try Again.";
+    gameResult.style.backgroundColor = "#1e217c";
+  }
+  else if (guessedNumber < randomNumber) {
+    gameResult.textContent = "Too Low! Try Again.";
+    gameResult.style.backgroundColor = "#1e217c";
+  }
+  else if (guessedNumber === randomNumber) {
+    gameResult.textContent = "Congratulations! You got it right.";
+    gameResult.style.backgroundColor = "green";
+  }
+  else {
+    gameResult.textContent = "Please provide a valid input.";
+    gameResult.style.backgroundColor = "#1e217c";
+  }
+}
+
