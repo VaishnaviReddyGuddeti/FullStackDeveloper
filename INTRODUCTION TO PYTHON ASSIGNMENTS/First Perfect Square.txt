@@ -1,0 +1,50 @@
+QUESTION:
+
+First Perfect Square:
+Given two integers (M and N), write a program to print the first perfect square in a given range.
+
+Input:
+
+The first line of input will contain a positive integer (M).
+The second line of input will contain a positive integer (N).
+
+Output:
+
+The output should be a single line containing the first perfect square in a given range.
+
+Explanation:
+
+For example, if the given numbers are M is 4 and N is 16, the perfect squares from 4 to 16 are 4(2 * 2), 9(3 * 3), and 16(4 * 4), as the first perfect square is 4. So the output should be 4.
+
+Sample Input 1:
+4
+16
+
+Sample Output 1:
+4
+
+Sample Input 2:
+5
+8
+
+Sample Output 2:
+No Perfect Square
+
+
+CODE:
+
+def Squares(a, b):
+    for i in range (a, b + 1):
+        j = 1;
+        while j * j <= i:
+            if j * j == i:
+                 yield j*j
+            j = j + 1
+        i = i + 1
+a = int(input())
+b = int(input())
+x = [v for v in Squares(a,b)]
+if x:
+    print(min(x))
+else:
+    print("No Perfect Square")
