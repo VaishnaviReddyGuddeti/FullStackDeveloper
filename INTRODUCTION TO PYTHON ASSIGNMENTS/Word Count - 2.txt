@@ -1,0 +1,54 @@
+QUESTION:
+
+Word Count - 2:
+Given a sentence S, write a program to print the frequency of each word in S, where words are sorted in alphabetical order.
+
+Input:
+
+The input will be a single line containing a string S.
+
+Output:
+
+The output contains multiple lines, with each line containing a word and frequency of each word in the given string separated by ": ", where words are sorted in alphabetical order.
+
+Explanation:
+
+For example, if the given sentence is "Hello world, welcome to python world", the output should be 
+Hello: 1
+python: 1
+to: 1
+welcome: 1
+world: 2
+
+Sample Input 1:
+Hello world welcome to python world 
+
+Sample Output 1:
+Hello : 1
+python : 1
+to : 1
+welcome : 1
+world : 2
+
+Sample Input 2:
+This is my book
+
+Sample Output 2:
+This : 1
+book : 1
+is : 1
+my : 1
+
+
+CODE:
+
+words = {}
+for str in input().split():
+    word = ("".join([ c if c.isalnum() else "" for c in str ]))
+    if word not in words:
+        words[word] = 1
+    else:
+        words[word] += 1
+
+for word in sorted(words):
+    print(word, ": ", words[word], sep='')
