@@ -1,0 +1,65 @@
+QUESTION:
+
+String Rotation:
+Given two strings(S1 and S2), write a program to determine if a string S2 is a rotation of another string S1.
+
+Input:
+
+The first line of the input will be a string S1.
+The second line of the input will be a string S2.
+
+Output:
+
+If string S2 is a rotation of another string S1, print number of right rotations made by string S1 to match the string S2. Otherwise, print "No Match".
+Where right rotation means all elements are moving towards the right side by one place where the last element will be placed in the first place example, one right rotation of "python" is "npytho".
+
+Explanation:
+
+For example, if the given strings S1 and S2 are "python" and "onpyth",
+The first right rotation of s1 is "npytho" which is not equal to string S2"onpyth"
+The second right rotation of s2 is "onpyth" which is equal to string S2 "onpyth".
+So the output should be 2
+
+Sample Input 1:
+python
+onpyth
+
+Sample Output 1:
+2 
+
+Sample Input 2:
+Python
+Python
+
+Sample Output 2:
+0
+
+
+CODE:
+
+def main():
+    
+    string1=input("")
+    
+    string2=input("")
+    nRotation=getNumberRotation(string1,string2)
+    
+    if nRotation==-1:
+        print("No Match")
+    else:
+        print(str(nRotation))
+        
+
+def getNumberRotation(string1,string2):
+    tempString=string1
+    nRotation =0
+    while tempString!=string2:
+        nRotation+=1
+        tempString = string1[len(string1) - nRotation:] + string1[0 : len(string1) - nRotation]
+        if nRotation>=len(string1):
+            return -1
+            
+    return nRotation
+
+
+main()
