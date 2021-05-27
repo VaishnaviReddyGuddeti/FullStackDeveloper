@@ -1,0 +1,69 @@
+QUESTION:
+
+Tic-Tac-Toe game:
+Abhinav and Anjali are playing the Tic-Tac-Toe game. Tic-Tac-Toe is a game played on a grid that's three squares by three squares. Abhinav is O, and Anjali is X. Players take turns putting their marks in empty squares. The first player to get 3 of her marks in a diagonal or horizontal, or vertical row is the winner. When all nine squares are complete, the game is over. If no player has three marks in a row, the game ends in a tie. Write a program to decide the winner in the Tic-Tac-Toe game.
+
+Input:
+
+The input will be three lines contain O's and X's separated by space.
+
+Output:
+
+The output should be a single line containing either "Abhinav Wins" or "Anjali Wins" or "Tie".
+
+Explanation:
+
+For example, if the input is 
+O X O
+O X X
+O O X 
+ 
+as three of O's are in vertical row print "Abhinav Wins".
+
+Sample Input 1:
+O X O
+O X X
+O O X 
+
+Sample Output 1:
+Abhinav Wins
+
+Sample Input 2:
+0  0  x
+x  x  0
+x  0  0
+
+Sample Output 2:
+Anjali Wins
+
+CODE:
+
+def check_win(board):
+    
+    for r in range(3):
+        if board[r][0] == board[r][1] == board[r][2]:
+            return board[r][0]
+        
+    for c in range(3):
+        if board[0][c] == board[1][c] == board[2][c]:
+            return board[0][c]
+
+    if board[0][0] == board [1][1] == board [2][2]:
+        return board[0][0]
+    
+    if board[0][2] == board [1][1] == board [2][0]:
+        return board[0][2]
+
+board = []
+for r in range(3):
+    line = input()
+    board.append(line.split())
+
+
+res = check_win(board)
+if res is None:
+    print("Tie")
+elif res.upper() == 'X':
+    print('Anjali Wins')
+elif res.upper() == 'O':
+    print('Abhinav Wins')
