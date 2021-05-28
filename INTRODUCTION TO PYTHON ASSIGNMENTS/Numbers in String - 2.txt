@@ -1,0 +1,59 @@
+QUESTION:
+
+Numbers in String - 2:
+Given a string, write a program to return the sum and average of the numbers that appear in the string, ignoring all other characters.
+
+Input:
+
+The input will be a single line containing a string.
+
+Output:
+
+The output should contain the sum and average of the numbers that appear in the string.
+ Note: Round the average value to two decimal places.
+
+Explanation:
+
+For example, if the given string is "I am 25 years and 10 months old", the numbers are 25, 10. Your code should print the sum of the numbers(35) and the average of the numbers(17.5) in the new line.
+
+Sample Input 1:
+I am 25 years and 10 months old
+
+Sample Output 1:
+35
+17.5
+
+Sample Input 2:
+Tech Foundation 35567
+
+Sample Output 2:
+35567
+35567.0
+
+CODE:
+
+def filter_digits_in_word(word):
+    number = ''
+    for i in word:
+        if i.isdigit():
+            number += i
+        else:
+            number += ' '
+    number.strip()
+    return list(map(int, number.split()))
+
+input_in_list = input().split()
+
+total = 0
+number_count = 0
+
+for i in input_in_list:
+    if i.isdigit():
+        total += int(i)
+        number_count += 1
+    elif not i.isalpha():
+        numbers_in_word = filter_digits_in_word(i)
+        total += sum(numbers_in_word)
+        number_count += len(numbers_in_word)
+print(total)
+print(round(total / number_count, 2))
