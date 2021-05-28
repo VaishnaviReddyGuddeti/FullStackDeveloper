@@ -1,0 +1,39 @@
+QUESTION:
+
+New Year Countdown:
+Given date-time D, write a program to print the time left for the next New Year.
+
+Input:
+
+The input will be a single line containing the date-time in the string format similar to "Dec 30 2020 02:43 PM".
+
+Output:
+
+The output should be a single line containing hours and minutes left for the next new year in the format similar to "33 hours 17 minutes".
+
+Explanation:
+
+For example, if the given date-time is "Dec 30 2020 02:43 PM", the difference between "Dec 30 2020 02:43 PM" and "Jan 1 2021 00:00 AM" is 1 day 9 hours 17 minutes. The difference in hours and minutes is  1 * 24 + 9 hours and 17 minutes. So the output should be "33 hours 17 minutes".
+
+Sample Input 1:
+Dec 30 2020 02:43 PM
+
+Sample Output 1:
+33 ours 17 minutes
+
+Sample Input 2:
+Jan 31 2020 04:43 AM
+
+Sample Output 2:
+8059 hours 17 minutes
+
+
+CODE:
+
+from datetime import datetime
+date = datetime.strptime(input(), '%b %d %Y %I:%M %p')
+new_year = date.strptime('Jan 1 ' + str(date.year + 1), '%b %d %Y')
+days = (new_year - date).days
+hours = days * 24 + 23 - date.hour
+minutes = 60 - date.minute
+print('{} hours {} minutes'.format(hours, minutes))
