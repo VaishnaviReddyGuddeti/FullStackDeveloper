@@ -1,0 +1,60 @@
+QUESTION:
+
+Weekends
+Given two dates D1 and D2, write a program to count the number of Saturdays and Sundays from D1 to  D2 (including D1 and D2).
+The date in string format is like "8 Feb 2021".
+Input
+
+The first line of input will contain date D1 in the string format.
+The second line of input will contain date D2 in the string format.
+Output
+
+The output should be a single line containing two integers separated by space.
+Explanation
+
+For example, if the given dates are "25 Jan 2021" and "14 Feb 2021", the Saturdays and Sundays dates from "25 Jan 2021" to "14 Feb 2021" are 
+"30 Jan 2021" is a Saturday
+"31 Jan 2021" is a Sunday
+"6 Feb 2021" is a Saturday
+"7 Feb 2021" is a Sunday
+"13 Feb 2021" is a Saturday
+"14 Feb 2021" is a Sunday
+So the output should be 
+Saturday: 3
+Sunday: 3
+
+Sample Input 1:
+25 Jan 2021
+14 Feb 2021
+
+Sample Output 1:
+Saturday : 3
+Sunday : 3
+
+Sample Input 2:
+25 May 2019
+22 Dec 2021
+
+Sample Output 2:
+Saturday : 135
+Sunday : 135
+
+CODE:
+
+from datetime import datetime, timedelta
+
+from_date = datetime.strptime(input(), '%d %b %Y')
+to_date = datetime.strptime(input(), '%d %b %Y')
+
+day_difference = (to_date - from_date).days
+
+saturday = 0
+sunday = 0
+for day in range(day_difference + 1):
+    str_date = datetime.strftime((from_date + timedelta(days = day)), '%A')
+    if str_date == 'Saturday':
+        saturday += 1
+    elif str_date == 'Sunday':
+        sunday += 1
+print('Saturday: {}'.format(saturday))
+print('Sunday: {}'.format(sunday))
