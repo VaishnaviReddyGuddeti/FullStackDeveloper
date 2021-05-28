@@ -1,0 +1,103 @@
+QUESTION:
+
+IPL Match Details:
+Write a program that reads all the match outcomes and summarizes the information of all the matches. 
+Points are given to the teams based on the outcome of the match.
+A win earns a team 3 points. A draw earns 1. A loss earns 0. 
+The following information is expected:
+MP: Matches Played
+W: Matches Won
+D: Matches Drawn (Tied)
+L: Matches Lost
+P: Points
+
+The team information should be displayed in descending order of points.
+
+Input:
+
+The first line contains a single integer N, denoting the total no. of matches played. 
+The following N lines contain outcomes of N matches. 
+Each of those lines has information on the teams (T1, T2) which played and the outcome (O) in format T1;T2;O. 
+The outcome (O) is one of 'win', 'loss', 'draw' and refers to the first team listed. 
+See Sample Input/Output for better understanding.
+The team name may contain spaces.
+
+Output:
+
+The output should contain summarized information of all the matches in a format similar to 'Team: CSK, Matches Played: 4, Won: 2, Lost: 1, Draw: 1, Points: 7' for each team in a new line.
+If there are no teams to print in summary, print "No Output".
+Constraints
+
+Names of teams may contain spaces but will be less than 24 characters
+100 >= N >= 0
+
+Sample Input :
+6
+CSK;RR;loss
+RR;DD;draw
+MI;KKR;win
+KKR;RR;loss
+CSK;DD;draw
+MI;DD;draw
+
+Sample Output :
+Team: RR, Matches Played: 3, Won: 2, Lost: 0, Draw: 1, Points: 7
+Team: MI, Matches Played: 2, Won: 1, Lost: 0, Draw: 1, Points: 4
+Team: DD, Matches Played: 3, Won: 0, Lost: 0, Draw: 3, Points: 3
+Team: CSK, Matches Played: 2, Won: 0, Lost: 1, Draw: 1, Points: 1
+Team: KKR, Matches Played: 2, Won: 0, Lost: 2, Draw: 0, Points: 0
+
+CODE:
+
+matches_played = int(input())
+
+list_matches = []
+unq_teams = set()
+outcomes = {}
+
+for i in range(matches_played):
+    list_matches.append(input().split(';'))
+    unq_teams.add(list_matches[i][0])
+    unq_teams.add(list_matches[i][1])
+
+for team in unq_teams:
+    won = 0
+    lost = 0
+    draw = 0
+    points = 0
+    for match in list_matches:
+        if team in match:
+            if team == match[0] and match[-1] != 'draw':
+                if match[-1] == 'win':
+                    won += 1
+                    points += 3
+                else:
+                    lost += 1
+            elif team == match[1] and match[-1] != 'draw':
+                if match[-1] == 'loss':
+                    won += 1
+                    points += 3
+                else:
+                    lost += 1
+            else:
+                draw += 1
+                points += 1
+    outcomes[team] = {
+        'matches_played': won + lost + draw,
+        'won': won,
+        'loss':lost,
+        'draw': draw,
+        'points':points
+    }
+desc_points = []
+for value in outcomes.values():
+    desc_points.append(value['points'])
+desc_points.sort(reverse = True)
+
+if len(outcomes) > 0:
+    for point in desc_points:
+        for match in outcomes.items():
+            if match[1]['points'] == point:
+                print('Team: {}, Matches Played: {}, Won: {}, Lost: {}, Draw: {}, Points: {}'.format(match[0], match[1]['matches_played'], match[1]['won'], match[1]['loss'], match[1]['draw'], match[1]['points']))
+else:
+    print('No Output')
