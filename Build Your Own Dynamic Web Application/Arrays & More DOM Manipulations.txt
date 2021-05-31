@@ -1,0 +1,581 @@
+                          * Arrays & More DOM Manipulations * 
+
+1. Data Structures
+Data Structures allow us to store and organize data efficiently. This makes us access and performs operations on the data smoothly.
+In JavaScript, we have built-in Data Structures like,
+-Arrays
+-Objects
+-Maps
+-Sets
+
+2. Array
+An Array holds an ordered sequence of items.
+
+2.1 Creating an Array
+JAVASCRIPT:
+
+let myArray = [5, "six", 2, 8.2];
+
+console.log(myArray);  // [5, "six", 2, 8.2]
+
+2.2 Accessing an Array Item
+JAVASCRIPT:
+
+let myArray = [5, "six", 2, 8.2];
+
+console.log(myArray[0]);  // 5
+
+console.log(myArray[1]);  // six
+
+2.3 Modifying an Array Item
+JAVASCRIPT:
+
+let myArray = [5, "six", 2, 8.2];
+myArray[1] = 6;
+
+console.log(myArray);  // [5, 6, 2, 8.2]
+
+2.4 Finding Array Length
+The array.length is used to find the number of items in the array.
+
+JAVASCRIPT:
+
+let myArray = [5, "six", 2, 8.2];
+let lengthOfArray = myArray.length;
+
+console.log(lengthOfArray);  // 4
+
+2.5 Array Methods
+
+2.5.1 push()
+The push() method adds new items to the end of the array.
+
+JAVASCRIPT:
+
+let myArray = [5, "six", 2, 8.2];
+myArray.push(true);
+
+console.log(myArray);  // [5, "six", 2, 8.2, true]
+
+2.5.2 pop()
+The pop() method removes the last item of an array and returns that item.
+
+JAVASCRIPT:
+
+let myArray = [5, "six", 2, 8.2];
+let lastItem = myArray.pop();
+
+console.log(myArray);  // [5, "six", 2]
+
+console.log(lastItem);  // 8.2
+
+Try out creating an array, accessing, modifying its array items, and apply array methods.
+EXAMPLE CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    Your HTML code goes here. Write JavaScript code in JAVASCRIPT tab.
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+
+let myArray = [5, "six", 2, 8.2];
+myArray[1] = 7;
+myArray.pop();
+myArray.push("seven");
+
+console.log(myArray);
+
+OUTPUT:
+
+Your HTML code goes here. Write JavaScript code in JAVASCRIPT tab.
+
+
+3. Functions
+3.1 Function Declaration
+
+JAVASCRIPT:
+
+function showMessage() {
+  console.log("Hello");
+}
+
+showMessage();
+
+3.2 Function Expression
+There is another syntax for creating a function which is called Function Expression.
+
+JAVASCRIPT:
+
+let showMessage = function() {
+  console.log("Hello");
+};
+
+showMessage();
+
+4. More DOM Manipulations
+
+4.1 Creating an HTML Element - createElement()
+
+JAVASCRIPT:
+
+let h1Element = document.createElement("h1");
+h1Element.textContent = "Web Technologies";
+
+console.log(h1Element);  // <h1>Web Technologies</h1>
+
+4.2 Appending to an HTML Element - appendChild()
+
+Appending to Document Body Object:
+JAVASCRIPT:
+
+document.body.appendChild(h1Element);
+
+Appending to Existing Container Element:
+JAVASCRIPT:
+
+let containerElement = document.getElementById("myContainer");
+containerElement.appendChild(h1Element);
+
+Try out creating and appending the HTML elements like a paragraph, image, etc.
+EXAMPLE CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div id="myContainer"></div>
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+
+let h1Element = document.createElement("h1");
+h1Element.textContent = "Web Technologies";
+
+let containerElement = document.getElementById("myContainer");
+containerElement.appendChild(h1Element);
+
+let btnElement = document.createElement("button");
+btnElement.textContent = "Change Heading";
+containerElement.appendChild(btnElement);
+
+OUTPUT:
+
+Web Technologies
+Change Heading
+
+4.3 Adding Event Listeners Dynamically
+JAVASCRIPT:
+
+let btnElement = document.createElement("button");
+btnElement.textContent = "Change Heading";
+document.getElementById("myContainer").appendChild(btnElement);
+
+btnElement.onclick = function(){
+  console.log("click event triggered");
+};
+
+4.4 Providing Class Names Dynamically - classList.add()
+JAVASCRIPT:
+
+btnElement.onclick = function(){
+  h1Element.textContent = "4.0 Technologies";
+  h1Element.classList.add("heading");
+
+  console.log(h1Element);
+};
+
+CSS:
+
+.heading {
+  color: blue;
+  font-family: "Caveat";
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+4.5 Removing Class Names Dynamically - classList.remove()
+JAVASCRIPT:
+
+let removeStylesBtnElement = document.createElement("button");
+removeStylesBtnElement.textContent = "Remove Styles";
+
+document.getElementById("myContainer").appendChild(removeStylesBtnElement);
+
+removeStylesBtnElement.onclick = function(){
+  h1Element.classList.remove("heading");
+};
+
+Try out adding the event listeners, class names and removing class names dynamically.
+
+
+EXAMPLE CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div id="myContainer"></div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.heading {
+  color: blue;
+  font-family: "Caveat";
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+JAVASCRIPT CODE:
+
+let h1Element = document.createElement("h1");
+h1Element.textContent = "Web Technologies";
+
+let containerElement = document.getElementById("myContainer");
+containerElement.appendChild(h1Element);
+
+let btnElement = document.createElement("button");
+btnElement.textContent = "Change Heading and Add Styles";
+containerElement.appendChild(btnElement);
+
+btnElement.onclick = function(){
+  h1Element.textContent = "4.0 Technologies";
+  h1Element.classList.add("heading");
+};
+
+let removeStylesBtnElement = document.createElement("button");
+removeStylesBtnElement.textContent = "Remove Styles";
+containerElement.appendChild(removeStylesBtnElement);
+
+removeStylesBtnElement.onclick = function(){
+  h1Element.classList.remove("heading");
+};
+
+OUTPUT:
+
+Web Technologies
+Change Heading and Add Styles
+Remove Styles
+
+                               *OBJECTS*
+
+Object:
+An Object is a collection of properties.
+A property is an association between a name (or key) and a value.
+For example, a person has a name, age, city, etc. These are the properties of the person.
+
+1. Creating an Object
+We can add properties into {} as key: value pairs.
+ 
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushant",
+  lastName: "Guddeti",
+  age: 25,
+};
+
+console.log(person);  // Object {firstName: "Sushant", lastName: "Guddeti", age: 25}
+
+1.1 Identifiers
+A valid Identifier should follow the below rules:
+
+It can contain alphanumeric characters, _ and $.
+It cannot start with a number.
+
+Valid Identifiers:
+
+JAVASCRIPT:
+firstName;
+$firstName;
+_firstName;
+firstName12;
+
+Invalid Identifiers:
+
+JAVASCRIPT:
+
+12firstName;
+firstName 12;
+
+To use an Invalid identifier as a key, we have to specify it in quotes.
+
+ 
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushant",
+  lastName: "Guddeti",
+  age: 28,
+  "1": "value1",
+  "my choice": "value2",
+};
+
+console.log(person);  // Object {1: "value1", firstName: "Sushant", lastName: "Guddeti", age: 28, my choice: "value2"}
+
+2. Accessing Object Properties
+2.1 Dot Notation
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushant",
+  lastName: "Guddeti",
+  age: 28,
+  "1": "value1",
+  "my choice": "value2",
+};
+
+console.log(person.firstName);  // Sushant
+
+Use Dot notation when the key is a valid Identifier.
+
+2.2 Bracket Notation
+JAVASCRIPT:
+
+let person = {
+  firstName: "Shourya",
+  lastName: "Guddeti",
+  age: 28,
+  "1": "value1",
+  "my choice": "value2",
+};
+
+console.log(person["firstName"]);  // Shourya
+
+2.3 Accessing Non-existent Properties
+Dot Notation:
+
+JAVASCRIPT:
+
+let person = {
+  firstName: "Shourya",
+  lastName: "Guddeti",
+  age: 28,
+  "1": "value1",
+  "my choice": "value2",
+};
+
+console.log(person.gender);  // undefined
+
+Bracket Notation:
+
+JAVASCRIPT:
+
+let person = {
+  firstName: "Vaishnavi",
+  lastName: "Guddeti",
+  age: 28,
+  "1": "value1",
+  "my choice": "value2",
+};
+
+console.log(person["gender"]);  // undefined
+
+2.4 Variable as a Key
+ 
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushant",
+  lastName: "Guddeti",
+  age: 28,
+};
+
+let a = "firstName";
+
+console.log(person[a]);  // Sushant
+console.log(person.a);  // undefined
+
+2.5 Object Destructuring
+To unpack properties from Objects, we use Object Destructuring. The variable name should match with the key of an object.
+
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushant",
+  lastName: "Guddeti",
+  age: 28,
+};
+
+let { gender, age } = person;
+
+console.log(gender);  // undefined
+
+console.log(age);  // 28
+
+Try out creating and accessing the Object in different ways like Object destructuring, dot notation etc. 
+
+EXAMPLE CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    Your HTML code goes here. Write JavaScript code in JAVASCRIPT tab.
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+
+let person = {
+  firstName: "Rahul",
+  lastName: "Attuluri",
+  age: 28,
+  "1": "value1",
+  "my choice": "value2",
+};
+
+let a = "firstName";
+let { gender, age } = person;
+
+console.log(person.firstName);
+
+console.log(person["gender"]);
+
+console.log(person[a]);
+
+console.log(person.a);
+
+console.log(gender);
+
+console.log(age);
+
+OUTPUT:
+
+Your HTML code goes here. Write JavaScript code in JAVASCRIPT tab.
+
+3. Modifying Objects
+3.1 Modifying Object Property
+Dot Notation:
+
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushant",
+  lastName: "Guddeti",
+  age: 28,
+};
+
+person.firstName = "Shourya";
+
+console.log(person.firstName);  // Shourya
+
+Bracket Notation:
+JAVASCRIPT:
+
+let person = {
+  firstName: "Shourya",
+  lastName: "Guddeti",
+  age: 28,
+};
+
+person["firstName"] = "Sushant";
+
+console.log(person["firstName"]);  // Sushant
+
+3.2 Adding Object Property
+Dot Notation:
+
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushant",
+  lastName: "Guddeti",
+  age: 28,
+};
+
+person.gender = "Male";
+
+console.log(person);  // Object {firstName: "Sushant", lastName: "Guddeti", age: 28, gender: "Male"}
+
+Bracket Notation:
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushant",
+  lastName: "Guddeti",
+  age: 28,
+};
+
+person["gender"] = "Male";
+
+console.log(person);  // Object {firstName: "Sushant", lastName: "Guddeti", age: 28, gender: "Male"}
+
+4. Property Value
+The Value of Object Property can be
+-Function
+-Array
+-Object
+
+4.1 Function as a Value
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushant",
+  lastName: "Guddeti",
+  age: 28,
+  run: function () {
+    console.log("Start Running.");
+  },
+};
+
+person.run();  // Start Running.
+
+Methods:
+
+A JavaScript method is a property containing a function definition.
+For example, in document.createElement();, the document is an Object, createElement is a key and createElement() is a Method.
+
+4.2 Array as a Value
+ 
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushnat",
+  lastName: "Guddeti",
+  age: 28,
+  habits: ["Playing Chess", "Singing"],
+};
+
+console.log(person.habits);  // ["Playing Chess", "Singing"]
+
+console.log(person.habits[0]);  // Playing Chess
+
+console.log(person["habits"][1]);  // Singing
+
+4.3 Object as a Value
+ 
+JAVASCRIPT:
+
+let person = {
+  firstName: "Sushant",
+  lastName: "Guddeti",
+  age: 28,
+  habits: ["Playing Chess", "Singing", "Dancing"],
+  car: {
+    name: "Maserati",
+    model: "Quattroporte",
+    color: "Blue",
+  },
+};
+
+console.log(person.car.name);  //Maserati
+
+console.log(person.car["model"]);  // Quattroporte
+
