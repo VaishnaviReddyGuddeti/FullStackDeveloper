@@ -1,0 +1,699 @@
+                            *Todos Application - Part: 1 *
+
+1. HTML Input Element
+1.1 Checkbox
+The HTML input element can be used to create a Checkbox. To define a Checkbox, you need to specify the HTML type attribute with the value checkbox for an HTML input element.
+
+HTML:
+
+<input type="checkbox" />
+
+1.2 The HTML Label Element
+The HTML label element defines a Label.
+
+HTML:
+
+<label for="myCheckbox">Graduated</label>
+
+2. DOM Manipulations
+2.1 The htmlFor Property
+We can use htmlFor property to add HTML for attribute to the HTML label element.
+
+JAVASCRIPT:
+
+let labelElement = document.createElement("label");
+labelElement.htmlFor = "myCheckbox";
+
+2.2 The setAttribute() Method
+We can use setAttribute() method to set any HTML attribute name and its corresponding value. If the attribute already exists, the value is updated. Otherwise, a new attribute is added with the specified name and value.
+
+Syntax: Element.setAttribute(name, value);
+
+JAVASCRIPT:
+
+let labelElement = document.createElement("label");
+labelElement.setAttribute("for", "myCheckbox");
+
+EXAMPLE CODE: ry out creating the HTML label element dynamically.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body> </body>
+</html>
+
+JAVASCRIPT CODE:
+
+let inputElement = document.createElement("input");
+
+inputElement.type = "checkbox";
+inputElement.id = "myCheckbox";
+document.body.appendChild(inputElement);
+
+3. Loops
+Loops allow us to execute a block of code several times.
+-for...of Loop
+-for...in Loop
+-for Loop
+while Loop and many more.
+
+3.1 The for...of Loop
+JAVASCRIPT:
+
+let myArray = [1, 2, 3, 4];
+
+for (let eachItem of myArray) {
+   console.log(eachItem);
+}
+
+The HTML Code for creating a Todo Item:
+
+HTML:
+
+<li class="todo-item-container d-flex flex-row">
+  <input type="checkbox" id="checkboxInput" class="checkbox-input" />
+  <div class="d-flex flex-row label-container">
+    <label for="checkboxInput" class="checkbox-label">
+      Learn HTML
+    </label>
+    <div class="delete-icon-container">
+      <i class="far fa-trash-alt delete-icon"></i>
+    </div>
+  </div>
+</li>
+
+
+4. CSS Box Properties
+4.1 Border
+The CSS border property is a shorthand property for:
+
+-border-width
+-border-style (required)
+-border-color
+
+For example,
+CSS:
+
+.button {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #e4e7eb;
+}
+
+Instead of writing the CSS properties border-style, border-width and border-color individually, we can apply these properties at once with a single CSS property called border.
+Syntax: border: border-width border-style border-color
+
+CSS:
+
+.button {
+  border: 2px dashed #e4e7eb;
+}
+
+To specify the border on one of the four sides of an HTML element, you can use the below CSS properties.
+
+-border-top
+-border-bottom
+-border-right
+-border-left
+
+CSS:
+
+.button {
+  border-top: 1px dotted #e4e7eb;
+}
+
+If the border is not required, we can apply the none as value to the CSS border property.
+CSS:
+
+.button {
+  border: none;
+}
+
+For example, if the border property is not required on the top side of an HTML element. You can use,
+CSS:
+
+.button {
+  border-top: none;
+}
+
+EXAMPLE CODE-1:
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="p-3">
+      <button class="button-1">Learn more</button>
+      <button class="button-2">Read more</button>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.button-1 {
+  border-top: 2px dashed orange;
+}
+
+.button-2 {
+  border-bottom: none;
+}
+
+EXAMPLE CODE - 2:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="todos-bg-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="todos-heading">Todos</h1>
+            <h1 class="create-task-heading">
+              Create <span class="create-task-heading-subpart">Task</span>
+            </h1>
+            <input type="text" id="todoUserInput" class="todo-user-input" />
+            <button class="add-todo-button">Add</button>
+            <h1 class="todo-items-heading">
+              My <span class="todo-items-heading-subpart">Tasks</span>
+            </h1>
+            <ul class="todo-items-container" id="todoItemsContainer"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.todos-bg-container {
+  background-color: #f9fbfe;
+  height: 100vh;
+}
+
+.todos-heading {
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 46px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.create-task-heading {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.create-task-heading-subpart {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.todo-items-heading {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.todo-items-heading-subpart {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.todo-items-container {
+  margin: 0px;
+  padding: 0px;
+}
+
+.todo-item-container {
+  margin-top: 15px;
+}
+
+.todo-user-input {
+  background-color: white;
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e4e7eb;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 15px;
+}
+
+.add-todo-button {
+  color: white;
+  background-color: #4c63b6;
+  font-family: "Roboto";
+  font-size: 18px;
+  border-width: 0px;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.label-container {
+  background-color: #e6f6ff;
+  width: 100%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #096f92;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 12px;
+  margin-right: 12px;
+}
+
+.checkbox-label {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  width: 82%;
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+}
+
+.delete-icon-container {
+  text-align: right;
+  width: 18%;
+}
+
+.delete-icon {
+  padding: 15px;
+}
+
+
+JAVASCRIPT CODE:
+
+let todoItemsContainer = document.getElementById("todoItemsContainer");
+let todoList = [
+  {
+    text: "Learn HTML"
+  },
+  {
+    text: "Learn CSS"
+  },
+  {
+    text: "Learn JavaScript"
+  }
+];
+
+function createAndAppendTodo(todo) {
+  let todoElement = document.createElement("li");
+  todoElement.classList.add("todo-item-container", "d-flex", "flex-row");
+  todoItemsContainer.appendChild(todoElement);
+
+  let inputElement = document.createElement("input");
+  inputElement.type = "checkbox";
+  inputElement.id = "checkboxInput";
+  inputElement.classList.add("checkbox-input");
+  todoElement.appendChild(inputElement);
+
+  let labelContainer = document.createElement("div");
+  labelContainer.classList.add("label-container", "d-flex", "flex-row");
+  todoElement.appendChild(labelContainer);
+
+  let labelElement = document.createElement("label");
+  labelElement.setAttribute("for", "checkboxInput");
+  labelElement.classList.add("checkbox-label");
+  labelElement.textContent = todo.text;
+  labelContainer.appendChild(labelElement);
+
+  let deleteIconContainer = document.createElement("div");
+  deleteIconContainer.classList.add("delete-icon-container");
+  labelContainer.appendChild(deleteIconContainer);
+
+  let deleteIcon = document.createElement("i");
+  deleteIcon.classList.add("far", "fa-trash-alt", "delete-icon");
+  deleteIconContainer.appendChild(deleteIcon);
+}
+
+for (let todo of todoList) {
+  createAndAppendTodo(todo);
+}
+
+                            *Todos Application: Part 2*
+
+
+1. HTML Input Element
+1.1 Placeholder
+Placeholder is the text that appears in the HTML input element when no value is set. We can specify it using the HTML attribute  placeholder.
+
+HTML:
+
+<input type="text" placeholder="Enter your name" />
+
+2. JavaScript Built-in Functions
+
+2.1 alert()
+The alert() function displays an alert box with a specified message and an OK button.
+
+JAVASCRIPT:
+
+alert("Enter Valid Text");
+
+3. DOM Properties
+
+3.1 Checked
+The checked property sets or returns the checked status of an HTML checkbox input element as a boolean value.
+
+JAVASCRIPT:
+
+let checkboxElement = document.getElementById(checkboxId);
+checkboxElement.checked = true;
+
+4. DOM Manipulations
+
+4.1 The removeChild() Method
+The removeChild() method removes an HTML child element of the specified HTML parent element from the DOM and returns the removed HTML child element.
+
+JAVASCRIPT:
+
+function onDeleteTodo(todoId) {
+  let todoElement = document.getElementById(todoId);
+
+  todoItemsContainer.removeChild(todoElement);
+}
+
+4.2 The classList.toggle() Method
+The classList.toggle() method is used to toggle between adding and removing a class name from an HTML element.
+
+JAVASCRIPT:
+
+function onTodoStatusChange(checkboxId, labelId) {
+  let checkboxElement = document.getElementById(checkboxId);
+  let labelElement = document.getElementById(labelId);
+
+  labelElement.classList.toggle('checked');
+}
+
+We can replace classList.add() and classList.remove() methods with classList.toggle() method.
+
+Try out adding the placeholder to the HTML input elements, deleting the HTML child elements, adding alerts and toggling the class names.
+
+EXAMPLE CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="todos-bg-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="todos-heading">Todos</h1>
+            <h1 class="create-task-heading">
+              Create <span class="create-task-heading-subpart">Task</span>
+            </h1>
+            <input type="text" id="todoUserInput" class="todo-user-input" placeholder="What needs to be done?"/>
+            <button class="add-todo-button" id="addTodoButton">Add</button>
+            <h1 class="todo-items-heading">
+              My <span class="todo-items-heading-subpart">Tasks</span>
+            </h1>
+            <ul class="todo-items-container" id="todoItemsContainer"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.todos-bg-container {
+  background-color: #f9fbfe;
+  height: 100vh;
+}
+
+.todos-heading {
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 46px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.create-task-heading {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.create-task-heading-subpart {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.todo-items-heading {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.todo-items-heading-subpart {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.todo-items-container {
+  margin: 0px;
+  padding: 0px;
+}
+
+.todo-item-container {
+  margin-top: 15px;
+}
+
+.todo-user-input {
+  background-color: white;
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e4e7eb;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 15px;
+}
+
+.add-todo-button {
+  color: white;
+  background-color: #4c63b6;
+  font-family: "Roboto";
+  font-size: 18px;
+  border-width: 0px;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.label-container {
+  background-color: #e6f6ff;
+  width: 100%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #096f92;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 12px;
+  margin-right: 12px;
+}
+
+.checkbox-label {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  width: 82%;
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+}
+
+.delete-icon-container {
+  text-align: right;
+  width: 18%;
+}
+
+.delete-icon {
+  padding: 15px;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+JAVASCRIPT CODE:
+
+let todoItemsContainer = document.getElementById("todoItemsContainer");
+let addTodoButton = document.getElementById("addTodoButton");
+
+let todoList = [
+  {
+    text: "Learn HTML",
+    uniqueNo: 1
+  },
+  {
+    text: "Learn CSS",
+    uniqueNo: 2
+  },
+  {
+    text: "Learn JavaScript",
+    uniqueNo: 3
+  }
+];
+
+let todosCount = todoList.length;
+
+function onTodoStatusChange(checkboxId, labelId) {
+  let checkboxElement = document.getElementById(checkboxId);
+  let labelElement = document.getElementById(labelId);
+
+  labelElement.classList.toggle('checked');
+}
+
+function onDeleteTodo(todoId) {
+  let todoElement = document.getElementById(todoId);
+
+  todoItemsContainer.removeChild(todoElement);
+}
+
+function createAndAppendTodo(todo) {
+  let todoId = 'todo' + todo.uniqueNo;
+  let checkboxId = 'checkbox' + todo.uniqueNo;
+  let labelId = 'label' + todo.uniqueNo;
+
+  let todoElement = document.createElement("li");
+  todoElement.classList.add("todo-item-container", "d-flex", "flex-row");
+  todoElement.id = todoId;
+  todoItemsContainer.appendChild(todoElement);
+
+  let inputElement = document.createElement("input");
+  inputElement.type = "checkbox";
+  inputElement.id = checkboxId;
+
+  inputElement.onclick = function() {
+    onTodoStatusChange(checkboxId, labelId);
+  }
+
+  inputElement.classList.add("checkbox-input");
+  todoElement.appendChild(inputElement);
+
+  let labelContainer = document.createElement("div");
+  labelContainer.classList.add("label-container", "d-flex", "flex-row");
+  todoElement.appendChild(labelContainer);
+
+  let labelElement = document.createElement("label");
+  labelElement.setAttribute("for", checkboxId);
+  labelElement.id = labelId;
+  labelElement.classList.add("checkbox-label");
+  labelElement.textContent = todo.text;
+  labelContainer.appendChild(labelElement);
+
+  let deleteIconContainer = document.createElement("div");
+  deleteIconContainer.classList.add("delete-icon-container");
+  labelContainer.appendChild(deleteIconContainer);
+
+  let deleteIcon = document.createElement("i");
+  deleteIcon.classList.add("far", "fa-trash-alt", "delete-icon");
+
+  deleteIcon.onclick = function () {
+    onDeleteTodo(todoId);
+  };
+
+  deleteIconContainer.appendChild(deleteIcon);
+}
+
+for (let todo of todoList) {
+  createAndAppendTodo(todo);
+}
+
+function onAddTodo() {
+  let userInputElement = document.getElementById("todoUserInput");
+  let userInputValue = userInputElement.value;
+
+  if(userInputValue === ""){
+    alert("Enter Valid Text");
+    return;
+  }
+
+  todosCount = todosCount + 1;
+
+  let newTodo = {
+    text: userInputValue,
+    uniqueNo: todosCount
+  };
+
+  createAndAppendTodo(newTodo);
+  userInputElement.value = "";
+}
+
+addTodoButton.onclick = function(){
+  onAddTodo();
+}
