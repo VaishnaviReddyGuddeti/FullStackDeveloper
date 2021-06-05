@@ -1,0 +1,480 @@
+1. Execution Context
+The environment in which JavaScript Code runs is called Execution Context.
+
+Execution context contains all the variables, objects, and functions.
+
+Execution Context is destroyed and recreated whenever we reload an Application.
+
+2. Storage Mechanisms
+2.1 Client-Side Data Storage
+Client-Side Data Storage is storing the data on the client (user's machine).
+-Local Storage
+-Session Storage
+-Cookies
+-IndexedDB and many more.
+
+2.2 Server-Side Data Storage
+Server-Side Data Storage is storing the data on the server.
+
+3. Local Storage
+It allows web applications to store data locally within the user's browser.
+It is a Storage Object. Data can be stored in the form of key-value pairs.
+Please note that both key and value must be strings. If their type is other than a string, they get converted to strings automatically.
+
+Key	Value
+fullName	Rahul Attuluri
+gender	Male
+city	Delhi
+
+To access and work with Local Storage we have below methods:
+-setItem()
+-getItem()
+-clear()
+-removeItem()
+
+3.1 The setItem() Method
+The setItem() method can be used for storing data in the Local Storage.
+Syntax: localStorage.setItem("Key", "Value");
+
+3.2 The getItem() Method
+The getItem() method can be used for getting data from the Local Storage.
+Syntax: localStorage.getItem("Key");
+
+Try out the setItem() and getItem() methods.
+
+EXAMPLE CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    Your HTML code goes here. Write JavaScript code in JAVASCRIPT tab.
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+
+localStorage.setItem("fullName", "Rahul Attuluri");
+
+localStorage.setItem("gender", "Male");
+
+localStorage.setItem("city", "Delhi");
+
+let fullName = localStorage.getItem("fullName");
+
+let gender = localStorage.getItem("gender");
+
+let city = localStorage.getItem("city");
+
+console.log(fullName);
+console.log(gender);
+console.log(city);
+
+OUTPUT:
+
+Your HTML code goes here. Write JavaScript code in JAVASCRIPT tab.
+
+
+4. Values
+4.1 null
+We use null in a situation where we intentionally want a variable but don't need a value to it.
+
+JAVASCRIPT:
+
+let selectedColor = null;
+
+console.log(selectedColor);  // null
+console.log(typeof(selectedColor));  // object
+
+5. HTML Elements
+5.1 The textarea Element
+The HTML textarea element can be used to write the multiline text as an input.
+
+HTML:
+-The HTML rows attribute specifies the number of lines.
+-The HTML cols attribute specifies the number of characters per each line.
+
+Try out the HTML textarea element, setItem() and getItem() methods.
+
+EXAMPLE CODE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <textarea rows="8" cols="55" id="message"></textarea>
+    <br />
+    <button class="btn btn-primary mt-1" id="saveButton">Save</button>
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+
+let textAreaElement = document.getElementById("message");
+let saveButton = document.getElementById("saveButton");
+
+saveButton.onclick = function() {
+  let userEnteredText = textAreaElement.value;
+  localStorage.setItem("userEnteredText", userEnteredText);
+};
+
+let storedUserInputValue = localStorage.getItem("userEnteredText");
+
+if (storedUserInputValue === null) {
+  textAreaElement.value = "";
+}
+else {
+  textAreaElement.value = storedUserInputValue;
+}
+
+
+1. JavaScript Object Notation (JSON)
+JSON is a data representation format used for:
+
+Storing data (Client/Server)
+Exchanging data between Client and Server
+1.1 Supported Types
+-Number
+-String
+-Boolean
+-Array
+-Object
+-Null
+
+1.2 JS Object vs JSON Object
+In JSON, all keys in an object must be enclosed with double-quotes. While in JS, this is not necessary.
+
+JS:
+let profile = {
+  name: "Rahul",
+  age: 29,
+  designation: "Web Developer"
+};
+
+JSON:
+let profile = {
+  "name": "Rahul",
+  "age": 29,
+  "designation": "Web Developer"
+};
+
+1.3 JSON Methods
+1.3.1 JSON.stringify()
+It converts the given value into JSON string.
+
+Syntax: JSON.stringify( value )
+
+1.3.2 JSON.parse()
+It parses a JSON string and returns a JS object.
+
+Syntax: JSON.parse( string )
+
+EXAMPLE CODE - 1:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    Your HTML code goes here. Write JavaScript code in JAVASCRIPT tab.
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+
+let profile = {
+  name: "Rahul",
+  age: 29,
+  designation: "Web Developer"
+};
+let stringifiedProfile = JSON.stringify(profile);
+
+console.log(stringifiedProfile);
+
+console.log(typeof(stringifiedProfile));
+
+EXAMPLE CODE - 2:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="todos-bg-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="todos-heading">Todos</h1>
+            <h1 class="create-task-heading">
+              Create <span class="create-task-heading-subpart">Task</span>
+            </h1>
+            <input type="text" id="todoUserInput" class="todo-user-input" placeholder="What needs to be done?"/>
+            <button class="button" id="addTodoButton">Add</button>
+            <h1 class="todo-items-heading">
+              My <span class="todo-items-heading-subpart">Tasks</span>
+            </h1>
+            <ul class="todo-items-container" id="todoItemsContainer"></ul>
+            <button class="button" id="saveTodoButton">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.todos-bg-container {
+  background-color: #f9fbfe;
+  height: 100vh;
+}
+
+.todos-heading {
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 46px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.create-task-heading {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.create-task-heading-subpart {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.todo-items-heading {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.todo-items-heading-subpart {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.todo-items-container {
+  margin: 0px;
+  padding: 0px;
+}
+
+.todo-item-container {
+  margin-top: 15px;
+}
+
+.todo-user-input {
+  background-color: white;
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e4e7eb;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 15px;
+}
+
+.button {
+  color: white;
+  background-color: #4c63b6;
+  font-family: "Roboto";
+  font-size: 18px;
+  border-width: 0px;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.label-container {
+  background-color: #e6f6ff;
+  width: 100%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #096f92;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 12px;
+  margin-right: 12px;
+}
+
+.checkbox-label {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  width: 82%;
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+}
+
+.delete-icon-container {
+  text-align: right;
+  width: 18%;
+}
+
+.delete-icon {
+  padding: 15px;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+JAVASCRIPT CODE:
+
+let todoItemsContainer = document.getElementById("todoItemsContainer");
+let addTodoButton = document.getElementById("addTodoButton");
+let saveTodoButton = document.getElementById("saveTodoButton");
+
+function getTodoListFromLocalStorage() {
+  let stringifiedTodoList = localStorage.getItem("todoList");
+  let parsedTodoList = JSON.parse(stringifiedTodoList);
+  if (parsedTodoList === null) {
+    return [];
+  } else {
+    return parsedTodoList;
+  }
+}
+
+let todoList = getTodoListFromLocalStorage();
+let todosCount = todoList.length;
+
+saveTodoButton.onclick = function () {
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+};
+
+function onTodoStatusChange(checkboxId, labelId) {
+  let checkboxElement = document.getElementById(checkboxId);
+  let labelElement = document.getElementById(labelId);
+  labelElement.classList.toggle("checked");
+}
+
+function onDeleteTodo(todoId) {
+  let todoElement = document.getElementById(todoId);
+  todoItemsContainer.removeChild(todoElement);
+}
+
+function createAndAppendTodo(todo) {
+  let todoId = "todo" + todo.uniqueNo;
+  let checkboxId = "checkbox" + todo.uniqueNo;
+  let labelId = "label" + todo.uniqueNo;
+
+  let todoElement = document.createElement("li");
+  todoElement.classList.add("todo-item-container", "d-flex", "flex-row");
+  todoElement.id = todoId;
+  todoItemsContainer.appendChild(todoElement);
+
+  let inputElement = document.createElement("input");
+  inputElement.type = "checkbox";
+  inputElement.id = checkboxId;
+
+  inputElement.onclick = function() {
+    onTodoStatusChange(checkboxId, labelId);
+  };
+
+  inputElement.classList.add("checkbox-input");
+  todoElement.appendChild(inputElement);
+
+  let labelContainer = document.createElement("div");
+  labelContainer.classList.add("label-container", "d-flex", "flex-row");
+  todoElement.appendChild(labelContainer);
+
+  let labelElement = document.createElement("label");
+  labelElement.setAttribute("for", checkboxId);
+  labelElement.id = labelId;
+  labelElement.classList.add("checkbox-label");
+  labelElement.textContent = todo.text;
+  labelContainer.appendChild(labelElement);
+
+  let deleteIconContainer = document.createElement("div");
+  deleteIconContainer.classList.add("delete-icon-container");
+  labelContainer.appendChild(deleteIconContainer);
+
+  let deleteIcon = document.createElement("i");
+  deleteIcon.classList.add("far", "fa-trash-alt", "delete-icon");
+
+  deleteIcon.onclick = function () {
+    onDeleteTodo(todoId);
+  };
+
+  deleteIconContainer.appendChild(deleteIcon);
+}
+
+for (let todo of todoList) {
+  createAndAppendTodo(todo);
+}
+
+function onAddTodo() {
+  let userInputElement = document.getElementById("todoUserInput");
+  let userInputValue = userInputElement.value;
+
+  if (userInputValue === "") {
+    alert("Enter Valid Text");
+    return;
+  }
+
+  todosCount = todosCount + 1;
+
+  let newTodo = {
+    text: userInputValue,
+    uniqueNo: todosCount,
+  };
+  todoList.push(newTodo);
+  createAndAppendTodo(newTodo);
+  userInputElement.value = "";
+}
+
+addTodoButton.onclick = function () {
+  onAddTodo();
+};
