@@ -1,0 +1,368 @@
+                                                               *FORMS*
+
+1. HTML Forms
+The HTML Forms can be used to collect data from the user.
+
+Forms are of different kinds:
+-Login/Sign in Form
+-Registration Form
+-Contact Us Form, etc.
+
+1.1 HTML Form Element
+The HTML form element can be used to create HTML forms. It is a container that can contain different types of Input elements like Text Fields, Checkboxes, etc.
+
+HTML:
+<form></form>
+
+Note:
+Whenever we click a button or press Enter key while editing any input field in the form, the submit event will be triggered.
+
+2. Event Object Methods
+2.1 preventDefault
+The preventDefault() method prevents the occurrence of default action.
+
+Here in the form, it prevents the default behaviour of the submit event.
+
+JAVASCRIPT:
+
+let myFormEl = document.getElementById("myForm");
+
+myFormEl.addEventListener("submit", function(event) {
+  event.preventDefault();
+});
+
+3. Event Types
+There are different types of events.
+-Keyboard Events
+-Mouse Events
+-Touch Events
+-Form Events, etc.
+
+3.1 Form Events
+A Form Event is an event that can occur within a form.
+
+Some of the form events are:
+-blur
+-focus
+-change, etc.
+
+3.1.1 Blur Event
+The blur event happens when an HTML element has lost focus.
+
+JAVASCRIPT:
+let nameEl = document.getElementById("name");
+
+nameEl.addEventListener("blur", function(event) {
+  console.log("blur event triggered");
+});
+
+EXAMPLE CODE: Try out the preventDefault method and blur event
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="form-heading">Add User</h1>
+      <form id="myForm">
+        <div class="mb-3">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" />
+          <p id="nameErrMsg" class="error-message"></p>
+        </div>
+        <div class="mb-3">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" />
+          <p id="emailErrMsg" class="error-message"></p>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.form-heading {
+  font-family: "Roboto";
+  font-size: 36px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+JAVASCRIPT CODE:
+let myFormEl = document.getElementById("myForm");
+
+let nameEl = document.getElementById("name");
+let nameErrMsgEl = document.getElementById("nameErrMsg");
+
+let emailEl = document.getElementById("email");
+let emailErrMsgEl = document.getElementById("emailErrMsg");
+
+nameEl.addEventListener("blur", function(event) {
+  if (event.target.value === "") {
+    nameErrMsgEl.textContent = "Required*";
+  } else {
+    nameErrMsgEl.textContent = "";
+  }
+});
+
+emailEl.addEventListener("blur", function(event) {
+  if (event.target.value === "") {
+    emailErrMsgEl.textContent = "Required*";
+  } else {
+    emailErrMsgEl.textContent = "";
+  }
+});
+
+myFormEl.addEventListener("submit", function(event) {
+  event.preventDefault();
+});
+
+
+                                                 *Forms | Part-2 |*
+
+
+1. HTML Select Element
+The HTML select element is used to create a drop-down list.
+
+HTML:
+<select></select>
+
+1.1 HTML Option Element
+The HTML option element is used to create the menu option of a drop-down list.
+
+The text content of the HTML option element is used as a label.
+
+HTML:
+<select>
+  <option>Active</option>
+</select>
+
+1.1.1 The value Attribute
+Every HTML option element should contain the HTML value attribute.
+
+HTML:
+<option value="Active">Active</option>
+
+2. HTML Input Element
+2.1 Radio
+The HTML input radio element is used to select one option among a list of given options.
+
+HTML:
+<input type="radio" id="genderMale" value="Male" />
+<input type="radio" id="genderFemale" value="Female" />
+
+2.1.1 HTML name attribute
+The HTML name Attribute specifies the name for an HTML Element.
+
+HTML:
+<input type="radio" value="Male" name="gender" />
+
+2.1.2 Radio Group
+All the radio buttons with same name collectively called as a radio group.
+
+We can select only one radio button within a radio group.
+
+HTML:
+<input type="radio" value="Male" name="gender" />
+<input type="radio" value="Female" name="gender" />
+
+3. Boolean Attributes
+For the HTML Boolean attributes, we only specify the name of the HTML attribute.
+
+The presence of a boolean attribute represents the true value, and the absence represents the false value.
+
+3.1 HTML selected attribute
+The selected attribute specifies that an option should be pre-selected when the page loads.
+
+HTML:
+<option value="Active" selected>Active</option>
+
+3.2 HTML checked attribute
+The checked attribute specifies that an input element should be pre-selected (checked) when the page loads.
+
+HTML:
+<input type="radio" id="genderMale" value="Male" name="gender" checked />
+
+
+EXAMPLE CODE: Try out the HTML select element, input radio element and the boolean attributes
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="form-heading">Add User</h1>
+      <form id="myForm">
+        <div class="mb-3">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" />
+          <p id="nameErrMsg" class="error-message"></p>
+        </div>
+        <div class="mb-3">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" />
+          <p id="emailErrMsg" class="error-message"></p>
+        </div>
+        <div class="mb-3">
+          <label for="status">Working Status</label>
+          <select id="status" class="form-control">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <h1 class="gender-field-heading">Gender</h1>
+          <input type="radio" name="gender" id="genderMale" value="Male" checked />
+          <label for="genderMale">Male</label>
+          <input type="radio" name="gender" id="genderFemale" value="Female" class="ml-2"/>
+          <label for="genderFemale">Female</label>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.form-heading {
+  font-family: "Roboto";
+  font-size: 36px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+.gender-field-heading {
+  color: #212529;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+JAVASCRIPT CODE:
+
+let nameEl = document.getElementById("name");
+let nameErrMsgEl = document.getElementById("nameErrMsg");
+
+let emailEl = document.getElementById("email");
+let emailErrMsgEl = document.getElementById("emailErrMsg");
+
+let workingStatusEl = document.getElementById("status");
+let genderMaleEl = document.getElementById("genderMale");
+let genderFemaleEl = document.getElementById("genderFemale");
+
+let myFormEl = document.getElementById("myForm");
+
+let formData = {
+  name: "",
+  email: "",
+  status: "Active",
+  gender: "Male"
+};
+
+nameEl.addEventListener("change", function(event) {
+  if (event.target.value === "") {
+    nameErrMsgEl.textContent = "Required*";
+  } else {
+    nameErrMsgEl.textContent = "";
+  }
+
+  formData.name = event.target.value;
+});
+
+emailEl.addEventListener("change", function(event) {
+  if (event.target.value === "") {
+    emailErrMsgEl.textContent = "Required*";
+  } else {
+    emailErrMsgEl.textContent = "";
+  }
+
+  formData.email = event.target.value;
+});
+
+workingStatusEl.addEventListener("change", function(event) {
+  formData.status = event.target.value;
+});
+
+genderMaleEl.addEventListener("change", function(event) {
+  formData.gender = event.target.value;
+});
+
+genderFemaleEl.addEventListener("change", function(event) {
+  formData.gender = event.target.value;
+});
+
+function validateFormData(formData) {
+  let {name, email} = formData;
+  if (name === "") {
+    nameErrMsgEl.textContent = "Required*";
+  }
+  if (email === ""){
+    emailErrMsgEl.textContent = "Required*";
+  }
+}
+
+function submitFormData(formData) {
+  let options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization:
+        "Bearer 00f3f8fde06120db02b587cc372c3d85510896e899b45774068bb750462acd9f",
+    },
+    body: JSON.stringify(formData)
+  };
+
+  let url = "https://gorest.co.in/public-api/users";
+
+  fetch(url, options)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(jsonData) {
+      console.log(jsonData);
+      if (jsonData.code === 422) {
+        if (jsonData.data[0].message === "has already been taken") {
+          emailErrMsgEl.textContent = "Email Already Exists";
+        }
+      }
+    });
+}
+
+myFormEl.addEventListener("submit", function(event){
+  event.preventDefault();
+  validateFormData(formData);
+  submitFormData(formData);
+});
+
+
+
+
