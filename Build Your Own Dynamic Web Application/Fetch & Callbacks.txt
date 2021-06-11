@@ -1,0 +1,623 @@
+                                *Callbacks & Schedulers *
+
+1. Callback function
+A Callback is a function that is passed as an argument to another function.
+
+1.1 Passing a function as an argument
+JAVASCRIPT:
+function displayGreeting(displayName) {
+  console.log("Hello");
+  displayName();
+  console.log("Good Morning!");
+}
+
+displayGreeting(function() {
+  console.log("Rahul");
+});
+
+1.2 Passing a function name as an argument
+JAVASCRIPT:
+function displayGreeting(displayName) {
+  console.log("Hello");
+  displayName();
+  console.log("Good Morning!");
+}
+function displayRahul() {
+  console.log("Rahul");
+}
+displayGreeting(displayRahul);
+
+1.3 Passing a function expression as an argument
+JAVASCRIPT:
+function displayGreeting(displayName) {
+  console.log("Hello");
+  displayName();
+  console.log("Good Morning!");
+}
+let displayRam = function() {
+  console.log("Ram");
+};
+displayGreeting(displayRam);
+
+2. Schedulers
+The Schedulers are used to schedule the execution of a callback function.
+
+There are different scheduler methods.
+-setInterval()
+-clearInterval()
+-setTimeout()
+-clearTimeout(), etc.
+
+2.1 setInterval()
+The setInterval() method allows us to run a function at the specified interval of time repeatedly.
+
+Syntax: setInterval(function, delay);
+
+function - a callback function that is called repeatedly at the specified interval of time (delay).
+delay - time in milliseconds. (1 second = 1000 milliseconds)
+
+JAVASCRIPT:
+let counter = 0;
+setInterval(function() {
+  console.log(counter);
+  counter = counter+1;
+}, 1000);
+
+In the setInterval() method, the callback function repeatedly executes until the browser tab is closed or the scheduler is cancelled.
+
+When we call the setInterval() method, it returns a unique id. This unique Id is used to cancel the callback function execution.
+
+2.2 clearInterval()
+The clearInterval() method cancels a schedule previously set up by calling setInterval().
+
+To execute clearInterval() method, we need to pass the uniqueId returned by setInterval() as an argument.
+
+Syntax: clearInterval(uniqueId);
+
+JAVASCRIPT:
+let counter = 0;
+let uniqueId = setInterval(function() {
+  console.log(counter);
+  counter = counter+1;
+}, 1000);
+
+clearInterval(uniqueId);
+
+EXAMPLE CODE: Try out the setInterval() and clearInterval() methods 
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <button id="setIntervalBtn">
+      Set Interval
+    </button>
+    <button id="clearIntervalBtn">
+      Clear Interval
+    </button>
+  </body>
+</html>
+
+
+JAVASCRIPT CODE:
+let setIntervalBtnEl = document.getElementById("setIntervalBtn");
+let clearIntervalBtnEl = document.getElementById("clearIntervalBtn");
+
+let uniqueId = null;
+
+setIntervalBtnEl.onclick = function() {
+  let counter = 0;
+  uniqueId = setInterval(function() {
+    console.log(counter);
+    counter = counter + 1;
+  }, 1000);
+};
+
+clearIntervalBtnEl.onclick = function() {
+  clearInterval(uniqueId);
+  console.log("Interval cleared");
+};
+
+2.3 setTimeout()
+The setTimeout() method executes a function after the specified time.
+
+Syntax: setTimeout(function, delay);
+
+function - a callback function that is called after the specified time (delay).
+delay - time in milliseconds.
+
+JAVASCRIPT:
+let counter = 0;
+setTimeout(function() {
+  console.log(counter);
+  counter = counter + 1;
+}, 1000);
+
+2.4 clearTimeout()
+We can cancel the setTimeout() before it executes the callback function using the clearTimeout() method.
+
+To execute clearTimeout(), we need to pass the uniqueId returned by setTimeout() as an argument.
+
+Syntax: clearTimeout(uniqueId);
+
+JAVASCRIPT:
+let counter = 0;
+let uniqueId = setTimeout(function() {
+  console.log(counter);
+  counter = counter+1;
+}, 1000);
+
+clearTimeout(uniqueId);
+
+EXAMPLE CODE: Try out the setTimeout() and clearTimeout() methods 
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <button id="setTimeoutBtn">
+      Set Timeout
+    </button>
+  </body>
+</html>
+
+JAVASCRIPT CODE:
+let setTimeoutBtnEl = document.getElementById("setTimeoutBtn");
+
+let uniqueId = null;
+
+setTimeoutBtnEl.onclick = function() {
+  setTimeout(function() {
+    console.log("Hello");
+  }, 3000);
+};
+
+
+
+
+                                         *Event Listeners and More Events*
+
+
+1. Event Listeners
+JavaScript offers three ways to add an Event Listener to a DOM element.
+-Inline event listeners
+-onevent listeners
+-addEventListener()
+
+1.1 Inline event listeners
+HTML:
+<button onclick="greeting()">Greet</button>
+
+JAVASCRIPT:
+function greeting() {
+  console.log("Hi Rahul");
+}
+
+1.2 onevent listeners
+HTML:
+<button id="greetBtn">Greet</button>
+
+JAVASCRIPT:
+let greetBtnEl = document.getElementById("greetBtn");
+
+greetBtnEl.onclick = function() {
+  console.log("Hi Rahul");
+};
+
+1.3 addEventListener()
+It is a modern approach to add an event listener.
+
+Syntax: element.addEventListener(event, function);
+
+element - HTML element
+event - event name
+function - Callback function
+
+HTML:
+<button id="greetBtn">Greet</button>
+
+JAVASCRIPT:
+let greetBtn = document.getElementById("greetBtn");
+
+greetBtn.addEventListener("click", function() {
+  console.log("Hi Rahul");
+});
+
+2. Operators
+2.1 Comparison Operators:
+
+Operator	                             Usage	                                        Description
+Equal ( == )	           a == b	                          returns true if both a and b values are equal.
+Not equal ( != )	            a != b	                           returns true if both a and b values are not equal.
+Strict equal ( === )	           a === b	                           returns true if both a and b values are equal and of the same type.
+Strict not equal ( !== )           a !== b	                             returns true if either a and b values are not equal or of the different type.
+Greater than ( > )	             a > b	                            returns true if a value is greater than b value.
+Greater than or equal ( >= )   a >= b	                               returns true if a value is greater than or equal to b value.
+Less than ( < )	              a < b	                                returns true if a value is less than b value.
+Less than or equal ( <= )        a <= b	                              returns true if a value is less than or equal to b value.
+
+
+2.2 Logical Operators
+
+Operator	                     Usage	Description
+AND ( && )	a && b	returns true if both a and b values are true.
+OR ( | | )	                    a | | b	returns true if either a or b value is true.
+NOT ( ! )	                       !a	returns true if a value is not true.
+
+
+3. More Events
+Events are the actions by which the user or browser interact with HTML elements.
+
+There are different types of events.
+-Keyboard Events
+-Mouse Events
+-Touch Events, and many more.
+
+3.1 Keyboard Events
+Keyboard Event is the user interaction with the keyboard.
+
+The keyboard events are
+-keydown
+-keyup
+
+3.1.1 Keydown event
+The keydown event occurs when a key on the keyboard is pressed.
+
+Syntax: element.addEventListener("keydown", function);
+
+JAVASCRIPT:
+let inputEl = document.createElement("input");
+
+function printKeydown() {
+  console.log("key pressed");
+}
+
+inputEl.addEventListener("keydown", printKeydown);
+document.body.appendChild(inputEl);
+
+3.1.2 Keyup event
+The keyup event occurs when a key on the keyboard is released.
+
+Syntax: element.addEventListener("keyup", function);
+
+3.2 Event Object
+Whenever an event happens, the browser creates an event object.
+
+It consists of information about the event that has happened.
+
+It consists of many properties and methods.
+-type
+-target
+-key
+-timeStamp
+-stopPropagation, and many more.
+
+3.2.1 Properties & Methods
+For any event, event-specific properties and methods will be present.
+
+For Example,
+
+The keydown event has key property, whereas the onclick event doesn't have it.
+
+event.type:
+The event.type property contains the type of event occurred like click, keydown, etc.
+
+JAVASCRIPT
+
+let inputEl = document.createElement("input");
+
+function printKeydown(event) {
+  console.log(event.type);  // keydown
+}
+
+inputEl.addEventListener("keydown", printKeydown);
+document.body.appendChild(inputEl);
+
+event.target:
+The event.target property contains the HTML element that triggered the event.
+
+JAVASCRIPT
+
+let inputElement = document.createElement("input");
+
+function printKeydown(event) {
+  console.log(event.target);  // <input></input>
+}
+
+inputElement.addEventListener("keydown", printKeydown);
+document.body.appendChild(inputElement);
+
+event.key:
+The event.key property contains the value of the key pressed by the user.
+
+JAVASCRIPT
+let inputElement = document.createElement("input");
+
+function printKeydown(event) {
+  console.log(event.key);
+}
+
+inputElement.addEventListener("keydown", printKeydown);
+document.body.appendChild(inputElement);
+
+EXAMPLE CODE:
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="timer-container">
+      <input type="text" class="user-input" id="defuser" />
+      <br />
+      <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/time-bomb-img.png" class="bomb-image"/>
+      <p class="timer-display" id="timer">10</p>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Monoton&family=Open+Sans:wght@400;700&family=Playfair+Display+SC:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Work+Sans:wght@400;700&display=swap");
+
+.timer-container {
+  text-align: center;
+  background-color: #00bafc;
+  height: 100vh;
+  padding: 20px;
+}
+
+.timer-display {
+  color: white;
+  font-size: 50px;
+}
+
+.user-input {
+  text-align: center;
+  border-width: 0px;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.bomb-image {
+  width: 150px;
+  margin-top: 40px;
+}
+
+JAVASCRIPT CODE:
+let timerEl = document.getElementById("timer");
+let defuserEl = document.getElementById("defuser");
+let countdown = 10;
+
+let intervalId = setInterval(function() {
+  countdown = countdown - 1;
+  timerEl.textContent = countdown;
+  if (countdown === 0) {
+    timerEl.textContent = "BOOM";
+    clearInterval(intervalId);
+  }
+}, 1000);
+
+defuserEl.addEventListener("keydown", function(event) {
+  let bombDefuserText = defuserEl.value;
+  if (event.key === "Enter" && bombDefuserText === "defuse" && countdown !== 0) {
+    timerEl.textContent = "You did it!";
+    clearInterval(intervalId);
+  }
+});
+
+                   
+
+
+
+
+
+                                                                                                                  *Hypertext Transfer Protocol (HTTP)*
+
+
+1. Web Resources
+A Web Resource is any data that can be obtained via internet.
+
+A resource can be
+-HTML document
+-CSS document
+-JSON Data or Plain text
+-Image, Video, etc.
+
+2. Uniform Resource Locator (URL)
+URL is a text string that specifies where a resource can be found on the internet.
+
+We can access web resources using the URL.
+
+Syntax: protocol://domainName/path?query-parameters
+
+In the URL http://www.flipkart.com/watches?type=digital&rating=4,
+
+http is a Protocol
+www.flipkart.com is a Domain Name
+/watches is a Path
+type=digital&rating=4 is the Query Parameters
+
+2.1 Protocol
+A protocol is a standard set of rules that allow electronic devices to communicate with each other.
+
+There are different types of protocols.
+
+Hypertext Transfer Protocol (HTTP)
+Hypertext Transfer Protocol Secure (HTTPS)
+Web Sockets, etc.
+2.1.1 HTTP
+The Hypertext Transfer Protocol (HTTP), is a protocol used to transfer resources over the web.
+
+Examples: Internet forums, Educational sites, etc.
+
+HTTP Request: Message sent by the client
+
+HTTP Response: Message sent by the server
+
+2.1.2 HTTPS
+In Hypertext Transfer Protocol Secure (HTTPS), information is transferred in an
+encrypted format and provides secure communication.
+
+Examples: Banking Websites, Payment gateway, Login Pages, Emails and Corporate Sector Websites, etc.
+
+2.2 Domain Name
+It indicates which Web server is being requested.
+
+2.3 Path
+The path is to identify the resources on the server.
+
+Examples:
+
+/watches in http://www.flipkart.com/watches
+/electronics/laptops/gaming in http://www.flipkart.com/electronics/laptops/gaming
+2.4 Query Parameters
+Query parameters add some criteria to the request for the resource.
+
+Multiple query parameters can be added by using an & ( ampersand ) symbol.
+
+For example,
+
+http://www.flipkart.com/watches?type=digital&rating=4
+
+3. HTTP
+3.1 HTTP Requests
+HTTP requests are messages sent by the client to initiate an action on the server.
+
+HTTP request includes
+-Start Line
+-Headers
+-Body
+
+3.1.1 Start Line
+A Start Line specifies a
+
+URL
+HTTP Method
+HTTP Version
+HTTP Methods
+
+The HTTP Request methods indicate the desired action to be performed for a given resource.
+
+Methods	                        Description
+GET (Read)	Request for a resource(s) from the server
+POST (Create)	Submit data to the server
+PUT (Update)	The data within the request must be stored at the URL supplied, replacing any existing data
+DELETE (Delete)	Delete a resource(s)
+
+HTTP Version:
+
+Year	Version
+1991	HTTP/0.9
+1994	HTTPS
+1996	HTTP/1.0
+1997	HTTP/1.1
+2015	HTTP/2
+2019	HTTP/3
+
+3.1.2 Headers
+HTTP Headers let the client and the server to pass additional information with an HTTP request or response.
+
+3.1.3 Body
+We place the data in the Request body when we want to send data to the server.
+
+For example, form details filled by the user.
+
+HTTP Requests:
+
+-Start Line
+1.URL
+1a.Protocol
+       -HTTP
+        -HTTPS
+1b.Domain Name
+1c.Path
+1d.Query Parameters
+
+2.HTTP Method
+2a.GET (Read)
+2b.POST (Create)
+2c.PUT (Update)
+2d.DELETE (Delete)
+
+3.HTTP Version
+
+-Headers
+-Body
+
+3.2 HTTP Responses
+HTTP responses are messages sent by the server as an answer to the clients request.
+
+HTTP Response includes:
+-Status Line
+-Headers
+-Body
+
+3.2.1 Status Line
+A Status line specifies a
+
+HTTP version:
+-Status code
+-Status text
+-Status code
+
+Status codes Indicate whether an HTTP request has been successfully completed or not.
+
+Status Code Series	Indicates
+1XX	                   Information
+2XX	                    Success
+3XX	                     Redirection
+4XX	                      Client Error
+5XX	                       Server Error
+
+->200 ( Success ) - Indicates that the request has succeeded
+
+->201 ( Created ) - The request has succeeded and a new resource has been created as a result
+
+Status text:
+
+Status Code	Status Text
+200	                       OK
+204	                    No Response
+301	                   Moved Permanently
+401	                      Unauthorized
+403	                      Forbidden
+404	                            Not Found
+
+3.2.2 Body
+Response Body contains the resource data that was requested by the client.
+
+HTTP Responses:
+
+1. Status Line
+-HTTP version
+-Status code
+         1XX
+         2XX
+         3XX
+        4XX
+         5XX
+-Status text
+
+2.Headers
+3.Body
+
+
+
+
