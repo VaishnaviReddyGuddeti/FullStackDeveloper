@@ -1,0 +1,441 @@
+
+                                         *Introduction to Bootstrap*
+
+1. Reusability of CSS Rulesets
+If we want the same style for multiple HTML elements, we can write the CSS Ruleset once and use it for different HTML elements.
+
+CSS:
+.button {
+  width: 138px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 10px;
+}
+
+HTML:
+<button class="button">Get Started</button>
+<button class="button">Visit Now</button>
+
+2. Multiple class names as an HTML attribute value
+We can provide multiple class names separated by space as a value to the HTML class attribute.
+
+Syntax: <tag class = "name1 name2 name3 name4 ...">Content</tag>
+
+HTML attribute value: name1 name2 name3 name4 ...
+
+class names: name1, name2, name3, and name4
+
+CSS:
+.button {
+  width: 138px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 10px;
+}
+.button-green {
+  background-color: #8cc63f;
+}
+
+HTML:
+<button class="button button-green">Get Started</button>
+
+EXAMPLE :
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button class="button button-green">Get Started</button>
+    <button class="button button-orange">Visit Now</button>
+  </body>
+</html>
+
+CSS CODE:
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.button-green {
+  background-color: #8cc63f;
+}
+.button-orange {
+  background-color: #f7931e;
+}
+.button {
+  width: 138px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 10px;
+}
+
+3. Bootstrap
+Bootstrap is a large collection of predefined reusable Code Snippets written in HTML, CSS, and Javascript. The Code Snippets include Buttons, Cards, Carousels, etc.
+
+3.1 How to use Bootstrap?
+To use the Code Snippets provided by Bootstrap, we need to add the below piece of code within the HTML head element. We call it BootstrapCDN.
+
+HTML:
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+3.2 Predefined Styles in Bootstrap
+3.2.1 Button
+The Bootstrap class name btn is used to style the HTML button element.
+
+HTML:
+<button class="btn">Submit</button>
+
+->To achieve the different button styles, Bootstrap has the following class names.
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <button class="btn btn-primary">Get Started</button>
+    <button class="btn btn-secondary">Get Started</button>
+    <button class="btn btn-success">Get Started</button>
+    <button class="btn btn-danger">Get Started</button>
+    <button class="btn btn-warning">Get Started</button>
+    <button class="btn btn-info">Get Started</button>
+    <button class="btn btn-light">Get Started</button>
+    <button class="btn btn-dark">Get Started</button>
+  </body>
+</html>
+
+Bootstrap provides us with different types of buttons. One of them is outline buttons, which don't have a background color.
+
+To add the outline buttons in our HTML document, just replace btn in the above class names with the btn-outline.
+
+To achieve the different outline button styles, Bootstrap has the following class names:
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <button class="btn btn-outline-primary">Get Started</button>
+    <button class="btn btn-outline-secondary">Get Started</button>
+    <button class="btn btn-outline-success">Get Started</button>
+    <button class="btn btn-outline-danger">Get Started</button>
+    <button class="btn btn-outline-warning">Get Started</button>
+    <button class="btn btn-outline-info">Get Started</button>
+    <button class="btn btn-outline-light">Get Started</button>
+    <button class="btn btn-outline-dark">Get Started</button>
+  </body>
+</html>
+
+NOTE:
+By default, Bootstrap class name btn has no background color.
+
+3.2.2 Text colors
+To apply different colors to the text, Bootstrap has the following class names:
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <p class="text-primary">Tourism</p>
+    <p class="text-secondary">Tourism</p>
+    <p class="text-success">Tourism</p>
+    <p class="text-danger">Tourism</p>
+    <p class="text-warning">Tourism</p>
+    <p class="text-info">Tourism</p>
+    <p class="text-light">Tourism</p>
+    <p class="text-dark">Tourism</p>
+  </body>
+</html>
+
+3.2.3 Text transform
+To apply different cases like upper case, lower case, etc. to the text, Bootstrap has the following class names:
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <p class="text-uppercase">Plan your TRIP.</p>
+    <p class="text-capitalize">plan your trip.</p>
+    <p class="text-lowercase">PLAN your TRIP.</p>
+  </body>
+</html>
+
+3.2.4 Background colors
+To apply different background colors to an HTML element, Bootstrap has the following class names:
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="bg-primary"><p>Tourism</p></div>
+    <div class="bg-secondary"><p>Tourism</p></div>
+    <div class="bg-success"><p>Tourism</p></div>
+    <div class="bg-danger"><p>Tourism</p></div>
+    <div class="bg-warning"><p>Tourism</p></div>
+    <div class="bg-info"><p>Tourism</p></div>
+    <div class="bg-light"><p>Tourism</p></div>
+    <div class="bg-dark"><p>Tourism</p></div>
+  </body>
+</html>
+
+Bootstrap provides us with many predefined class names. Some of them are:
+-card
+-carousel
+-alert
+-alert-success
+-alert-link
+-bg-danger
+-card-body and many more...
+
+NOTE:
+Using predefined bootstrap class names as a selector in our CSS Ruleset may give unexpected results.
+
+EXAMPLE:
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="bg-warning text-center">
+      <h1 class="text-primary">Tourism</h1>
+      <p class="text-lowercase">PLAN your TRIP.</p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </body>
+</html>
+
+
+                                                          *Introduction to Bootstrap | Part 2 | *
+
+*Flexbox Properties*
+
+1. Flexbox Container
+The Bootstrap class name d-flex defines a Flexbox Container. The direct HTML elements in the Flexbox Container are called flex items.
+
+HTML:
+<div class="d-flex">
+  <div>
+    <h1>Tourism</h1>
+    <p>Plan your trip.</p>
+    <button>Get Started</button>
+  </div>
+</div>
+
+-The HTML container element with the class="d-flex" is a Flexbox Container.
+-The HTML container element div in Flexbox Container is a flex item. Because it is directly inside the Flexbox Container.
+-The HTML main heading, paragraph, and button elements are not flex items. Because these elements are not directly inside the Flexbox Container.
+
+Note:
+Wrapping HTML elements in the Flexbox Container is mandatory to apply other flex properties.
+
+2. Flex Direction
+The Flex Direction specifies the direction of the flex items in the Flexbox Container.
+
+Class Name	Direction of the flex items in a Flexbox Container
+flex-row	                               Horizontal
+flex-column	            Vertical
+
+
+2.1 flex-row
+The Bootstrap class name flex-row is used to move the flex items horizontally in the Flexbox Container.
+
+HTML:
+<div class="d-flex flex-row">
+  <div>
+    <h1>Tourism</h1>
+    <p>Plan your trip.</p>
+    <button>Get Started</button>
+  </div>
+</div>
+
+2.2 flex-column
+The Bootstrap class name flex-column is used to move the flex items vertically in the Flexbox Container.
+
+HTML:
+<div class="d-flex flex-column">
+  <div>
+    <h1>Tourism</h1>
+    <p>Plan your trip.</p>
+    <button>Get Started</button>
+  </div>
+</div>
+
+NOTE:
+The Bootstrap class name flex-row is the default Flex Direction for the Flexbox Container. So, once d-flex is specified, all the flex items in the Flexbox Container display horizontally.
+
+3. Justify Content
+The Justify Content specifies the alignment of flex items along the Flex Direction in a Flexbox Container.
+
+3.1 justify-content-start
+The Bootstrap class name justify-content-start is used to align the flex items at the start of the Flexbox Container either horizontally or vertically based on the Flex Direction.
+
+Flex Direction:	Alignment of flex items in a Flexbox Container:
+flex-row	                   Align flex items horizontally to the left
+flex-column	Align flex items vertically to the top
+
+HTML:
+<div class="d-flex flex-column justify-content-start">
+  <div>
+    <h1>Tourism</h1>
+    <p>Plan your trip.</p>
+    <button>Get Started</button>
+  </div>
+</div>
+
+3.2 justify-content-center
+The Bootstrap class name justify-content-center is used to align the flex items at the center of the Flexbox Container either horizontally or vertically based on the Flex Direction.
+
+Flex Direction	Alignment of flex items in a Flexbox Container
+flex-row	                     Align flex items horizontally to the center
+flex-column	 Align flex items vertically to the center
+
+HTML:
+
+<div class="d-flex flex-column justify-content-center">
+  <div>
+    <h1>Tourism</h1>
+    <p>Plan your trip.</p>
+    <button>Get Started</button>
+  </div>
+</div>
+
+3.3 justify-content-end
+The Bootstrap class name justify-content-end is used to align the flex items at the end of the Flexbox Container either horizontally or vertically based on the Flex Direction.
+
+Flex Direction	Alignment of flex items in a Flexbox Container
+flex-row	                      lign flex items horizontally to the right
+flex-column	Align flex items vertically to the bottom
+
+HTML:
+<div class="d-flex flex-column justify-content-end">
+  <div>
+    <h1>Tourism</h1>
+    <p>Plan your trip.</p>
+    <button>Get Started</button>
+  </div>
+</div>
+
+EXAMPLE - 1:
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="bg-container d-flex flex-column justify-content-end">
+      <div class="tourism-card">
+        <h1 class="main-heading">Tourism</h1>
+        <p class="paragraph">Plan your trip.</p>
+        <button class="button">Get Started</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/ocean.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.tourism-card {
+  text-align: center;
+  background-color: white;
+  padding: 5px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.main-heading {
+  font-family: "Roboto";
+}
+.paragraph {
+  font-family: "Roboto";
+}
+.button {
+  color: white;
+  background-color: #25b1cc;
+  width: 138px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 20px;
+}
+
+
+EXAMPLE - 2:
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="d-flex flex-column justify-content-end box-container">
+      <div class="box box-orange"><p>Box 1</p></div>
+      <div class="box box-green"><p>Box 2</p></div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.box{
+  width: 100px;
+  height: 100px;
+  color: white;
+}
+.box-orange{
+  background-color: orange;
+}
+.box-green{
+  background-color: green;
+}
+.box-container{
+  width: 100vw;
+  height: 100vh;
+}
+
