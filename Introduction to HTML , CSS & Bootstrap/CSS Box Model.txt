@@ -1,0 +1,208 @@
+
+                                              *Introduction to CSS Box Model | Part 1 | *
+
+CSS Box Properties
+
+1. Height
+The CSS height property specifies the height of an HTML element.
+
+CSS:
+.card {
+  height: 200px;
+}
+
+2. Width
+The CSS width property specifies the width of an HTML element.
+
+CSS:
+.card {
+  width: 250px;
+}
+
+CSS Background Properties
+
+1. Background Image
+The CSS background-image property specifies the background image of an HTML element.
+CSS:
+.card {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/ocean.jpg");
+}
+
+-> Value: url (URL)
+      Description: The URL to the image.
+
+NOTE:
+1.The background image takes the height of the content of an HTML element if you don't specify the height to it.
+2.The URL given to the background-image must be a valid URL to display the image.
+
+2. Background Size
+The CSS background-size property specifies the size of the background image of an HTML element.
+
+CSS:
+.card {
+  background-size: cover;
+}
+
+-> Value: cover
+      Description: Scales the image to the smallest size while maintaining the same aspect ratio (width/height) and covers the entire width and height even if the image is cropped.
+
+Note:
+Aspect Ratio is the ratio of the width and height (width/height) of an image.
+
+EXAMPLE:
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div class="card">
+      <h1>Tourism</h1>
+      <p>Plan your trip wherever you want to go</p>
+      <button>Get Started</button>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.card {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/ocean.jpg");
+  background-size: cover;
+  width: 250px;
+  height: 200px;
+}
+
+                                                                       *Introduction to CSS Box Model | Part 2 | *
+
+CSS Box Properties
+
+1. Border Width
+The CSS border-width property specifies the width of the border for all four sides of an HTML element.
+
+CSS:
+.button {
+  border-width: 2px;
+}
+
+The CSS Property and value pair border-width: 0px; removes the border of an HTML element.
+
+NOTE:
+Specifying the CSS border-style property for an HTML element is mandatory. Otherwise, the CSS properties like border-color, border-width will not appear in the browser. The HTML button element is an exception as it appears with a border in the browser by default.
+
+2. Border Radius
+The CSS border-radius property specifies the roundness of the corners of an HTML element.
+
+}
+
+CSS:
+.button {
+  border-radius: 20px;
+}
+
+You can use the below CSS properties to round a specific corner of an HTML element.
+
+Property:
+-border-top-left-radius
+-border-top-right-radius
+-border-bottom-left-radius
+-border-bottom-right-radius
+
+Quick Tip:
+Specifying the background color for an HTML element makes the border radius more visible.
+
+3. Border Color
+The CSS border-color property specifies the color of the border for all four sides of an HTML element.
+CSS:
+.button {
+  border-color: orange;
+}
+
+Warning:
+Specifying the CSS border-style property for an HTML element is mandatory. Otherwise, the CSS properties like border-color, border-width will not appear in the browser. The HTML button element is an exception as it appears with a border in the browser by default.
+
+4. Border Style
+The CSS border-style property specifies the style of the border for all four sides of an HTML element.
+CSS:
+.button {
+  border-style: dashed;
+}
+
+You can use one of the below values of the CSS border-style property.
+Value:
+-dotted
+-dashed
+-solid
+-none (default)
+
+5. Padding
+The CSS padding property specifies the space around the content of an HTML element.
+
+CSS:
+.card {
+  padding: 10px;
+}
+
+*CSS Colors*
+
+1. Hex Code
+CSS Colors can be represented in multiple ways:
+Color names:
+-Hex Code
+-HSL
+-RGB and many more...
+Since few colors have the Color names, Hex Codes make a good alternative to pick a wide variety of colors.
+
+Some of the Color names and their Hex Codes are:
+
+Color Name	Hex Code
+orange	                      #ffa500
+red	                      #ff0000
+blue	                      #0000ff
+green	                      #008000
+-	                      #012d36
+-	                      #432711
+-	                      #25b1cc
+
+CSS:
+.button {
+  background-color: #25b1cc;
+}
+
+How to pick a color using Hex Code?
+The color picker lets you pick a color among the approximately 16,777,216 colors available.
+
+One of the simplest ways to access a color picker is:
+
+Type color picker in the Google Search bar and search it.
+
+EXAMPLE:
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div class="card">
+      <h1>Tourism</h1>
+      <p>Plan your trip wherever you want to go</p>
+      <button class="button">Get Started</button>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.button {
+  border-width: 2px;
+  border-color: orange;
+  border-style: dashed;
+  border-radius: 10px;
+  background-color: #25b1cc;
+}
+.card {
+  padding: 10px;
+}
+
