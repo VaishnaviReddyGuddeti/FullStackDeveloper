@@ -1,0 +1,1019 @@
+                                                           *Favourite Places Section *
+
+1. HTML Elements
+1.1 Image Element
+The HTML img element defines an Image.
+
+Syntax: <img src="IMAGE_URL"/>
+
+1.2 The src Attribute
+The HTML Attribute src specifies the path (URL) of the Image.
+
+HTML:
+<img
+  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"
+/>
+
+1.3 How to get the path (URL) of an Image?
+One of the ways to get the path (URL) of an Image from the internet.
+
+-Open the Google Image search page: Go to https://images.google.com/ in your Web browser. This will open the Google search page for images.
+
+-Enter an image you want to search for: Type a word or phrase into the text box in the middle of the page.
+
+-Click the Search icon: It's to the right of the text box. Doing so will search Google for images related to your search.
+
+-Find your image: Scroll through the results until you find one which matches your needs.
+
+-Open the image in a new tab: Click the Open image in new tab.
+
+-Copy the image's URL: Copy the entire URL of the image from the address bar of the Web browser.
+
+-Paste this URL in the HTML src Attribute of an HTML img element.
+
+1.4 How to apply Height and Width to an Image?
+We can provide multiple HTML Attributes to the HTML img element. The HTML src and class Attributes are provided in the HTML img element given below.
+
+HTML:
+<img
+  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"
+  class="image"
+/>
+
+CSS:
+.image {
+  width: 80px;
+  height: 100px;
+}
+
+EXAMPLE:
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBn+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <img
+      src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"
+      class="image"
+    />
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.image {
+  width: 80px;
+  height: 100px;
+  border-radius: 8px;
+}
+
+2. Void Elements
+The HTML elements that only have a start tag and do not contain content or end tag are called as Void Elements.
+
+Syntax: <tag />
+
+For example, the HTML img element.
+
+<img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"/>
+
+3. CSS Box Model Properties
+
+3.1 Margin
+The CSS margin property specifies the space around the four sides of an HTML element.
+
+CSS:.card-container {
+  margin: 10px;
+}
+
+You can use the below CSS properties to apply a margin on the specific side of an HTML element,
+
+Property:
+-margin-top
+-margin-right
+-margin-bottom
+-margin-left
+
+EXAMPLE:
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="bg-container">
+      <div class="card-container">
+        <h1>Creating Workforce for 4.0</h1>
+        <p>
+          In this rapidly evolving technology and industry landscape, it is
+          inevitable to constantly learn, unlearn, and relearn emerging
+          technologies and 21st century skills to leverage this technology
+          disruption. iB Hubs commits to create a powerful workforce with all
+          the necessary tools and techniques to thrive in this new wave of
+          transformation.
+        </p>
+      </div>
+      <div class="card-container">
+        <h1>Application Research and Development in 4.0 Technologies</h1>
+        <p>
+          iB Hubs Tech Parks carry out application Research and Development in
+          these new-age technologies. This will lead to the building of
+          innovative solutions for the world’s current challenges, enabling
+          human advancement.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-container {
+  background-color: #214875;
+  padding: 3px;
+}
+
+.card-container {
+  background-color: #f7fbff;
+  padding: 10px;
+  margin: 10px;
+}
+
+Step by Step Process of achieving the Favourite Places Section:
+Step1:
+-Adding a Background Container
+-Adding a Favourite Places Section Heading
+-Adding Padding to the Favourite Places Section Heading
+-Adding a Favourite Place Card
+                 --Adding a Favourite Place Card Container
+                  --Adding a Favourite Place Card Heading
+                  --Adding a Favourite Place Card Description
+                  --Adding padding to the Favourite Place Card
+
+EXAMPLE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="favourite-places-bg-container">
+      <h1 class="favourite-places-heading">Favourite Places</h1>
+      <div class="favourite-place-card-container">
+        <div>
+          <h1 class="favourite-place-card-heading">Taj Mahal</h1>
+          <p class="favourite-place-card-description">
+            If there was just one symbol to represent all of India, it would be
+            the Taj Mahal
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.favourite-places-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/towerbg.png");
+  height: 100vh;
+  background-size: cover;
+}
+
+.favourite-places-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+
+.favourite-place-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.favourite-place-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.favourite-place-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+
+Step2:
+-Adding an Image to the Favourite Place Card
+-Adding height and width to an Image
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="favourite-places-bg-container">
+      <h1 class="favourite-places-heading">Favourite Places</h1>
+      <div class="favourite-place-card-container">
+        <div>
+          <h1 class="favourite-place-card-heading">Taj Mahal</h1>
+          <p class="favourite-place-card-description">
+            If there was just one symbol to represent all of India, it would be
+            the Taj Mahal
+          </p>
+        </div>
+        <img
+          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"
+          class="favourite-place-card-image"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.favourite-places-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/towerbg.png");
+  height: 100vh;
+  background-size: cover;
+}
+
+.favourite-places-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+
+.favourite-place-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.favourite-place-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.favourite-place-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+
+.favourite-place-card-image {
+  width: 80px;
+  height: 100px;
+}
+
+Step3:
+-Aligning Elements (the text and Image) side by side in the Favourite Place Card
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="favourite-places-bg-container">
+      <h1 class="favourite-places-heading">Favourite Places</h1>
+      <div class="favourite-place-card-container d-flex flex-row">
+        <div>
+          <h1 class="favourite-place-card-heading">Taj Mahal</h1>
+          <p class="favourite-place-card-description">
+            If there was just one symbol to represent all of India, it would be
+            the Taj Mahal
+          </p>
+        </div>
+        <img
+          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"
+          class="favourite-place-card-image"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.favourite-places-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/towerbg.png");
+  height: 100vh;
+  background-size: cover;
+}
+
+.favourite-places-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+
+.favourite-place-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.favourite-place-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.favourite-place-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+
+.favourite-place-card-image {
+  width: 80px;
+  height: 100px;
+}
+
+Step4:
+-Adding Multiple Favourite Place Cards inside Background Container
+-Adding Spacing Between the Favourite Place Cards using the CSS Margin Property
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="favourite-places-bg-container">
+      <h1 class="favourite-places-heading">Favourite Places</h1>
+
+      <div class="favourite-place-card-container d-flex flex-row">
+        <div>
+          <h1 class="favourite-place-card-heading">Taj Mahal</h1>
+          <p class="favourite-place-card-description">
+            If there was just one symbol to represent all of India, it would be
+            the Taj Mahal
+          </p>
+        </div>
+        <img
+          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-img.png"
+          class="favourite-place-card-image"
+        />
+      </div>
+
+      <div class="favourite-place-card-container d-flex flex-row">
+        <div>
+          <h1 class="favourite-place-card-heading">Golden Temple</h1>
+          <p class="favourite-place-card-description">
+            Amritsar is world-famous for the beautiful and highly revered Golden
+            Temple
+          </p>
+        </div>
+        <img
+          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/golden-temple-img.png"
+          class="favourite-place-card-image"
+        />
+      </div>
+
+      <div class="favourite-place-card-container d-flex flex-row">
+        <div>
+          <h1 class="favourite-place-card-heading">Mysore Palace</h1>
+          <p class="favourite-place-card-description">
+            The Mysore Palace is a historical palace and the royal residence at
+            Mysore .
+          </p>
+        </div>
+        <img
+          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/mysore-palace-img.png"
+          class="favourite-place-card-image"
+        />
+      </div>
+
+      <div class="favourite-place-card-container d-flex flex-row">
+        <div>
+          <h1 class="favourite-place-card-heading">Varanasi Temple</h1>
+          <p class="favourite-place-card-description">
+            Varanasi Temple is most famous Hindu temples dedicated to Lord Shiva
+          </p>
+        </div>
+        <img
+          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/varanasi-temple-img.png"
+          class="favourite-place-card-image"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.favourite-places-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/towerbg.png");
+  height: 100vh;
+  background-size: cover;
+}
+
+.favourite-places-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+
+.favourite-place-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 15px;
+}
+
+.favourite-place-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.favourite-place-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+
+.favourite-place-card-image {
+  width: 80px;
+  height: 100px;
+}
+
+
+                                                                  *Approach to Develop a Layout *
+
+1. HTML Image vs CSS Background Image
+
+Ways to add Images in Website:
+-HTML Image
+-CSS Background Image
+
+When to use HTML Image:
+-When there are no content or HTML elements over the Image.
+-When Image is a part of the content on a page.
+
+When to use CSS Background Image:
+-When Image is not a part of the content on a page.
+-When there are content or HTML elements over the Image.
+
+2. CSS Margin vs CSS Padding
+
+When to use CSS Padding:
+-To specify the space around the four sides of the content of an HTML element.
+-To add the space between the content and border of an HTML element.
+
+When to use CSS Margin:
+-To specify the space around the four sides of an HTML element.
+-To add the space between HTML elements.
+
+For example, let's take an HTML button element.
+
+HTML:
+<button class="button">View More</button>
+
+CSS:
+.button {
+  padding: 20px;
+  margin: 15px;
+}
+
+EXAMPLE:
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBn+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <button class="button">View More</button>
+  </body>
+</html>
+
+CSS CODE:
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.button {
+  padding: 20px;
+  margin: 15px;
+}
+
+3. Step by Step Process to develop a Diwali Page
+Let's divide the Diwali Page into two Sections.
+
+Top Section
+Bottom Section
+Go through the previous Cheat Sheets and use the suitable CSS Property and Value pairs
+
+3.1 Top Section
+Follow the steps to develop a top Section of the Diwali Page
+
+Step-1: Adding a background image to the Top Section
+-Add the background image
+-Specify the height of the background image
+-Specify the background size to the image and whether to occupy up to the specified width and height or not
+
+Step-2: Adding a Top Section heading
+-Add the Top Section heading
+-Specify the color of the text
+-Specify the font family of the text
+-Specify the size of the text
+-Specify the width of the text (heading box)
+-Specify the padding of the text (heading box)
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBn+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="diwali-top-section">
+      <h1 class="diwali-top-section-heading">Celebrate Diwali with your friends</h1>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.diwali-top-section {
+ background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/diwali-bg.png");
+ height: 30vh;
+ background-size: cover;
+}
+
+.diwali-top-section-heading {
+ color: white;
+ font-family: "Caveat";
+ font-size: 36px;
+ width: 200px;
+ padding: 20px;
+}
+
+3.2 Bottom Section
+Follow the steps to develop a Bottom Section of the Diwali Page
+
+Step-1: Adding a Bottom Section Container
+Add the background color
+Specify the padding to the Bottom Section Container
+Step-2: Adding the card item
+-Add the background color
+-Add the image:
+    --Specify the width and height of the image
+-Add the name of the card item:
+       --Specify the color of the text
+       --Specify the size of the text
+-Add the price of the card item
+   --Specify the color of the text
+   --Specify the size of the text
+   --Specify the font weight of the text
+
+-Specify padding to the card item
+-Specify the text alignment of the card item
+
+Step-3: Aligning the card items
+-Specify margin to the card items
+-Align the pair of two cards side by side using Flexbox properties
+      --Wrap two cards with the HTML container element:
+      --Define it as a Flexbox Container
+      --Specify the Flex Direction to it
+      --Specify the Justify Content to it
+
+Step-4: Adding the button
+-Add the button
+-Add the button bootstrap class names to it
+-Specify the text alignment of the Bottom Section Container
+
+EXAMPLE:
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBn+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="diwali-top-section">
+      <h1 class="diwali-top-section-heading">
+        Celebrate Diwali with your friends
+      </h1>
+    </div>
+    <div class="diwali-bottom-section">
+      <div class="d-flex flex-row justify-content-center">
+        <div class="diwali-card-item">
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/lamp-img.png"
+            class="diwali-card-image"
+          />
+          <h1 class="diwali-card-name">Diwali Air Balloon</h1>
+          <p class="diwali-card-price">Rs 369</p>
+        </div>
+
+        <div class="diwali-card-item">
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/diya-img.png"
+            class="diwali-card-image"
+          />
+          <h1 class="diwali-card-name">Diwali - Lamp</h1>
+          <p class="diwali-card-price">Rs 50</p>
+        </div>
+      </div>
+      <div class="d-flex flex-row justify-content-center">
+        <div class="diwali-card-item">
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/firework-img.png"
+            class="diwali-card-image"
+          />
+          <h1 class="diwali-card-name">Sparklers</h1>
+          <p class="diwali-card-price">Rs 150</p>
+        </div>
+
+        <div class="diwali-card-item">
+          <img
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/firecracker-img.png"
+            class="diwali-card-image"
+          />
+          <h1 class="diwali-card-name">Fire Cracker</h1>
+          <p class="diwali-card-price">Rs 560</p>
+        </div>
+      </div>
+      <button class="btn btn-primary">View More</button>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.diwali-top-section {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/diwali-bg.png");
+  height: 30vh;
+  background-size: cover;
+}
+.diwali-top-section-heading {
+  color: white;
+  font-family: "Caveat";
+  font-size: 36px;
+  width: 200px;
+  padding: 20px;
+}
+.diwali-bottom-section {
+  text-align:center;
+  background-color: #e6f6ff;
+  padding:15px;
+}
+.diwali-card-item {
+  text-align: center;
+  background-color: white;
+  width:140px;
+  border-radius: 9px;
+  padding: 16px;
+  margin: 15px;
+}
+.diwali-card-image {
+  height: 64px;
+  width: 64px;
+}
+.diwali-card-name {
+  color: #616e7c;
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: normal;
+}
+.diwali-card-price {
+  color: #323f4b;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+}
+
+4. Resources used to develop a Diwali Page
+URL of background image:
+-https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/diwali-bg.png
+
+URLs of card item images:
+-https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/lamp-img.png
+-https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/diya-img.png
+-https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/firework-img.png
+-https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/firecracker-img.png
+
+Colors and Background colors:
+-white
+
+Hex code color values:
+-#e6f6ff
+-#616e7c
+-#323f4b
+
+
+                                                                              *Favourite Place Detailed View Section*
+
+1. Bootstrap Components
+1.1 Carousel
+The Carousel is a slideshow for cycling through images, text, etc. Slides will change every few seconds.
+
+To add the Carousel to our Favourite Place Detailed View Section Page, we used Bootstrap Carousel Component with the Indicators.
+
+You can add the different images in the Carousel by changing the image URL in the value of the HTML src attribute.
+
+HTML:
+<img
+  class="d-block w-100"
+  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c1-img.png"
+  alt="...">
+/>
+
+EXAMPLE CODE
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c1-img.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c2-img.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c3-img.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </body>
+</html>
+
+2. Bootstrap Utilities
+2.1 Embed
+The given code snippet is the Youtube embed code provided by Bootstrap. You can add the different Youtube Videos by changing the Video ID in the value of the HTML src attribute.
+
+The Video ID is in between the https://www.youtube.com/embed/ and ?rel=0.
+
+HTML:
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe
+    class="embed-responsive-item"
+    src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+    allowfullscreen
+  ></iframe>
+</div>
+
+2.1.1 How to add the Youtube video?
+One of the ways to add the Youtube video.
+
+->Open the Youtube Home page: On the desktop, go to https://www.youtube.com/ in your Web browser whereas on mobile, click on the Youtube application.
+
+->Enter a video you want to search for: Type a word or phrase into the text box.
+
+->Click the Search icon: It's to the right of the text box. Click it.
+
+->Select the video: Scroll through the results until you find one which matches your needs and click it.
+
+->Copy the video ID:
+-On the desktop, Copy the video ID after v=. If & is present after the v=, copy the video ID after v= and before &. For example, in the Youtube Video URL https://www.youtube.com/watch?v=49HTIoCccDY&feature=youtu.be&ab_channel=theLuxuryTravelExpert, the video ID is 49HTIoCccDY.
+-Whereas on mobile, click on the share icon and select Messages, and copy the video ID after forward slash /.
+
+->Paste this video ID after the embed/ and before the ?rel=0 in the value of the HTML src attribute.
+
+EXAMPLE:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe
+        class="embed-responsive-item"
+        src="https://www.youtube.com/embed/49HTIoCccDY?rel=0"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </body>
+</html>
+
+NOTE:
+Be careful while pasting the video ID. The video ID must be in between the https://www.youtube.com/embed/ and ?rel=0. You won't get the video if any character is missed in the value of the HTML src attribute.
+
+3. Step by Step Process to develop a Favourite Place Detailed View Section Page
+
+Step-1:
+Add the Background Image and Heading
+
+Step-2:
+->Add a Detailed View Card
+-Add a Detailed View Card Container
+-Add the Bootstrap Carousel Code
+-Add the HTML src attributes for the HTML img element in the Carousel
+-Add a Detailed View Card Text Container
+-Add a Detailed View Card Heading
+-Add a Detailed View Card Description
+-Add the padding to the Card Text Container
+-Add the margin to the Card Container
+
+Follow the same steps and replace the Bootstrap Carousel Code with the Bootstrap Youtube Embed Code to add Youtube Video to the Favourite Place Detailed View Section Page.
+
+EXAMPLE
+
+HTML CODE:
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="detailed-view-bg-container">
+      <h1 class="detailed-view-heading">Detailed View</h1>
+      <div class="detailed-view-card-container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c1-img.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c2-img.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/tajmahal-c3-img.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class="detailed-view-card-text-container">
+          <h1 class="detailed-view-card-heading">Taj Mahal</h1>
+          <p class="detailed-view-card-description">
+            The Taj Mahal is considered to be the greatest architectural
+            achievement in the whole range of Indo-Islamic architecture. Its
+            recognised architectonic beauty has a rhythmic combination of solids
+            and voids, concave and convex and light shadow; such as arches and
+            domes further increases the aesthetic aspect. Not a piece of
+            architecture, as other buildings are, but the proud passions of an
+            emperor’s love wrought in living stones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.detailed-view-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/seabg.png");
+  height: 100vh;
+  background-size: cover;
+}
+.detailed-view-heading {
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 24px;
+}
+.detailed-view-card-container {
+  background-color: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin: 24px;
+}
+.detailed-view-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.detailed-view-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+.detailed-view-card-text-container {
+  padding: 16px;
+}
+
+
