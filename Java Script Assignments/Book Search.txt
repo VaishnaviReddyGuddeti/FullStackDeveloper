@@ -1,0 +1,234 @@
+QUESTION
+
+
+Book Search: In this assignment, let's build a Book Search page by applying the concepts we learned till now.
+
+Instructions:
+
+-Add HTML input element with id searchInput inside an HTML container element
+-Add HTML select element with id selectDisplayCount inside an HTML container element
+-Add HTML container element with id searchResults
+
+By following the above instructions, achieve the given functionality.
+
+-When a value is entered in the HTML input element with id searchInput and press on Enter key
+--Get title, imageLink, author (HTTP response with key search_results) by making HTTP request using fetch with URL https://apis.ccbp.in/book-store?title=kalam&maxResults=30
+---Set imageLink in the HTML img element and set author in the HTML paragraph element
+
+-When a value is entered in the HTML input element with id searchInput and an option is selected in the drop down
+--Make a HTTP GET request to fetch the books based on the title entered and maximum number of results
+
+-If search results not equal to zero, then append the search results to the HTML container element with id searchResults
+
+-If search results equal to zero, then display "No results found"
+
+-Add loading status with Bootstrap component spinner while making an HTTP request
+
+Resources:
+Use this Background image:
+
+https://assets.ccbp.in/frontend/dynamic-webapps/book-search-bg.png
+
+CSS Colors used:
+Text colors Hex code values used:
+
+#323f4b
+#ffffff
+
+CSS Font families used:
+Roboto
+
+
+SOLUTION
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 bg-image d-flex flex-column justify-content-center text-center">
+                <h1 class="main-heading mb-4">Book Search</h1>
+                <div>
+                    <input id="searchInput" type="search" placeholder="Type book title" class="searchInput mb-4" />
+                </div>
+                <div>
+                    <select id="selectDisplayCount" class="text-center select-opt-container form-controls">
+                        <option selected value="10" id="tenBooks">10 Books</option>
+                        <option value="20" id="tewntyBooks">20 Books</option>
+                        <option value="30" id="thirtyBooks">30 Books</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-12 d-none" id="spinner">
+                <div class="d-flex flex-row justify-content-center">
+                    <div class="spinner-border" role="status"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="searchResults" class="search-results-container">
+
+    </div>
+
+</body>
+
+</html>
+
+
+CSS CODE:
+
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-image {
+    background-image: url("https://assets.ccbp.in/frontend/dynamic-webapps/book-search-bg.png");
+    background-size: cover;
+    height: 300px;
+}
+
+.main-heading {
+    color: #ffffff;
+    font-family: "Roboto";
+}
+
+.searchInput {
+    height: 40px;
+    width: 200px;
+    font-family: "Roboto";
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.select-opt-container {
+    height: 40px;
+    width: 200px;
+    font-family: "Roboto";
+    border-radius: 5px;
+}
+
+.errorMsg {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.searchResultsTitle {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.image-size {
+    height: 200px;
+    width: 150px;
+}
+
+.author-name {
+    font-family: "Roboto";
+    color: #323f4b;
+    font-weight: 600;
+}
+
+JAVASCRIPT CODE:
+
+let searchInputEl = document.getElementById("searchInput");
+let searchResultsEl = document.getElementById("searchResults");
+let spinnerEl = document.getElementById("spinner");
+let errorMessageEl = document.getElementById("errorMessage");
+let popularBooksTitleEl = document.getElementById("popularBooksTitle");
+
+function popularBooksTitleElCalling() {
+    popularBooksTitleEl.textContent = "Popular Books";
+    popularBooksTitleEl.classList.add("errorMsg", "pl-3", "w-100");
+}
+
+function createAndAppendSearchResult(result) {
+    let {
+        title,
+        imageLink,
+        author
+    } = result;
+    let containerDivEl = document.createElement("div");
+    containerDivEl.classList.add("container");
+    searchResultsEl.appendChild(containerDivEl);
+
+    let rowDivEl = document.createElement("div");
+    rowDivEl.classList.add("row");
+    containerDivEl.appendChild(rowDivEl);
+
+    let bookDetailsContainerEl = document.createElement("div");
+    bookDetailsContainerEl.classList.add("p-3", "col-7");
+    rowDivEl.appendChild(bookDetailsContainerEl);
+
+    let imageEl = document.createElement("img");
+    imageEl.src = imageLink;
+    imageEl.classList.add("w-100", "image-size");
+    bookDetailsContainerEl.appendChild(imageEl);
+
+    let authorNameEl = document.createElement("p");
+    authorNameEl.textContent = author;
+    authorNameEl.classList.add("author-name", "p-2");
+    bookDetailsContainerEl.appendChild(authorNameEl);
+
+}
+
+function displayResults(searchresults) {
+    if (searchresults.length === 0) {
+        let errorMsgEl = document.createElement("p");
+        errorMsgEl.textContent = "No result found";
+        searchResultsEl.appendChild(errorMsgEl);
+    } else {
+        let headingEl = document.createElement("h1");
+        headingEl.textContent = "Popular Books";
+        searchResultsEl.appendChild(headingEl)
+        for (let result of searchresults) {
+            createAndAppendSearchResult(result);
+        }
+    }
+}
+let changedMaxNoBooks = 10;
+let selectDisplayCountEl = document.getElementById("selectDisplayCount");
+selectDisplayCountEl.addEventListener("change", function(event) {
+    changedMaxNoBooks = (event.target.value);
+});
+
+function searchBookResults(event) {
+    if (event.key === "Enter") {
+        let inputVal = searchInputEl.value;
+        let url = "https://apis.ccbp.in/book-store?title=" + inputVal + "&maxResults=" + changedMaxNoBooks;
+        let options = {
+            method: "GET"
+        };
+        spinnerEl.classList.remove("d-none");
+        searchResultsEl.classList.add("d-none");
+        searchResultsEl.textContent = "";
+        fetch(url, options)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                spinnerEl.classList.add("d-none");
+                searchResultsEl.classList.remove("d-none");
+                let {
+                    search_results
+                } = jsonData;
+                displayResults(search_results);
+            });
+    }
+}
+searchInputEl.addEventListener("keydown", searchBookResults);
+
