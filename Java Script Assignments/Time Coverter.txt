@@ -1,0 +1,166 @@
+QUESTION
+
+Time Converter: In this assignment, let's build a Time Converter by applying the concepts we learned till now.
+
+Instructions:
+
+-The HTML input element for entering the number of hours should have the id hoursInput
+-The HTML input element for entering the number of minutes should have the id minutesInput
+-Add HTML label elements for HTML input elements with ids hoursInput and minutesInput
+-The HTML button element should have the id convertBtn
+-The HTML p element to display the converted time in seconds should have the id timeInSeconds
+-The HTML p element to display the error message should have the id errorMsg
+
+By following the above instructions, achieve the given functionality.
+
+-When values are entered in HTML input elements with ids hoursInput and minutesInput, the HTML button with id convertBtn is clicked
+--The converted time in seconds should be displayed in the HTML p element with id timeInSeconds
+--The HTML p element with id errorMsg should be empty
+-The HTML p element with id errorMsg should display an error message in the following cases
+--When the HTML input element with id hoursInput is empty and convertBtn is clicked
+--When the HTML input element with id minutesInput is empty and convertBtn is clicked
+--When both the HTML input elements hoursInput and minutesInput are empty and convertBtn is clicked
+
+Quick Tip:
+timeInSeconds = ((hours) *60 + minutes) * 60
+
+Note:
+The values given for the HTML input elements with ids hoursInput and minutesInput should be positive integers.
+
+Resources:
+Use this Background image:
+https://assets.ccbp.in/frontend/dynamic-webapps/time-converter-bg.png
+
+CSS Colors used:
+Text colors Hex code values used:
+
+#f5f7fa
+#000000
+#ffffff
+
+CSS Font families used:
+Open Sans
+
+SOLUTION
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="bg-container p-4">
+        <h1 class="heading">Time Converter</h1>
+        <p class="paragraph">Enter hours and minutes values to convert into seconds</p>
+        <div class="mt-3">
+            <label for="hoursInput" class="label-text">Hours *</label>
+            <input type="text" class="form-control" id="hoursInput" />
+        </div>
+        <div class="mt-3">
+            <label for="minutesInput" class="label-text">Minutes *</label>
+            <input type="text" class="form-control" id="minutesInput" />
+        </div>
+        <button id="convertBtn" class="btn btn-light convert-button mt-4 mb-4">Convert to Seconds</button>
+        <p class="error-msg" id="errorMsg"></p>
+        <p id="timeInSeconds"></p>
+    </div>
+</body>
+
+</html>
+
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-container {
+    background-image: url('https://assets.ccbp.in/frontend/dynamic-webapps/time-converter-bg.png');
+    height: 100vh;
+    background-size: cover;
+}
+
+.heading {
+    color: #ffffff;
+    font-size: 70px;
+    font-weight: 700;
+    font-family: 'Open Sans';
+}
+
+.paragraph {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Open Sans';
+}
+
+.label-text {
+    color: #ffffff;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.convert-button {
+    color: #000000;
+    font-weight: 500;
+}
+
+.error-msg {
+    color: #f5f7fa;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.timeIn-Seconds {
+    color: #f5f7fa;
+    font-family: 'Open Sans';
+    font-size: 40px;
+    font-weight: 400;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #f5f7fa;
+    text-align: center;
+}
+
+
+JAVASCRIPT CODE:
+
+let hoursInputEl = document.getElementById("hoursInput");
+let minutesInputEl = document.getElementById("minutesInput");
+let convertBtnEl = document.getElementById("convertBtn");
+
+let errorMsgEl = document.getElementById("errorMsg");
+let timeInSecondsEl = document.getElementById("timeInSeconds");
+
+function convertToSeconds(event) {
+    let noHours = hoursInputEl.value;
+    let noMinutes = minutesInputEl.value;
+
+    if (noHours === "") {
+        errorMsgEl.textContent = "Please enter a valid number of hours.";
+    } else if (noMinutes === "") {
+        errorMsgEl.textContent = "Please enter a valid number of minutes.";
+    } else {
+        let intHours = parseInt(noHours);
+        let intMinutes = parseInt(noMinutes);
+        let seconds = (intHours * 60 + intMinutes) * 60;
+
+        errorMsgEl.textContent = "";
+        timeInSecondsEl.textContent = seconds + "s";
+        timeInSecondsEl.classList.add("timeIn-Seconds", "col-7");
+    }
+}
+
+convertBtnEl.addEventListener("click", convertToSeconds)
+
+
