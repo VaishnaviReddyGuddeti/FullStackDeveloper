@@ -1,0 +1,250 @@
+QUESTION
+
+Speed Typing Test: In this assignment, let's build a Speed Typing Test by applying the concepts we learned till now.
+
+Instructions:
+
+-Add HTML container element with id speedTypingTest
+-Add HTML paragraph elements with id timer, quoteDisplay and result
+-Add HTML textarea element with id quoteInput
+-Add HTML button elements with id submitBtn and resetBtn
+-Add the Bootstrap component spinner
+
+By following the above instructions, achieve the given functionality.
+
+-When the page is opened
+--Make a HTTP request to get a random quotation
+---URL: https://apis.ccbp.in/random-quote
+--Display the random quotation in the HTML paragraph element with id quoteDisplay
+--Start the timer and display the time in seconds in the HTML paragraph element with id timer
+
+-When a value is entered in the HTML textarea element with id quoteInput and the HTML button element with id submitBtn is clicked
+--If the value entered in the HTML textarea element with id quoteInput is same as the quotation in the HTML paragraph element with id quoteDisplay
+---The timer should be stopped and a success message should be shown in the HTML paragraph element with id result
+--If the value entered in the HTML textarea element with id quoteInput does not match the quotation in the HTML paragraph element with id quoteDisplay
+---The timer should be running and an error message should be shown in the HTML paragraph element with id result
+
+-When the HTML button with id resetBtn is clicked
+--Make a HTTP request to get a new random quotation
+--Display the new random quotation in the HTML paragraph element with id quoteDisplay
+--Reset the timer to 0 seconds and display the time in seconds in the HTML paragraph element with id timer
+--Empty the HTML textarea element with id quoteInput
+
+-Add loading status with Bootstrap component spinner while making an HTTP request.
+
+Resources
+Clock Image:
+
+https://assets.ccbp.in/frontend/dynamic-webapps/clock-img.png
+
+CSS Colors Used:
+
+Background Color Hex Codes Used:
+
+#690cb0
+#dac0ff
+#f3eaff
+#f2ebfe
+#ffffff
+
+Border Color Hex Codes Used:
+#9aa5b1
+
+Text Color Hex Codes Used:
+
+#690cb0
+#3e4c59
+#ffffff
+#323f4b
+
+
+SOLUTION
+
+
+HTML CODE:
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="bg-color p-4">
+        <h1 class="main-heading">
+            Speed Typing Test
+        </h1>
+        <p class="start-greet">On your fingers lets set Go!</p>
+
+        <div class="d-flex flex-row">
+            <div>
+                <img src="https://assets.ccbp.in/frontend/dynamic-webapps/clock-img.png" class="clock-image" />
+            </div>
+            <p id="timer" class="seconds-size pb-5 pl-3"></p>
+            <P id="resultWhileCorrect" class="start-greet pt-4 pl-1"> seconds</P>
+
+        </div>
+        <div id="speedTypingTest" class="pactice-container w-100 mb-3">
+            <div class="p-4">
+                <div class="col-12 d-none mt-5" id="spinner">
+                    <div class="d-flex flex-row justify-content-center">
+                        <div class="spinner-border" role="status"></div>
+                    </div>
+                </div>
+                <p id="quoteDisplay" class="pactice-txt">Do not give your attention to what others do or fail to do; give it to what you do or fail to do.</p>
+                <textarea id="quoteInput" placeholder="Type here!!" class="w-100" rows="8" cols="20"></textarea>
+            </div>
+        </div>
+        <p id="result" class="result-msg pt-1 pb-1"></p>
+        <div class="d-flex flex-row">
+            <div>
+                <button id="submitBtn" class="submit-Btn">Submit</button>
+            </div>
+            <div>
+                <button id="resetBtn" class="reset-Btn">Reset</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.bg-color {
+    background-image: linear-gradient(to left, #dac0ff, #f2ebfe);
+    height: 100%;
+}
+
+.main-heading {
+    color: #690cb0;
+    font-weight: bold;
+}
+
+.start-greet {
+    color: #3e4c59;
+}
+
+.clock-image {
+    height: 55px;
+    width: 55px;
+}
+
+.seconds-size {
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+span {
+    color: #323f4b;
+}
+
+.pactice-container {
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #9aa5b1;
+    background-color: #f2ebfe;
+}
+
+.pactice-txt {
+    font-size: 20px;
+    font-weight: 500;
+    color: #323f4b;
+}
+
+.result-msg {
+    color: #3e4c59;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.submit-Btn {
+    background-color: #690cb0;
+    color: #ffffff;
+    border-radius: 8px;
+    height: 40px;
+    width: 90px;
+    border: 0;
+    margin-right: 30px;
+}
+
+.reset-Btn {
+    background-color: #ffffff;
+    color: #323f4b;
+    border-radius: 8px;
+    height: 40px;
+    width: 90px;
+    border: 0;
+    margin-right: 30px;
+    font-weight: 500;
+}
+
+
+JAVASCRIPT CODE:
+
+let quoteDisplayEl = document.getElementById("quoteDisplay");
+let spinnerEl = document.getElementById("spinner");
+let timerEl = document.getElementById("timer");
+let submitBtnEl = document.getElementById("submitBtn");
+let quoteInputEl = document.getElementById("quoteInput");
+let resultEl = document.getElementById("result");
+let resetBtnEl = document.getElementById("resetBtn");
+
+//Update the quotation
+function getRandomNewQuotation() {
+    let options = {
+        method: "GET"
+    };
+    spinnerEl.classList.remove("d-none");
+    quoteDisplayEl.classList.add("d-none");
+    fetch("https://apis.ccbp.in/random-quote", options)
+        .then(function(responce) {
+            return responce.json();
+        })
+        .then(function(jsonData) {
+            spinnerEl.classList.add("d-none");
+            quoteDisplayEl.classList.remove("d-none");
+            quoteDisplayEl.textContent = jsonData.content;
+        });
+}
+getRandomNewQuotation();
+
+//Timer Counter
+let counter = 0;
+let uniqueId = setInterval(function() {
+    timerEl.textContent = counter;
+    counter = counter + 1;
+}, 1000);
+
+submitBtnEl.onclick = function() {
+    if (quoteDisplayEl.textContent === quoteInputEl.value) {
+        clearInterval(uniqueId);
+        resultEl.textContent = "You typed in " + timerEl.textContent + " seconds";
+    } else {
+        resultEl.textContent = "You typed incorrect sentence";
+    }
+};
+
+resetBtnEl.onclick = function() {
+
+    getRandomNewQuotation();
+    clearInterval(uniqueId);
+    quoteInputEl.value = "";
+    timerEl.textContent = uniqueId
+    counter = 0;
+    uniqueId = setInterval(function() { //Reset the interval
+        timerEl.textContent = counter;
+        counter = counter + 1;
+    }, 1000);
+};
+
