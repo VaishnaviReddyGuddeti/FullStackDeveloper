@@ -1,0 +1,623 @@
+                                                                                             *Getting Started with Command Line*
+
+
+
+
+User Interface:
+
+Graphical User Interface:
+Graphical User Interface (GUI) commonly referred as the User Interface (UI).
+
+Command Line Interface:
+-Command Line Interface (CLI) facilitates the users to perform powerful operations on a computer with simple commands.
+-Command is a text instruction to a computer program to perform a specific task.
+
+What is Shell?
+-Shell is the  software that interprets and executes the various commands that we provide.
+-Terminal is a text input/output environment.
+
+Different Shells:
+
+-Bourne Shell (sh)
+-Bourne-Again Shell (bash)
+-C Shell (csh)
+-Korn Shell (ksh)
+-Z Shell (zsh)
+
+Opening Terminal:
+Bash is one of the most commonly used shell in Linux distributions.
+
+-Open the Dash (Super Key) or Applications and type terminal.
+-Shortcut: Ctrl + Alt + T
+
+Opening Terminal (in MAC):
+-Open Launchpad and search for terminal.
+-Press command(⌘) + space, type "terminal".
+
+For Windows Operating System:
+For windows install WSL2  (Windows Subsystem for Linux).
+
+Note:  It is suggested to try the commands taught bash. As they will not work in Windows Powershell & Command Prompt.
+
+Opening WSL2 Ubuntu Terminal:
+Click Start and search for "Ubuntu".
+
+Using Cloud:
+Alternatively you can use Google Cloud Shell.
+
+https://shell.cloud.google.com/
+
+Commands:
+Listing Files & Directories
+ls  is used to list files and directories.
+
+ls
+
+Using Additional Options:
+-l -h option provides details in human readable format.
+
+Some options require values arguments/values to be passed.
+--(--block-size option rounds the file size to nearest values.)
+--Inputs : KB , MB
+
+Get Options for Commands:
+help  displays a list of options that you can use with the command.
+Example: ls --help
+
+This Command will be helpful when you don’t know about its parameters and return type etc.
+
+Clear the Screen:
+-clear command clears the terminal.
+-Shortcut: Ctrl+L .
+ Example: clear
+
+Get User Manual for Commands:
+-man displays the user manual of a command .
+-Here we pass the command as an argument.
+Syntax: man <command>
+Example: man ls
+-Type q to exit the manual
+
+Get System Date & Time:
+date  displays the system date and time.
+Example: date
+
+Get Current User:
+whoami  displays the current logged in user.
+Example: whoami
+
+Previous Commands:
+-Shell keeps track of the commands you have typed in.
+-Use up ( ⬆) and down ( ⬇) arrows to access the commands.
+
+History:
+-history display the history of the commands you have typed in so far.
+-By default, It shows the last 500 recent commands.
+Example: history
+
+Bash History:
+Bash maintains the history to . bash_history file.
+Example: cat  .bash_history
+
+exit:
+exit  to close/end a shell session.
+Example: exit
+
+Summary:
+
+Command	    Description
+ls	    List files & directories
+date	    Displays the system date and time
+whoami	    Displays current logged in user
+--help	    Displays list of options for a given command
+man	    Displays user manual for a given command
+clear	    Clears the shell
+history	     It will show you the last five hundred commands you have entered.
+exit	     Ends the shell
+
+
+
+                                                                                         *Setting Up WSL2 Ubuntu Terminal on*
+
+
+Windows:
+This document guides on how to setup WSL2 on the latest versions of Windows 10, so that you can setup Ubuntu Command-Line environment.
+
+System Requirements:
+The following hardware prerequisites are required to successfully setup WSL2.
+
+-A 64-bit processor with Second Level Address Translation (SLAT) support.
+--Look for Intel VT-x support or AMD-V support. Any of Intel or AMD Processors released after 2010 will have this.
+-4 GB system RAM.
+-BIOS-level hardware virtualization support must be enabled in the BIOS settings.
+-A 64-bit Windows 10, Version 1903 or higher, with Build 18362 or higher.
+-A 15 GB free space on C: Drive after the installation of all the recent Windows Updates.
+
+Quick Tip:
+To check your version and build number, select Windows logo key + R, type winver, select OK.
+
+Note:
+If you are running an older version of Windows 10, open "Settings" from your Windows menu, navigate to "Update & Security" and select "Check for Updates". Install all available updates and feature updates. You may need to restart multiple times in the process.
+
+Setup WSL:
+Enable WSL Feature:
+Open PowerShell as Administrator and run:
+Powershell:  
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+Enable Virtual Machine Feature:
+Enable the Virtual Machine Platform feature. Your system will require BIOS-level hardware virtualization support which must be enabled in the BIOS settings.
+
+-You can check whether virtualization support is enabled by checking your Task Manager.
+
+-Open PowerShell as Administrator and run:
+Powershell:
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+-Restart your PC.
+
+Download Kernel Package:
+-Download the latest WSL2 Linux kernel update package for x64 PCs
+-Run the update package downloaded in the previous step. (Double-click to run - you will be prompted for elevated permissions, select ‘yes’ to approve this installation.)
+
+Set WSL 2 as your default version:
+Open PowerShell and run this command to set WSL 2 as the default version.
+
+Powershell:
+wsl --set-default-version 2
+
+Install Linux Distribution:
+-Install Ubuntu from Microsoft Store.
+-Once the installation is complete, open "Ubuntu" from start-menu.
+-Enter a new username and password for the WSL environment when prompted. (Remember them)
+
+
+
+                                                                                      *Working with File System*
+
+
+Working With Files:
+
+Creating a File:
+-touch creates an empty file.
+eg: touch filename
+
+Viewing File Content:
+-cat reads contents of file and prints it.
+eg: cat filename
+
+Echo:
+-echo output/prints a string in the terminal.
+eg: echo "content"
+
+Writing to Files Using echo Command:
+-Using > operator we can redirect the output of echo command to a file.
+eg: echo "Hello World!" > filename
+
+Renaming a File:
+-mv renames the file names.
+-destination can be a new or existing file.
+Syntax:  mv source destination
+
+Eg:
+mv practice.txt exam.txt
+
+Copying Files:
+-cp copies src_file to dest_file.
+Syntax: cp src_file dest_file
+Eg: cp exam.txt fun_text.txt
+
+NOTE: If dest_file already exist then cp overrides the contents of dest_file.
+
+Deleting a File:
+-rm removes (delete) files.
+Syntax: rm filename
+Example: rm exam.txt
+
+Hidden Files:
+-Linux, by default, hides many of the sensitive system files, in order to avoid accidental changes.
+
+-Hidden files starts with "."
+
+-ls -a shows the hidden files.
+
+-ls -a also shows the current and parent directories:
+      
+. represents Current directory
+.. represents  parent directory
+
+Eg: ls -a
+
+Summary:
+
+Command	               Description
+touch	         Creates an empty file
+cat	          Reads contents of file and prints it
+echo	          Writes text to standard output
+mv	            Renames the file names
+cp	            Copies content from files
+rm	            Removes (delete) files
+ls -a	          Shows the hidden files
+
+Working with Directories:
+
+Creating A Directory:
+-mkdir creates a directory.
+Eg: mkdir directory_path
+
+Current Working Directory:
+-pwd prints name of current working directory.
+
+Changing the Current Working Directory:
+-cd changes the current working directory.
+Eg: cd directory_path
+
+Note :
+cd / changes your current directory to root folder.
+
+Creating a Directory in Directory:
+-mkdir creates a directory.
+Eg:  mkdir directory_name
+
+Switching to Parent Directory:
+-cd .. move to parent directory.
+
+-Here .. is relative path to parent directory.
+Eg: cd ..
+
+File Paths:
+There are two notations for  file paths: 
+1. Absolute Path
+2. Relative Path
+
+Absolute Path:
+Representing the complete path of a file or folder from the root.
+
+Relative Path:
+Representing the path of a file or folder  wrt.  current working directory.
+
+In relative path conventions:
+
+1   .refers to the current working directory.
+
+2   .. refers to the parent directory.
+
+Home Directory:
+Each user in the computer is given a separate directory to work with - called home directory.
+
+-cd ~  can be used to switch to home directory.
+Eg:  
+ ```shell
+  cd ~
+  ```
+
+-cd   (cd and space) command can also be used to switch to home directory.
+Eg:
+ ```shell
+  cd 
+  ```
+
+Renaming a directory:
+-mv  renames the directory name
+Syntax: mv source destination
+Example: mv tutorial commands
+
+Moving a directory:
+mv moves files or directories  from source to destination paths.
+Syntax: mv source destination
+Example: mv welcome.txt commands
+
+Copying Files to Another Directory:
+cp can be used to copy files between directories.
+
+Syntax: cp file_path directory_name
+Example: cp welcome.txt commands
+
+Copying Directory:
+-cp -r can be used to  copy a directory.
+
+Syntax: cp -r source_path destination_path
+Example: cp -r commands linux
+
+Common Mistake:
+Raises an error if destination path have any non existing directories in between.
+
+Deleting a Directory:
+-rm -r removes(deletes) directories.
+Syntax:  rm -r directory_name
+Example: rm -r commands
+
+Summary:
+We can use folder/file paths for cp, mv, rm commands.
+
+Command 	Description
+mkdir	       Creates a directory
+pwd	       Prints name of current working directory
+cd	      Changes the current working directory
+rm -r	       Deletes a directory
+
+                                                                                *Working with Files*
+
+
+
+Text Editor:
+-A text editor is used for editing text files.
+-Various text editors are:
+--Notepad++
+--Sublime Text
+--gEdit
+--Visual Studio Code  etc..
+
+Nano:
+Nano is an easy to use command line text editor for Unix and Linux-based operating systems.
+
+Open file:
+To open a file with nano, pass the filename as an argument.
+Eg: nano filename
+
+Updating File:
+Add the text of the file in the middle of the editor.
+
+Saving File:
+To save a file,  PRESS  Ctrl+O  and Enter().
+
+Exit Nano:
+To exit from nano editor, PRESS  Ctrl+X.
+
+Viewing File Contents:
+To view file Contents:
+Eg: cat filename
+
+Filtering & Output Redirection:
+Filtering:
+We can filter the contents of a file using the following filter commands.
+
+-head
+-tail
+-grep
+
+head:
+-Used to print top N lines of a file.
+
+-By default, it will print the first 10 lines.
+Syntax: head [-N] filename
+
+Example:  head -2 sentences.txt
+
+tail:
+-Used to print last N lines of a file.
+
+-By default it will print the last 10 lines.
+
+Syntax: tail [-N] filename
+
+Example:  tail -2 sentences.txt
+
+Counting:
+Word Count:
+wc is used to find out number of lines, word count and characters  count in the files.
+
+
+Piping:
+-Pipe is used to combine two or more commands
+-Output of one command is passed as an input to the command followed and so on.
+
+Using ‘|’
+Syntax:  command_1 | command_2 | command N
+
+Example:  cat sentences.txt | head -2
+
+Grep:
+Searches a file or files for lines that have a certain pattern.
+
+Syntax: cat filename | grep <pattern>
+
+Example: cat sentences.txt | grep "morning"
+
+Example 1
+Number of lines that contain the word morning in the given file.
+
+Example 2
+Occurrences of the word "morning" in the given file from the lines 10 to 15
+
+Output Redirection:
+">" takes the standard output of the command and redirects it to the file.
+
+Syntax: command > filename
+
+Example: cat sentences.txt | head -2 > learnings.txt
+
+Compressing & Uncompressing Files:
+
+-File compression is a reduction in the number of bits needed to store the data of a file.
+-Files are stored in such a way that, it uses less disk space than all the individual files and directories combined
+-Advantages of compressing files are:
+--taking less disk space
+--easier and faster transmission
+
+-Commonly used file formats for the compressed files:
+--gzip
+--zip
+--tar
+
+tar:
+We can use tar to compress files & directories
+
+Compression:
+Syntax: tar -czvf file-name.tar.gz path1 path2 ..
+
+Example: tar -czvf my_collection.tar.gz videos report.txt
+
+Extract/ Uncompress
+Syntax: tar -xzvf filename.tar.gz -C path
+
+Example:  tar -xzvf my_collection.tar.gz -C collections
+
+zip:
+It is used to package all the files into one file with .zip extension
+
+Syntax:  zip -r zipfile.zip file1 folder1 file2 ...
+
+Example:  zip -r collections.zip videos report.txt
+
+unzip:
+The unzip command extracts all files from the specified ZIP archive
+
+Syntax:  unzip filename.zip -d path
+
+Example: unzip collections.zip -d new-folder
+
+Summary: 
+
+Command	 Description
+head	 Used to print top N lines of a file
+tail	 Used to print last N lines of a file
+wc	 Used to find out number of lines, word count and characters count in the files
+grep	 Searches a file or files for lines that have a certain pattern
+tar	 Used to compress files & directories
+zip	 Used to package all the files into one file with .zip extension
+unzip	 It extracts all files from the specified ZIP archive
+
+
+
+                                                                                   *Miscellaneous Commands*
+
+
+Super User & File Permissions
+Linux Users:
+The root user, also known as the superuser or administrator, has access to all commands and files.
+
+Root User:
+sudo command temporarily elevates the privileges allowing users to complete sensitive tasks without logging in as the root user.
+Eg:  sudo command
+
+Linux Commands
+Executable Path:
+which command is used to identify the location of a given executable path.
+
+Syntax  :  which command
+
+Example  :  
+$  which sudo
+/usr/bin/sudo
+
+Create New Users:
+useradd  is used to create a new user with the given username.
+
+Syntax  :  sudo useradd username
+
+Example  : sudo useradd abhi
+
+Set/Change User Password:
+passwd is used to set or change password of a given user.
+
+Syntax  : sudo passwd username
+
+Example  : sudo passwd abhi
+
+Execute Command as Another User:
+-su is used to execute command as another user.
+Eg:  su user
+
+Eg: su -c command user
+
+File Permissions:
+Authorization Levels:
+Multi-user operating systems  like linux provide two levels of authorization in securing the files
+
+-Ownership
+-Permission
+
+User Ownership:
+Users accessing a file/ directory can be categorized into 3 types
+
+Type	Description
+Owner	User who is considered as owner
+Group	A group of users, who are assigned a specific permission
+Others	Any other users who doesn’t belong to the above two types
+
+Ownership and Permissions:
+
+Permissions	Description
+Read	           Open and read a file
+Write	          Modify the contents of a file
+Execute	          Authority to run as a program
+
+Changing Permissions:
+Syntax  :  chmod permissions filename
+
+Example  : chmod 764 sample.txt
+
+"chmod" stands for change mode
+
+Number	Binary	Symbol	Permission Type
+0	000	---	No Permission
+1	001	--x	Execute
+2	010	-w-	Write
+3	011	-wx	Execute + Write
+4	100	r--	Read
+5	101	r-x	Read + Execute
+6	110	rw-	Read +Write
+7	111	rwx	Read + Write +Execute
+
+Changing Ownership
+-For changing the user of a file/directory
+Syntax  : sudo chown user filename
+
+Example  : sudo chown root sample.txt
+
+-For changing the user and group of a file/directory
+Syntax  :  sudo chown user:group filename
+
+Example  : sudo chown root:root sample.txt
+
+Packaging:
+Package & Repository
+-A package file is a compressed collection of files that comprise the software package
+-Packages are stored in repositories to make them accessible to users
+
+Package Managers:
+apt
+-APT stands for the Advanced Packaging Tool
+-It is used to  install, upgrade or remove software packages  in linux
+
+Syntax  : sudo apt
+
+Installing Package:
+Installing a package from a repository
+
+Syntax  :  sudo apt install package_name
+
+brew:
+-It is a Package Manager for macOS.
+
+--With brew command you can install the packages in macOS.
+
+Installing Package
+Syntax  : brew install package_name
+
+yum:
+yum is a graphical based package management tool for RPM (RedHat Package Manager)  based Linux systems.
+
+Installing Package
+Syntax :  yum package_name
+
+Summary:
+
+Command 	                          Description
+sudo	                             Temporarily elevates the privileges
+which	                              Used to identify the location of a given executable path
+useradd	                              Used to create a new user with the given username
+passwd	                              Used to set or change password of a given user
+su	                              Used to execute command as another user
+chmod	                              Used to change the access permissions of file
+chown	                               Changing the user of a file/directory
+apt	                               Used to install, upgrade or remove software packages in linux
+wget	                               Used for downloading files from the web
+curl	                               Used for transferring data from or to a server
+apt-cache	                               Searches for a particular package
+add-apt-repository	            Used to add repository
+apt-key	                                Used to add PPA security key
+
+
+
