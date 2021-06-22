@@ -1,0 +1,373 @@
+                                                                 *Prototypal Inheritance*
+
+
+1. Built-in Constructor Functions
+These are the built-in constructor functions provided by JavaScript.
+
+-function Array()
+-function Function()
+-function Promise()
+-function Object()
+-function String()
+-function Number(), etc.
+
+2. Built-in Array Constructor Function
+
+2.1 Default Properties and Methods
+Properties:
+-constructor
+-length
+-prototype, etc.
+
+Methods:
+-push()
+-pop()
+-splice()
+-shift(), etc.
+
+2.2 Creating an Array with the new Operator (Older way of writing)
+Syntax: let myArray = new Array(item1, item2, ...);
+
+JAVASCRIPT:
+
+let myArray = new Array("a", 2, true);
+myArray.push("pen");
+
+console.log(myArray);  // Array (4)["a", 2, true, "pen"]
+console.log(myArray.length);  // 4
+
+3. Prototype Property
+The Prototype property will be shared across all the instances of their constructor function.
+
+3.1 Accessing the Prototype of a Constructor Function
+JAVASCRIPT:
+
+console.log(Array.prototype);
+
+3.2 Accessing the shared Prototype of an Instance
+JAVASCRIPT:
+
+let myArray = new Array("a", 2, true);
+console.log(Object.getPrototypeOf(myArray));
+
+3.3 Prototypal Inheritance
+On calling the new() operator, all the properties and methods defined on the prototype will become accessible to the instance objects. This process is called Prototypal Inheritance.
+
+4. Built-in Function Constructor Function
+
+4.1 Default Properties and Methods
+
+Properties:
+-name
+-length
+-constructor
+-prototype, etc.
+
+Methods:
+-apply()
+-bind()
+-call()
+-toString(), etc.
+
+4.2 Creating a Function with the new Operator (Older way of writing)
+Syntax: let myFunction = new Function("param1, param2, ...", function body);
+
+JAVASCRIPT:
+
+let Car = new Function("color, brand",
+  `this.color = color;
+   this.brand = brand;
+   this.start = function() {
+     console.log("started");
+  };`);
+
+console.log(Function.prototype);
+
+
+5. Instance Specific and Prototype Properties
+
+5.1 Prototype Properties/ Methods
+The Prototype Properties/ Methods are the properties or methods common across the instance objects.
+
+Examples:
+-calculateAge
+-displayGreetings
+-displayProfileDetails
+-calculateIncome
+
+5.1.1 Adding a Method to the prototype
+JAVASCRIPT:
+
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+Person.prototype.displayFullName = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+let person1 = new Person("Sushant", "Guddeti");
+let person2 = new Person("Shourya", "Mulapuri");
+
+console.log(Object.getPrototypeOf(person1) === Object.getPrototypeOf(person2));
+
+5.2 Instance Specific Properties/ Methods
+The Instance Specific Properties/ Methods are the properties or methods specific to the instance object.
+
+Examples:
+-gender
+-yearOfBirth
+-friendsList
+-name
+ 
+JAVASCRIPT:
+
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+Person.prototype.displayFullName = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+let person1 = new Person("Sushant", "Guddeti");
+console.log(Object.getOwnPropertyNames(person1));
+
+
+                                                                              *JS Classes*
+
+
+1. Class
+ The class is a special type of function used for creating multiple objects.
+
+1.1. Constructor Method
+The constructor method is a special method of a class for creating and initializing an object of that class.
+
+Syntax:
+class MyClass {
+  constructor(property1, property2) {
+    this.property1 = property1;
+    this.property2 = property2;
+  }
+  method1() { ... }
+  method2() { ... }
+}
+
+1.1.1 Creating a Single Object
+Syntax :
+
+class MyClass {
+  constructor(property1, property2) {
+    this.property1 = property1;
+    this.property2 = property2;
+  }
+  method1() { ... }
+  method2() { ... }
+}
+let myObject = new MyClass(property1, property2);
+
+Example:
+JAVASCRIPT:
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+ }
+ displayFullName() {
+   return this.firstName + " " + this.lastName;
+ }
+}
+let person1 = new Person("Sushant", "Guddeti");
+
+console.log(person1);
+
+1.1.2 Creating Multiple Objects
+ 
+JAVASCRIPT:
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+}
+let person1 = new Person("Sushant", "Guddeti");
+let person2 = new Person("Shourya", "Mulapuri");
+
+console.log(person1); 
+console.log(person2);
+
+1.2 Prototype property of a Class
+ 
+JAVASCRIPT:
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  displayFullName() {
+   return this.firstName + " " + this.lastName;
+  }
+}
+let person1 = new Person("Sushant", "Guddeti");
+
+console.log(Person.prototype);
+
+1.3 Prototype of an Instance
+The Instance Prototype refers to the prototype object of the constructor function.
+
+JAVASCRIPT:
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  displayFullName() {
+   return this.firstName + " " + this.lastName;
+  }
+}
+let person1 = new Person("Sushant", "Guddeti");
+
+console.log(Object.getPrototypeOf(person1));
+
+NOTE:
+The Type of a class is a function
+
+2.Inheritance in JS Classes
+The Inheritance is a mechanism by which a class inherits methods and properties from another class.
+
+2.1 Extends
+The extends keyword is used to inherit the methods and properties of the superclass.
+
+2.2 Super
+Calling super() makes sure that SuperClass constructor() gets called and initializes the instance.
+
+Syntax :
+
+class SuperClass {
+}
+class SubClass extends SuperClass{
+  constructor(property1, property2){
+    super(property1);
+    this.property2 = property2;
+  }
+  method1() {  }
+}
+let myObject = new SubClass(property1, property2);
+
+Here, SubClass inherits methods and properties from a SuperClass.
+
+2.3 Method Overriding
+Here the constructor method is overridden. If we write the SuperClass methods in SubClass, it is called method overriding.
+
+Syntax :
+
+class SuperClass {
+}
+class SubClass extends SuperClass{
+  constructor(property1, property2){
+    super(property1);
+    this.property2 = property2;
+  }
+}
+let myObject = new SubClass(property1, property2);
+
+Example :
+JAVASCRIPT:
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  eat() {
+    return `${this.name} is eating`;
+  }
+  makeSound() {
+    return `${this.name} is shouting`;
+  }
+}
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+  sniff() {
+    return `${this.name} is sniffing`;
+  }
+}
+class Cat extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+  knead() {
+    return `${this.name} is kneading`;
+  }
+}
+let animal1 = new Animal("gorilla");
+let someDog = new Dog("someDog", "German Shepherd");
+let persianCat = new Cat("someCat", "Persian Cat");
+
+console.log(animal1);  
+console.log(animal1.eat());  
+
+console.log(someDog);  
+console.log(someDog.eat());  
+console.log(someDog.sniff());  
+
+console.log(persianCat); 
+console.log(persianCat.knead()); 
+console.log(persianCat.eat());  
+console.log(persianCat.makeSound());
+
+3.this in classes
+
+3.1 Super Class
+In class, this refers to the instance object.
+JAVASCRIPT:
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+ }
+ eat() {
+   return this;  
+ }
+ makeSound() {
+   return `${this.name} is shouting!`;
+ }
+}
+let animal1 = new Animal("dog");
+
+console.log(animal1.eat());
+
+Here this refers to the animal1.
+
+3.2 Sub Class
+ 
+JAVASCRIPT:
+
+class Animal {
+    constructor(name) {
+    this.name = name;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+  sniff() {
+    return this;
+  }
+}
+let dog = new Dog("dog", "german Shepherd");
+
+console.log(dog.sniff());
+
