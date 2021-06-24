@@ -1,0 +1,641 @@
+                                                                                      *JS Promises |Part 1|*
+
+
+1. Synchronous Execution
+Example :
+JAVASCRIPT:
+
+alert("First Line");
+alert("Second Line");
+alert("Third Line");
+
+2. Asynchronous Execution
+Example 1:
+JAVASCRIPT:
+
+const url = "https://apis.ccbp.in/jokes/random";
+
+fetch(url)
+  .then((response) => {
+    return response.json();
+  })
+  .then((jsonData) => {
+    //statement-1
+    console.log(jsonData); // Object{ value:"The computer tired when it got home because it had a hard drive" }
+  });
+
+//statement-2
+console.log("fetching done"); // fetching done
+
+In the above example, the second statement won’t wait until the first statement execution. In JS, fetch() works asynchronously.
+
+3. JS Promises
+1.Promise is a way to handle Asynchronous operations.
+2.A promise is an object that represents a result of operation that will be returned at some point in the future.
+
+Example :
+JAVASCRIPT:
+
+const url = "https://apis.ccbp.in/jokes/random";
+let responseObject = fetch(url);
+
+console.log(responseObject); // Promise{ [[PromiseStatus]]:pending, [[PromiseValue]]:undefined }
+console.log("fetching done"); // fetching done
+
+NOTE:
+A promise will be in any one of the three states:
+1.Pending : Neither fulfilled nor rejected
+2.Fulfilled : Operation completed successfully
+3.Rejected : Operation failed
+
+3.1 Resolved State
+When a Promise object is Resolved, the result is a value.
+
+JAVASCRIPT:
+const url = "https://apis.ccbp.in/jokes/random";
+let responsePromise = fetch(url);
+
+responsePromise.then((response) => {
+  console.log(response); // Response{ … }
+});
+
+3.2 Rejected State
+Fetching a resource can be failed for various reasons like:
+-URL is spelled incorrectly
+-Server is taking too long to respond
+-Network failure error, etc.
+
+JAVASCRIPT:
+
+const url = "https://a.ccbp.in/random";
+let responsePromise = fetch(url);
+
+responsePromise.then((response) => {
+  return response;
+});
+responsePromise.catch((error) => {
+  console.log(error); // TypeError{ "Failed to fetch" }
+});
+
+3.3 Promise Chaining
+Combining multiple .then()s or .catch()s to a single promise is called promise chaining.
+
+Syntax :
+
+const url = "INCORRECT_RESOURCE_URL";
+let responsePromise = fetch(url);
+
+responsePromise
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+3.3.1 OnSuccess Callback returns Promise
+Here, log the response in JSON format.
+
+JAVASCRIPT:
+
+const url = "RESOURCE_URL";
+let responsePromise = fetch(url);
+
+responsePromise.then((response) => {
+  console.log(response.json());
+});
+
+3.3.2 Chaining OnSuccess Callback again
+JAVASCRIPT:
+
+const url = "https://apis.ccbp.in/jokes/random";
+let responsePromise = fetch(url);
+
+responsePromise
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  });
+
+3.4 Fetch with Error Handling
+Check the behavior of code with valid and invalid URLs.
+JAVASCRIPT:
+
+const url = "https://apis.ccbp.in/jokes/random";
+let responsePromise = fetch(url);
+
+responsePromise
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data); // Object { value: "They call it the PS4 because there are only 4 games worth playing!"
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+                                                                        *JS Promises | Part 2 | *
+
+
+
+1. Asynchronous JS code style
+There are two main types of asynchronous code style you'll come across in JavaScript:
+
+-Callback based
+Example : setTimeout(), setInterval()
+
+-Promise based
+Example : fetch()
+
+2. Creating your own Promises
+Promises are the new style of async code that you'll see used in modern JavaScript.
+
+Syntax :
+const myPromise = new Promise((resolveFunction, rejectFunction) => {
+      //Async task
+});
+
+In the above syntax:
+
+-The Promise constructor takes a function (an executor) that will be executed immediately and passes in two functions: resolve, which must be called when the Promise is resolved (passing a result), and reject when it is rejected (passing an error).
+-The executor is to be executed by the constructor, during the process of constructing the new Promise object.
+-resolveFunction is called on promise fulfilled.
+-rejectFunction is called on promise rejection.
+
+Example :
+JAVASCRIPT:
+
+const myPromise = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+    }, 1000);
+  });
+};
+
+console.log(myPromise());
+
+2.1 Accessing Arguments from Resolve
+When resolve() is excuted, callback inside then() will be executed.
+
+Example :
+JAVASCRIPT:
+
+const myPromise = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Promise Resolved");
+    }, 1000);
+  });
+};
+
+myPromise().then((fromResolve) => {
+  console.log(fromResolve); // Promise Resolved
+});
+
+2.2 Accessing Arguments from Reject
+When reject() is excuted, callback inside catch() will be executed.
+
+Example :
+JAVASCRIPT:
+
+const myPromise = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject("Promise Rejected");
+    }, 2000);
+  });
+};
+
+myPromise()
+  .then((fromResolve) => {
+    console.log(fromResolve);
+  })
+  .catch((fromReject) => {
+    console.log(fromReject); // Promise Rejected
+  });
+
+3. Async/Await
+1.The Async/Await is a modern way to consume promises.
+2.The Await ensures processing completes before the next statement executes.
+Syntax :
+
+const myPromise = async () => {
+  let promiseObj1 = fetch(url1);
+  let response1 = await promiseObj1;
+  let promiseObj2 = fetch(url2);
+  let response2 = await promiseObj2;
+};
+
+myPromise();
+
+NOTE:
+1.Use async keyword before the function only if it is performing async operations.
+2.Should use await inside an async function only.
+
+3.1 Fetch with Async and Await
+Example :
+JAVASCRIPT:
+
+const url = "https://apis.ccbp.in/jokes/random";
+
+const doNetworkCall = async () => {
+  const response = await fetch(url);
+  const jsonData = await response.json();
+  console.log(jsonData);
+};
+
+doNetworkCall();
+
+3.2 Error Handling with Async and Await
+Example :
+JAVASCRIPT:
+
+const url = "https://a.ccbp.in/jokes/random";
+
+const doNetworkCall = async () => {
+  try {
+    const response = await fetch(url);
+    const jsonData = await response.json();
+    console.log(jsonData);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+doNetworkCall();
+
+3.3 Async Function always returns Promise
+Example :
+JAVASCRIPT:
+
+const url = "https://apis.ccbp.in/jokes/random";
+
+const doNetworkCall = async () => {
+  const response = await fetch(url);
+  const jsonData = await response.json();
+  console.log(jsonData);
+};
+
+const asyncPromise = doNetworkCall();
+console.log(asyncPromise);
+
+4. String Manipulations
+There are methods and properties available to all strings in JavaScript.
+
+String Methods	                                                Functionality
+toUpperCase(), toLowerCase()	                   Converts from one case to another
+includes(), startsWith(), endsWith()	Checks a part of the string
+split()	                                                          Splits a string
+toString()	                                                         Converts number to a string
+trim(), replace()	                                      Updates a string
+concat(), slice(), substring()	                   Combines & slices strings
+indexOf()	                                                          Finds an index
+
+
+4.1 trim()
+The trim( ) method removes whitespace from both ends of a string.
+
+Syntax : string.trim()
+JAVASCRIPT:
+
+const greeting = "   Hello world!  ";
+console.log(greeting);
+console.log(greeting.trim());
+
+4.2 slice()
+The slice() method extracts a section of a string and returns it as a new string, without modifying the original string.
+Syntax : string.slice(start, end)
+JAVASCRIPT:
+
+const text = "The quick brown fox";
+console.log(text.slice(0, 3)); // The
+console.log(text.slice(2, 3)); // e
+
+4.3 toUpperCase()
+The toUpperCase() method converts a string to upper case letters.
+Syntax : string.toUpperCase()
+JAVASCRIPT:
+
+const text = "The quick brown fox";
+console.log(text.toUpperCase()); // THE QUICK BROWN FOX
+
+4.4 toLowerCase()
+The toLowerCase() method converts a string to lower case letters.
+Syntax : string.toLowerCase()
+JAVASCRIPT:
+
+const text = "Learn JavaScript";
+console.log(text.toLowerCase()); // learn javascript
+
+4.5 split()
+The split() method is used to split a string into an array of substrings and returns the new array.
+Syntax : string.split(separator, limit)
+
+JAVASCRIPT:
+
+const str = "He-is-a-good-boy";
+const words = str.split("-");
+console.log(words); // ["He", "is", "a", "good", "boy"]
+
+4.6 replace()
+The replace() method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
+
+Syntax : string.replace(specifiedvalue, newvalue)
+
+JAVASCRIPT:
+
+const str = "Welcome to Hyderabad";
+const words = str.replace("Hyderabad", "Guntur");
+
+console.log(words); // Welcome to Guntur
+
+4.7 includes()
+1.The includes() method determines whether a string contains the characters of a specified string.
+
+2.It returns true if the string contains the value, otherwise it returns false.
+
+Syntax : string.includes(searchvalue, start)
+
+JAVASCRIPT:
+
+onst str = "Learn 4.0 Technologies";
+const word = str.includes("Tech");
+const number = str.includes("5.0");
+
+console.log(word); // true
+console.log(number); // false
+
+4.8 concat()
+The concat() method is used to join two or more strings.
+Syntax : string.concat(string1, string2, ..., stringX)
+
+JAVASCRIPT:
+
+const str1 = "Hello";
+const str2 = "World";
+console.log(str1.concat(str2)); // HelloWorld
+console.log(str1.concat(" Pavan", ". Have a nice day.")); // Hello Pavan. Have a nice day.
+
+4.9 indexOf()
+The indexOf() method returns the position of the first occurrence of a specified value in a string.
+
+Syntax : string.indexOf(searchvalue, start)
+
+JAVASCRIPT:
+
+const str = "Building Global Startups";
+console.log(str.indexOf("Global")); // 9
+console.log(str.indexOf("up")); // 21
+
+4.10 startsWith()
+The startsWith() method determines whether a string begins with the characters of a specified string, returning true or false as appropriate.
+
+Syntax : string.startsWith(searchvalue, start)
+
+JAVASCRIPT:
+const str = "World-class Products";
+console.log(str.startsWith("rld")); // false
+console.log(str.startsWith("World")); // true
+
+4.11 endsWith()
+The endsWith() method determines whether a string ends with the characters of a specified string, returning true or false as appropriate.
+
+Syntax : string.endsWith(searchvalue, length)
+
+JAVASCRIPT:
+const str = "How are you?";
+console.log(str.endsWith("you?")); // true
+console.log(str.endsWith("re")); // false
+
+4.12 toString()
+The toString() method returns the value of a string object.
+
+Syntax : string.toString()
+
+JAVASCRIPT:
+const number = 46;
+const newNumber = number.toString();
+
+console.log(newNumber); // 46
+console.log(typeof newNumber); // string
+
+4.13 substring()
+The substring() method returns the part of the string between the start and end indexes, or to the end of the string.
+
+Syntax : string.substring(start, end)
+
+JAVASCRIPT:
+const str = "I am learning JavaScript";
+console.log(str.substring(2, 9)); // am lear
+console.log(str.substring(6)); // earning JavaScript
+
+4.14 Length
+The length property returns the length of a string (number of characters).
+
+Syntax : string.length
+
+JAVASCRIPT:
+const str = "Upgrade to CCBP Tech 4.0 Intensive";
+console.log(str.length); // 34
+
+
+                                                                                *More JS Concepts*
+
+1. Scoping
+The Scope is the region of the code where a certain variable can be accessed.
+
+In JavaScript there are two types of scope:
+-Block scope
+-Global scope
+
+1.1 Block Scope
+If a variable is declared with const or let within a curly brace ({}), then it is said to be defined in the Block Scope.
+-if..else
+-function (){}
+-switch
+-for..of, etc.
+
+Example :
+JAVASCRIPT:
+
+let age = 27;
+if (age > 18) {
+  let x = 0;
+  console.log(x); // 0
+}
+console.log(x); //  ReferenceError{"x is not defined"}
+
+1.2 Global Scope
+1.If a variable is declared outside all functions and curly braces ({}), then it is said to be defined in the Global Scope.
+2.When a variable declared with let or const is accessed, Javascript searches for the variable in the block scopes first followed by global scopes.
+
+JAVASCRIPT:
+
+const x = 30;
+function myFunction() {
+  if (x > 18) {
+    console.log(x); // 30
+  }
+}
+
+myFunction();
+
+2. Hoisting
+
+2.1 Function Declarations
+Hoisting is a JavaScript mechanism where function declarations are moved to the top of their scope before code execution.
+
+JAVASCRIPT:
+let x = 15;
+let y = 10;
+let result = add(x, y);
+console.log(result); // 25
+
+function add(a, b) {
+  return a + b;
+}
+
+2.2 Function Expressions
+Function expressions in JavaScript are not hoisted.
+
+JAVASCRIPT:
+myFunction();
+let myFunction = function () {
+  let x = 5;
+  console.log(x); // ReferenceError{"Cannot access 'myFunction' before initialization"}
+};
+
+2.3 Arrow Functions
+Arrow Functions in JavaScript are not hoisted.
+
+JAVASCRIPT:
+myFunction();
+let myFunction = () => {
+  let x = 5;
+  console.log(x); // ReferenceError{"Cannot access 'myFunction' before initialization"}
+};
+
+3. More Array Methods
+The map(), forEach(), filter() and reverse() are some of the most commonly used array methods in JavaScript.
+
+3.1 Map()
+
+1.The map() method creates a new array with the results of calling a function for every array element.
+2.The map() method calls the provided function once for each element in an array, in order.
+Syntax : array.map(callback(currentValue, index, arr))
+
+1.Here the callback is a function that is called for every element of array.
+2.currentValue is the value of the current element and index is the array index of the current element. Here index and arr are optional arguments.
+
+JAVASCRIPT:
+
+const numbers = [1, 2, 3, 4];
+const result = numbers.map((number) => number * number);
+
+console.log(result); // [1, 4, 9, 16]
+
+3.2 forEach()
+The forEach() method executes a provided function once for each array element. It always returns undefined.
+
+Syntax : array.forEach(callback(currentValue, index, arr))
+
+Here index and arr are optional arguments.
+
+JAVASCRIPT:
+let fruits = ["apple", "orange", "cherry"];
+
+fruits.forEach((fruit) => console.log(fruit));
+
+3.3 filter()
+1.The filter() method creates a new array filled with all elements that pass the test (provided as a function).
+
+2.A new array with the elements that pass the test will be returned. If no elements pass the test, an empty array will be returned.
+
+Syntax : array.filter(function(currentValue, index, arr))
+
+Here index and arr are optional arguments.
+
+JAVASCRIPT:
+const numbers = [1, -2, 3, -4];
+const positiveNumbers = numbers.filter((number) => number > 0);
+
+console.log(positiveNumbers); // [1, 3]
+
+3.4 reduce()
+The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in single output value.
+
+Syntax : array.reduce(function(accumulator, currentValue, index, arr), initialValue)
+
+Here accumulator is the initialValue or the previously returned value of the function and currentValue is the value of the current element, index and arr are optional arguments.
+
+JAVASCRIPT:
+const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+console.log(array1.reduce(reducer)); // 10
+
+3.5 every()
+The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+
+Syntax : array.every(function(currentValue, index, arr))
+
+Here index and arr are optional arguments.
+
+JAVASCRIPT:
+let array1 = [32, 33, 16, 20];
+const result = array1.every((array1) => array1 < 40);
+
+console.log(result); // true
+
+3.6 some()
+The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+
+Syntax : array.some(function(currentValue, index, arr))
+
+Here index and arr are optional arguments.
+
+JAVASCRIPT:
+const myAwesomeArray = ["a", "b", "c", "d", "e"];
+const result = myAwesomeArray.some((alphabet) => alphabet === "d");
+
+console.log(result); // true
+
+3.7 reverse()
+The reverse() method reverses the order of the elements in an array.The first array element becomes the last, and the last array element becomes the first.
+
+Syntax : array.reverse()
+
+JAVASCRIPT:
+const myArray = ["iBHubs", "CyberEye", "ProYuga"];
+const reversedArray = myArray.reverse();
+
+console.log(reversedArray); // ["ProYuga", "CyberEye", "iBHubs"]
+
+3.8 flat()
+The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+Syntax : let newArray = arr.flat([depth]);
+
+JAVASCRIPT:
+const arr1 = [0, 1, 2, [3, 4]];
+const arr2 = [0, 1, 2, [[[3, 4]]]];
+
+console.log(arr1.flat()); // [ 0,1,2,3,4 ]
+console.log(arr2.flat(2)); // [0, 1, 2, [3, 4]]
+
+4. Mutable & Immutable methods
+Mutable methods will change the original array and Immutable methods won't change the original array.
+
+Mutable methods	Immutable methods
+shift()	                                map()
+unshift()	                                filter()
+push()	                                reduce()
+pop()	                                forEach()
+sort()	                                slice()
+reverse()	                                join()
+splice(), etc.	             some(), etc.
+
