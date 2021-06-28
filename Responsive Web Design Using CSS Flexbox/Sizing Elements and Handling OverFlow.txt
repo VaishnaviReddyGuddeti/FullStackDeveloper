@@ -1,0 +1,2378 @@
+                                                                           *Sizing Elements and Handling Overflow *
+
+
+
+1. Sizing Elements
+1.1 Intrinsic Size
+Some elements have a natural size set by default, we call it Intrinsic Size.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <img
+      src="https://res.cloudinary.com/dfxicv9iv/image/upload/c_scale,h_300,w_600/v1613576396/hand-holding-tree-img_auama0.jpg"
+    />
+    <p class="paragraph">Once upon a time, there was a tortoise and a hare</p>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.paragraph {
+  color: #666666;
+  padding: 4px;
+  font-size: 18px;
+  border: 2px solid blue;
+}
+
+In the example above, the default sizes are applied to the image and paragraph elements.
+
+
+1.2 Extrinsic Size
+If we set a Specific Size to an element, we call an Extrinsic Size.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <img
+      src="https://assets.ccbp.in/frontend/intermediate-rwd/hand-holding-tree-img.png"
+      class="image"
+    />
+    <p class="paragraph">Once upon a time, there was a tortoise and a hare</p>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.image {
+  height: 150px;
+  width: 300px;
+}
+.paragraph {
+  color: #666666;
+  padding: 4px;
+  font-size: 18px;
+  border: 2px solid blue;
+  height: 150px;
+  width: 150px;
+}
+
+In the example above, a specific size was given to the image and paragraph elements.
+
+
+2. Handling Overflow
+2.1 CSS Overflow Property
+Content overflow can be handled using the CSS overflow property.
+
+The overflow property has the following values:
+
+1.visible(default) - CSS tries to avoid data loss. Hence, the overflow: visible; is the default value for it.
+2.hidden- The overflow is clipped, and the rest of the content will be invisible.
+3.scroll- The overflow is clipped, and a scrollbar is added to see the rest of the content.
+4.auto- It is similar to scroll, but it adds scrollbars only when necessary.
+
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <p class="paragraph">
+      Once upon a time, there was a tortoise and a hare. The tortoise was
+      friendly and quiet. He did everything slowly. The hare was fast and rude.
+      He did everything quickly. One day, the hare saw the tortoise and was so
+      amused by it that he called him 'lazy'.
+    </p>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.paragraph {
+  border: 2px solid blue;
+  height: 150px;
+  width: 180px;
+  overflow: auto;
+}
+
+2.2 overflow-x & overflow-y
+There are two other CSS properties similar to overflow, which is used for handling in any one particular direction.
+
+-overflow-x- To handle overflow in the horizontal direction.
+-overflow-y- To handle overflow in the vertical direction.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div class="image-container">
+      <img
+        src="https://assets.ccbp.in/frontend/intermediate-rwd/hand-holding-tree-img.png"
+        class="image"
+      />
+    </div>
+    <div>
+      <p class="paragraph">
+        Once upon a time, there was a tortoise and a hare. The tortoise was
+        friendly and quiet. He did everything slowly. The hare was fast and
+        rude. He did everything quickly. One day, the hare saw the tortoise and
+        was so amused by it that he called him 'lazy'.
+      </p>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.image-container {
+  border: 2px solid blue;
+  width: 200px;
+  height: 140px;
+  overflow-x: scroll;
+}
+.image {
+  width: 300px;
+  height: 120px;
+}
+.paragraph {
+  border: 2px solid blue;
+  height: 150px;
+  width: 180px;
+  overflow-y: scroll;
+}
+
+
+3. Min & Max Sizes
+3.1 Min size
+The min-height & min-width CSS properties can be used to define the minimum sizes of an element.
+
+CSS:
+.paragraph {
+  min-height: 150px;
+}
+
+3.2 Max size
+The max-height & max-width CSS properties can be used to restrict the sizes of an element.
+CSS:
+.paragraph {
+  min-height: 150px;
+  max-height: 180px;
+}
+
+3.3 Min & Max Sizes with Overflow
+If the content needs a larger than maximum height, the overflowing of content can be observed.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <p class="paragraph">
+      Once upon a time, there was a tortoise and a hare. The tortoise was
+      friendly and quiet. He did everything slowly. The hare was fast and rude.
+      He did everything quickly. One day, the hare saw the tortoise and was so
+      amused by it that he called him 'lazy'.
+    </p>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.paragraph {
+  border: 2px solid blue;
+  width: 150px;
+  min-height: 150px;
+  max-height: 180px;
+  overflow: auto;
+}
+
+4. A Note on Meta Element
+
+HTML:
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+</html>
+
+The meta element is used to provide additional important information about HTML document.
+
+1. Name - specifies the type of meta element it is, what type of information it contains. viewport gives instructions to browsers on how to control the page's dimensions and scaling.
+2. Content - specifies the actual meta content.
+
+Note:
+In mobile devices, you may experience this issue, so it is a good practice to include viewport meta element in the HTML.
+
+5. Summer Collection Section Example - Final Code
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="bg-container">
+      <div class="card-container">
+        <h1 class="heading">New Summer Collection !</h1>
+        <div class="card-body">
+          <img
+            src="https://assets.ccbp.in/frontend/intermediate-rwd/offer-img.png"
+            class="image"
+          />
+          <p class="description">
+            Beat the heat with our cool fashion sale where everyday shopping is
+            always rewarded. Get 50% cashback, free shipping, free returns, and
+            more at 1000+ top retailers!
+          </p>
+          <p class="description">
+            Shop from the comfort of your home & get your favourites delivered
+            right to your doorstep. comprehensive size charts, product info &
+            more to help you make the right buying decision. Fresh collection.
+            Trendy designs. All for you!
+          </p>
+          <p class="description">
+            You can see more of this collection by clicking on See More button
+            below. Buy the Collection before they are all gone. Use EHYA20 to
+            get 20% Disc.
+          </p>
+          <button class="button">See More</button>
+          <button class="button">Apply Offer</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0px;
+}
+
+.bg-container {
+  height: 100vh;
+  font-family: "Roboto";
+  background-size: cover;
+  background-image: url("https://assets.ccbp.in/frontend/intermediate-rwd/summer-collection-bg.png");
+  border: 1px solid gray;
+}
+
+.card-container {
+  border: 1px solid gray;
+  border-radius: 24px;
+  background: white;
+  margin: auto;
+  margin-top: 80px;
+  width: 92%;
+  max-width: 800px;
+}
+
+.heading {
+  padding-left: 20px;
+  font-size: 32px;
+}
+
+.card-body {
+  padding: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top: 1px solid lightgray;
+  height: 60vh;
+  overflow-y: auto;
+}
+
+.image {
+  border-radius: 24px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.description {
+  color: #594d6d;
+  font-size: 18px;
+}
+
+.button {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  background: #ffdda9;
+  color: #12022f;
+  border: none;
+  border-radius: 28px;
+  padding: 12px;
+  padding-left: 48px;
+  padding-right: 48px;
+  margin-right: 5px;
+}
+
+
+                                                                                                      *Box Sizing*
+
+
+1. Box Sizing
+Every HTML element on a web page is a rectangular box.
+
+By default in the CSS box model, the width and height you set to an element are applied only to the element's content.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.box {
+  height: 120px;
+  width: 120px;
+  background-color: skyblue;
+  font-size: 40px;
+  font-family: "Roboto";
+  margin: 10px;
+}
+
+.box2 {
+    padding: 20px;
+}
+
+.box3 {
+    padding: 20px;
+    border: 20px solid blue;
+}
+
+2. The box-sizing Property
+The box-sizing CSS property sets how the total width and height of an element are calculated.
+
+Box-sizing Property has the following values:
+
+-content-box(default)
+-border-box
+
+2.1 Content Box
+The width and height properties include the content, but they do not include the padding, border, or margin.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.box {
+  height: 120px;
+  width: 120px;
+  background-color: skyblue;
+  font-size: 40px;
+  font-family: "Roboto";
+  margin: 10px;
+  box-sizing: content-box;
+}
+
+.box2 {
+    padding: 20px;
+}
+
+.box3 {
+    padding: 20px;
+    border: 20px solid blue;
+}
+
+2.2 Border Box
+The width and height properties include the content, padding, and border, but they do not include the margin.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.box {
+  height: 120px;
+  width: 120px;
+  background-color: skyblue;
+  font-size: 40px;
+  font-family: "Roboto";
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.box2 {
+    padding: 20px;
+}
+
+.box3 {
+    padding: 20px;
+    border: 20px solid blue;
+}
+
+NOTE:
+
+-Bootstrap uses box-sizing: border-box; for all the HTML Elements.
+-It's better to use box-sizing: border-box; while developing layouts.
+
+3. Universal Selector (*)
+ Selects all the HTML elements within the document.
+
+Syntax :
+* {
+  property1: value1;
+  property2: value2;
+}
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+  color: brown;
+  box-sizing: border-box;
+}
+
+.box {
+  height: 120px;
+  width: 120px;
+  background-color: skyblue;
+  font-size: 40px;
+  font-family: "Roboto";
+  margin: 10px;
+}
+
+.box2 {
+    padding: 20px;
+}
+
+.box3 {
+    padding: 20px;
+    border: 20px solid blue;
+}
+
+NOTE:
+Styles applied using a universal selector will have the lowest specificity.
+
+
+
+                                                                                                        *Introduction to CSS Flexbox*
+
+
+
+1. Layout
+A Layout is a pattern to structure the information and arrange the elements on the website.
+
+1.1 Methods to Design a Layout
+Mainly, there are two methods that help design the webpage layout.
+
+-Flexbox (stable)
+-CSS Grid (Advanced & Fast growing but not stable)
+
+1.1.1 Flexbox
+Flexbox is a layout method that helps to arrange the HTML elements in rows (horizontally) or columns (vertically).
+
+2. Flexbox Layout with CSS Properties
+To achieve flexbox layout CSS provides many properties, these are a few among them.
+
+-display
+-flex-direction
+-justify-content
+-align-items
+-flex-wrap
+-flex-flow
+-align-content
+-align-self
+-flex-grow
+-flex-basis
+-flex-shrink
+-order and many more...
+
+2.1 Display
+To achieve different Layouts, we can use CSS property display.
+
+Display property can have the following values:
+-flex
+-inline-flex
+-grid
+-none and many more...
+Providing display property with the value flex converts the element into a Flex Container. All HTML elements that are direct children of Flex Container are called Flex Items.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="boxes-container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.box {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.box1 {
+  background-color: #1abc9c;
+}
+
+.box2 {
+  background-color: #3498db;
+}
+
+.box3 {
+  background-color: #983e9c;
+}
+
+.boxes-container {
+  display: flex;
+  border: 10px solid goldenrod;
+}
+
+In the example above, irrespective of inline or block elements, the Flex Container handles the display of Flex Items.
+2.2 Flex Direction
+The Flex Direction specifies the direction of the flex items in the Flexbox Container.
+
+When working with Flexbox layout, we need to think in terms of two axes.
+
+-Main Axis- It is specified by the flex-direction property.
+-Cross Axis- It runs perpendicular to the main axis.
+
+Flex Direction property can have the following values:
+
+-row- Direction of the flex items is horizontal.
+-column- Direction of the flex items is vertical.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="boxes-container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.box {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.box1 {
+  background-color: #1abc9c;
+}
+
+.box2 {
+  background-color: #3498db;
+}
+
+.box3 {
+  background-color: #983e9c;
+}
+
+.boxes-container {
+  display: flex;
+  flex-direction: column;
+  border: 10px solid goldenrod;
+}
+
+In the example above, try out flex-direction property with different values.
+
+2.3 Justify Content
+The justify-content property specifies the alignment of flex items along the main axis.
+
+Justify Content property can have the following values:
+-flex-start(default) - All the elements will arrange to the start of the container.
+-center- All the elements will arrange to the center of the container.
+-flex-end- All the elements will arange to the end of the container.
+-space-between- Left over space will be arranged in between the flex items.
+-space-around- Every flex item will get space around them.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="boxes-container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.box {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.box1 {
+  background-color: #1abc9c;
+}
+
+.box2 {
+  background-color: #3498db;
+}
+
+.box3 {
+  background-color: #9b59b6;
+}
+
+.boxes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  border: 10px solid goldenrod;
+}
+
+In the example above, try out justify-contentandflex-direction properties with different values.
+
+2.4 Align Items
+The align-items property specifies the alignment of flex items along the cross axis.
+
+Align Items property can have the following values:
+
+-stretch(default)- Will stretch its available height.
+-flex-start- Will be at the starting of the flex container.
+-center- Will be at the center of the avilable height.
+-flex-end- Will be at the ending point of the available height.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="boxes-container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+    </div>
+  </body>
+</html>
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.box {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.box1 {
+  background-color: #1abc9c;
+}
+
+.box2 {
+  background-color: #3498db;
+}
+
+.box3 {
+  background-color: #983e9c;
+}
+
+.boxes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  border: 10px solid goldenrod;
+}
+
+In the example above, try out align-itemsandflex-direction properties with different values.
+
+
+3. Music Section Example - Final code
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="bg-container">
+      <p class="heading">THE MUSIC WORLD</p>
+      <p class="description">
+        Music is your own experience, your thoughts, your wisdom. If you don’t
+        live it, you're not listening to the right kind.
+      </p>
+      <div class="buttons-container">
+        <button class="button">Get Started</button>
+        <button class="outline-button">Learn More</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0;
+}
+
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://assets.ccbp.in/frontend/intermediate-rwd/music-section-bg.png");
+  font-family: "Open Sans";
+  min-height: 100vh;
+  background-size: cover;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 15px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 18px;
+  color: #ececec;
+  margin-bottom: 25px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.button {
+  font-family: "Open Sans";
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 28px;
+  margin: 10px;
+  background-color: #ffdda9;
+  color: #12022f;
+  border: 0px;
+}
+
+.outline-button {
+  border-radius: 28px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 28px;
+  margin: 10px;
+  background-color: transparent;
+  border-witdh: 2px;
+  border-style: solid;
+  border-color: #ffffff;
+  color: #ececec;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+                                                                                               *Introduction to CSS Flexbox | Part 2 |*
+
+
+1. Flex Wrap
+The flex-wrap property arranges the flex items in multiple lines.
+
+Flex Wrap property can have the following values:
+
+-nowrap(default)
+-wrap
+-wrap-reverse and many more...
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="boxes-container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+      <div class="box box4">4</div>
+      <div class="box box5">5</div>
+      <div class="box box6">6</div>
+      <div class="box box7">7</div>
+      <div class="box box8">8</div>
+      <div class="box box9">9</div>
+      <div class="box box10">10</div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.box {
+  color: white;
+  font-family: "Roboto";
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.box1 {
+  background-color: #1abc9c;
+}
+
+.box2 {
+  background-color: #3498db;
+}
+
+.box3 {
+  background-color: #9b59b6;
+}
+
+.box4 {
+  background-color: #333333;
+}
+
+.box5 {
+  background-color: #f1c40f;
+}
+
+.box6 {
+  background-color: #e38710;
+}
+
+.box7 {
+  background-color: #e74c3c;
+}
+
+.box8 {
+  background-color: #bdc3c7;
+}
+
+.box9 {
+  background-color: #53c955;
+}
+
+.box10 {
+  background-color: #4da17b;
+}
+
+.boxes-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
+  border: 10px solid goldenrod;
+}
+In the example above, try out the flex-wrap property with different values by changing the flex-direction.
+
+2. Frontend Developer Section Example
+Initial Code:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="bg-container">
+      <h1 class="heading">Frontend Developer</h1>
+      <p class="description">
+        Frontend Developers work closely with designers to make websites
+        beautiful, functional, and fast. This learning path includes:
+      </p>
+      <div class="card border-green">
+        <p>Basics of HTML5</p>
+      </div>
+      <div class="card border-dark-green">
+        <p>CSS Specificity</p>
+      </div>
+      <div class="card border-dark-yellow">
+        <p>CSS Box Model</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0px;
+}
+
+.bg-container {
+  font-family: "Open Sans";
+  background-color: #2b5489;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.heading {
+  color: white;
+  width: 90%;
+  max-width: 900px;
+  font-size: 48px;
+}
+
+.description {
+  color: #e2e8f0;
+  margin-bottom: 56px;
+  width: 90%;
+  max-width: 900px;
+  font-size: 20px;
+}
+
+.cards-container {
+  width: 90%;
+  max-width: 900px;
+}
+
+.card {
+  background-color: white;
+  width: 210px;
+  border-radius: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 28px;
+  padding-left: 28px;
+  margin-bottom: 24px;
+  font-family: "Open Sans";
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 18px;
+  color: #334155;
+}
+
+.border-green {
+  border-left: 8px solid #65a30d;
+}
+
+.border-dark-green {
+  border-left: 8px solid #0d9488;
+}
+
+.border-dark-yellow {
+  border-left: 8px solid #ca8a04;
+}
+
+.border-orange {
+  border-left: 8px solid #ea580c;
+}
+
+.border-blue {
+  border-left: 8px solid #4f46e5;
+}
+
+.border-violet {
+  border-left: 8px solid #9333ea;
+}
+
+.border-pink {
+  border-left: 8px solid #db2777;
+}
+
+.border-red {
+  border-left: 8px solid #e11d48;
+}
+
+Final Code:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="bg-container">
+      <h1 class="heading">Frontend Developer</h1>
+      <p class="description">
+        Frontend Developers work closely with designers to make websites
+        beautiful, functional, and fast. This learning path includes:
+      </p>
+      <div class="cards-container">
+        <div class="card border-green">
+          <p>Basics of HTML5</p>
+        </div>
+        <div class="card border-dark-green">
+          <p>CSS Specificity</p>
+        </div>
+        <div class="card border-dark-yellow">
+          <p>CSS Box Model</p>
+        </div>
+        <div class="card border-orange">
+          <p>Bootstrap Flex Utilities</p>
+        </div>
+        <div class="card border-blue">
+          <p>Bootstrap Grid System</p>
+        </div>
+        <div class="card border-violet">
+          <p>CSS Cascading</p>
+        </div>
+        <div class="card border-pink">
+          <p>Website Layout</p>
+        </div>
+        <div class="card border-red">
+          <p>DOM Manipulation</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0px;
+}
+
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans";
+  background-color: #2b5489;
+  min-height: 100vh;
+}
+
+.heading {
+  color: white;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  font-size: 48px;
+}
+
+.description {
+  color: #e2e8f0;
+  margin-bottom: 56px;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  max-width: 900px;
+}
+
+.card {
+  background-color: white;
+  width: 210px;
+  border-radius: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 28px;
+  padding-left: 28px;
+  margin-bottom: 24px;
+  font-family: "Open Sans";
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 18px;
+  color: #334155;
+}
+
+.border-green {
+  border-left: 8px solid #65a30d;
+}
+
+.border-dark-green {
+  border-left: 8px solid #0d9488;
+}
+
+.border-dark-yellow {
+  border-left: 8px solid #ca8a04;
+}
+
+.border-orange {
+  border-left: 8px solid #ea580c;
+}
+
+.border-blue {
+  border-left: 8px solid #4f46e5;
+}
+
+.border-violet {
+  border-left: 8px solid #9333ea;
+}
+
+.border-pink {
+  border-left: 8px solid #db2777;
+}
+
+.border-red {
+  border-left: 8px solid #e11d48;
+}
+
+Flex Item can also be a Flex Container.
+
+
+3. Shoes Shopping Section Example
+Initial Code:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/20c5629a29.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="bg-container">
+      <h1 class="heading">The Best Running Shoes Of 2021</h1>
+      <p class="description">
+        Running is the easiest type of exercise routine to begin, at least
+        according to the popular sentiment. As the truism goes, all you need is
+        a pair of shoes and a road to start.
+      </p>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-background-container nike-bg-image-1">
+            <p class="badge">Trending</p>
+          </div>
+          <h4 class="card-heading">Nike Zoom Rival Fly</h4>
+          <p class="card-description">
+            The Nike Zoom Rival Fly features a futuristic look with cushioning
+            in the forefoot that gives you a responsive feel.
+          </p>
+          <div class="card-footer-container">
+            <p class="price">$170.00</p>
+            <div class="icon-container">
+              <i class="fa fa-shopping-bag icon"> </i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0px;
+}
+
+.bg-container {
+  background-image: linear-gradient(to right, #659ebc, #2aaba8, #2aaba8);
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.heading {
+  color: white;
+  font-family: "Open Sans";
+  width: 90%;
+  max-width: 900px;
+}
+
+.description {
+  color: white;
+  font-family: "Open Sans";
+  width: 90%;
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+
+.cards-container {
+  width: 90%;
+  max-width: 900px;
+}
+
+.card {
+  width: 230px;
+  background-color: white;
+  padding: 16px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  font-family: "Open Sans";
+  font-size: 16px;
+}
+
+.card-background-container {
+  height: 150px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 16px;
+}
+
+.nike-bg-image-1 {
+  background-image: url("https://assets.ccbp.in/frontend/intermediate-rwd/nike-shoes-1-img.png");
+}
+
+.nike-bg-image-2 {
+  background-image: url("https://assets.ccbp.in/frontend/intermediate-rwd/nike-shoes-2-img.png");
+}
+
+.nike-bg-image-3 {
+  background-image: url("https://assets.ccbp.in/frontend/intermediate-rwd/nike-shoes-3-img.png");
+}
+
+.card-description {
+  font-size: 16px;
+  color: #594d6d;
+}
+
+.badge {
+  background-color: #f7941d;
+  color: white;
+  padding-top: 4px;
+  padding-right: 15px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  font-size: 12px;
+  border-radius: 16px;
+  margin-right: 8px;
+  margin-bottom: 6px;
+}
+
+.icon-container {
+  background-color: #659ebc;
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.icon {
+  color: white;
+  font-size: 22px;
+}
+
+Final Code:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/20c5629a29.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="bg-container">
+      <h1 class="heading">The Best Running Shoes Of 2021</h1>
+      <p class="description">
+        Running is the easiest type of exercise routine to begin, at least
+        according to the popular sentiment. As the truism goes, all you need is
+        a pair of shoes and a road to start.
+      </p>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-background-container nike-bg-image-1">
+            <p class="badge">Trending</p>
+          </div>
+          <h4 class="card-heading">Nike Zoom Rival Fly</h4>
+          <p class="card-description">
+            The Nike Zoom Rival Fly features a futuristic look with cushioning
+            in the forefoot that gives you a responsive feel.
+          </p>
+          <div class="card-footer-container">
+            <p class="price">$170.00</p>
+            <div class="icon-container">
+              <i class="fa fa-shopping-bag icon"> </i>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-background-container nike-bg-image-2">
+            <p class="badge">Trending</p>
+          </div>
+          <h4 class="card-heading">Nike React Infinity Run</h4>
+          <p class="card-description">
+            The Nike React Infinity Run Flyknit is designed to help reduce
+            injury and keep you on the run.
+          </p>
+          <div class="card-footer-container">
+            <p class="price">$170.00</p>
+            <div class="icon-container">
+              <i class="fa fa-shopping-bag icon"> </i>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-background-container nike-bg-image-3">
+            <p class="badge">Trending</p>
+          </div>
+          <h4 class="card-heading">Nike React Miler</h4>
+          <p class="card-description">
+            The Nike React Miler gives you trusted stability for miles with
+            athlete-informed performance.
+          </p>
+          <div class="card-footer-container">
+            <p class="price">$170.00</p>
+            <div class="icon-container">
+              <i class="fa fa-shopping-bag icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-background-container nike-bg-image-1">
+            <p class="badge">Trending</p>
+          </div>
+          <h4 class="card-heading">Nike Zoom Rival Fly</h4>
+          <p class="card-description">
+            The Nike Zoom Rival Fly features a futuristic look with cushioning
+            in the forefoot that gives you a responsive feel.
+          </p>
+          <div class="card-footer-container">
+            <p class="price">$170.00</p>
+            <div class="icon-container">
+              <i class="fa fa-shopping-bag icon"> </i>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-background-container nike-bg-image-2">
+            <p class="badge">Trending</p>
+          </div>
+          <h4 class="card-heading">Nike React Infinity Run</h4>
+          <p class="card-description">
+            The Nike React Infinity Run Flyknit is designed to help reduce
+            injury and keep you on the run.
+          </p>
+          <div class="card-footer-container">
+            <p class="price">$170.00</p>
+            <div class="icon-container">
+              <i class="fa fa-shopping-bag icon"> </i>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-background-container nike-bg-image-3">
+            <p class="badge">Trending</p>
+          </div>
+          <h4 class="card-heading">Nike React Miler</h4>
+          <p class="card-description">
+            The Nike React Miler gives you trusted stability for miles with
+            athlete-informed performance.
+          </p>
+          <div class="card-footer-container">
+            <p class="price">$170.00</p>
+            <div class="icon-container">
+              <i class="fa fa-shopping-bag icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-background-container nike-bg-image-1">
+            <p class="badge">Trending</p>
+          </div>
+          <h4 class="card-heading">Nike Zoom Rival Fly</h4>
+          <p class="card-description">
+            The Nike Zoom Rival Fly features a futuristic look with cushioning
+            in the forefoot that gives you a responsive feel.
+          </p>
+          <div class="card-footer-container">
+            <p class="price">$170.00</p>
+            <div class="icon-container">
+              <i class="fa fa-shopping-bag icon"> </i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0px;
+}
+
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to right, #659ebc, #2aaba8, #2aaba8);
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.heading {
+  color: white;
+  font-family: "Open Sans";
+  width: 90%;
+  max-width: 900px;
+}
+
+.description {
+  color: white;
+  font-family: "Open Sans";
+  width: 90%;
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 900px;
+}
+
+.card {
+  width: 230px;
+  background-color: white;
+  padding: 16px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  font-family: "Open Sans";
+  font-size: 16px;
+}
+
+.card-background-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 150px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 16px;
+}
+
+.nike-bg-image-1 {
+  background-image: url("https://assets.ccbp.in/frontend/intermediate-rwd/nike-shoes-1-img.png");
+}
+
+.nike-bg-image-2 {
+  background-image: url("https://assets.ccbp.in/frontend/intermediate-rwd/nike-shoes-2-img.png");
+}
+
+.nike-bg-image-3 {
+  background-image: url("https://assets.ccbp.in/frontend/intermediate-rwd/nike-shoes-3-img.png");
+}
+
+.card-description: {
+  font-size: 16px;
+  color: #594d6d;
+}
+
+.badge {
+  background-color: #f7941d;
+  color: white;
+  padding-top: 4px;
+  padding-right: 15px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  font-size: 12px;
+  border-radius: 16px;
+  margin-right: 8px;
+  margin-bottom: 6px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #659ebc;
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.card-footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  color: white;
+  font-size: 22px;
+}
+
+
+
+                                                                                              *Introduction to CSS Flexbox | Part 3 | *
+
+
+1. Align Self
+The align-self property specifies the alignment of Individual Flex Items along the cross axis.
+
+Align Self property can have the following values:
+
+-flex-start
+-center
+-flex-end
+-stretch
+-auto(default) and more...
+If the value of align-self is auto, then the align-items value of its Flex Container gets inherited.
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="boxes-container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+      <div class="box box4">4</div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0px;
+}
+
+.boxes-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100vh;
+  border: 10px solid goldenrod;
+}
+
+.box {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.box1 {
+  background-color: #1abc9c;
+}
+
+.box2 {
+  background-color: #3498db;
+  align-self: center;
+}
+
+.box3 {
+  background-color: #983e9c;
+  align-self: flex-end;
+}
+
+.box4 {
+  background-color: #333333;
+  align-self: stretch;
+}
+
+In the example above, try out the align-self property with different values by changing the flex-direction.
+
+
+2. Order
+The order property specifies the order of Flex Items in the Flex Container.
+
+Order property has the following values:
+
+- 0 (default)
+- +ve values
+- -ve values
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div class="boxes-container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+      <div class="box box4">4</div>
+      <div class="box box5">5</div>
+      <div class="box box6">6</div>
+      <div class="box box7">7</div>
+      <div class="box box8">8</div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0px;
+}
+
+.boxes-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
+  border: 10px solid goldenrod;
+}
+
+.box {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.box1 {
+  background-color: #1abc9c;
+  order: 1;
+}
+
+.box2 {
+  background-color: #3498db;
+}
+
+.box3 {
+  background-color: #9b59b6;
+  order: 4;
+}
+
+.box4 {
+  background-color: #333333;
+}
+
+.box5 {
+  background-color: #f1c40f;
+  order: 7;
+}
+
+.box6 {
+  background-color: #e38710;
+}
+
+.box7 {
+  background-color: #e74c3c;
+  order: 4;
+}
+
+.box8 {
+  background-color: #bdc3c7;
+  order: -3;
+}
+In the example above, try out order property with different values.
+
+Note:
+If two or more HTML elements have the same order, then they will be arranged based on their source code.
+
+3. Chat Screen Example
+Initial Code:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="header">
+      <i class="fa fa-arrow-left back-icon"></i>
+      <img src="https://assets.ccbp.in/frontend/intermediate-rwd/preethi-img.png" class="profile-pic" />
+      <div>
+        <p class="name">Preethi</p>
+        <p class="status">Online</p>
+      </div>
+    </div>
+    <div class="chat-container">
+      <div class="msg-container">
+        <img src="https://assets.ccbp.in/frontend/intermediate-rwd/preethi-img.png" class="from-msg-profile-pic" />
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'>Hi Praneetha. How are you?</p>
+          <p class='msg-time from-msg-time'>7:45 PM</p>
+        </div>
+      </div>
+      <div class="msg-container to-msg-container">
+        <img src="https://assets.ccbp.in/frontend/intermediate-rwd/praneetha-img.png" class="to-msg-profile-pic" />
+        <div class="msg-text-container to-msg-text-container">
+          <p class='msg-text to-msg-text'>Hello Preethi, I’m fine. How about you?</p>
+          <p class='msg-time to-msg-time'>8:00 PM</p>
+        </div>
+      </div>
+      <div class="msg-container">
+        <img src="https://assets.ccbp.in/frontend/intermediate-rwd/preethi-img.png" class="from-msg-profile-pic" />
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'>I'm fine too.</p>
+          <p class='msg-time from-msg-time'>8:45 PM</p>
+        </div>
+      </div>
+      <div class="msg-container">
+        <img src="https://assets.ccbp.in/frontend/intermediate-rwd/preethi-img.png" class="from-msg-profile-pic" />
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'>I'm going for a trek on Sunday. Will you join me?</p>
+          <p class='msg-time from-msg-time'>8:46 PM</p>
+        </div>
+      </div>
+      <div class="msg-container to-msg-container">
+        <img src="https://assets.ccbp.in/frontend/intermediate-rwd/praneetha-img.png" class="to-msg-profile-pic" />
+        <div class="msg-text-container to-msg-text-container">
+          <p class='msg-text to-msg-text'>Will let you know tomorrow.</p>
+          <p class='msg-time to-msg-time'>9:00 PM</p>
+        </div>
+      </div>
+      <div class="msg-container">
+        <img src="https://assets.ccbp.in/frontend/intermediate-rwd/preethi-img.png" class="from-msg-profile-pic" />
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'>Ok!</p>
+          <p class='msg-time from-msg-time'>9:45 PM</p>
+        </div>
+      </div>
+      <div class="date-container">
+        <p class="date">20 JANUARY 2021</p>
+      </div>
+      <div class="msg-container to-msg-container">
+        <img src="https://assets.ccbp.in/frontend/intermediate-rwd/praneetha-img.png" class="to-msg-profile-pic" />
+        <div class="msg-text-container to-msg-text-container">
+          <p class='msg-text to-msg-text'>Hey, I’ll be joining you on the trek :D</p>
+          <p class='msg-time to-msg-time'>8:46 AM</p>
+        </div>
+      </div>
+      <div class="msg-container">
+        <img src="https://assets.ccbp.in/frontend/intermediate-rwd/preethi-img.png" class="from-msg-profile-pic" />
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'> Nice! Let's rock it :)</p>
+          <p class='msg-time from-msg-time'>9:45 AM</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #085bb9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.back-icon {
+  color: white;
+  margin-right: 30px;
+  font-size: 22px;
+}
+
+.profile-pic {
+  border-radius: 32px;
+  margin-right: 16px;
+  width: 64px;
+  height: 64px;
+}
+
+.name {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Open Sans";
+  margin: 0px;
+  margin-bottom: 8px;
+}
+
+.status {
+  color: #e4e7eb;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Open Sans";
+  margin: 0px;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  overflow: auto;
+  align-items:flex-start;
+}
+
+.msg-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 36px;
+}
+
+.to-msg-container {
+}
+
+.from-msg-profile-pic {
+  border-radius: 20px;
+  margin-right: 8px;
+  margin-left: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.to-msg-profile-pic{
+  border-radius: 20px;
+  margin-right: 8px;
+  margin-left: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.msg-text-container {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  max-width: 355px;
+  min-width: 80px;
+  justify-content: space-between;
+}
+
+.from-msg-text-container {
+  font-family: "Open Sans";
+  color: white;
+  background: #0967d2;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.to-msg-text-container {
+  font-family: "Open Sans";
+  color: #323f4b;
+  background: #dce6f4;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.msg-text {
+  margin: 0px;
+  font-size: 16px;
+}
+
+.to-msg-text{
+  color:#323f4b;
+}
+
+.from-msg-text{
+  color: white;
+}
+
+.msg-time {
+  margin: 0px;
+  font-size: 12px;
+  min-width: 60px;
+  margin-left: 15px;
+}
+
+.from-msg-time{
+  color: #77b7ff;
+}
+
+.to-msg-time{
+  color: #7892B5
+}
+
+.date-container {
+  background: #cbd5e1;
+  border-radius: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 36px;
+}
+
+.date {
+  font-weight: 600;
+  font-size: 14px;
+  color: #64748b;
+  margin: 0px;
+  font-family: "Roboto";
+}
+
+.footer {
+  height: 8vh;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 48px;
+  padding-top: 15px;
+}
+
+.footer-input-container {
+  border: 1px solid #cbd2d9;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-input {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  color: #7b8794;
+  font-family: "Open Sans";
+  width: 100%;
+  border: 0px;
+  background: #f5f7fa;
+  outline: none;
+}
+
+.send {
+  width: 40px;
+  height: 40px;
+  background: #0967d2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px;
+  outline: none;
+}
+
+.send-icon {
+  color: white;
+  font-size: 24px;
+}
+
+Final Code:
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="header">
+      <i class="fa fa-arrow-left back-icon"></i>
+      <img src="https://res.cloudinary.com/dx94hnzfl/image/upload/v1612593409/Ellipse_1_2_uziel2.png" class="profile-pic" />
+      <div>
+        <p class="name">Preethi</p>
+        <p class="status">Online</p>
+      </div>
+    </div>
+    <div class="chat-container">
+      <div class="msg-container">
+        <img src="https://res.cloudinary.com/dx94hnzfl/image/upload/v1612593409/Ellipse_1_2_uziel2.png" class="from-msg-profile-pic" />
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'>Hi Praneetha. How are you?</p>
+          <p class='msg-time from-msg-time'>7:45 PM</p>
+        </div>
+      </div>
+      <div class="msg-container to-msg-container">
+        <img src="https://res.cloudinary.com/dx94hnzfl/image/upload/v1612594885/Avatar_jarzmi.png" class="to-msg-profile-pic" />
+        <div class="msg-text-container to-msg-text-container">
+          <p class='msg-text to-msg-text'>Hello Preethi, I’m fine. How about you?</p>
+          <p class='msg-time to-msg-time'>8:00 PM</p>
+        </div>
+      </div>
+      <div class="msg-container">
+        <img src="https://res.cloudinary.com/dx94hnzfl/image/upload/v1612593409/Ellipse_1_2_uziel2.png" class="from-msg-profile-pic" />
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'>I'm fine too.</p>
+          <p class='msg-time from-msg-time'>8:45 PM</p>
+        </div>
+      </div>
+      <div class="msg-container">
+        <img src="https://res.cloudinary.com/dx94hnzfl/image/upload/v1612593409/Ellipse_1_2_uziel2.png" class="from-msg-profile-pic" />
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'>I'm going for a trek on Sunday. Will you join me?</p>
+          <p class='msg-time from-msg-time'>8:46 PM</p>
+        </div>
+      </div>
+      <div class="msg-container to-msg-container">
+        <img src="https://res.cloudinary.com/dx94hnzfl/image/upload/v1612594885/Avatar_jarzmi.png" class="to-msg-profile-pic" />
+        <div class="msg-text-container to-msg-text-container">
+          <p class='msg-text to-msg-text'>Will let you know tomorrow.</p>
+          <p class='msg-time to-msg-time'>9:00 PM</p>
+        </div>
+      </div>
+      <div class="msg-container">
+        <img src="https://res.cloudinary.com/dx94hnzfl/image/upload/v1612593409/Ellipse_1_2_uziel2.png" class="from-msg-profile-pic" />
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'>Ok!</p>
+          <p class='msg-time from-msg-time'>9:45 PM</p>
+        </div>
+      </div>
+      <div class="date-container">
+        <p class="date">20 JANUARY 2021</p>
+      </div>
+      <div class="msg-container to-msg-container">
+        <img src="https://res.cloudinary.com/dx94hnzfl/image/upload/v1612594885/Avatar_jarzmi.png" class="to-msg-profile-pic" />
+        <div class="msg-text-container to-msg-text-container">
+          <p class='msg-text to-msg-text'>Hey, I’ll be joining you on the trek :D</p>
+          <p class='msg-time to-msg-time'>8:46 AM</p>
+        </div>
+      </div>
+      <div class="msg-container">
+        <img src="https://res.cloudinary.com/dx94hnzfl/image/upload/v1612593409/Ellipse_1_2_uziel2.png" class="from-msg-profile-pic" />
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'> Nice! Let's rock it :)</p>
+          <p class='msg-time from-msg-time'>9:45 AM</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body {
+  margin: 0px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #085bb9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.back-icon {
+  color: white;
+  margin-right: 30px;
+  font-size: 22px;
+}
+
+.profile-pic {
+  border-radius: 32px;
+  margin-right: 16px;
+  width: 64px;
+  height: 64px;
+}
+
+.name {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Open Sans";
+  margin: 0px;
+  margin-bottom: 8px;
+}
+
+.status {
+  color: #e4e7eb;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Open Sans";
+  margin: 0px;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  overflow: auto;
+  align-items:flex-start;
+}
+
+.msg-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 36px;
+}
+
+.to-msg-container {
+  align-self: flex-end;
+}
+
+
+.from-msg-profile-pic {
+  border-radius: 20px;
+  margin-right: 8px;
+  margin-left: 8px;
+  width: 40px;
+  height: 40px;
+}
+.to-msg-profile-pic{
+  border-radius: 20px;
+  margin-right: 8px;
+  margin-left: 8px;
+  width: 40px;
+  height: 40px;
+  order: 1;
+}
+
+.msg-text-container {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  max-width: 355px;
+  min-width: 80px;
+  justify-content: space-between;
+}
+
+.from-msg-text-container {
+  font-family: "Open Sans";
+  color: white;
+  background: #0967d2;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.to-msg-text-container {
+  font-family: "Open Sans";
+  color: #323f4b;
+  background: #dce6f4;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.msg-text {
+  margin: 0px;
+  font-size: 16px;
+}
+
+.to-msg-text{
+  color:#323f4b;
+}
+
+.from-msg-text{
+  color: white;
+}
+
+.msg-time {
+  margin: 0px;
+  align-self: flex-end;
+  font-size: 12px;
+  min-width: 60px;
+  margin-left: 15px;
+}
+
+.from-msg-time{
+  color: #77b7ff;
+}
+
+.to-msg-time{
+  color:#7892B5
+}
+
+.date-container {
+  background: #cbd5e1;
+  border-radius: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-self: center;
+  margin-bottom: 36px;
+}
+
+.date {
+  font-weight: 600;
+  font-size: 14px;
+  color: #64748b;
+  margin: 0px;
+  font-family: "Roboto";
+}
+
+.footer {
+  height: 8vh;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 48px;
+  padding-top: 15px;
+}
+
+.footer-input-container {
+  border: 1px solid #cbd2d9;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-input {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  color: #7b8794;
+  font-family: "Open Sans";
+  width: 100%;
+  border: 0px;
+  background: #f5f7fa;
+  outline: none;
+}
+
+.send {
+  width: 40px;
+  height: 40px;
+  background: #0967d2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px;
+  outline: none;
+}
+
+.send-icon {
+  color: white;
+  font-size: 24px;
+}
+
+
+
+
+
+
