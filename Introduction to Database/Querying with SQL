@@ -1,0 +1,179 @@
+Comparison Operators:
+In a typical e-commerce scenario, users would generally filter the products with good ratings, or want to purchase the products of a certain brand or of a certain price.
+Let's see how comparison operators are used to filter such kind of data using the following database.
+
+Comparison Operators:
+Operator	   Description
+=	            Equal to
+<>	        Not equal to
+<          Less than
+<=	       Less than or equal to
+>	         Greater than
+>=	       Greater than or equal to
+
+
+String Operations:
+Consider the case of e-commerce platforms. We generally search for the products on the basis of product name. But while searching, we need not enter the full name. For example, typing “mobiles” in a search bar will fetch thousands of results. How to get the data on the basis of only a part of the string? Let’s learn about it!
+
+Database :
+The database contains aproducttable that stores the data of products like name, category, price, brand and rating.
+You can check the schema and data ofproducttable in the code playground.
+
+LIKE Operator:
+LIKEoperator is used to perform queries on strings. This operator is especially used inWHEREclause to retrieve all the rows that match the given pattern.
+
+We writepatternsusing the followingwildcard characters:
+
+Symbol	               Description	                                      Example
+Percent sign (%)	     Represents zero or more characters	           ch%finds ch, chips, chocolate..
+Underscore (_)	       Represents a single character	              _atfinds mat, hat and bat
+
+Syntax
+SQL:
+SELECT
+    *
+FROM
+    table_name
+WHERE
+    c1 LIKE matching_pattern;
+    
+Note:
+The percent sign(%) is used when we are not sure of the number of characters present in the string.
+If we know the exact length of the string, then the wildcard character underscore(_) comes in handy.
+
+Logical Operators:
+So far, we've used comparison operators to filter the data. But in real-world scenarios, we often have to retrieve the data using several conditions at once. For example, in the case of e-commerce platforms, users often search for something like:
+Get shoes from the Puma brand, which have ratings greater than 4.0 and price less than 5000.
+
+With logical operators, we can perform queries based on multiple conditions. Let's learn how with the following database.
+
+Database:
+The database contains aproducttable that stores the data of products like name, category, price, brand and rating.
+You can check the schema and data ofproducttable in the code playground.
+
+AND, OR, NOT:
+Operator	Description
+AND	    Used to fetch rows that satisfy two or more conditions.
+OR	    Used to fetch rows that satisfy at least one of the given conditions.
+NOT	    Used to negate a condition in theWHEREclause.
+
+Syntax
+SQL:
+SELECT
+  *
+FROM
+  table_name
+WHERE
+  condition1
+  operator condition2
+  operator condition3
+  ...;
+  
+Multiple Logical Operators:
+We can also use the combinations of logical operators to combine two or more conditions. These compound conditions enable us to fine-tune the data retrieval requirements. 
+
+Precedence:
+->When a query has multiple operators, operator precedence determines the sequence of operations.
+
+Order of precedence:
+NOT
+AND
+OR
+
+Example:
+Fetch the products that belong to
+
+Redmi brandandratinggreater than 4 or
+the products from OnePlus brand
+
+SQL:
+SELECT
+  *
+FROM
+  product
+WHERE
+  brand = "Redmi"
+  AND rating > 4
+  OR brand = "OnePlus";
+  
+Quick Tip:
+It is suggested to always use parenthesis to ensure correctness while grouping the conditions.
+
+IN and BETWEEN Operators:
+Consider the case of a typical e-commerce scenario. Users generally search for the products that belong to a list of brands, or the products that lie within a particular price range. 
+
+In such scenarios, we use the IN operator to check if a value is present in the list of values. And, BETWEEN operator is used to check if a particular value exists in the given range.
+
+Let’s learn about these operators in detail using the following database.
+
+Database:
+The database contains aproducttable that stores the data of products like name, category, price, brand and rating.
+You can check the schema and data ofproducttable in the code playground.
+
+IN Operator:
+Retrieves the corresponding rows from the table if the value of column(c1) is present in the given values(v1,v2,..).
+
+Syntax
+SQL:
+SELECT
+  *
+FROM
+  table_name
+WHERE
+  c1 IN (v1, v2,..);
+ 
+BETWEEN Operator:
+Retrieves all the rows from table that have cloumn(c1) value present between the given range(v1 and v2).
+
+Syntax
+SQL:
+SELECT
+  *
+FROM
+  table_name
+WHERE
+  c1 BETWEEN v1
+  AND v2;
+  
+Note:
+BETWEENoperator is inclusive, i.e., both the lower and upper limit values of the range are included.
+
+Possible Mistakes:
+1.When using theBETWEENoperator, the first value should be less than second value. If not, we'll get an incorrect result depending on the DBMS.
+SQL:
+SELECT
+  name,
+  price,
+  brand
+FROM
+  product
+WHERE
+  price BETWEEN 500
+  AND 300;
+  
+2.We have to give both lower limit and upper limit while specifying range.
+SQL:
+SELECT
+  name,
+  price,
+  brand
+FROM
+  product
+WHERE
+  price BETWEEN
+  AND 300;
+  
+3.The data type of the column for which we're using theBETWEENoperator must match with the data types of the lower and upper limits.
+SQL:
+SELECT
+  name,
+  price,
+  brand
+FROM
+  product
+WHERE
+  name BETWEEN 300
+  AND 500;
+  
+
+
