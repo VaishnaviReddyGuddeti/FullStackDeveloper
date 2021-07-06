@@ -176,4 +176,101 @@ WHERE
   AND 500;
   
 
+ORDER BY and DISTINCT:
+In any e-commerce application, users have the option of sorting the products based on price, rating, etc. Also, for any product, users could know all the distinct brands available for the product.
+Let's learn how to retrieve such ordered results and unique data!
 
+Database:
+The database contains aproducttable that stores the data of products like name, category, price, brand and rating.
+You can check the schema and data ofproducttable in the code playground.
+
+ORDER BY:
+We useORDER BYclause to order rows. By default,ORDER BYsorts the data in theascending order.
+Syntax
+SQL:
+SELECT
+  column1,
+  column2,
+..columnN
+FROM
+  table_name [WHERE condition]
+ORDER BY
+  column1 ASC / DESC,
+  cloumn2 ASC / DESC;
+  
+DISTINCT:
+DISTINCTclause is used to return the distinct i.e unique values.
+
+Syntax
+SQL:
+SELECT
+  DISTINCT column1, 
+  column2,..
+  columnN
+FROM
+  table_name
+WHERE
+  [condition];
+  
+Pagination:
+E-commerce applications like Amazon or Flipkart hold millions of products. But, the user does not require all the available products every time s/he accesses the application. Infact, fetching all the products takes too long and consumes huge amount of data.
+
+Using pagination, only a chunk of the data can be sent to the user based on their request. And, the next chunk of data can be fetched only when the user asks for it.
+
+We useLIMIT&OFFSETclauses to select a chunk of the results
+Let's understand more about pagination concept using the following databse.
+
+Database:
+The database contains aproducttable that stores the data of products like name, category, price, brand and rating.
+
+LIMIT:
+LIMITclause is used to specify thenumber of rows(n)we would like to have in result.
+
+Syntax
+SQL:
+
+SELECT
+  column1,
+  column2,..
+  columnN
+FROM
+  table_name
+LIMIT n;
+
+Note:
+If the limit value is greater than the total number of rows, then all rows will be retrieved.
+
+OFFSET:
+OFFSETclause is used to specify the position (from nth row) from where the chunk of the results are to be selected.
+
+Syntax
+SQL:
+SELECT
+  column1,
+  column2,..
+  columnN
+FROM
+  table_name 
+OFFSET n;
+
+Possible Mistakes:
+UsingOFFSET before theLIMITclause.
+SQL:
+SELECT
+  *
+FROM
+  product OFFSET 2
+LIMIT 4;
+OUTPUT :SYNTAX ERROR
+
+Using onlyOFFSETclause.
+SQL:
+SELECT
+  *
+FROM
+  product 
+OFFSET 2;
+OUTPUT :SYNTAX ERROR
+
+Note:
+OFFSETclause should be placed after theLIMITclause. DefaultOFFSETvalue is 0.
