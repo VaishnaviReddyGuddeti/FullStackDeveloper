@@ -232,4 +232,4 @@ HAVING
 Note:
 WHERE vs HAVING: WHERE is used to filter rows and this operation is performed before grouping. HAVING is used to filter groups and this operation is performed after grouping.
 
-COMMON CONCEPTS:
+
