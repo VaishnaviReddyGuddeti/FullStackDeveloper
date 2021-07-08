@@ -1,0 +1,235 @@
+*Aggregations:
+Consider the case of sports tournaments like cricket. Players’ performances are analysed based on their batting average, maximum number of sixes hit, the least score in a tournament, etc. 
+
+We perform aggregations in such scenarios to combine multiple values into a single value, i.e., individual scores to an average score.
+
+Let’s learn more about aggregations to perform insightful analysis using the following database.
+
+Database:
+The database consists of a player_match_details table that stores the information of players' details in a match like name, match, score, year, number of fours and sixes scored. 
+
+Schema
+SQL:
+player_match_details (
+  name VARCHAR(250),
+  match VARCHAR(10),
+  score INTEGER,
+  fours INTEGER,
+  sixes INTEGER,
+  year INTEGER
+);
+
+Aggregation Functions:
+Combining multiple values into a single value is called aggregation. Following are the functions provided by SQL to perform aggregations on the given data:
+
+Aggregate Functions	                       Description
+COUNT	                              Counts the number of values
+SUM	                                Adds all the values
+MIN                                 Returns the minimum value
+MAX                                	Returns the maximum value
+AVG	                                Calculates the average of the values
+
+Syntax
+SQL:
+SELECT
+  aggregate_function(c1), 
+  aggregate_function(c2)
+FROM
+  TABLE;
+  
+Note:
+We can calculate multiple aggregate functions in a single query.
+
+Examples:
+1.Get the total runs scored by "Ram" from theplayer_match_detailstable.
+SQL:
+ELECT
+  SUM(score)
+FROM
+  player_match_details
+WHERE
+  name = "Ram";
+
+OUTPUT:
+SUM(score)
+221
+
+2.Get the highest and least scores among all the matches that happened in the year 2011.
+SQL:
+SELECT
+  MAX(score),
+  MIN(score)
+FROM
+  player_match_details
+WHERE
+  year = 2011;
+ 
+ OUTPUT:
+ MAX(score) 	MIN(score)
+   75	            62
+
+COUNT Variants:
+Calculate the total number of matches played in the tournament.
+
+Variant 1
+SQL:
+SELECT COUNT(*)    
+ FROM player_match_details;
+ 
+Variant 2
+SQL:
+SELECT COUNT(1)    
+ FROM player_match_details;
+ 
+Variant 3
+SQL:
+SELECT COUNT()    
+ FROM player_match_details;
+ 
+Output of Variant 1, Variant 2 and Variant 3
+All the variants, i.e., Variant 1,Variant 2andVariant 3give the same result: 18
+
+Special Cases:
+-When SUM function is applied on non-numeric data types like strings, date, time, datetime etc.,SQLite DBMS returns 0.0 and Postgre SQLDBMS returns None.
+-Aggregate functions on strings and their outputs
+
+Aggregate        Functions	Output
+MIN, MAX	     Based on lexicographic ordering
+SUM, AVG       0 (depends on DBMS)
+COUNT	         Default behavior
+
+-NULL values are ignored while computing the aggregation values
+-When aggregate functions are applied on only NULLvalues:
+AggregateFunctions	    Output
+MIN	                     NULL
+MAX	                     NULL
+SUM	                     NULL
+COUNT	                    0
+AVG	                     NULL
+
+Alias:
+Using the keywordAS, we can provide alternate temporary names to the columns in the output.
+
+Syntax
+SQL:
+SELECT
+  c1 AS a1,
+  c2 AS a2,
+  ...
+FROM
+  table_name;
+
+Examples
+1.Get all the names of players with column name as "player_name".
+SQL:
+SELECT
+  name AS player_name
+FROM
+  player_match_details;
+  
+Output:
+player_name
+Ram
+Joseph
+---
+
+Group By with Having:
+Previously, we have learnt to perform aggregations on all the rows of a table. Now, we shall look at how to split a table into multiple groups and apply aggregation on each group.
+
+The GROUP BY keyword in SQL is used to group rows which have the same values for the mentioned attributes. You can perform aggregations on these groups to get finer analytics.
+
+HAVING keyword is used to further refine the data by filtering the aggregated values. Let’s explore more about  GROUP BY and HAVING clauses with the following database.
+
+Database:
+
+The database consists ofplayer_match_detailstable which stores name, match, score, year, number of fours and sixes scored.
+
+->Schema:
+SQL:
+CREATE TABLE player_match_details (
+   name VARCHAR(250),
+   match VARCHAR(250),
+   score INTEGER,
+   fours INTEGER,
+   sixes INTEGER,
+   year INTEGER
+);
+
+GROUP BY:
+TheGROUP BYclause in SQL is used to group rows which have same values for the mentioned attributes.
+
+Syntax
+SQL:
+SELECT
+  c1,
+  aggregate_function(c2)
+FROM
+  table_name
+GROUP BY c1;
+
+Example : SQL
+SELECT
+  name, SUM(score) as total_score
+FROM
+  player_match_details
+GROUP BY name;
+
+GROUP BY with WHERE:
+We use WHERE clause to filter the data before performing aggregation.
+
+Syntax
+SQL:
+SELECT
+  c1,
+  aggregate_function(c2)
+FROM
+  table_name
+WHERE 
+  c3 = v1
+GROUP BY c1;
+
+Example:
+Get the number of half-centuries scored by each player.
+SQL:
+SELECT
+ name, COUNT(*) AS half_centuries
+FROM 
+ player_match_details
+WHERE score >= 50
+GROUP BY name;
+
+HAVING:
+HAVINGclause is used to filter the resultant rows after the application ofGROUP BYclause.
+
+Syntax
+SQL:
+SELECT
+  c1,
+  c2,
+  aggregate_function(c1)
+FROM
+  table_name
+GROUP BY 
+  c1, c2
+HAVING 
+  condition;
+  
+Example:
+Get thenameand number ofhalf_centuriesof players who scored more than one half century.
+SQL:
+SELECT
+  name,
+  count(*) AS half_centuries
+FROM
+  player_match_details
+WHERE
+  score >= 50
+GROUP BY
+  name
+HAVING
+  half_centuries > 1;
+  
+Note:
+WHERE vs HAVING: WHERE is used to filter rows and this operation is performed before grouping. HAVING is used to filter groups and this operation is performed after grouping.
+
+COMMON CONCEPTS:
