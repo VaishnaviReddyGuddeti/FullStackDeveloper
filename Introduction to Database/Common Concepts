@@ -1,1 +1,223 @@
 
+Expressions in Querying:
+We can write expressions in various SQL clauses. Expressions can comprise of various data types like integers, floats, strings, datetime, etc. 
+
+Let's learn more about expressions using the following database.
+
+Database:
+The IMDb stores various movies, actors and cast information.
+
+Using Expressions in SELECT Clause:
+1.Get profits of all movies.
+Note: Consider profit as the difference between collection and budget.
+SQL:
+SELECT 
+    id, name, (collection_in_cr-budget_in_cr) as profit
+FROM
+    movie;
+    
+Note:
+We use "||" operator to concatenate strings in sqlite3
+
+2.Get the movienameandgenrein the following format:movie_name - genre.
+SQL:
+SELECT
+  name || " - " || genre AS movie_genre
+FROM
+  movie;
+  
+Using Expressions in WHERE Clause:
+1.Get all the movies with a profit of at least 50 crores.
+SQL:
+SELECT
+   *
+FROM
+   movie
+WHERE
+   (collection_in_cr - budget_in_cr) >= 50;
+   
+Using Expressions in UPDATE Clause:
+1.Scale down ratings from 10 to 5 in movie table.
+SQL:
+UPDATE movie
+SET rating = rating/2;
+
+Expressions in HAVING Clause:
+Get all the genres that have average profit greater than 100 crores.
+
+SQL:
+SELECT
+  genre
+FROM
+  movie
+GROUP BY
+  genre
+HAVING
+  AVG(collection_in_cr - budget_in_cr) >= 100;
+  
+SQL Functions:
+ SQL provides many built-in functions to perform various operations over data that is stored in tables.
+Let's look at a few most commonly used functions in the industry using the following database.
+
+Database:
+The IMDb dataset stores the information of movies, actors and cast.
+
+Date Functions:
+strftime()
+strftime() function is used to extract month, year, etc. from a date/datetime field based on a specified format.
+
+Syntax:SQL
+strftime(format, field_name)
+
+Example:
+Get the movie title and release year for every movie in the database 
+
+SQL:
+SELECT name, strftime('%Y', release_date)
+FROM
+    movie;
+
+In the above query, we extract year from release_date by writing strftime('%Y', release_date) in SELECT clause.
+
+Example:
+Get the number of movies released in each month of the year 2010
+
+SQL:
+SELECT 
+    strftime('%m', release_date) as month,
+    COUNT(*) as total_movies
+FROM
+    movie
+WHERE
+    strftime('%Y', release_date) = '2010'
+GROUP BY
+    strftime('%m', release_date);
+    
+CAST Function:
+CAST function is used to typecast a value to a desired data type.
+
+Syntax
+SQL:
+CAST(value AS data_type);
+
+Example:
+Get the number of movies released in each month of the year 2010
+
+SQL:
+SELECT strftime('%m', release_date) as month,
+        COUNT(*) as total_movies
+FROM
+    movie
+WHERE
+    CAST(strftime('%Y', release_date) AS INTEGER) = 2010
+GROUP BY
+    strftime('%m', release_date);
+    
+Here,CAST(strftime('%Y', release_date) AS INTEGER) converts the year in string format to integer format. 
+
+Other Common Functions:
+Arithmetic Functions:
+SQL Function	         Behavior
+FLOOR	Rounds          a number to the nearest integer below its current value
+CEIL	Rounds          a number to the nearest integer above its current value
+ROUND	Rounds          a number to a specified number of decimal places
+
+Examples:
+Fetch the ceil, floor and round (to 1 decimal) values of the collections of all movies.
+SQL:
+SELECT
+    name,
+  ROUND(collection_in_cr, 1) AS RoundedValue,
+  CEIL(collection_in_cr) AS CeilValue,
+  FLOOR(collection_in_cr) AS FloorValue
+FROM
+  movie;
+  
+String Functions:
+SQL Function	             Behavior
+UPPER	                Converts a string to upper case
+LOWER               	Converts a string to lower case
+
+When you are not sure about the case (upper/lower) of the movie name, you can write a query as below to search for all the avengers movies irrespective of the case. 
+
+SQL:
+SELECT
+   name
+FROM
+  movie
+  WHERE UPPER(name) LIKE UPPER("%avengers%");
+  
+Note:
+Usually, UPPER() AND LOWER() functions can help you to perform case-insensitive searches.
+
+CASE Clause:
+SQL provides CASE clause to perform conditional operations. This is similar to the switch case / if-else conditions in other programming languages.
+
+Let's learn more about the usage of CASE clause using the given database
+
+Database:
+The IMDb dataset which consists of movies, actors and cast.
+
+CASE Clause:
+Each condition in the CASE clause is evaluated and results in corresponding value when the first condition is met.
+
+Syntax
+SQL:
+SELECT c1, c2
+CASE
+    WHEN condition1 THEN value1
+    WHEN condition2 THEN value2
+    ...
+    ELSE value
+    END AS cn
+FROM table;
+
+Note:
+1.In CASE clause, if no condition is satisfied, it returns the value in the ELSE part. If we do not specify the ELSE part, CASE clause results in NULL
+
+2.We can use CASE in various clauses like SELECT, WHERE, HAVING, ORDER BY and GROUP BY.
+
+Example:
+Calculate the tax amount for all movies based on the profit. Check the following table for tax percentages.
+
+profit	              tax_percentage
+<=100 crores	         10% of profit
+100< <=500 crores    	 15% of profit
+> 500 crores	         18% of profit
+
+SQL:
+SELECT id, name,
+  CASE
+    WHEN collection_in_cr - budget_in_cr <= 100 THEN collection_in_cr - budget_in_cr * 0.1
+    WHEN (collection_in_cr - budget_in_cr > 100
+    AND collection_in_cr - budget_in_cr < 500) THEN collection_in_cr - budget_in_cr * 0.15
+    ELSE collection_in_cr - budget_in_cr * 0.18
+  END AS tax_amount
+FROM
+  movie;
+  
+CASE with Aggregates:
+CASE statements can also be used together with aggregate functions
+
+Example:
+Get the number of movies with rating greater than or equal to 8, and the movies with rating less than 8, and are released between 2015 and 2020.
+ 
+SQL:
+SELECT
+  count(
+    CASE
+      WHEN rating >= 8 THEN 1
+    END
+  ) AS above_eight,
+  count(
+    CASE
+      WHEN rating < 8 THEN 1
+    END
+  ) AS below_eight
+FROM
+  movie
+WHERE
+  CAST(strftime("%Y", release_date) AS INTEGER) BETWEEN 2015
+  AND 2020;
+  
+
