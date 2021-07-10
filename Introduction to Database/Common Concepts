@@ -221,3 +221,124 @@ WHERE
   AND 2020;
   
 
+SQL Set Operations:
+The SQL Set operation is used to combine the two or more SQL queries.
+Let us understand common set operators by performing operations on two sets 
+
+-cast in "Sherlock Holmes" movie
+-cast in "Avengers Endgame" movie
+
+Common Set Operators
+INTERSECT:
+Actors who acted in both Sherlock Holmes and Avengers Endgame
+Result: Robert D Jr.
+
+MINUS:
+Actors who acted in Sherlock Holmes and not in Avengers Endgame
+Result: Jude Law, Mark Strong
+
+UNION:
+Unique actors who acted in Sherlock Holmes or in Avengers Endgame
+Result: Jude Law, Mark Strong, Robert D Jr, Chris Evans, Mark Ruffalo
+
+UNION ALL:
+Doesn't eliminate duplicate results 
+
+Result: Jude Law, Mark Strong, Robert D Jr, Robert D Jr, Chris Evans, Mark Ruffalo
+Let's learn more about CASE clause using the given database
+
+Database:
+The IMDb dataset which consists of movies, actors and cast.
+
+Applying Set Operations:
+We can apply these set operations on the one or more sql queries to combine their results  
+Syntax:SQL
+SELECT
+    c1, c2
+FROM
+    table_name
+SET_OPERATOR
+SELECT
+    c1, c2
+FROM
+    table_name;
+    
+Basic rules when combining two sql queries using set operations:
+-Each SELECT statement must have the same number of columns
+-The columns must have similar data types
+-The columns in each SELECT statement must be in the same order
+
+Examples:
+->Get ids of actors who acted in both Sherlock Holmes(id=6) and Avengers Endgame(id=15)?
+SQL:
+SELECT actor_id
+FROM cast
+WHERE movie_id=6
+INTERSECT
+SELECT actor_id
+FROM cast
+WHERE movie_id=15;
+
+->Get ids of actors who acted in Sherlock Holmes(id=6) and not in Avengers Endgame(id=15)?
+SQL:
+SELECT actor_id
+FROM cast
+WHERE movie_id=6
+EXCEPT
+SELECT actor_id
+FROM cast
+WHERE movie_id=15;
+
+->Get distinct ids of actors who acted in Sherlock Holmes(id=6) or Avengers Endgame(id=15).
+SQL:
+SELECT actor_id
+FROM cast
+WHERE movie_id=6
+UNION
+SELECT actor_id
+FROM cast
+WHERE movie_id=15;
+
+->Get ids of actors who acted in Sherlock Holmes(id=6) or Avengers Endgame(id=15).
+SQL:
+SELECT actor_id
+FROM cast
+WHERE movie_id=6
+UNION ALL
+SELECT actor_id
+FROM cast
+WHERE movie_id=15;
+
+ORDER BY Clause in Set Operations:
+ORDER BY clause can appear only once at the end of the query containing multiple SELECT statements.
+
+While using Set Operators, individual SELECT statements cannot have ORDER BY clause. Additionally, sorting can be done based on the columns that appear in the first SELECT query. For this reason, it is recommended to sort this kind of queries using column positions.
+
+Example:
+Get distinct ids of actors who acted in Sherlock Holmes (id=6) or Avengers Endgame(id=15). Sort ids in the descending order.
+SQL:
+SELECT actor_id
+FROM cast
+WHERE movie_id=6
+UNION
+SELECT actor_id
+FROM cast
+WHERE movie_id=15
+ORDER BY 1 DESC;
+
+Pagination in Set Operations:
+Similar to ORDER BY clause, LIMIT and OFFSET clauses are used at the end of the list of queries.
+
+Example:
+Get the first 5 ids of actors who acted in Sherlock Holmes (id=6) or Avengers Endgame(id=15). Sort ids in the descending order.
+SQL:
+SELECT actor_id
+FROM cast
+WHERE movie_id=6
+UNION
+SELECT actor_id
+FROM cast
+WHERE movie_id=15
+ORDER BY 1 DESC
+LIMIT 5;
+
