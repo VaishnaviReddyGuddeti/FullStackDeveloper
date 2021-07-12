@@ -47,3 +47,166 @@ Cardinality in DBMS defines the maximum number of times an instance in one entit
 
 Applying ER Model Concepts:
 In the previous cheatsheet, we have understood the core concepts of ER Model — entity types, relationships and attributes. Now, let's build an ER model for a real-world scenario.
+
+E-commerce Application:
+In a typical e-commerce application, 
+-Customer has only one cart. A cart belongs to only one customer
+-Customer can add products to cart
+-Cart contains multiple products
+-Customer can save multiple addresses in the application for further use like selecting delivery address
+Let’s apply the concepts of ER Model to this e-commerce scenario.
+
+Entity types:
+-Customer
+-Product
+-Cart
+-Address
+
+Relationships:
+Let's understand the relationships in the e-commerce use-case.
+
+Relation Between Cart and Customer:
+-A customer has only one cart.
+-A cart is related to only one customer.
+-Hence, the relation between customer and cart entities is One-to-One relation.
+
+Relation Between Cart and Products:
+-A cart can have many products.
+-A product can be in many carts.
+-Therefore, the relation between cart and product is Many-to-Many relation.
+
+Relation Between Customer and Address:
+-A customer can have multiple addresses.
+-An address is related to only one customer.
+-Hence, the relation between customer and address is One-to-Many relation.
+
+Attributes:
+Following are the attributes for the entity types in the e-commerce scenario. 
+Here, attributes like id, product_id, etc., are key attributes as they uniquely identify each entity in the entity type.
+
+ER Model to Relational Database:
+In the previous cheatsheet, we've learnt to build an ER model for a given scenario. Now, let's convert this ER model to Relational Database.
+Let's consider the same e-commerce application.
+
+E-commerce Application:
+In a typical e-commerce application, 
+-Customer has only one cart. A cart belongs to only one customer
+-Customer can add products to cart
+-Cart contains multiple products
+-Customer can save multiple addresses in the application for further use like selecting delivery address
+
+Entity Type to Table:
+Primary key: A minimal set of attributes (columns) in a table that uniquely identifies rows in a table.
+
+Relationships:
+Relation Between Customer and Address - One to Many Relationship
+-A customer can have multiple addresses.
+-An address is related to only one customer.
+We store the primary key of a customer in the address table to denote that the addresses are related to a particular customer.
+This new column/s in the table that refer to the primary key of another table is called Foreign Key.
+Here,customer_idis the foreign key that stores id (primary key) of customers.
+
+Relation Between Cart and Customer - One to One Relationship:
+-A customer has only one cart.
+-A cart is related to only one customer.
+This is similar to one-to-many relationship. But, we need to ensure that only one cart is associated to a customer
+
+Relation Between Cart and Products - Many to Many Relationship:
+-A cart can have many products.
+-A product can be in many carts.
+Here, we cannot store either the primary key of a product in the cart table or vice versa.
+To store the relationship between the cart and product tables, we use a Junction Table.
+
+Note:
+We store the properties of a the relationship in the junction table. For example, quantity of each product in the cart should be stored in the junction table cart_product.
+
+Creating a Relational Database:
+In the previous sessions, we've explored how to represent an ER model in the form of tables in a relational database.
+Now, let's create tables to store the data in the database by defining all the columns and relationships between the tables.
+
+Primary Key:
+Following syntax creates a table withc1as the primary key.
+
+Syntax:SQL
+CREATE TABLE table_name (
+    c1 t1 NOT NULL PRIMARY KEY, 
+...
+    cn tn, 
+);
+
+Foreign Key:
+In case of foreign key, we just create a foreign key constraint.
+
+Syntax:SQL
+CREATE TABLE table2(
+  c1 t1 NOT NULL PRIMARY KEY,
+  c2 t2,
+  FOREIGN KEY(c2) REFERENCES table1(c3) ON DELETE CASCADE
+);
+
+Understanding:
+SQL:
+FOREIGN KEY(c2) REFERENCES table1(c3)
+Above part of the foreign key constraint ensure that foreign key can only contain values that are in the referenced primary key.
+
+SQL:
+ON DELETE CASCADE
+
+Ensure that if a row intable1is deleted, then all its related rows intable2will also be deleted.
+
+Note:
+To enable foreign key constraints in SQLite, usePRAGMA foreign_keys = ON; By default it is enabled in our platform!
+
+Creating Tables in Relational Database:
+Customer Table:
+SQL:
+CREATE TABLE customer (
+   id INTEGER NOT NULL PRIMARY KEY,
+   name VARCHAR(250),
+   age INT
+);
+
+Product Table
+SQL:
+CREATE TABLE product (
+  id INTEGER NOT NULL PRIMARY KEY,
+  name VARCHAR(250),
+  price INT,
+  brand VARCHAR(250),
+  category VARCHAR(250)
+);
+
+Address Table
+SQL:
+CREATE TABLE address(
+  id INTEGER NOT NULL PRIMARY KEY,
+  pin_code INTEGER,
+  door_no VARCHAR(250),
+  city VARCHAR(250),
+  customer_id INTEGER,
+  FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE
+);
+
+Cart Table
+SQL:
+CREATE TABLE cart(
+  id INTEGER NOT NULL PRIMARY KEY,
+  customer_id INTEGER NOT NULL UNIQUE,
+  total_price INTEGER,
+  FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE
+);
+
+Cart Product Table (Junction Table)
+SQL:
+CREATE TABLE cart_product(
+  id INTEGER NOT NULL PRIMARY KEY,
+  cart_id INTEGER,
+  product_id INTEGER,
+  quantity INTEGER,
+  FOREIGN KEY (cart_id) REFERENCES cart(id) ON DELETE CASCADE,
+  FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE
+);
+
+
+
+
