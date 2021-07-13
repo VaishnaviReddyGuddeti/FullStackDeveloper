@@ -1,0 +1,152 @@
+*Views*
+Database:
+The database stores the sample data of an e-commerce aplication. 
+Here, the database consists ofuser,order_detailsandproducttables that store the information of products, orders placed, and the products on the platform.
+
+View:
+A view can simply be considered as a name to a SQL Query
+
+Create View:
+To create a view in the database, use theCREATE VIEWstatement.
+
+Example:
+Createuser_base_detailsview with id, name, age, gender and pincode.
+SQL:
+CREATE VIEW user_base_details AS 
+SELECT id, name, age, gender, pincode
+FROM user;
+
+Note:
+In general, views are read only.
+We cannot perform write operations like updating, deleting & inserting rows in the base tables through views.
+
+Querying Using View:
+We can use its name instead of writing the original query to get the data.
+SQL:
+SELECT *
+FROM user_base_details;
+
+We can use same operations which are used on tables like WHERE clause, Ordering results, etc.
+If we try to retrive data which is not defined in the view it raises an error.
+
+Example:SQL
+SELECT name, address
+FROM user_base_details
+WHERE gender = "Male";
+ORDER BY age ASC;
+
+List All Available Views:
+In SQLite, to list all the available views, we use the folowing query.
+SQL:
+SELECT
+  name
+FROM
+  sqlite_master
+WHERE
+  TYPE = 'view';
+  
+Delete View:
+To remove a view from a database, use the DROP VIEW statement.
+
+Syntax:SQL
+DROP VIEW view_name;
+
+Example:
+Deleteuser_base_detailsview from the database.
+SQL:
+DROP VIEW user_base_details;
+
+Advantages:
+-Views are used to write complex queries that involves multiple joins, group by, etc., and can be used whenever needed.
+-Restrict access to the data such that a user can only see limited data instead of a complete table.
+
+Subqueries:
+We can write nested queries, i.e., a query inside another query.
+Let's understand the scenarios where subqueries can be used with the following database.
+
+Database:
+The database stores the sample data of an e-commerce aplication. 
+Here, the database consists ofuser,order_detailsandproducttables that store the information of products, orders placed, and the products on the platform.
+
+Examples
+Example 1:
+Get the rating variance of products in the "WATCH" category. Rating variance is the difference between average rating and rating of a product.
+Here, we need to write an  expression to subtract rating of each product from the average rating as following.
+SQL:
+SELECT name, 
+(average_rating - rating) AS rating_variance
+...
+
+Replace average_rating with a query which computes the average.
+SQL:
+
+SELECT
+   name,
+   (
+       SELECT AVG(rating)
+       FROM product
+       WHERE category = "WATCH"
+   ) - rating AS rating_variance
+FROM product
+WHERE category = "WATCH";
+
+Example 2:
+Fetch all the products whose ratings is greater than average rating of all products.
+SQL:
+SELECT *
+FROM product
+WHERE rating > (
+       SELECT AVG(rating)
+       FROM product
+   );
+   
+Example 3:
+Fetch all the order_ids in which order consists of mobile (product_ids : 291, 292, 293, 294, 296) and not ear phones (product_ids : 227, 228, 229, 232, 233).
+SQL:
+SELECT
+  order_id
+FROM
+  order_details
+WHERE
+  order_id IN (
+    SELECT
+      order_id
+    FROM
+      order_product
+    WHERE
+      product_id IN (291, 292, 293, 294, 296)
+  )
+  AND NOT order_id IN (
+    SELECT
+      order_id
+    FROM
+      order_product
+    WHERE
+      product_id IN (227, 228, 229, 232, 233)
+  );
+  
+*Possible Mistakes*
+In SELECT Clause:
+A subquery in the SELECT clause can have only one column.
+
+Query:SQL 
+SELECT name, (
+   SELECT AVG(rating), MAX(rating) 
+       FROM product
+       WHERE category = "WATCH"
+   ) - rating AS rating_variance
+FROM product
+WHERE category = "WATCH";
+
+In WHERE Clause:
+Query:
+ In WHERE clause, a subquery can have only one column.
+SQL:
+SELECT
+   order_id, total_amount
+FROM order_details
+WHERE total_amount > (
+   SELECT total_amount, order_id
+   FROM order_details
+);
+
