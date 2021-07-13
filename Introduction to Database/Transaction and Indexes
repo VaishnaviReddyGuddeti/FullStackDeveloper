@@ -1,0 +1,31 @@
+Transactions:
+A transaction is a logical group of one or more SQL statements.
+
+Transactions are used in various scenarios such as banking, ecommerce, social networks, booking tickets, etc.
+
+A transaction has four important properties.
+-Atomicity
+-Consistency
+-Isolation
+-Durability
+
+Atomicity:
+Either all SQL statements or none are applied to the database.
+
+Consistency:
+Transactions always leave the database in a consistent state.
+
+Isolation:
+Multiple transaction can occur at the same time without adversely affecting the other.
+
+Durability:
+Changes of a successful transaction persist even after a system crash.
+These four properties are commonly acronymed as ACID.
+A-Automatic 
+C-Consistency
+I-Isolation
+D-Durable
+
+Indexes:
+In scenarios like, searching for a word in dictionary, we use index to easily search for the word. Similarly, in databases, we maintain indexes to speed up the search for data in a table.
+
