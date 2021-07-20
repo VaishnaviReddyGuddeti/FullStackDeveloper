@@ -1,0 +1,365 @@
+1. HTTP Server
+-Works with the HTTP requests and responses
+-Handles the different paths
+-Handles the query parameters
+-Sends the content as HTML, CSS, etc. as an HTTP response
+-Works with the databases
+
+1.1 Server-side Web Frameworks
+The Server-side Web Frameworks take care of all the above requirements.
+Some of the Web Frameworks are:
+-Express (Node JS)
+-Django (Python)
+-Ruby on Rails (Ruby)
+-Spring Boot (Java)
+
+2. Express JS
+It is a free and open-source Server-side Web Application Framework for Node JS.
+It provides a robust set of features to build web and mobile applications quickly and easily.
+Installation Command:
+npm install express --save
+
+3. Network call using Express JS
+1.Creating Express server instance
+JAVASCRIPT:
+const express = require("express");
+const app = express();
+
+2.Assigning a port number
+JAVASCRIPT:
+app.listen(3000);
+
+The app starts a server and listens on port 3000 for connections.
+
+3.1 Handling HTTP Request
+Syntax:
+app.METHOD(PATH, HANDLER)
+-METHOD is an HTTP request method, in lowercase like get, post, put, and delete.
+-PATH is a path on the server.
+-HANDLER is the function executed when the PATH is matched with the requested path.
+
+3.1.1 GET Request
+JAVASCRIPT:
+const express = require("express");
+const app = express();
+
+app.get("/", (request, response) => {
+  response.send("Hello World!");
+});
+app.listen(3000);
+
+Note:
+Whenever the code changes, we need to restart the server to reflect the changes we made.
+
+4. Testing Network Calls
+We can test the Network calls in two ways.
+1.Browser Network Tab.
+
+5. Network Call to get a Today’s Date
+JAVASCRIPT:
+const express = require("express");
+const app = express();
+
+app.get("/date", (request, response) => {
+  let date = new Date();
+  response.send(`Today's date is ${date}`);
+});
+
+app.listen(3000);
+
+6. Network Call to get HTML content as an HTTP Response
+6.1 Sending file as an HTTP Response
+Syntax:
+response.sendFile(PATH, {root: __dirname });
+
+->PATH is a path to the file which we want to send.
+->__dirname is a variable in Common JS Modules that returns the path of the folder where the current JavaScript file is present.
+JAVASCRIPT:
+const express = require("express");
+const app = express();
+
+app.get("/page", (request, response) => {
+  response.sendFile("./page.html", { root: __dirname });
+});
+
+app.listen(3000);
+
+1. Application Programming Interface (API)
+An API is a software intermediary that allows two applications to talk to each other.
+For example, OLA, and UBER use Google Maps API to provide their services.
+All the Network calls that we added are also the APIs.
+
+2. Database
+Express apps can use any database supported by Node JS.
+There are many popular options, including SQLite, PostgreSQL, MySQL, Redis, and MongoDB.
+
+3. SQLite
+The SQLite provides a command-line tool sqlite3.
+It allows the user to enter and execute SQL statements against an SQLite database.
+
+3.1 SQLite CLI
+3.1.1 Listing Existing Tables
+The .tables command is used to get the list of tables available in the SQLite database.
+
+3.1.2 Selecting Table Data
+Syntax: SELECT * from <table>
+
+4. SQLite Methods
+4.1 Open
+The SQLite open() method is used to connect the database server and provides a connection object to operate on the database.
+Syntax:JAVASCRIPT
+open({
+  filename: DATABASE_PATH,
+  driver: SQLITE_DATABASE_DRIVER,
+});
+It returns a promise object. On resolving the promise object, we will get the database connection object.
+
+4.2 Executing SQL Queries
+SQLite package provides multiple methods to execute SQL queries on a database.
+
+Some of them are:
+-all()
+-get()
+-run()
+-exec(), etc.
+
+4.2.1 all()
+db.all(SQL_QUERY);
+The all() method is used to get multiple rows of data.
+
+5. SQL Third-party packages
+We can use sqlite and sqlite3 node packages to connect SQLite Database from Node JS.
+Installation Commands:
+npm install sqlite --save
+npm install sqlite3 --save
+
+6. Connecting SQLite Database from Node JS to get the books from Goodreads Website
+1.Install the SQL third-party packages sqlite and sqlite3.
+2.Initialize the SQLite Database
+
+6.1 SQLite Database Initialization
+JAVASCRIPT:
+const express = require("express");
+const path = require("path");
+
+const { open } = require("sqlite");
+const sqlite3 = require("sqlite3");
+const app = express();
+
+const dbPath = path.join(__dirname, "goodreads.db");
+
+let db = null;
+
+const initializeDBAndServer = async () => {
+  try {
+    db = await open({
+      filename: dbPath,
+      driver: sqlite3.Database,
+    });
+    app.listen(3000, () => {
+      console.log("Server Running at http://localhost:3000/");
+    });
+  } catch (e) {
+    console.log(`DB Error: ${e.message}`);
+    process.exit(1);
+  }
+};
+
+initializeDBAndServer();
+
+6.2 Goodreads Get Books API
+JAVASCRIPT:
+app.get("/books/", async (request, response) => {
+  const getBooksQuery = `
+    SELECT
+      *
+    FROM
+      book
+    ORDER BY
+      book_id;`;
+  const booksArray = await db.all(getBooksQuery);
+  response.send(booksArray);
+});
+
+
+1. SQLite Methods
+The SQLite package provides multiple methods to execute SQL queries on a database.
+
+Some of them are:
+-all()
+-get()
+-run()
+-exec(), etc.
+
+1.1 get()
+The get() method is used to get a single row from the table.
+Syntax:
+db.get(SQL_QUERY);
+
+1.2 run()
+The run() method is used to create or update table data.
+Syntax:
+db.run(SQL_QUERY);
+
+2. Node JS Third-party packages
+2.1 Nodemon
+The Nodemon is a tool that restarts the server automatically whenever we make changes in the file.
+Installation Command:
+npm install -g nodemon
+
+Note:
+-The-g indicates that the nodemon will be installed globally in the environment.
+-While executing the file, replace the node with the nodemon. For example, nodemon index.js.
+
+3. GoodReads APIs
+-Get Book
+-Add Book
+-Update Book
+-Delete Book
+-Get Author Books
+
+3.1 Get Book
+We can use /books/:bookId/ as a path to identify a single book resource, where bookId is a path parameter.
+For example,
+In http://localhost:3000/books/1/, the bookId is 1.
+JAVASCRIPT:
+app.get("/books/:bookId/", async (request, response) => {
+  const { bookId } = request.params;
+  const getBookQuery = `
+    SELECT
+      *
+    FROM
+      book
+    WHERE
+      book_id = ${bookId};`;
+  const book = await db.get(getBookQuery);
+  response.send(book);
+});
+
+Note:
+Any string can be used as a path parameter.
+
+3.2 Add Book
+To add a book to the Database, you need to send a request body in JSON format.
+-The express.json() is used to recognize the incoming request object as JSON Object and parses it.
+-The request.body is used to get the HTTP Request body.
+JAVASCRIPT:
+app.post("/books/", async (request, response) => {
+  const bookDetails = request.body;
+  const {
+    title,
+    authorId,
+    rating,
+    ratingCount,
+    reviewCount,
+    description,
+    pages,
+    dateOfPublication,
+    editionLanguage,
+    price,
+    onlineStores,
+  } = bookDetails;
+  const addBookQuery = `
+    INSERT INTO
+      book (title,author_id,rating,rating_count,review_count,description,pages,date_of_publication,edition_language,price,online_stores)
+    VALUES
+      (
+        '${title}',
+         ${authorId},
+         ${rating},
+         ${ratingCount},
+         ${reviewCount},
+        '${description}',
+         ${pages},
+        '${dateOfPublication}',
+        '${editionLanguage}',
+         ${price},
+        '${onlineStores}'
+      );`;
+
+  const dbResponse = await db.run(addBookQuery);
+  const bookId = dbResponse.lastID;
+  response.send({ bookId: bookId });
+});
+
+The dbResponse.lastID provides the primary key of the new row inserted.
+
+3.3 Update Book
+We can use /books/:bookId/ as a path to identify a single book resource, where :bookId is the path parameter.
+For example, http://localhost:3000/books/1/.
+JAVASCRIPT:
+app.put("/books/:bookId/", async (request, response) => {
+  const { bookId } = request.params;
+  const bookDetails = request.body;
+  const {
+    title,
+    authorId,
+    rating,
+    ratingCount,
+    reviewCount,
+    description,
+    pages,
+    dateOfPublication,
+    editionLanguage,
+    price,
+    onlineStores,
+  } = bookDetails;
+  const updateBookQuery = `
+    UPDATE
+      book
+    SET
+      title='${title}',
+      author_id=${authorId},
+      rating=${rating},
+      rating_count=${ratingCount},
+      review_count=${reviewCount},
+      description='${description}',
+      pages=${pages},
+      date_of_publication='${dateOfPublication}',
+      edition_language='${editionLanguage}',
+      price=${price},
+      online_stores='${onlineStores}'
+    WHERE
+      book_id = ${bookId};`;
+  await db.run(updateBookQuery);
+  response.send("Book Updated Successfully");
+});
+
+The request.params provides the parameters passed through the request.
+
+Note:
+The strings sent through the APIs must be wrapped in quotes.
+
+3.4 Delete Book
+JAVASCRIPT:
+app.delete("/books/:bookId/", async (request, response) => {
+  const { bookId } = request.params;
+  const deleteBookQuery = `
+    DELETE FROM
+      book
+    WHERE
+      book_id = ${bookId};`;
+  await db.run(deleteBookQuery);
+  response.send("Book Deleted Successfully");
+});
+
+3.5 Get Author Books
+JAVASCRIPT:
+app.get("/authors/:authorId/books/", async (request, response) => {
+  const { authorId } = request.params;
+  const getAuthorBooksQuery = `
+    SELECT
+     *
+    FROM
+     book
+    WHERE
+      author_id = ${authorId};`;
+  const booksArray = await db.all(getAuthorBooksQuery);
+  response.send(booksArray);
+});
+
+
+
+
+
+
