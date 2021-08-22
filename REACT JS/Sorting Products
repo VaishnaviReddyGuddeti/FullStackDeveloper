@@ -1,0 +1,11 @@
+                                                                        *Sorting Products*
+                                                                        
+                                                                        
+                                                                        
+1. setState() - Callback Function
+The setState() is asynchronous, it takes an optional callback parameter that can be used to make updates after the state is changed.
+Syntax:
+
+                                                                        
+                                                                        
+                                                                        
